@@ -1,0 +1,13 @@
+jQuery(document).ready(function ($) {
+
+    if ($('#menu-sidebar').length > 0 && $('.entry-content').html().trim() === '') {
+        var id_pagina = $('#primary > main > article.page').attr('id');
+        var menu_filhos = $('#menu-sidebar #' + id_pagina).next().next().html();
+        if ((menu_filhos !== undefined) && (menu_filhos.trim().length > 0)) {
+            $('#primary > main > article.page .entry-content').html('<ul class="menu">' + menu_filhos + '</ul>');
+        } else {
+            $('#primary > main > article.page .entry-content').html($('#menu-sidebar > li > ul').clone().addClass('menu'));
+        }
+    }
+
+});

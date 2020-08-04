@@ -1,0 +1,422 @@
+jQuery(document).ready(function ($) {
+
+    // Habilita o tooltip do elemento que tiver a propriedade data-toggle='tooltip' //
+    $("[data-toggle='tooltip']").tooltip();
+
+    /// Acessibilidade ///////////////////////////////////////////////////////////////////////
+
+
+    $('body:not(".mobile") #uerj-vlibras').click(function () {
+        $('.link-vlibras').toggleClass('visivel');
+    });
+    $(document).on('click', '.mobile #uerj-vlibras', function () {
+        window.open('http://www.vlibras.gov.br/', '_blank');
+
+    });
+
+
+    // Alto contraste
+    var carragouEstiloAltoContraste = 0;
+
+    if (localStorage.getItem("alto_contraste") == 1) {
+        $('body').addClass('alto_contraste');
+        var prefixo = '';
+        if (window.location.hostname === 'localhost') {
+            prefixo = '/uerj-dev';
+        }
+        $('head').append('<link id="estilo_alto_contraste" href="' + location.protocol + '//' + window.location.hostname + prefixo + '/wp-content/themes/uerj/css/alto_contraste.css" type="text/css" rel="stylesheet">');
+        carragouEstiloAltoContraste++;
+    }
+
+    $('#alto_contraste').click(function () {
+        if ($('body.alto_contraste').length > 0) {
+            $('body').removeClass('alto_contraste');
+            localStorage.setItem("alto_contraste", 0);
+        } else {
+            if (carragouEstiloAltoContraste == 0) {
+                var prefixo = '';
+                if (window.location.hostname === 'localhost') {
+                    prefixo = '/uerjdev';
+                }
+                $('head').append('<link id="estilo_alto_contraste" href="' + location.protocol + '//' + window.location.hostname + prefixo + '/wp-content/themes/uerj/css/alto_contraste.css" type="text/css" rel="stylesheet">');
+                carragouEstiloAltoContraste++;
+            }
+            $('body').addClass('alto_contraste');
+            localStorage.setItem("alto_contraste", 1);
+        }
+
+    });
+
+    // tamanho da fonte ////////////
+
+    var tamanho_minimo = parseInt($('html').css('font-size'));
+    var tamanho_maximo = tamanho_minimo + 5;
+
+    if (localStorage.getItem("tamanho_fonte_uerj")) {
+        var tamanho = localStorage.getItem("tamanho_fonte_uerj");
+        $('html').css('font-size', tamanho + 'px');
+    }
+
+    $('#aumenta_fonte').click(function () {
+        var tamanho_fonte = parseInt($('html').css('font-size'));
+        if (tamanho_maximo === tamanho_fonte) {
+            return false;
+        }
+        var tamanho_novo_fonte = tamanho_fonte + 1;
+        $('html').css('font-size', tamanho_novo_fonte + 'px');
+        localStorage.setItem("tamanho_fonte_uerj", tamanho_novo_fonte);
+    });
+
+    $('#diminui_fonte').click(function () {
+        var tamanho_fonte = parseInt($('html').css('font-size'));
+        if (tamanho_minimo === tamanho_fonte) {
+            return false;
+        }
+        var tamanho_novo_fonte = tamanho_fonte - 1;
+        $('html').css('font-size', tamanho_novo_fonte + 'px');
+        localStorage.setItem("tamanho_fonte_uerj", tamanho_novo_fonte);
+    });
+
+    $('#reset_fonte').click(function () {
+        $('html').removeAttr('style');
+        localStorage.removeItem("tamanho_fonte_uerj");
+    });
+
+    // Icones Acessibilidade
+    var tamanho_acessibilidade = 0;
+    var icones_acessibilidade = 0;
+    $('.icones-acessibilidade a').each(function () {
+        tamanho_acessibilidade += $(this).find('i').outerWidth();
+//        console.log($(this));
+//        console.log($(this).find('i').outerWidth());
+        icones_acessibilidade++;
+    });
+    $('#aciona_acesssibilidade').click(function () {
+
+        $('.icones-acessibilidade.aberto').width($(this).find('i').outerWidth());
+        $('.icones-acessibilidade').toggleClass('aberto');
+        $('.icones-acessibilidade.aberto').outerWidth(tamanho_acessibilidade + icones_acessibilidade * 6 + 20);
+
+    });
+
+
+
+
+    //// verifica se há legenda na figura e adiciona a classe correspondente
+    $('.site-main figure figcaption').each(function () {
+        if ($(this).html() === '') {
+            $(this).addClass('sem-legenda');
+        } else {
+            $(this).addClass('com-legenda');
+        }
+//        console.log($(this));
+    });
+
+
+
+    /////// mostra o ALT-text da imagem da revista no mouseover
+
+    $('.publicacoes__revista').each(function () {
+        var textoDescricao = $(this).find('img').attr('alt');
+        $(this).append('<div class="descricao"><p>' + textoDescricao + '</p></div>');
+    });
+
+
+
+    /////// mostra o ALT-text da imagem da revista no mouseover
+    $('.publicacao__item figure').each(function () {
+        var textoDescricao = $(this).find('div').attr('alt');
+        $(this).append('<figcaption class="descricao"><p>' + textoDescricao + '</p></figcaption>');
+    });
+
+
+// menu
+
+    $('.icone-mobile').click(function () {
+
+        if (!$('.page-wrap').hasClass('nav-on'))
+        {
+            $('.page-wrap').addClass('nav-on');
+            adiciona_menu_backdrop();
+
+        } else
+        {
+            $('.page-wrap').removeClass('nav-on');
+            remove_menu_backdrop();
+        }
+    });
+
+
+
+/// submenu
+    function abre_submenu(velocidade) {
+        $('aside#secondary #menu-sidebar > li > .sub-menu, aside#secondary section:not(:first-of-type)').slideDown(velocidade, function () {
+//            $('html, body').animate({scrollTop: $(window).scrollTop() + 100}, 800);
+            $('#secondary').addClass('opened');
+        });
+    }
+
+    function fecha_submenu(velocidade) {
+        $('aside#secondary #menu-sidebar > li > .sub-menu, aside#secondary section:not(:first-of-type)').slideUp(velocidade, function () {
+            //$(this).css({'display':'block','height':'30px','overflow':'hidden'});
+            $('#secondary').removeClass('opened');
+        });
+    }
+
+    function adiciona_menu_backdrop() {
+        var altura_menu_backdrop = $(document).outerHeight() - 25;
+//        $('.page-wrap').prepend('<div style="width:calc(100% - 65px); background-color:rgba(0,0,0,0.75); height: 45px; z-index: 11; position: absolute"></div><div class="menu-backdrop" style="height:' + altura_menu_backdrop + 'px; top: 45px"><div></div></div>');
+        $('.page-wrap').prepend('<div class="menu-backdrop" style="height:' + altura_menu_backdrop + 'px; top: -45px"><div></div></div>');
+        $('.menu-backdrop').click(function () {
+            remove_menu_backdrop();
+            $('.page-wrap').removeClass('nav-on');
+        });
+    }
+    function remove_menu_backdrop() {
+        $('.menu-backdrop').remove();
+    }
+
+
+    function adiciona_submenu_backdrop() {
+        var altura_submenu_backdrop = $(document).outerHeight() - 90;
+        var top_submenu_backdrop = $('.site-header').outerHeight() + 45;
+        $('#secondary').parent().append('<div class="submenu-backdrop" style="height:' + altura_submenu_backdrop + 'px; top:' + top_submenu_backdrop + 'px"></div>');
+        $('.submenu-backdrop').click(function () {
+            remove_submenu_backdrop();
+            fecha_submenu(200);
+        });
+    }
+    function remove_submenu_backdrop() {
+        $('.submenu-backdrop').remove();
+    }
+
+
+
+    if ($('#menu-sidebar').length) {
+
+        // adiciona a classe .has-submenu caso haja submenu na sidebar
+//        $('#secondary').has('#menu-sidebar').addClass('has-submenu');
+        $('body').addClass('has-submenu');
+
+        $('.menu-sidebar-container ul > li').has('ul').addClass('dropdown expand');
+
+        //$('#menu-sidebar li.current-menu-ancestor > ul').show().parent().removeClass('expand').addClass('active');
+
+
+
+//        if ($('#secondary #menu-sidebar').length) {
+
+        $('.menu-sidebar-container > ul > li > a').click(function (event) {
+            event.preventDefault();
+            if (!$('#secondary.opened').length) {
+                abre_submenu(200);
+                adiciona_submenu_backdrop();
+            } else {
+                fecha_submenu(200);
+                remove_submenu_backdrop();
+            }
+        });
+
+        $('#menu-sidebar .sub-menu li.dropdown > a').after('<span></span>');
+
+        $('#menu-sidebar .current-menu-item').addClass('active');
+
+        $('#menu-sidebar li.dropdown').has('.current-menu-item').addClass('active').removeClass('expand');
+
+        $('#menu-sidebar li.dropdown.current-menu-item').removeClass('expand');
+
+        $('#menu-sidebar li.dropdown > span').click(function () {
+            if ($(this).parent().hasClass('expand')) {
+                $(this).parent().find('ul').first().slideDown(200, function () {
+                    $(this).parent().removeClass('expand');
+                });
+            } else {
+                $(this).parent().find('ul').first().slideUp(200, function () {
+                    $(this).parent().addClass('expand');
+                });
+            }
+        });
+
+
+//        }        ;
+
+    }
+
+
+/// APAGAR //////////
+// reposiciona o breadcrumb no DOM
+    var breadcrumb = $(".site-header__breadcrumb");
+    $("#primary").prepend(breadcrumb);
+//////
+
+
+
+    function identifica_mobile() {
+        if ($(this).width() < 992) {
+            $('body').addClass('mobile');
+            $('.icones-acessibilidade-mobile').append($('.icones-acessibilidade'));
+            fecha_submenu(0);
+            remove_submenu_backdrop();
+
+            if (!$('.icones-acessibilidade.aberto').length) {
+                $('.icones-acessibilidade').addClass('aberto');
+                $('.icones-acessibilidade i').first().hide();
+
+                $('.icones-acessibilidade.aberto').outerWidth(tamanho_acessibilidade + icones_acessibilidade * 6 - 25);
+            }
+
+        } else {
+            $('.site-header__faixa2 > .container').prepend($('.icones-acessibilidade'));
+            $('body').removeClass('mobile');
+            abre_submenu(0);
+            $('.icones-acessibilidade.aberto').width($('#aciona_acesssibilidade').find('i').outerWidth());
+            $('.icones-acessibilidade.aberto').removeClass('aberto');
+            $('.icones-acessibilidade i').first().show();
+        }
+        ;
+    }
+//// SCROLLTOP ////////////////////////////
+//Check to see if the window is top if not then display button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function () {
+        $('html, body').animate({scrollTop: 0}, 800);
+        return false;
+    });
+
+///////////////////////////////////////////////////
+
+//    $('.dropdown-toggle').hover(function () {
+////        $(this).dropdown("open");
+//        $(this).parent().addClass("open");
+//        
+//    });
+
+
+// slideshow de galeria de imagens do wordpress implementado usando o superslides ///////////////////////////////////////////////////////////
+    if (($('body .entry-content > [id *= "gallery-"]').length > 0)) {
+
+        var prefixo = '';
+        if (window.location.hostname === 'localhost') {
+            prefixo = 'uerjdev';
+        }
+
+        var inicio_caminho = 'http://' + window.location.hostname + '/' + prefixo;
+
+        $('head').append('<link id="estilo" href="' + inicio_caminho + '/wp-content/themes/uerj/css/galeria-slideshow.css" type="text/css" rel="stylesheet">');
+        $('head').append('<script id="easing" src="' + inicio_caminho + '/wp-content/themes/uerj/js/jquery.easing.1.3.js"></script>');
+        $('head').append('<script id="animate" src="' + inicio_caminho + '/wp-content/themes/uerj/js/jquery.animate-enhanced.min.js"></script>');
+        $('head').append('<script id="hammer" src="' + inicio_caminho + '/wp-content/themes/uerj/js/hammer.min.js"></script>');
+        $('head').append('<script id="superslides" src="' + inicio_caminho + '/wp-content/themes/uerj/js/jquery.superslides.js"></script>');
+        $('head').append('<script id="galeria" src="' + inicio_caminho + '/wp-content/themes/uerj/js/galeria.js"></script>');
+    }
+    /// fim galeria de imagens ////////////////////////////////////////////////////////////////////
+
+    function init() {
+// alterna o tamanho do cabeçalho
+        window.addEventListener('scroll', function (e) {
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                    shrinkOn = 90,
+                    header = $(".site-header");
+            body = $("body");
+            if (distanceY > shrinkOn) {
+                header.addClass("encolhido");
+                body.addClass("header-encolhido");
+            } else {
+                header.removeClass("encolhido");
+                body.removeClass("header-encolhido");
+            }
+        });
+
+        fecha_submenu(0);
+        remove_submenu_backdrop();
+
+        identifica_mobile();
+        var w = $(window).width();
+        $(window).resize(function () {
+            if (w !== $(window).width()) {
+
+                identifica_mobile();
+                w = $(window).width();
+
+                delete w;
+
+            }
+        });
+
+
+
+        //// ajusta collapse do plugin bootstrap shortcodes ///////////////////////////
+        var link;
+        $('[id^="custom-collapse-"] .panel-heading').each(function () {
+            link = $(this).find('a');
+            link_class = link.attr('class');
+            link_data_toggle = link.attr('data-toggle');
+            link_data_parent = link.attr('data-parent');
+            link_href = link.attr('href');
+            link_conteudo = link.text();
+
+//            link.parent().text(link_conteudo);
+//            link.remove();
+
+            $(this).wrap("<a class=" + link_class + " data-toggle=" + link_data_toggle + " data-parent=" + link_data_parent + " href=" + link_href + "></a>");
+
+        });
+        /////////////////////////////////
+
+//      Quando rolar a página, sumir com o dropdown do menu principal
+
+        $(document).scroll(function () {
+            $('#menu-principal-navegacao li').removeClass('open');
+        });
+
+
+
+    }
+
+    
+        var brdcrb = $("span[property='name']").last().text().toLowerCase();
+        var a = $("#text-2 > .textwidget > a");
+        
+        switch(brdcrb) {
+            case "extensão":
+            var href = "http://www.sr3.uerj.br/";
+            var texto = "SR3";
+            // a.prop('href', "http://www.sr3.uerj.br/");
+            // a.html("Acesse o site da SR3");
+            break;
+        
+        case "ensino":
+            var href = "http://www.sr1.uerj.br";
+            var texto = "SR1";
+            // a.prop('href', "http://www.antigo.uerj.br/sr1");
+            // a.html("Acesse o site da SR1");
+            break;
+
+        case "pesquisa":
+            var href = "http://www.sr2.uerj.br/";
+            var texto = "SR2";
+            // a.prop('href', "http://www.sr2.uerj.br/");
+            // a.html("Acesse o site da SR2");
+            break;
+
+        default:
+            break;
+        } 
+        
+        a.prop('href', href);
+        a.html("Acesse o site da " + texto);
+
+    
+
+
+    window.onload = init();
+});
+

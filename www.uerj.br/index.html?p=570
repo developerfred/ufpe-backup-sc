@@ -1,0 +1,977 @@
+<!-- * EQUIPE 
+ * 
+ * Desenvolvimento:
+ * - Carlos Eduardo Carvalho Mendes; 
+ * - Fernando da Costa Ribeiro
+ * 
+ * Gestão do Projeto e Definição da solução:
+ * - Carlos Eduardo Carvalho Mendes
+ * 
+ * Diretoria de Informática - Dinfo
+-->
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed Todas as Notícias do site Uerj" href="https://www.uerj.br/feed/?post_type=noticia" />
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed Agenda de Eventos do site Uerj" href="https://www.uerj.br/feed/?post_type=agenda" />
+        
+        <title>Concursos e Editais - UERJ - Universidade do Estado do Rio de Janeiro</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v7.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://www.uerj.br/concursos-e-editais/" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Concursos e Editais - UERJ - Universidade do Estado do Rio de Janeiro" />
+<meta property="og:url" content="https://www.uerj.br/concursos-e-editais/" />
+<meta property="og:site_name" content="UERJ - Universidade do Estado do Rio de Janeiro" />
+<meta property="article:publisher" content="https://www.facebook.com/UERJoficial/" />
+<meta property="og:image" content="https://www.uerj.br/wp-content/uploads/2017/10/foto14.jpg" />
+<meta property="og:image:secure_url" content="https://www.uerj.br/wp-content/uploads/2017/10/foto14.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="402" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Concursos e Editais - UERJ - Universidade do Estado do Rio de Janeiro" />
+<meta name="twitter:site" content="@UERJ_oficial" />
+<meta name="twitter:image" content="https://www.uerj.br/wp-content/uploads/2017/10/foto14.jpg" />
+<meta name="twitter:creator" content="@UERJ_oficial" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Feed para UERJ - Universidade do Estado do Rio de Janeiro &raquo;" href="https://www.uerj.br/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/www.uerj.br\/wp-includes\/js\/wp-emoji.js?ver=4.9.10","twemoji":"https:\/\/www.uerj.br\/wp-includes\/js\/twemoji.js?ver=4.9.10"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Check if two sets of Emoji characters render the same.
+	 *
+	 * @param set1 array Set of Emoji characters.
+	 * @param set2 array Set of Emoji characters.
+	 * @returns {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji".
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 56826, 55356, 56819 ],
+					[ 55356, 56826, 8203, 55356, 56819 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447 ],
+					[ 55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447 ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * She's the hero Emoji deserves, but not the one it needs right now.
+				 *
+				 * To test for support, try to render a new emoji (female superhero),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (superhero + female sign).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[55358, 56760, 9792, 65039],
+					[55358, 56760, 8203, 9792, 65039]
+				);
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='dashicons-css'  href='https://www.uerj.br/wp-includes/css/dashicons.css?ver=4.9.10' type='text/css' media='all' />
+<link rel='stylesheet' id='elusive-css'  href='https://www.uerj.br/wp-content/plugins/menu-icons/vendor/kucrut/icon-picker/css/types/elusive.css?ver=2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://www.uerj.br/wp-content/plugins/menu-icons/vendor/kucrut/icon-picker/css/types/font-awesome.css?ver=4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='foundation-icons-css'  href='https://www.uerj.br/wp-content/plugins/menu-icons/vendor/kucrut/icon-picker/css/types/foundation-icons.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://www.uerj.br/wp-content/plugins/menu-icons/vendor/kucrut/icon-picker/css/types/genericons.css?ver=3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='menu-icons-extra-css'  href='https://www.uerj.br/wp-content/plugins/menu-icons/css/extra.css?ver=0.11.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css-css'  href='https://www.uerj.br/wp-content/themes/uerj/css/bootstrap.css?ver=4.9.10' type='text/css' media='all' />
+<link rel='stylesheet' id='uerj-style-css'  href='https://www.uerj.br/wp-content/themes/uerj/css/custom.css?ver=4.9.10' type='text/css' media='all' />
+<link rel='stylesheet' id='media-queries-css'  href='https://www.uerj.br/wp-content/themes/uerj/css/media-queries.css?ver=4.9.10' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.uerj.br/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.uerj.br/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.uerj.br/wp-content/themes/uerj/js/bootstrap.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://www.uerj.br/wp-content/themes/uerj/js/custom.js?ver=4.9.10'></script>
+<link rel='https://api.w.org/' href='https://www.uerj.br/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.uerj.br/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.uerj.br/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://www.uerj.br/?p=570' />
+<link rel="alternate" type="application/json+oembed" href="https://www.uerj.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.uerj.br%2Fconcursos-e-editais%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.uerj.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.uerj.br%2Fconcursos-e-editais%2F&#038;format=xml" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134871307-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+  	gtag('config', 'UA-134871307-1');
+</script>
+<!-- FIM - Global site tag (gtag.js) - Google Analytics -->
+<link rel="icon" href="https://www.uerj.br/wp-content/uploads/2018/02/favicon-uerj-50x50.png" sizes="32x32" />
+<link rel="icon" href="https://www.uerj.br/wp-content/uploads/2018/02/favicon-uerj-250x250.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.uerj.br/wp-content/uploads/2018/02/favicon-uerj-250x250.png" />
+<meta name="msapplication-TileImage" content="https://www.uerj.br/wp-content/uploads/2018/02/favicon-uerj-300x300.png" />
+    </head>
+
+    <body class="page-template-default page page-id-570 institucional">
+        <div id="page" class="site page-wrap">
+            <header id="masthead" class="site-header" role="banner">
+                <div class="site-header__logo">
+                    <div class="container">
+                        <a href="https://www.uerj.br">
+                        <div class="logo-container">                                
+                                
+<svg id="logomarca" version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 545.9 292.9" style="enable-background:new 0 0 545.9 292.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1F77BC;}
+	.st1{fill:#BD8D15;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#BD8D15;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#EB6521;}
+	.st4{fill:#1F77BC;stroke:#BD8D15;stroke-width:1.5;stroke-miterlimit:10;}
+	.st5{fill:url(#SVGID_1_);}
+</style>
+<g>
+	<g>
+		<g>
+			<g>
+				<path class="st0" d="M65.2,63.4l-8.4-10.8c-1.8-2.3-2.5-5.6,1-8.4c3.2-2.5,6.1-1.9,8.4,1l8.4,10.8l-2.9,2.3l-8.3-10.6
+					c-1.5-1.9-2.8-2-3.8-1.2c-1.3,1-1.1,2.4,0.2,4.1l8.3,10.6L65.2,63.4z"/>
+				<path class="st0" d="M49.6,51.6l14.1,13.2l-3.4,3.6l-13-5.8l0,0l9.8,9.2l-2.3,2.5L40.6,61.1l3.3-3.5l13.6,6.2l0,0l-10.3-9.7
+					L49.6,51.6z"/>
+				<path class="st0" d="M37.9,64.8l15.5,11.5l-2.2,2.9L35.7,67.8L37.9,64.8z"/>
+				<path class="st0" d="M50.4,80l-2,3.3L35,78.5l0,0l10.5,9.8l-1.9,3.1L29.4,77.6l2.2-3.7L50.4,80z"/>
+				<path class="st0" d="M25.6,84.6l17.7,7.7l-3.8,8.8l-2.7-1.2l2.4-5.4l-4.4-1.9l-2.2,5l-2.7-1.2l2.2-5l-5.2-2.2l-2.4,5.6l-2.7-1.2
+					L25.6,84.6z"/>
+				<path class="st0" d="M19.3,100.9l1-3.5l18.6,5.3l-1.9,6.5c-0.7,2.4-2.8,3.5-6,2.6c-2.4-0.7-3.9-2-3.7-4.4l-0.1,0
+					c-0.3,0.7-1.2,3-4.5,2c-1.2-0.3-4.7-1.3-5.6-1.2l1-3.5c1.3-0.1,2.5,0.3,3.7,0.7c2.2,0.6,4,1.4,4.8-1.3l0.3-0.9L19.3,100.9z
+					 M29.9,103.9l-0.5,1.6c-0.4,1.4,1,2.2,2.2,2.6c1.8,0.5,2.6,0,3-1.1l0.4-1.6L29.9,103.9z"/>
+				<path class="st0" d="M15.4,116.9c0.7-4.5,3.7-4.9,7-4.3l-0.5,3.6c-1.8-0.3-3.4-0.4-3.7,1.6c-0.2,1.2,0.6,2,1.9,2.1
+					c3.4,0.5,4.7-6.8,10.4-6c3,0.4,5.2,2.1,4.5,6.5c-0.5,3.5-2.5,5-6.5,4.2l0.5-3.5c1.4,0.2,2.9,0.2,3.1-1.3c0.2-1.2-0.4-2-1.8-2.2
+					c-3.6-0.5-4.4,6.8-10.4,6C15.1,123,15,119.7,15.4,116.9z"/>
+				<path class="st0" d="M14.7,127l19.3,0.8l-0.2,3.7l-19.3-0.8L14.7,127z"/>
+				<path class="st0" d="M33.6,134l0.4,6.1c0.3,4.8-3.2,5.9-9.2,6.3c-3,0.2-9.7,1-10.1-5.2l-0.4-6L33.6,134z M17.5,138.7l0.1,1.8
+					c0.1,2.2,2,2.6,6.8,2.2c3.6-0.2,6.7-0.4,6.5-3l-0.1-1.9L17.5,138.7z"/>
+				<path class="st0" d="M15.5,150.6l19.9,0.7l1,4.7l-17.9,8.7l-0.8-3.8l4-1.9l-1.1-4.9l-4.4-0.1L15.5,150.6z M32.2,154.2
+					L32.2,154.2l-8.5,0.1l0.7,3.4L32.2,154.2z"/>
+				<path class="st0" d="M37.8,161.5l2.2,5.7c1.7,4.5-1.3,6.6-6.9,8.7c-2.8,1.1-9,3.8-11.2-2l-2.1-5.6L37.8,161.5z M23.8,170.7
+					l0.6,1.7c0.8,2.1,2.7,1.8,7.2,0.1c3.3-1.3,6.3-2.4,5.4-4.8l-0.7-1.8L23.8,170.7z"/>
+				<path class="st0" d="M26,183.7l17-9.2l4.6,8.4l-2.6,1.4l-2.8-5.2l-4.2,2.3l2.6,4.8l-2.6,1.4l-2.6-4.8l-5,2.7l2.9,5.4l-2.6,1.4
+					L26,183.7z"/>
+				<path class="st0" d="M54.4,192.7l4.1,4.5c3.3,3.6,1.3,6.6-3.2,10.7c-2.2,2-6.9,6.9-11.2,2.3l-4-4.4L54.4,192.7z M44.8,206.4
+					l1.2,1.3c1.5,1.7,3.2,0.7,6.7-2.5c2.6-2.4,4.9-4.5,3.2-6.4l-1.3-1.4L44.8,206.4z"/>
+				<path class="st0" d="M57.7,210.2c3.2-4,6.3-7.7,11-3.9c4.7,3.8,1.6,7.6-1.6,11.6c-3.2,3.9-6.3,7.7-11,3.9
+					C51.4,218,54.5,214.1,57.7,210.2z M64.2,215.5c3.1-3.8,4.3-5.7,2.7-7c-1.6-1.3-3.2,0.2-6.3,4c-3.1,3.8-4.3,5.7-2.7,7
+					C59.5,220.8,61,219.3,64.2,215.5z"/>
+				<path class="st0" d="M75.4,234.2l8.2-17.5l8.7,4.1l-1.3,2.7l-5.4-2.5l-2,4.3l4.9,2.3l-1.3,2.7l-4.9-2.3l-2.4,5.1l5.5,2.6
+					l-1.3,2.7L75.4,234.2z"/>
+				<path class="st0" d="M92.5,241.6c-4.3-1.4-4.2-4.5-3-7.6l3.5,1.1c-0.6,1.8-1,3.3,1,3.9c1.2,0.4,2-0.3,2.4-1.5
+					c1.1-3.3-5.9-5.8-4.2-11.3c0.9-2.9,2.9-4.8,7.2-3.4c3.4,1.1,4.6,3.3,3.1,7.1l-3.4-1.1c0.4-1.4,0.7-2.8-0.7-3.3
+					c-1.1-0.4-2,0.1-2.4,1.4c-1.1,3.5,6,5.4,4.2,11.2C98.5,242.9,95.2,242.5,92.5,241.6z"/>
+				<path class="st0" d="M116.4,227l-0.6,3.2l-4-0.7l-2.9,15.9l-3.6-0.7l2.9-15.9l-4-0.7l0.6-3.2L116.4,227z"/>
+				<path class="st0" d="M113.4,246.2l6-19l4.8,0.3l3.6,19.6l-3.9-0.2l-0.7-4.3l-5-0.3l-1.3,4.2L113.4,246.2z M121.4,231L121.4,231
+					l-2.2,8.2l3.5,0.2L121.4,231z"/>
+				<path class="st0" d="M130,227.7l6.1-0.5c4.8-0.4,6,3,6.5,9c0.3,3,1.3,9.7-5,10.2l-6,0.5L130,227.7z M135,243.6l1.8-0.2
+					c2.2-0.2,2.5-2.1,2.1-6.9c-0.3-3.5-0.6-6.7-3.1-6.4l-1.9,0.2L135,243.6z"/>
+				<path class="st0" d="M145.9,235.7c-1.2-5-2.3-9.7,3.6-11.1s7,3.3,8.2,8.3c1.2,4.9,2.3,9.7-3.6,11.1
+					C148.2,245.5,147,240.7,145.9,235.7z M154,233.8c-1.2-4.8-1.9-6.8-3.9-6.4c-2,0.5-1.8,2.6-0.6,7.4c1.2,4.8,1.9,6.8,3.9,6.4
+					C155.4,240.8,155.2,238.6,154,233.8z"/>
+				<path class="st0" d="M166.8,219.1l5.4-2.9c4.2-2.3,6.7,0.4,9.6,5.7c1.4,2.6,5,8.4-0.5,11.4l-5.3,2.8L166.8,219.1z M177.8,231.8
+					l1.6-0.8c2-1.1,1.5-2.9-0.8-7.2c-1.7-3.1-3.2-5.9-5.4-4.7l-1.7,0.9L177.8,231.8z"/>
+				<path class="st0" d="M184.6,220.3c-3.1-4.1-6-8-1.1-11.6c4.9-3.6,7.8,0.3,10.8,4.4c3,4.1,6,8,1.1,11.6
+					C190.6,228.3,187.6,224.3,184.6,220.3z M191.3,215.2c-3-4-4.5-5.5-6.1-4.3c-1.7,1.2-0.6,3.1,2.4,7.1c3,4,4.5,5.5,6.1,4.3
+					C195.4,221.1,194.3,219.2,191.3,215.2z"/>
+				<path class="st0" d="M214.5,206.1l-2.3,2.9l-15-12.1l4.3-5.3c1.6-1.9,4-2.1,6.5,0c1.9,1.5,2.8,3.4,1.6,5.5l0,0
+					c0.6-0.6,2.3-2.3,5-0.1c1,0.8,3.8,3,4.7,3.2L217,203c-1.2-0.4-2.2-1.3-3.2-2.1c-1.8-1.4-3.2-2.8-5-0.6l-0.6,0.7L214.5,206.1z
+					 M206,199.2l1-1.3c0.9-1.1-0.1-2.5-1-3.2c-1.4-1.2-2.4-1.1-3.2-0.1l-1,1.3L206,199.2z"/>
+				<path class="st0" d="M221.3,197.1l-16.2-10.6l2-3.1l16.2,10.6L221.3,197.1z"/>
+				<path class="st0" d="M217.1,186c-4.6-2.3-8.9-4.5-6.2-9.9c2.7-5.4,7.1-3.2,11.6-0.9c4.5,2.3,8.9,4.5,6.2,9.9
+					C226,190.5,221.6,188.3,217.1,186z M220.9,178.5c-4.4-2.2-6.4-3-7.4-1.1c-0.9,1.8,0.9,3.1,5.3,5.3c4.4,2.2,6.4,3,7.4,1.1
+					C227.1,181.9,225.3,180.7,220.9,178.5z"/>
+				<path class="st0" d="M218,159.2l1.3-6c1-4.7,4.7-4.9,10.5-3.6c2.9,0.6,9.6,1.6,8.3,7.8l-1.3,5.9L218,159.2z M234.8,159.1
+					l0.4-1.7c0.5-2.2-1.2-3-6-4c-3.5-0.7-6.5-1.4-7.1,1.1l-0.4,1.9L234.8,159.1z"/>
+				<path class="st0" d="M240,147l-19.3-1.5l0.7-9.6l3,0.2l-0.4,5.9l4.8,0.4l0.4-5.4l3,0.2l-0.4,5.4l5.6,0.4l0.5-6.1l3,0.2L240,147z
+					"/>
+				<path class="st0" d="M219.5,114.8l14.7-2.2c3.3-0.5,5.1,1.7,5.5,4.3c0.8,5.1-1.5,5.6-5.9,6.3l-0.6-3.7c1.5-0.2,3.9-0.3,3.6-2.2
+					c-0.1-0.8-1-1.3-1.9-1.1l-14.9,2.3L219.5,114.8z"/>
+				<path class="st0" d="M238.1,108.6l-19.9,0.8l-1.4-4.6l17.2-10l1.1,3.7l-3.8,2.1l1.4,4.8l4.4-0.3L238.1,108.6z M221.1,106.2
+					L221.1,106.2l8.5-0.7l-1-3.4L221.1,106.2z"/>
+				<path class="st0" d="M232.6,91.2l-17.5,8.3L213,95l10.1-10l0,0L211,90.7l-1.5-3.1l17.5-8.3l2.1,4.4l-10.7,10.4l0,0l12.8-6.1
+					L232.6,91.2z"/>
+				<path class="st0" d="M224.4,75.1l-16.1,10.7l-5.3-8l2.5-1.6l3.3,4.9l4-2.6l-3-4.5l2.5-1.6l3,4.5l4.7-3.1l-3.4-5.1l2.5-1.6
+					L224.4,75.1z"/>
+				<path class="st0" d="M216.7,64.1l-15,12.2l-2.3-2.9l15-12.2L216.7,64.1z"/>
+				<path class="st0" d="M209,55.3l2.6,2.6l-13.7,13.6l-4.8-4.8c-1.8-1.8-1.6-4.2,0.7-6.5c1.7-1.7,3.7-2.4,5.7-1l0,0
+					c-0.5-0.6-2-2.5,0.5-4.9c0.9-0.9,3.4-3.5,3.7-4.3l2.5,2.6c-0.5,1.2-1.5,2-2.4,2.9c-1.6,1.6-3.2,2.9-1.2,4.9l0.7,0.7L209,55.3z
+					 M201.2,63l-1.1-1.2c-1-1-2.5-0.2-3.3,0.7c-1.3,1.3-1.3,2.3-0.5,3.1l1.1,1.2L201.2,63z"/>
+				<path class="st0" d="M194.8,54.9c-3.1,4.1-6,8-10.9,4.3c-4.8-3.7-1.9-7.5,1.2-11.6c3.1-4,6-8,10.9-4.3
+					C200.9,47,197.9,50.9,194.8,54.9z M188.1,49.9c-3,3.9-4.1,5.8-2.4,7.1c1.6,1.2,3.2-0.3,6.1-4.2c3-3.9,4.1-5.8,2.4-7.1
+					C192.6,44.4,191.1,45.9,188.1,49.9z"/>
+			</g>
+			<g>
+				<path class="st0" d="M80.8,173.5c0,1.9,0.3,3.3,0.8,4c0.6,0.8,1.5,1.2,2.8,1.2c1.6,0,2.7-0.4,3.4-1.1c0.7-0.8,1-2,1-3.8l0-11.3
+					c0-1-0.1-1.6-0.3-1.8c-0.2-0.2-0.7-0.3-1.6-0.3h-1.2v-3.5l10.8,0l0,3.5h-1.1c-0.8,0-1.3,0.1-1.6,0.3c-0.2,0.2-0.3,0.8-0.3,1.7
+					l0,12c0,2.7-0.9,4.7-2.7,6.1c-1.8,1.4-4.4,2.1-7.9,2.1c-3.1,0-5.6-0.7-7.3-2.1c-1.7-1.4-2.6-3.3-2.6-5.8l0-12.2
+					c0-0.9-0.1-1.5-0.4-1.8c-0.2-0.2-0.8-0.4-1.6-0.4H70l0-3.5h14v3.5h-1.3c-0.8,0-1.4,0.1-1.6,0.4c-0.2,0.2-0.3,0.8-0.3,1.8
+					L80.8,173.5z"/>
+				<path class="st0" d="M125.6,156.9l0,9.3H122c-0.2-1.2-0.5-2.2-0.8-2.8c-0.3-0.7-0.6-1.2-1-1.6c-0.4-0.5-1-0.8-1.6-1
+					c-0.6-0.2-1.6-0.3-3.1-0.3h-0.7h-3v6.8h0.9c1.1,0,1.8-0.3,2.2-0.8c0.4-0.5,0.6-1.5,0.6-2.9v-0.2h2.9l0,11.4h-2.9
+					c0-1.7-0.3-2.9-0.6-3.4c-0.4-0.5-1.1-0.8-2.2-0.8h-0.9l0,7.8h4.1c1.6,0,2.7-0.1,3.3-0.3c0.6-0.2,1.1-0.6,1.4-1.1
+					c0.4-0.6,0.6-1.3,0.9-2.2c0.2-0.9,0.3-1.9,0.4-3.2h3.8l0,10.3l-24.5,0l0-3.5h1.2c0.8,0,1.3-0.1,1.5-0.3c0.2-0.2,0.4-0.7,0.4-1.7
+					v-0.2l0-13.6c0-1-0.1-1.6-0.3-1.8c-0.2-0.2-0.7-0.3-1.6-0.3h-1.1l0-3.5H125.6z"/>
+				<path class="st0" d="M135.1,176.1l0-13.6c0-1-0.1-1.6-0.3-1.8c-0.2-0.2-0.8-0.3-1.6-0.3H132v-3.5l16,0c2.8,0,4.9,0.5,6.3,1.5
+					c1.4,1,2.1,2.6,2.1,4.7c0,1.4-0.4,2.6-1.3,3.5c-0.9,1-2.1,1.6-3.6,2c1.6,0.2,2.6,0.7,3.2,1.6c0.6,0.8,0.8,2.7,0.8,5.7
+					c0,0.9,0.1,1.5,0.2,1.9c0.1,0.3,0.4,0.5,0.7,0.5c0.3,0,0.5-0.2,0.7-0.6c0.2-0.4,0.2-1.1,0.2-1.9c0-0.1,0-0.2,0-0.4
+					c0-0.2,0-0.3,0-0.4h2.4c0,0.1,0,0.3,0,0.5c0,0.2,0,0.4,0,0.5c0,2.3-0.4,4-1.3,5.1c-0.9,1.1-2.3,1.6-4.3,1.6
+					c-2.1,0-3.6-0.5-4.6-1.4c-1-0.9-1.4-2.5-1.4-4.5v-2.1c0-1.7-0.2-2.7-0.6-3.2c-0.4-0.5-1.3-0.7-2.6-0.7l-2.1,0v5.6
+					c0,1,0.1,1.6,0.3,1.8c0.2,0.2,0.7,0.3,1.5,0.3h1.3v3.5l-14,0l0-3.5h1.2c0.8,0,1.3-0.1,1.6-0.3
+					C134.9,177.7,135.1,177.1,135.1,176.1z M142.7,167.1h2c1.4,0,2.4-0.2,3-0.7c0.6-0.5,0.9-1.3,0.9-2.4c0-1.3-0.3-2.1-0.8-2.6
+					c-0.5-0.5-1.5-0.8-2.8-0.8h-2.3L142.7,167.1z"/>
+				<path class="st0" d="M174.4,162.5c0-1-0.1-1.6-0.3-1.8c-0.2-0.2-0.7-0.3-1.6-0.3h-1.3v-3.5l13.8,0l0,3.5H184
+					c-0.8,0-1.3,0.1-1.5,0.3c-0.2,0.2-0.4,0.7-0.4,1.7v0.2l0,10.9c0,1.8-0.2,3.2-0.5,4.2c-0.3,1-0.8,1.8-1.5,2.5
+					c-0.8,0.8-1.8,1.4-3,1.8c-1.2,0.4-2.6,0.6-4.3,0.6c-2.6,0-4.6-0.7-6.2-2c-1.6-1.3-2.4-3-2.4-5.1c0-1.6,0.4-2.8,1.3-3.8
+					c0.9-1,2-1.5,3.3-1.5c1,0,1.8,0.3,2.4,0.9c0.6,0.6,0.9,1.5,0.9,2.5c0,1-0.3,1.8-0.8,2.4c-0.5,0.6-1.2,0.9-2.1,0.9
+					c-0.1,0-0.3,0-0.5,0c-0.2,0-0.3,0-0.5-0.1c0.3,0.6,0.7,1.1,1.1,1.4c0.5,0.3,1,0.5,1.6,0.5c1.3,0,2.2-0.4,2.6-1.1
+					c0.5-0.7,0.7-2.2,0.7-4.5V162.5z"/>
+			</g>
+		</g>
+		<g>
+			<path class="st1" d="M100.9,107.9c-1.1,1.2-3.5-1.6-6.6,4.9c-9.3,1.1-10.4,6.9-9,7.6c0.5,0.2,0.5,0.1,0.5,0.1
+				c0.4-3.7,7.4-6.1,9.4-6.6c2.5-6.7,5.2-4.1,6.1-5.4c0.6-3.2,1.8-3.6,1.8-3.6S101.8,104.8,100.9,107.9z"/>
+			<path class="st1" d="M170.3,120.7c-0.1-3.6-6.5-5-8.2-5.5c0,0-34.8,0-36.2,0c-1.9,0,0.9,5.5,2.3,5.5
+				C129.6,120.7,170.3,120.7,170.3,120.7z"/>
+			<g>
+				<path class="st1" d="M169.6,122.2c-1.2,0-83.5,0-83.5,0c-2.1-0.1,0.2,1.9,2.6,3.9c1.2,1.1,0.9,0.7,2.1,1.8
+					c4,4.5,1.3,13.3,16.2,17.9c0,0,0.4,2.4,1.6,2.5c1.2,0,36.5,0,38,0c1.5,0,1.9-2.5,1.9-2.5c14.9-4.6,12.2-13.4,16.2-17.9
+					c1.2-1.2,0.9-0.8,2.1-1.8C169.1,124.1,170.9,122.2,169.6,122.2z M124.4,143.2c-5,1-9.4,2.9-11.8,2.9c-1.8,0-3-2.4-3-2.4
+					c-13.1-4.1-13.4-10.6-14.7-14.5c-1.4-3.9-4.4-5.4-0.8-5.4l36.8,0.1c0,0,7.9,1.3,10.3,7.1C143.8,138.8,133.5,141.3,124.4,143.2z"
+					/>
+			</g>
+			<path class="st1" d="M125.3,104.5c-0.8,0-1.6,0.4-1.4,2.2c-5.3,0-10.6,0-12.2,0c-0.8,0-0.8,1.3-0.8,1.3l44.4,0
+				c-0.7-3.2-1.9-3.6-1.9-3.6L125.3,104.5z"/>
+			<path class="st1" d="M125.7,109.5c-1.5,0-1.4,1.3-1.3,2.3c-2.3,0-17.6,0-18.9,0c-1.1,0-0.9,1.5-0.9,1.5l56.2,0
+				c-0.9-3.4-3.7-3.8-3.7-3.8L125.7,109.5z"/>
+			<path class="st2" d="M145.9,150.9c0,0.6-0.3,1.1-0.7,1.1l-35.3,0c-0.4,0-0.7-0.5-0.7-1.1l0,0c0-0.6,0.3-1.1,0.7-1.1h35.3
+				C145.6,149.9,145.9,150.4,145.9,150.9L145.9,150.9z"/>
+			<g>
+				<path class="st1" d="M119,187.1c-1.3,0-1.7,0-3.1,0l3.6,32.5c1,0.4,0.8,0.3,2,0.6L119,187.1z"/>
+				<g>
+					<path class="st1" d="M121.6,187.1l1.2,33.4c0.7,0.1,2.1,0.4,3.9,0.4l-0.4-33.9C124.5,187.1,122.8,187.1,121.6,187.1z
+						 M128.8,187.1l-0.4,33.7l0,0.2c1.7-0.1,3.2-0.3,3.9-0.4l1.2-33.5C132.3,187.1,130.6,187.1,128.8,187.1z"/>
+				</g>
+				<path class="st1" d="M139.2,187.2c-1.3,0-1.7,0-3.1,0l-2.5,33.1c1-0.2,1-0.2,1.9-0.6L139.2,187.2z"/>
+			</g>
+			<path class="st2" d="M123.6,254.2c0,0,0.9,0.6,3.9,0.6c3.1,0,4.1-0.6,4.1-0.6l-1.5,13.8c0,0-0.4,2.2-2.5,2.2
+				c-2.1,0-2.4-2.2-2.4-2.2L123.6,254.2z"/>
+		</g>
+		<g>
+			<path class="st3" d="M175.8,64c0.1,0.8,0.2,13-17.9,11.9c-0.7,0-1.6-0.3-2.2-0.2c33.2-21.9-2.4-29-5.6-39
+				c-0.3,4.3,1.4,5.6,3.1,9.5c1.6,3.7,1.3,5.4,1.3,5.4s-17.8-12-14.9-23.3c0.2-0.7-6.6,4.7-5.2,14.1c1.2,7.6,1.7,19.7-18.4,22.3
+				c-11,1.4-40.7,7.8-38.9,23.1c1.8,15.4,32.6,13.5,32.6,13.5c8.5,0,4.8-7-0.2-9.3c-8.7-3.9-8.7-13.3,13.1-17.4
+				c-10.8,6.6-9.2,10.2-1.1,14.5c9.2,4.7,0.9,12.2,4.9,12.2c3.1,0.1,8.6,0.2,11.5,0.1c5-0.1-18.8-11.1,5.9-25.2
+				c-11.7,16.4,3.5,23.9,5.8,24c2.3,0.1-7.9-9.5,12.3-13.9C182.7,82,175.8,64,175.8,64z"/>
+			<path class="st3" d="M95.3,57.3c-5.6,5.7-5.1,10.3-5.1,10.3s4.9-4.4,9.5-6c4.5-1.5,11.4-2,17.4-3.7c6.8-2,13.5-9.4,9.4-19.4
+				c-3.4-8.2-8.5-11.1-7.1-17.4c-3.4,2.6-5,5.9-5.3,10.3c-0.4,5.9,3.7,9.9-1,14.9C107.7,52,102,51.3,95.3,57.3z"/>
+			<path class="st3" d="M86.1,65.1c0,0,0.5-12.6,14.7-18.3c15.2-6.2,2.6-23.8-7.1-21.9c4.8,3.3,10.9,11.4,2.4,16.6
+				C78.6,52.1,86.1,65.1,86.1,65.1z"/>
+		</g>
+	</g>
+	<line class="st4" x1="281.6" y1="280.3" x2="281.6" y2="11"/>
+	<g>
+		<g>
+			<path class="st0" d="M339.5,264.4c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.2,0.6v9.5c0,0.3-0.1,0.6-0.3,0.8
+				c-0.2,0.2-0.5,0.3-0.8,0.3c-0.3,0-0.6-0.1-0.8-0.3c-0.2-0.2-0.3-0.5-0.3-0.8v-7.6l-1.4,0.7c-0.1,0.1-0.3,0.1-0.4,0.1
+				c-0.2,0-0.4-0.1-0.6-0.3c-0.1-0.2-0.2-0.4-0.2-0.6c0-0.2,0-0.4,0.1-0.5c0.1-0.2,0.2-0.3,0.4-0.4l2.3-1.2c0.2-0.1,0.4-0.2,0.6-0.3
+				C339.2,264.4,339.4,264.4,339.5,264.4z"/>
+			<path class="st0" d="M358.1,264.4c0.6,0,1.1,0.1,1.6,0.3c0.5,0.2,0.9,0.5,1.3,0.8c0.4,0.3,0.6,0.7,0.8,1.2c0.2,0.5,0.3,1,0.3,1.5
+				c0,1.2-0.4,2.4-1.3,3.5l-2.8,3.5c-0.2,0.3-0.4,0.5-0.6,0.6c-0.2,0.1-0.4,0.2-0.7,0.2c-0.3,0-0.5-0.1-0.6-0.2
+				c-0.1-0.2-0.2-0.3-0.2-0.6c0-0.1,0-0.3,0.1-0.4c0.1-0.2,0.2-0.3,0.3-0.5l2.3-2.7l0.2-0.2c-0.4,0.2-0.8,0.3-1.2,0.3
+				c-0.5,0-1-0.1-1.4-0.3c-0.4-0.2-0.8-0.4-1.1-0.7c-0.3-0.3-0.5-0.7-0.7-1.1c-0.2-0.4-0.3-0.9-0.3-1.4c0-0.5,0.1-1.1,0.3-1.5
+				c0.2-0.5,0.5-0.9,0.9-1.2c0.4-0.3,0.8-0.6,1.3-0.8C357,264.5,357.5,264.4,358.1,264.4z M358,270.1c0.3,0,0.5,0,0.8-0.1
+				c0.2-0.1,0.5-0.2,0.6-0.4c0.2-0.2,0.3-0.4,0.4-0.6c0.1-0.2,0.2-0.5,0.2-0.8c0-0.3,0-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.4-0.6
+				c-0.2-0.2-0.4-0.3-0.6-0.4c-0.2-0.1-0.5-0.1-0.8-0.1c-0.3,0-0.5,0-0.8,0.1c-0.2,0.1-0.5,0.2-0.6,0.4c-0.2,0.2-0.3,0.4-0.4,0.6
+				c-0.1,0.2-0.2,0.5-0.2,0.7c0,0.6,0.2,1,0.6,1.4C357,269.9,357.5,270.1,358,270.1z"/>
+			<path class="st0" d="M378,268.6c0.6,0,1.1,0.1,1.6,0.2c0.5,0.1,1,0.4,1.3,0.7c0.4,0.3,0.7,0.7,0.9,1.1c0.2,0.4,0.3,0.9,0.3,1.5
+				c0,0.6-0.1,1.1-0.4,1.6c-0.3,0.5-0.6,0.9-1.1,1.2c-0.4,0.3-1,0.6-1.5,0.8c-0.6,0.2-1.2,0.3-1.8,0.3c-0.4,0-0.9,0-1.3-0.1
+				c-0.4-0.1-0.8-0.2-1.1-0.4c-0.3-0.2-0.5-0.5-0.5-0.9c0-0.2,0.1-0.4,0.2-0.6c0.1-0.2,0.3-0.2,0.5-0.2c0.1,0,0.1,0,0.2,0
+				c0.1,0,0.2,0,0.3,0.1c0.2,0.1,0.4,0.2,0.7,0.2c0.3,0,0.5,0.1,0.9,0.1c0.4,0,0.7,0,1-0.1c0.3-0.1,0.6-0.2,0.8-0.4
+				c0.2-0.2,0.4-0.4,0.5-0.6c0.1-0.2,0.2-0.5,0.2-0.8c0-0.6-0.2-1.1-0.7-1.4c-0.4-0.3-1-0.5-1.7-0.5c-0.2,0-0.5,0-0.8,0.1
+				c-0.3,0-0.5,0.1-0.8,0.2c-0.1,0-0.2,0-0.3,0.1c-0.1,0-0.2,0-0.2,0c-0.1,0-0.2,0-0.3-0.1c-0.1-0.1-0.1-0.2-0.1-0.4l0.7-4.4
+				c0.1-0.3,0.2-0.5,0.4-0.7c0.2-0.2,0.5-0.3,0.8-0.3h3.8c0.3,0,0.5,0.1,0.6,0.3c0.2,0.2,0.2,0.4,0.2,0.6c0,0.3-0.1,0.5-0.2,0.7
+				c-0.2,0.2-0.4,0.3-0.6,0.3h-3.2l-0.4,2.2C377.4,268.6,377.7,268.6,378,268.6z"/>
+			<path class="st0" d="M399.2,275.9c-0.6,0-1.2-0.1-1.8-0.4c-0.5-0.2-1-0.6-1.4-1.1c-0.4-0.5-0.7-1.1-1-1.8
+				c-0.2-0.7-0.4-1.6-0.4-2.5s0.1-1.8,0.4-2.5c0.2-0.7,0.6-1.3,1-1.8c0.4-0.5,0.9-0.9,1.4-1.1c0.5-0.2,1.1-0.4,1.8-0.4
+				c0.6,0,1.2,0.1,1.7,0.4c0.5,0.2,1,0.6,1.4,1.1c0.4,0.5,0.7,1.1,1,1.8c0.2,0.7,0.4,1.6,0.4,2.5c0,0.9-0.1,1.8-0.4,2.5
+				c-0.2,0.7-0.6,1.3-1,1.8c-0.4,0.5-0.9,0.9-1.4,1.1C400.4,275.8,399.8,275.9,399.2,275.9z M399.2,273.9c0.7,0,1.3-0.3,1.7-0.9
+				c0.4-0.6,0.6-1.5,0.6-2.8c0-1.2-0.2-2.1-0.6-2.8c-0.4-0.6-1-1-1.7-1c-0.7,0-1.3,0.3-1.7,1c-0.4,0.6-0.6,1.6-0.6,2.8
+				c0,1.2,0.2,2.1,0.6,2.8C398,273.6,398.5,273.9,399.2,273.9z"/>
+			<path class="st0" d="M431.3,279c-0.2,0-0.3-0.1-0.5-0.2c-0.1-0.1-0.2-0.3-0.2-0.5v-15.1c0-0.2,0.1-0.4,0.2-0.5
+				c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.3,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.2,0.5v15.1c0,0.2-0.1,0.4-0.2,0.5
+				C431.6,278.9,431.4,279,431.3,279z"/>
+			<path class="st0" d="M465.7,274.2c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.6,0.3h-5.6
+				c-0.4,0-0.6-0.2-0.6-0.5c0-0.2,0.1-0.4,0.2-0.6l2.8-3.6c0.5-0.6,0.8-1.2,1.1-1.6c0.3-0.5,0.4-1,0.4-1.5c0-0.3-0.1-0.5-0.2-0.7
+				c-0.1-0.2-0.3-0.4-0.4-0.5c-0.2-0.1-0.4-0.3-0.7-0.3c-0.3-0.1-0.5-0.1-0.8-0.1c-0.3,0-0.6,0-0.8,0.1c-0.3,0.1-0.5,0.1-0.7,0.2
+				c-0.2,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3-0.1-0.5-0.3c-0.1-0.2-0.2-0.4-0.2-0.6c0-0.2,0-0.4,0.2-0.5c0.1-0.2,0.3-0.3,0.5-0.4
+				c0.3-0.2,0.7-0.3,1.1-0.4c0.4-0.1,0.9-0.1,1.3-0.1c0.6,0,1.1,0.1,1.6,0.2c0.5,0.1,0.9,0.4,1.2,0.6c0.3,0.3,0.6,0.6,0.8,1
+				c0.2,0.4,0.3,0.8,0.3,1.3c0,0.4,0,0.7-0.1,1c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.3-0.3,0.6-0.5,0.9c-0.2,0.3-0.4,0.6-0.7,1l-1.9,2.5
+				h3C465.3,273.9,465.6,274,465.7,274.2z"/>
+			<path class="st0" d="M483.1,275.9c-0.6,0-1.2-0.1-1.8-0.4c-0.5-0.2-1-0.6-1.4-1.1c-0.4-0.5-0.7-1.1-1-1.8
+				c-0.2-0.7-0.4-1.6-0.4-2.5s0.1-1.8,0.4-2.5c0.2-0.7,0.6-1.3,1-1.8c0.4-0.5,0.9-0.9,1.4-1.1c0.5-0.2,1.1-0.4,1.8-0.4
+				c0.6,0,1.2,0.1,1.7,0.4c0.5,0.2,1,0.6,1.4,1.1c0.4,0.5,0.7,1.1,1,1.8c0.2,0.7,0.4,1.6,0.4,2.5c0,0.9-0.1,1.8-0.4,2.5
+				c-0.2,0.7-0.6,1.3-1,1.8c-0.4,0.5-0.9,0.9-1.4,1.1C484.3,275.8,483.7,275.9,483.1,275.9z M483.1,273.9c0.7,0,1.3-0.3,1.7-0.9
+				c0.4-0.6,0.6-1.5,0.6-2.8c0-1.2-0.2-2.1-0.6-2.8c-0.4-0.6-1-1-1.7-1c-0.7,0-1.3,0.3-1.7,1c-0.4,0.6-0.6,1.6-0.6,2.8
+				c0,1.2,0.2,2.1,0.6,2.8C481.9,273.6,482.4,273.9,483.1,273.9z"/>
+			<path class="st0" d="M507.2,274.2c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.6,0.3H501
+				c-0.4,0-0.6-0.2-0.6-0.5c0-0.2,0.1-0.4,0.2-0.6l2.8-3.6c0.5-0.6,0.8-1.2,1.1-1.6c0.3-0.5,0.4-1,0.4-1.5c0-0.3-0.1-0.5-0.2-0.7
+				c-0.1-0.2-0.3-0.4-0.4-0.5c-0.2-0.1-0.4-0.3-0.7-0.3c-0.3-0.1-0.5-0.1-0.8-0.1c-0.3,0-0.6,0-0.8,0.1c-0.3,0.1-0.5,0.1-0.7,0.2
+				c-0.2,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3-0.1-0.5-0.3c-0.1-0.2-0.2-0.4-0.2-0.6c0-0.2,0-0.4,0.2-0.5c0.1-0.2,0.3-0.3,0.5-0.4
+				c0.3-0.2,0.7-0.3,1.1-0.4c0.4-0.1,0.9-0.1,1.3-0.1c0.6,0,1.1,0.1,1.6,0.2c0.5,0.1,0.9,0.4,1.2,0.6c0.3,0.3,0.6,0.6,0.8,1
+				s0.3,0.8,0.3,1.3c0,0.4,0,0.7-0.1,1c-0.1,0.3-0.2,0.6-0.3,0.9c-0.1,0.3-0.3,0.6-0.5,0.9c-0.2,0.3-0.4,0.6-0.7,1l-1.9,2.5h3
+				C506.8,273.9,507,274,507.2,274.2z"/>
+			<path class="st0" d="M524.6,275.9c-0.6,0-1.2-0.1-1.8-0.4c-0.5-0.2-1-0.6-1.4-1.1c-0.4-0.5-0.7-1.1-1-1.8
+				c-0.2-0.7-0.4-1.6-0.4-2.5s0.1-1.8,0.4-2.5c0.2-0.7,0.6-1.3,1-1.8c0.4-0.5,0.9-0.9,1.4-1.1c0.5-0.2,1.1-0.4,1.8-0.4
+				c0.6,0,1.2,0.1,1.7,0.4c0.5,0.2,1,0.6,1.4,1.1c0.4,0.5,0.7,1.1,1,1.8c0.2,0.7,0.4,1.6,0.4,2.5c0,0.9-0.1,1.8-0.4,2.5
+				c-0.2,0.7-0.6,1.3-1,1.8c-0.4,0.5-0.9,0.9-1.4,1.1C525.8,275.8,525.2,275.9,524.6,275.9z M524.6,273.9c0.7,0,1.3-0.3,1.7-0.9
+				c0.4-0.6,0.6-1.5,0.6-2.8c0-1.2-0.2-2.1-0.6-2.8c-0.4-0.6-1-1-1.7-1c-0.7,0-1.3,0.3-1.7,1c-0.4,0.6-0.6,1.6-0.6,2.8
+				c0,1.2,0.2,2.1,0.6,2.8C523.3,273.6,523.9,273.9,524.6,273.9z"/>
+		</g>
+		<g>
+			<path class="st0" d="M516.2,36.4c-7.4-7.5-17-12.1-27.5-12.1c-13.9,0-26.3,8-33.9,20.2c-3.5,5.7-6,12.2-7.2,19.4
+				c2.5-10.6,9.3-17.5,17.4-20.7c17.7-7.2,41.9,2.9,41.9,30v17.3c0,3.1-0.3,5.9-0.9,8.6c-1,7.9-3.6,15.2-7.5,21.4
+				c-7.6,12.2-19.9,20.2-33.9,20.2c-4.6,0-8.9-0.9-13-2.4c31.1,15.7,77.7-0.3,77.7-47.8v-5.8V73.2C529.3,57.5,524.2,45.2,516.2,36.4
+				z"/>
+			<path class="st1" d="M485.9,121.7c-17.4,5.4-39.3-5-39.3-31.2V73.2c0-3.4,0.4-6.5,1-9.3c1.2-7.1,3.7-13.7,7.2-19.4
+				c7.6-12.2,19.9-20.2,33.9-20.2c10.6,0,20.2,4.6,27.5,12.1c-28.2-31.2-92-19-92,36.8v6.5v10.8c0,23.9,11.8,39.9,27.4,47.8
+				c4.1,1.6,8.5,2.4,13,2.4c13.9,0,26.3-8,33.9-20.2c3.8-6.2,6.5-13.5,7.5-21.4C503.4,111.3,495.3,118.8,485.9,121.7z"/>
+			<path class="st1" d="M399,44.4c8.4,3.4,11.8,14.6,7.6,25c-0.1,0.2-0.2,0.4-0.3,0.6c0,0,9.6-19.7,13.6-27.4
+				c11.7-22.1-4.2-20.8-10-20.9c-5.8-0.1-21.6,0-21.6,0H335v21.6h58.1C395.1,43.4,397.1,43.7,399,44.4z"/>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="405.2137" y1="71.2288" x2="406.3291" y2="71.2288">
+				<stop  offset="0" style="stop-color:#FECC04"/>
+				<stop  offset="0.5233" style="stop-color:#F8AF07"/>
+				<stop  offset="0.9771" style="stop-color:#B76C15"/>
+			</linearGradient>
+			<path class="st5" d="M406.3,70.1l-1.1,2.2C405.6,71.6,406,70.9,406.3,70.1z"/>
+			<path class="st0" d="M399,44.4c-1.9-0.8-3.9-1.1-5.9-1h0.4l-16.4,33l-32.6,65.5h26.1l34.7-69.6l1.1-2.2c0.1-0.2,0.2-0.4,0.3-0.6
+				C410.8,59.1,407.5,47.9,399,44.4z"/>
+		</g>
+		<g>
+			<path class="st1" d="M487.2,242.7l-2.9-3.8l0,0l0,0l-10.7-14.2c4.9-1.2,8.7-3.3,11.4-6.6c2.7-3.2,4.1-7.2,4.1-11.9
+				c0-2.9-0.6-5.4-1.7-7.6c-1.1-2.2-2.7-4.1-4.8-5.6c-2.1-1.5-4.6-2.7-7.6-3.6c-3-0.8-6.3-1.2-9.9-1.2h-12.7c-2.1,0-3.7,0.6-4.8,1.8
+				c-1.1,1.2-1.7,2.9-1.7,5v49.8v2v6.8h12.8v-6.8v-2v-18.1h2.1l14.4,21.3c0.5,0.9,1.1,1.7,1.7,2.4l2.2,3.3h15.9l-6.9-9.5
+				C487.8,243.6,487.5,243.2,487.2,242.7z M458.6,215.9v-16.6h6.8c3.3,0,6,0.7,8.1,2.2c2,1.5,3.1,3.5,3.1,6c0,2.6-1,4.7-3,6.1
+				c-2,1.5-4.7,2.2-8.1,2.2H458.6z"/>
+			<path class="st1" d="M372.4,228.5c0,4.7-1.2,8.2-3.5,10.5c-2.3,2.2-5.3,3.4-8.9,3.4c-3.8,0-6.8-1.1-9.1-3.4
+				c-2.3-2.2-3.4-5.7-3.4-10.5v-40.3h-13.2v39.3c0,4.4,0.6,8.3,1.9,11.6c1.2,3.3,3,6,5.2,8.2c2.2,2.2,4.9,3.8,8,4.9
+				c3.1,1.1,6.4,1.6,10,1.6c3.8,0,7.2-0.5,10.4-1.6c3.2-1.1,5.9-2.7,8.3-4.9c2.3-2.2,4.2-4.9,5.5-8.2c1.3-3.3,2-7.1,2-11.6v-39.3
+				h-13.1V228.5z"/>
+			<path class="st1" d="M516.7,188.2v45.4c0,2.7-0.8,4.8-2.3,6.1c-1.5,1.3-3.4,2-5.6,2c-1.3,0-2.4-0.1-3.3-0.4
+				c-0.9-0.3-1.7-0.6-2.5-0.9c-0.7-0.3-1.2-0.5-1.7-0.7c-0.5-0.2-1-0.3-1.5-0.3c-1.2,0-2.2,0.5-3.1,1.5c-0.9,1-1.3,2.2-1.3,3.7
+				c0,1.8,0.4,3.2,1.1,4.2c0.7,1,1.6,1.9,2.7,2.5c1.5,0.9,3.1,1.5,5.1,1.9s3.8,0.6,5.8,0.6c2.9,0,5.6-0.5,8-1.4
+				c2.4-0.9,4.5-2.3,6.3-4.1c1.8-1.8,3.1-4,4.1-6.7c1-2.7,1.5-5.8,1.5-9.3v-44.1H516.7z"/>
+			<path class="st1" d="M421.4,188.2h-16.9c-2.1,0-3.8,0.6-5,1.7c-1.2,1.2-1.8,2.7-1.8,4.6V246c0,2.1,0.6,3.8,1.7,5
+				c1.2,1.2,2.7,1.8,4.6,1.8h17.3h8.1h5.9v-10.3H431c-0.5-0.1-1-0.1-1.5-0.1h-19v-17.7h15.9c0.7,0,1.4-0.1,2-0.2h3.9v-4.5
+				c0-0.2,0-0.3,0-0.5s0-0.4,0-0.5v-4.7h-14v0.1h-7.9v-15.8h19c0.6,0,1.1,0,1.5-0.1h4.4v-10.3h-5.9H421.4z"/>
+		</g>
+		<path class="st0" d="M529.4,167.1c-1.9-2.9-5-4-8.1-4.1c-6.4-0.2-12.7-0.2-19.1,0.2c-6.9,0.4-13.8,0.9-20.5-1
+			c-3-0.8-5.8-2.4-8.6-3.7c-1.7-0.8-3.2-1.9-4.9-2.7c-2.5-1.2-5.4-1.3-6.4,1.5c-0.1,0.1-0.2,0.6-0.3,0.7c-1.5,3.4-4.5,5.1-7,6.6
+			c-1.1-2.9-2.8-6.1-3.2-9.1c-0.6-3.8,3.2-2.6,3.2-1.2c-0.2,1.2,2.1,1.4,2.3,0.1c0.9-6.2-11-8.5-9.8-0.2c0.2,1.2,0.5,2.4,0.9,3.5
+			c-2.2,4.4-4,6.4-5.4,7.1c0.3-1.4,0.5-3.3-0.9-4.2c-0.1-3.5-2.8-6.3-6.4-6.2c-3.4,0.1-5.6,3-6.3,6.4c-2.4,5.1-4,8.3-5.1,10.2
+			c-1.5,2.8-1.5,1.3-1.3-1.3c0.3-3.1,0.9-7.2,1-8.3c0.6-6.7-3.7-8.4-6.8-3.1c-1.7,2.8-3.1,5.8-4.5,8.8c0.6-3.7,1.5-7.4,2.3-11
+			c0.2-1.1-4-3.8-4.3-2.1c-0.3,1.2-0.6,2.6-1,4.1c-2.1,4.6-4,7.8-5.6,9.6c-2.4,3-3.1,2.4-3.1-1.4c0-1.9,0.4-4.6,1.3-7.9
+			c0.1-0.6-2-3.5-2.9-3.1c-2.3-3.7-7.9-1.6-9.8,1.9c-0.4,0.8-0.8,1.7-1.1,2.7l0,0c0,0,0,0.1,0,0.1c0,0.1,0,0.1,0,0.2
+			c-0.1,0.2-0.1,0.4-0.1,0.6c-0.4,1.9-1.3,2.8-3.1,3.2c-6.1,1.5-12.3,1.1-18.5,0.8c-4.9-0.2-9.8-0.7-14.7-0.7
+			c-3.6,0-7.3,0.6-10.8,1.2c-2.3,0.4-4.2,1.9-5.3,4c-0.2,0.5,0,1.2,0,1.8c0.6-0.2,1.6-0.1,1.8-0.5c1.6-2.5,4.1-3.5,6.7-3.7
+			c4.6-0.3,9.1-0.4,13.7-0.2c9.4,0.4,20.3,1.3,29.8-1.1c0.1,0.5,0.1,1,0.2,1.5c1.1,4.6,4.8,3.2,6.9-0.2l1.5-2.6
+			c-0.1,0.8,0,1.6,0.1,2.4c0.7,5.8,5.3,6.7,8.8,2.7c0.8-1,1.8-2.3,2.7-3.9c-0.1,0.7-0.1,1.4,0,2c0.2,3.3,4,6.1,5.1,3.6
+			c1.6-3.6,3.4-7.5,5.3-10.9c0.9-1.7,1.1-1.1,0.9,0.4c-0.2,2.6-0.6,5.1-0.9,7.7c-0.6,6.7,3.2,10.5,7.5,3.2c1-1.6,2.1-3.7,3.3-6.1
+			c0.7,3,2.8,5.5,6.6,5.5c2.4,0,4.5-1.7,5.8-3.8c3.2-0.1,5.9-3.9,7.6-6.9c0.8,2,1.7,3.9,2.2,6c-5.8,3.3-5.5,11.4,0.6,11.2
+			c4.9-0.1,4.5-7.7,3.6-11c2.4-1.4,5.1-3.2,7.1-6c0.3-0.2,0.9-1.5,1-1.7c1.3-1.9,3.4-1.8,5.2-0.8c0.4,0.2,0.8,0.4,1.1,0.7
+			c6.6,5.5,14.5,7,22.8,7c5.6,0,11.1-0.7,16.7-0.8c4.5-0.1,9,0.2,13.5,0.5c2,0.2,3.8,1,5,2.8c0.2,0.3,1.1,0.2,1.7,0.3
+			C529.4,168.2,529.6,167.5,529.4,167.1z M391.9,167c-0.2-3.2,0.6-9.2,4.9-9.4C395.6,160.5,393.9,164.6,391.9,167z M439,166.8
+			c-0.9,1.1-2,2.1-3.3,2.1c-4,0-3.3-8.1-0.6-10.3c1.9-1.5,3.3-0.3,3.9,1.7c-0.8,0.2-1.4,0.9-1.6,1.8
+			C436.8,163.7,437.6,165.7,439,166.8z M440.2,164.5l-0.4-0.6c0.2,0,0.5-0.2,0.6-0.4C440.3,163.9,440.3,164.2,440.2,164.5z
+			 M449.7,173.6c-1.8,0-0.2-3.7,1.6-4.9C451.4,170.6,450.6,173.6,449.7,173.6z"/>
+	</g>
+</g>
+</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="logotipo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 455 130" width="455" height="130"><defs><path d="M155.14 9.92C141.24 9.92 128.84 17.92 121.24 30.12C117.74 35.82 115.24 42.32 114.04 49.52C116.54 38.92 123.34 32.02 131.44 28.82C149.14 21.62 173.34 31.72 173.34 58.82C173.34 60.55 173.34 74.39 173.34 76.12C173.34 79.22 173.04 82.02 172.44 84.72C171.44 92.62 168.84 99.92 164.94 106.12C157.34 118.32 145.04 126.32 131.04 126.32C126.44 126.32 122.14 125.42 118.04 123.92C149.14 139.62 195.74 123.62 195.74 76.12C195.74 75.73 195.74 73.8 195.74 70.32C195.74 63.42 195.74 59.58 195.74 58.82C195.74 43.12 190.64 30.82 182.64 22.02C175.24 14.52 165.64 9.92 155.14 9.92Z" id="a33Br37ULX"></path><path d="M113.04 76.12C113.04 74.39 113.04 60.55 113.04 58.82C113.04 55.42 113.44 52.32 114.04 49.52C115.24 42.42 117.74 35.82 121.24 30.12C128.84 17.92 141.14 9.92 155.14 9.92C165.74 9.92 175.34 14.52 182.64 22.02C154.44 -9.18 90.64 3.02 90.64 58.82C90.64 59.25 90.64 61.42 90.64 65.32C90.64 71.8 90.64 75.4 90.64 76.12C90.64 100.02 102.44 116.02 118.04 123.92C122.14 125.52 126.54 126.32 131.04 126.32C144.94 126.32 157.34 118.32 164.94 106.12C168.74 99.92 171.44 92.62 172.44 84.72C169.84 96.92 161.74 104.42 152.34 107.32C134.94 112.72 113.04 102.32 113.04 76.12Z" id="b1wo3AJ1nn"></path><path d="M73.04 55.02C72.94 55.22 72.84 55.42 72.74 55.62C72.74 55.62 82.34 35.92 86.34 28.22C98.04 6.12 82.14 7.42 76.34 7.32C70.54 7.22 54.74 7.32 54.74 7.32C51.19 7.32 33.42 7.32 1.44 7.32L1.44 28.92C36.3 28.92 55.67 28.92 59.54 28.92C61.54 29.02 63.54 29.32 65.44 30.02C73.84 33.42 77.24 44.62 73.04 55.02Z" id="aiCUc2mrk"></path><path d="M71.64 57.92C72.04 57.22 72.44 56.52 72.74 55.72C72.52 56.16 71.75 57.7 71.64 57.92Z" id="b1rSZFoSlf"></path><linearGradient id="gradientb8LshbB9K" gradientUnits="userSpaceOnUse" x1="89.46" y1="64.38" x2="90.58" y2="64.38"><stop style="stop-color: #fecc04;stop-opacity: 1" offset="0%"></stop><stop style="stop-color: #f8af07;stop-opacity: 1" offset="52.33%"></stop><stop style="stop-color: #b76c15;stop-opacity: 1" offset="97.71%"></stop></linearGradient><path d="M59.54 29.02C59.57 29.02 59.7 29.02 59.94 29.02L43.54 62.02L10.94 127.52L37.04 127.52L71.74 57.92C72.4 56.6 72.77 55.86 72.84 55.72C72.94 55.52 73.04 55.32 73.14 55.12C77.24 44.72 73.94 33.52 65.44 30.02C63.54 29.22 61.54 28.92 59.54 29.02Z" id="f1iHFbza4l"></path><path d="M378.33 48.45L378.65 48.45L378.97 48.46L379.28 48.46L379.6 48.47L379.91 48.49L380.22 48.5L380.53 48.51L380.84 48.53L381.15 48.55L381.45 48.57L381.76 48.59L382.06 48.62L382.36 48.64L382.66 48.67L382.96 48.7L383.26 48.73L383.56 48.76L383.85 48.8L384.15 48.84L384.44 48.87L384.73 48.91L385.02 48.96L385.31 49L385.6 49.05L385.88 49.09L386.17 49.14L386.45 49.19L386.73 49.25L387.01 49.3L387.29 49.36L387.57 49.41L387.85 49.47L388.12 49.54L388.4 49.6L388.67 49.66L388.94 49.73L389.21 49.8L389.48 49.87L389.74 49.95L390.01 50.03L390.27 50.12L390.53 50.2L390.79 50.29L391.04 50.38L391.3 50.47L391.55 50.56L391.8 50.65L392.05 50.74L392.29 50.84L392.53 50.93L392.78 51.03L393.01 51.13L393.25 51.23L393.49 51.33L393.72 51.43L393.95 51.53L394.18 51.64L394.4 51.75L394.63 51.85L394.85 51.96L395.07 52.07L395.29 52.18L395.51 52.3L395.72 52.41L395.93 52.53L396.14 52.65L396.35 52.76L396.56 52.88L396.76 53.01L396.97 53.13L397.17 53.25L397.37 53.38L397.57 53.5L397.76 53.63L397.95 53.76L398.15 53.89L398.34 54.02L398.53 54.16L398.71 54.29L398.9 54.43L399.08 54.57L399.26 54.71L399.43 54.85L399.61 54.99L399.78 55.14L399.95 55.28L400.12 55.43L400.29 55.58L400.45 55.74L400.61 55.89L400.77 56.04L400.93 56.2L401.09 56.36L401.24 56.52L401.39 56.68L401.54 56.85L401.68 57.01L401.83 57.18L401.97 57.35L402.11 57.52L402.25 57.69L402.38 57.86L402.52 58.03L402.65 58.21L402.77 58.39L402.9 58.57L403.02 58.75L403.15 58.93L403.27 59.11L403.38 59.3L403.5 59.48L403.61 59.67L403.72 59.86L403.83 60.05L403.94 60.24L404.04 60.43L404.14 60.63L404.24 60.82L404.34 61.02L404.43 61.22L404.52 61.42L404.61 61.62L404.7 61.82L404.79 62.03L404.87 62.23L404.95 62.44L405.03 62.65L405.11 62.86L405.18 63.07L405.25 63.28L405.32 63.49L405.39 63.71L405.46 63.93L405.52 64.15L405.58 64.37L405.64 64.59L405.69 64.81L405.74 65.03L405.79 65.26L405.84 65.49L405.89 65.72L405.93 65.95L405.97 66.18L406.01 66.42L406.04 66.65L406.07 66.89L406.1 67.13L406.13 67.37L406.16 67.61L406.18 67.86L406.2 68.1L406.22 68.35L406.23 68.6L406.24 68.85L406.25 69.1L406.26 69.36L406.26 69.61L406.26 69.87L406.26 70.29L406.25 70.7L406.24 71.12L406.21 71.52L406.19 71.93L406.15 72.33L406.11 72.73L406.06 73.13L406.01 73.52L405.95 73.91L405.89 74.3L405.82 74.68L405.74 75.06L405.66 75.43L405.57 75.81L405.47 76.18L405.37 76.54L405.26 76.91L405.15 77.27L405.03 77.62L404.9 77.98L404.77 78.33L404.63 78.67L404.49 79.02L404.34 79.36L404.18 79.69L404.02 80.03L403.85 80.36L403.68 80.68L403.5 81L403.32 81.32L403.12 81.64L402.93 81.95L402.72 82.26L402.52 82.57L402.3 82.87L402.08 83.17L401.85 83.46L401.62 83.75L401.38 84.04L401.14 84.33L400.89 84.62L400.64 84.9L400.38 85.17L400.12 85.45L399.85 85.71L399.57 85.97L399.3 86.23L399.01 86.48L398.73 86.72L398.43 86.96L398.14 87.2L397.83 87.43L397.53 87.65L397.21 87.87L396.9 88.09L396.57 88.3L396.25 88.51L395.92 88.71L395.58 88.9L395.24 89.1L394.89 89.28L394.54 89.47L394.18 89.64L393.82 89.82L393.45 89.99L393.08 90.15L392.71 90.31L392.33 90.47L391.94 90.62L391.55 90.76L391.15 90.91L390.75 91.05L390.35 91.18L389.94 91.31L389.52 91.43L389.1 91.56L388.68 91.67L388.25 91.79L387.81 91.9L400.55 108.8L404 113.32L404.03 113.37L404.06 113.41L404.08 113.46L404.11 113.5L404.14 113.54L404.16 113.59L404.19 113.63L404.22 113.67L404.24 113.71L404.27 113.75L404.3 113.8L404.32 113.84L404.4 113.96L404.43 114.01L404.46 114.05L404.48 114.09L404.51 114.13L404.54 114.17L404.56 114.22L404.59 114.26L404.62 114.3L404.64 114.35L404.67 114.39L404.7 114.43L404.72 114.48L404.75 114.52L404.78 114.57L404.81 114.61L404.83 114.66L404.86 114.71L404.89 114.76L404.91 114.8L404.94 114.85L404.97 114.9L404.99 114.95L405.02 115.01L405.05 115.06L405.07 115.11L413.29 126.42L394.36 126.42L391.74 122.49L391.69 122.43L391.63 122.37L391.58 122.3L391.53 122.24L391.47 122.17L391.42 122.11L391.36 122.04L391.31 121.98L391.26 121.91L391.21 121.84L391.15 121.78L391.1 121.71L391.05 121.64L390.99 121.57L390.94 121.5L390.89 121.43L390.84 121.36L390.79 121.29L390.73 121.22L390.68 121.15L390.63 121.08L390.58 121.01L390.53 120.94L390.48 120.86L390.43 120.79L390.38 120.72L390.33 120.64L390.28 120.57L390.23 120.49L390.18 120.42L390.13 120.34L390.09 120.26L390.04 120.19L389.99 120.11L389.94 120.03L389.9 119.95L389.85 119.87L389.81 119.79L389.76 119.71L389.72 119.63L372.57 94.28L370.07 94.28L370.07 126.3L354.83 126.3L354.83 56.54L354.83 56.35L354.84 56.17L354.85 55.98L354.85 55.8L354.87 55.62L354.88 55.44L354.9 55.27L354.92 55.1L354.94 54.92L354.97 54.75L354.99 54.59L355.02 54.42L355.06 54.25L355.09 54.09L355.13 53.93L355.17 53.77L355.21 53.62L355.26 53.46L355.3 53.31L355.35 53.16L355.41 53.01L355.46 52.86L355.52 52.72L355.58 52.58L355.64 52.44L355.71 52.3L355.77 52.16L355.84 52.03L355.91 51.9L355.99 51.77L356.06 51.64L356.14 51.51L356.22 51.39L356.31 51.27L356.39 51.15L356.48 51.03L356.57 50.92L356.67 50.8L356.76 50.69L356.86 50.58L356.96 50.48L357.06 50.38L357.16 50.28L357.27 50.18L357.38 50.08L357.49 49.99L357.6 49.9L357.71 49.81L357.83 49.73L357.95 49.65L358.07 49.57L358.2 49.49L358.32 49.42L358.45 49.35L358.58 49.28L358.71 49.21L358.85 49.15L358.99 49.09L359.13 49.03L359.27 48.98L359.41 48.93L359.56 48.88L359.71 48.83L359.86 48.78L360.01 48.74L360.17 48.7L360.32 48.67L360.48 48.63L360.64 48.6L360.81 48.58L360.97 48.55L361.14 48.53L361.31 48.51L361.49 48.49L361.66 48.48L361.84 48.46L362.02 48.45L362.2 48.45L362.39 48.44L362.57 48.44L377.69 48.44L378.01 48.44L378.33 48.45ZM369.95 81.3L378.17 81.3L379.02 81.29L379.85 81.25L380.65 81.18L381.43 81.09L382.19 80.98L382.91 80.83L383.61 80.66L384.29 80.46L384.94 80.24L385.57 79.98L386.17 79.7L386.74 79.39L387.29 79.05L387.81 78.68L388.3 78.31L388.76 77.92L389.18 77.5L389.56 77.05L389.91 76.59L390.22 76.1L390.49 75.59L390.73 75.05L390.93 74.5L391.09 73.92L391.22 73.32L391.31 72.71L391.36 72.07L391.38 71.42L391.36 70.79L391.3 70.18L391.2 69.59L391.07 69.01L390.89 68.46L390.68 67.92L390.43 67.4L390.14 66.9L389.82 66.42L389.46 65.95L389.07 65.51L388.65 65.08L388.19 64.67L387.69 64.28L387.14 63.91L386.58 63.57L385.99 63.26L385.37 62.98L384.74 62.72L384.08 62.5L383.41 62.3L382.71 62.13L381.98 61.98L381.24 61.86L380.48 61.77L379.69 61.71L378.88 61.67L378.05 61.66L369.95 61.66L369.95 81.3Z" id="e3r9KQ8Zu"></path><path d="M263.16 108.92C260.42 111.54 256.85 112.97 252.57 112.97C248.04 112.97 244.47 111.66 241.73 108.92C239 106.3 237.69 102.13 237.69 96.42C237.69 93.22 237.69 77.23 237.69 48.44L221.97 48.44C221.97 76.51 221.97 92.11 221.97 95.23C221.97 100.47 222.69 105.11 224.23 109.04C225.66 112.97 227.8 116.18 230.42 118.8C233.04 121.42 236.26 123.33 239.95 124.63C243.64 125.94 247.57 126.54 251.85 126.54C256.38 126.54 260.42 125.94 264.23 124.63C268.04 123.33 271.26 121.42 274.12 118.8C276.85 116.18 279.12 112.97 280.66 109.04C282.21 105.11 283.04 100.59 283.04 95.23C283.04 92.11 283.04 76.51 283.04 48.44L267.45 48.44L267.45 96.42C266.42 102.93 264.99 107.09 263.16 108.92Z" id="bPdgjcKJz"></path><path d="M439.12 102.49C439.12 105.71 438.17 108.21 436.38 109.75C434.6 111.3 432.34 112.13 429.72 112.13C428.17 112.13 426.86 112.02 425.79 111.66C424.72 111.3 423.76 110.94 422.81 110.59C421.98 110.23 421.38 109.99 420.79 109.75C420.19 109.52 419.6 109.4 419 109.4C417.57 109.4 416.38 109.99 415.31 111.18C414.24 112.37 413.76 113.8 413.76 115.59C413.76 117.73 414.24 119.4 415.07 120.59C415.91 121.78 416.98 122.85 418.29 123.56C420.07 124.63 421.98 125.35 424.36 125.83C426.74 126.3 428.88 126.54 431.26 126.54C434.72 126.54 437.93 125.94 440.79 124.87C443.65 123.8 446.15 122.13 448.29 119.99C450.43 117.85 451.98 115.23 453.17 112.02C454.36 108.8 454.96 105.11 454.96 100.94C454.96 97.44 454.96 79.94 454.96 48.44L439.12 48.44C439.12 80.87 439.12 98.89 439.12 102.49Z" id="dy4R0iZm"></path><path d="M305.55 48.44C303.05 48.44 301.02 49.16 299.59 50.47C298.16 51.89 297.45 53.68 297.45 55.94C297.45 62.07 297.45 111.12 297.45 117.25C297.45 119.75 298.16 121.78 299.47 123.21C300.9 124.63 302.69 125.35 304.95 125.35C306.32 125.35 313.19 125.35 325.55 125.35L335.19 125.35L342.21 125.35L342.21 113.09C339.14 113.09 337.44 113.09 337.09 113.09C336.5 112.97 335.9 112.97 335.31 112.97C333.8 112.97 326.26 112.97 312.69 112.97L312.69 91.9C324.05 91.9 330.36 91.9 331.62 91.9C332.45 91.9 333.28 91.78 334 91.66C334.31 91.66 335.86 91.66 338.64 91.66C338.64 88.44 338.64 86.66 338.64 86.3C338.64 86.06 338.64 85.94 338.64 85.7C338.64 85.47 338.64 85.23 338.64 85.11C338.64 84.74 338.64 82.87 338.64 79.51L321.97 79.51L321.97 79.63L312.57 79.63L312.57 60.82C326.14 60.82 333.68 60.82 335.19 60.82C335.9 60.82 336.5 60.82 336.98 60.7C337.32 60.7 339.07 60.7 342.21 60.7L342.21 48.44L335.19 48.44L325.67 48.44C313.59 48.44 306.89 48.44 305.55 48.44Z" id="akTwt95qh"></path><path d="M357.93 15.92L357.76 16.2L357.59 16.48L357.42 16.76L357.24 17.04L357.05 17.32L356.86 17.6L356.67 17.88L356.48 18.16L356.28 18.43L356.07 18.71L355.87 18.98L355.66 19.24L355.44 19.51L355.22 19.77L355 20.02L354.78 20.27L354.55 20.51L354.32 20.74L354.08 20.97L353.85 21.19L353.6 21.41L353.36 21.61L353.11 21.81L352.86 21.99L352.61 22.17L352.35 22.34L352.09 22.49L351.83 22.63L351.57 22.76L351.3 22.88L351.03 22.99L350.76 23.08L350.48 23.16L350.2 23.22L349.92 23.27L349.64 23.3L349.36 23.32L349.24 23.51L349.12 23.69L348.99 23.88L348.86 24.06L348.73 24.23L348.6 24.41L348.46 24.58L348.32 24.75L348.17 24.92L348.03 25.08L347.88 25.24L347.72 25.4L347.57 25.56L347.41 25.71L347.25 25.85L347.08 25.99L346.91 26.13L346.74 26.27L346.57 26.4L346.4 26.52L346.22 26.64L346.04 26.76L345.86 26.87L345.67 26.97L345.48 27.07L345.3 27.17L345.1 27.26L344.91 27.34L344.72 27.42L344.52 27.49L344.32 27.56L344.12 27.62L343.92 27.67L343.71 27.71L343.51 27.75L343.3 27.79L343.09 27.81L342.88 27.83L342.67 27.84L342.45 27.85L342.12 27.84L341.79 27.82L341.47 27.8L341.15 27.76L340.85 27.71L340.55 27.65L340.26 27.58L339.98 27.51L339.7 27.42L339.43 27.32L339.17 27.22L338.92 27.11L338.67 26.98L338.43 26.85L338.2 26.72L337.97 26.57L337.75 26.42L337.54 26.25L337.34 26.09L337.14 25.91L336.95 25.73L336.76 25.54L336.59 25.35L336.42 25.15L336.25 24.94L336.1 24.73L335.95 24.51L335.8 24.29L335.67 24.06L335.54 23.83L335.41 23.59L335.3 23.35L335.19 23.11L335.08 22.86L334.99 22.6L334.89 22.35L334.81 22.09L334.73 21.83L334.66 21.56L334.59 21.3L334.49 21.51L334.38 21.72L334.27 21.93L334.17 22.14L334.06 22.35L333.96 22.56L333.86 22.76L333.75 22.97L333.65 23.17L333.55 23.37L333.44 23.57L333.34 23.77L333.24 23.96L333.14 24.16L333.04 24.35L332.94 24.54L332.84 24.73L332.74 24.92L332.64 25.1L332.54 25.29L332.44 25.47L332.35 25.65L332.25 25.83L332.15 26L332.06 26.18L331.96 26.35L331.86 26.52L331.77 26.69L331.67 26.86L331.58 27.02L331.49 27.19L331.39 27.35L331.3 27.51L331.21 27.66L331.12 27.82L331.03 27.97L330.94 28.12L330.85 28.27L330.76 28.42L330.67 28.56L330.28 29.19L329.9 29.77L329.53 30.3L329.15 30.78L328.78 31.22L328.42 31.61L328.06 31.96L327.7 32.27L327.35 32.53L327.01 32.75L326.67 32.93L326.34 33.08L326.02 33.18L325.71 33.25L325.4 33.28L325.11 33.27L324.82 33.23L324.54 33.15L324.27 33.05L324.01 32.91L323.77 32.73L323.53 32.53L323.31 32.3L323.1 32.04L322.9 31.75L322.71 31.44L322.54 31.1L322.38 30.73L322.24 30.34L322.11 29.93L322 29.5L321.9 29.04L321.82 28.57L321.75 28.07L321.71 27.56L321.67 27.03L321.66 26.48L321.67 25.92L321.69 25.34L321.74 24.75L321.76 24.52L321.79 24.29L321.82 24.06L321.85 23.83L321.88 23.59L321.9 23.36L321.93 23.13L321.96 22.91L321.99 22.68L322.02 22.45L322.05 22.22L322.08 21.99L322.11 21.76L322.14 21.53L322.17 21.31L322.2 21.08L322.23 20.85L322.26 20.62L322.29 20.39L322.32 20.17L322.35 19.94L322.37 19.71L322.4 19.48L322.43 19.26L322.46 19.03L322.49 18.8L322.51 18.57L322.54 18.34L322.57 18.11L322.59 17.89L322.62 17.66L322.64 17.43L322.66 17.2L322.69 16.97L322.71 16.74L322.73 16.51L322.75 16.28L322.77 16.05L322.79 15.82L322.81 15.58L322.83 15.45L322.84 15.32L322.85 15.2L322.86 15.08L322.87 14.97L322.88 14.86L322.89 14.75L322.89 14.65L322.89 14.56L322.89 14.47L322.89 14.39L322.88 14.31L322.88 14.24L322.87 14.17L322.86 14.11L322.84 14.06L322.83 14.01L322.81 13.98L322.79 13.94L322.76 13.92L322.74 13.9L322.71 13.89L322.68 13.88L322.65 13.89L322.61 13.9L322.57 13.92L322.53 13.94L322.49 13.98L322.44 14.02L322.39 14.08L322.34 14.14L322.28 14.21L322.22 14.29L322.16 14.38L322.1 14.47L322.03 14.58L321.96 14.7L321.89 14.82L321.82 14.96L321.74 15.11L321.57 15.41L321.4 15.72L321.23 16.03L321.06 16.34L320.89 16.65L320.73 16.97L320.56 17.28L320.39 17.6L320.23 17.92L320.06 18.24L319.9 18.56L319.74 18.89L319.57 19.21L319.41 19.54L319.25 19.86L319.09 20.19L318.93 20.52L318.77 20.85L318.61 21.18L318.45 21.51L318.29 21.84L318.13 22.17L317.98 22.5L317.82 22.83L317.66 23.16L317.51 23.49L317.36 23.82L317.2 24.16L317.05 24.49L316.9 24.82L316.75 25.15L316.6 25.48L316.45 25.81L316.3 26.13L316.15 26.46L316.01 26.79L315.86 27.11L315.71 27.44L315.57 27.76L315.43 28.08L315.32 28.3L315.21 28.48L315.08 28.65L314.95 28.79L314.8 28.92L314.65 29.02L314.48 29.1L314.32 29.16L314.14 29.2L313.96 29.22L313.77 29.23L313.58 29.21L313.39 29.18L313.19 29.14L312.99 29.07L312.79 28.99L312.59 28.9L312.39 28.79L312.19 28.67L311.99 28.53L311.79 28.38L311.6 28.22L311.41 28.05L311.22 27.86L311.04 27.67L310.86 27.46L310.69 27.24L310.52 27.02L310.37 26.79L310.22 26.54L310.08 26.29L309.95 26.04L309.83 25.78L309.73 25.51L309.63 25.23L309.55 24.95L309.48 24.67L309.42 24.38L309.38 24.09L309.36 23.8L309.35 23.74L309.34 23.69L309.33 23.64L309.32 23.58L309.32 23.52L309.31 23.47L309.3 23.41L309.3 23.36L309.29 23.3L309.29 23.24L309.28 23.18L309.28 23.13L309.28 23.07L309.27 23.01L309.27 22.95L309.27 22.89L309.27 22.83L309.27 22.77L309.27 22.71L309.27 22.65L309.27 22.59L309.27 22.53L309.27 22.47L309.27 22.41L309.27 22.35L309.27 22.29L309.28 22.23L309.28 22.16L309.28 22.1L309.29 22.04L309.29 21.98L309.3 21.92L309.3 21.85L309.31 21.79L309.32 21.73L309.32 21.67L309.33 21.6L309.34 21.54L309.35 21.48L309.36 21.42L309.27 21.56L309.19 21.7L309.11 21.84L309.03 21.98L308.95 22.11L308.87 22.25L308.78 22.38L308.7 22.52L308.62 22.65L308.53 22.78L308.45 22.91L308.37 23.03L308.29 23.16L308.2 23.29L308.12 23.41L308.04 23.53L307.95 23.65L307.87 23.77L307.79 23.89L307.7 24.01L307.62 24.12L307.54 24.24L307.46 24.35L307.38 24.46L307.29 24.57L307.21 24.68L307.13 24.79L307.05 24.89L306.97 25L306.89 25.1L306.82 25.2L306.74 25.3L306.66 25.4L306.58 25.5L306.51 25.6L306.43 25.69L306.36 25.79L306.29 25.88L306.21 25.97L306.14 26.06L305.83 26.41L305.51 26.73L305.18 27.03L304.86 27.31L304.53 27.57L304.2 27.81L303.86 28.02L303.53 28.22L303.2 28.39L302.86 28.54L302.53 28.67L302.2 28.77L301.87 28.85L301.54 28.92L301.21 28.96L300.89 28.97L300.58 28.97L300.26 28.94L299.95 28.9L299.65 28.83L299.36 28.74L299.07 28.62L298.79 28.49L298.51 28.33L298.25 28.15L297.99 27.95L297.74 27.73L297.51 27.48L297.28 27.22L297.07 26.93L296.86 26.62L296.67 26.29L296.5 25.93L296.33 25.56L296.18 25.16L296.05 24.74L295.93 24.3L295.82 23.84L295.74 23.35L295.66 22.85L295.66 22.77L295.65 22.7L295.64 22.63L295.63 22.56L295.62 22.49L295.61 22.42L295.6 22.35L295.59 22.27L295.59 22.2L295.58 22.13L295.57 22.06L295.56 21.99L295.56 21.92L295.55 21.85L295.54 21.77L295.54 21.7L295.53 21.63L295.53 21.56L295.52 21.49L295.52 21.42L295.51 21.35L295.51 21.27L295.5 21.2L295.5 21.13L295.5 21.06L295.5 20.99L295.5 20.92L295.5 20.85L295.5 20.77L295.5 20.7L295.5 20.63L295.5 20.56L295.5 20.49L295.51 20.42L295.51 20.35L295.52 20.27L295.52 20.2L295.53 20.13L295.54 20.06L295.55 19.99L293.76 23.08L293.57 23.38L293.37 23.67L293.17 23.95L292.96 24.22L292.74 24.48L292.52 24.73L292.3 24.96L292.07 25.19L291.84 25.4L291.61 25.6L291.37 25.78L291.13 25.96L290.89 26.11L290.65 26.25L290.41 26.38L290.17 26.49L289.92 26.59L289.68 26.67L289.44 26.73L289.21 26.77L288.97 26.8L288.74 26.81L288.51 26.8L288.28 26.77L288.06 26.72L287.84 26.65L287.63 26.56L287.42 26.45L287.22 26.32L287.03 26.16L286.84 25.99L286.66 25.79L286.49 25.57L286.33 25.32L286.17 25.05L286.03 24.76L285.89 24.44L285.76 24.09L285.65 23.72L285.54 23.32L285.54 23.28L285.53 23.23L285.52 23.19L285.51 23.14L285.51 23.1L285.5 23.05L285.49 23.01L285.49 22.96L285.48 22.92L285.47 22.88L285.47 22.83L285.46 22.79L285.46 22.74L285.45 22.7L285.45 22.65L285.44 22.61L285.44 22.56L285.43 22.52L285.43 22.47L285.42 22.38L285.42 22.34L285.41 22.29L285.41 22.25L285.4 22.21L285.4 22.16L285.39 22.12L285.39 22.07L285.38 22.03L285.38 21.98L285.37 21.94L285.37 21.89L285.36 21.85L285.35 21.8L285.35 21.76L285.34 21.71L285.33 21.67L285.32 21.63L285.32 21.58L285.31 21.54L284.46 21.74L283.6 21.94L282.74 22.11L281.87 22.28L280.99 22.43L280.12 22.57L279.23 22.7L278.35 22.82L277.46 22.92L276.57 23.01L275.67 23.1L274.77 23.17L273.87 23.23L272.97 23.29L272.06 23.33L271.16 23.37L270.25 23.4L269.34 23.42L268.43 23.43L267.52 23.44L266.62 23.44L265.71 23.44L264.8 23.43L263.89 23.41L262.99 23.39L262.09 23.37L261.19 23.34L260.29 23.31L259.4 23.28L258.5 23.24L257.62 23.21L256.73 23.17L255.85 23.13L254.97 23.08L254.1 23.04L253.24 23L252.38 22.96L251.52 22.92L250.67 22.88L249.83 22.85L249.42 22.83L249.01 22.81L248.6 22.8L248.19 22.78L247.78 22.77L247.37 22.76L246.96 22.75L246.56 22.74L246.15 22.74L245.74 22.73L245.33 22.73L244.93 22.72L244.52 22.72L244.11 22.72L243.71 22.72L243.3 22.72L242.89 22.73L242.49 22.73L242.08 22.74L241.67 22.74L241.27 22.75L240.86 22.76L240.46 22.77L240.05 22.78L239.64 22.79L239.24 22.8L238.83 22.81L238.42 22.83L238.02 22.85L237.61 22.86L237.2 22.88L236.79 22.9L236.38 22.92L235.98 22.94L235.57 22.96L235.16 22.98L234.75 23.01L234.34 23.03L233.93 23.06L233.52 23.08L233.29 23.1L233.06 23.13L232.83 23.15L232.6 23.18L232.37 23.22L232.14 23.26L231.91 23.3L231.68 23.35L231.46 23.4L231.23 23.45L231.01 23.51L230.79 23.58L230.57 23.65L230.35 23.72L230.14 23.8L229.92 23.88L229.71 23.97L229.5 24.06L229.29 24.16L229.08 24.26L228.88 24.37L228.68 24.48L228.48 24.6L228.28 24.72L228.09 24.85L227.9 24.98L227.71 25.12L227.52 25.27L227.34 25.42L227.16 25.58L226.98 25.74L226.81 25.91L226.64 26.09L226.47 26.27L226.31 26.45L226.15 26.65L225.99 26.85L225.84 27.06L225.69 27.27L225.54 27.49L225.52 27.52L225.5 27.56L225.47 27.59L225.44 27.61L225.41 27.64L225.38 27.67L225.34 27.69L225.3 27.71L225.25 27.73L225.21 27.75L225.16 27.77L225.11 27.78L225.06 27.8L225 27.81L224.95 27.82L224.89 27.84L224.83 27.85L224.77 27.86L224.71 27.87L224.65 27.88L224.59 27.88L224.52 27.89L224.46 27.9L224.39 27.91L224.33 27.92L224.26 27.92L224.2 27.93L224.13 27.94L224.07 27.95L224 27.96L223.94 27.97L223.87 27.98L223.81 27.99L223.75 28L223.69 28.01L223.63 28.02L223.57 28.04L223.51 28.05L223.45 28.07L223.4 28.08L223.4 28.03L223.4 27.98L223.4 27.92L223.39 27.87L223.39 27.81L223.39 27.76L223.38 27.7L223.38 27.64L223.37 27.59L223.37 27.53L223.36 27.47L223.35 27.42L223.35 27.36L223.34 27.31L223.34 27.25L223.33 27.19L223.33 27.14L223.32 27.08L223.32 27.02L223.31 26.97L223.31 26.91L223.3 26.86L223.3 26.8L223.3 26.75L223.3 26.69L223.29 26.64L223.29 26.58L223.29 26.53L223.3 26.48L223.3 26.43L223.3 26.37L223.31 26.32L223.31 26.27L223.32 26.22L223.33 26.17L223.34 26.13L223.35 26.08L223.37 26.03L223.38 25.99L223.4 25.94L223.5 25.75L223.6 25.57L223.71 25.39L223.82 25.21L223.93 25.04L224.05 24.87L224.17 24.7L224.3 24.53L224.42 24.37L224.55 24.21L224.69 24.05L224.82 23.9L224.96 23.75L225.1 23.6L225.25 23.46L225.4 23.32L225.55 23.19L225.7 23.05L225.86 22.93L226.02 22.8L226.18 22.68L226.35 22.56L226.51 22.45L226.68 22.34L226.86 22.24L227.03 22.13L227.21 22.04L227.39 21.94L227.57 21.86L227.75 21.77L227.94 21.69L228.13 21.62L228.32 21.55L228.51 21.48L228.71 21.42L228.9 21.36L229.1 21.31L229.3 21.26L229.51 21.22L229.71 21.18L230.02 21.13L230.34 21.07L230.65 21.02L230.97 20.97L231.28 20.91L231.6 20.86L231.92 20.81L232.24 20.76L232.55 20.7L232.87 20.65L233.19 20.6L233.51 20.56L233.84 20.51L234.16 20.46L234.48 20.41L234.8 20.37L235.12 20.32L235.45 20.28L235.77 20.24L236.09 20.2L236.42 20.16L236.74 20.12L237.07 20.08L237.39 20.05L237.71 20.01L238.04 19.98L238.36 19.95L238.69 19.92L239.01 19.9L239.34 19.87L239.66 19.85L239.98 19.83L240.31 19.81L240.63 19.8L240.96 19.78L241.28 19.77L241.6 19.76L241.92 19.76L242.25 19.75L242.57 19.75L243 19.75L243.44 19.75L243.88 19.76L244.32 19.77L244.75 19.78L245.19 19.79L245.63 19.8L246.07 19.81L246.5 19.83L246.94 19.85L247.38 19.87L247.82 19.89L248.25 19.91L248.69 19.93L249.13 19.95L249.57 19.97L250 20L250.44 20.02L250.88 20.05L251.32 20.08L251.75 20.1L252.19 20.13L252.63 20.16L253.07 20.19L253.94 20.24L254.38 20.27L254.82 20.3L255.26 20.33L255.69 20.35L256.13 20.38L256.57 20.41L257.01 20.43L257.44 20.46L257.88 20.48L258.32 20.5L258.76 20.52L259.19 20.55L259.63 20.56L260.07 20.58L260.62 20.61L261.17 20.64L261.73 20.66L262.28 20.69L262.84 20.72L263.39 20.74L263.94 20.77L264.5 20.79L265.05 20.82L265.6 20.84L266.15 20.86L266.71 20.87L267.26 20.89L267.81 20.9L268.37 20.91L268.92 20.92L269.47 20.92L270.02 20.92L270.57 20.92L271.12 20.91L271.68 20.9L272.23 20.88L272.78 20.87L273.33 20.84L273.88 20.81L274.43 20.78L274.98 20.74L275.53 20.69L276.08 20.64L276.63 20.58L277.17 20.52L277.72 20.45L278.27 20.37L278.82 20.29L279.36 20.2L279.91 20.1L280.46 20L281 19.88L281.55 19.76L282.09 19.63L282.25 19.59L282.41 19.56L282.56 19.51L282.7 19.47L282.85 19.42L282.99 19.37L283.12 19.32L283.25 19.27L283.38 19.21L283.51 19.15L283.63 19.09L283.74 19.03L283.86 18.96L283.97 18.89L284.08 18.81L284.18 18.74L284.28 18.66L284.38 18.57L284.47 18.49L284.56 18.4L284.65 18.3L284.74 18.21L284.82 18.11L284.9 18L284.97 17.9L285.04 17.78L285.11 17.67L285.18 17.55L285.25 17.43L285.31 17.3L285.37 17.17L285.42 17.04L285.48 16.9L285.53 16.76L285.58 16.62L285.62 16.46L285.67 16.31L285.71 16.15L285.75 15.99L285.78 15.82L285.78 15.77L285.78 15.75L285.78 15.73L285.78 15.71L285.78 15.7L285.78 15.68L285.78 15.66L285.78 15.64L285.79 15.62L285.79 15.61L285.79 15.59L285.79 15.57L285.79 15.55L285.79 15.54L285.79 15.52L285.79 15.5L285.8 15.48L285.8 15.46L285.8 15.45L285.8 15.43L285.81 15.41L285.81 15.39L285.81 15.37L285.82 15.36L285.82 15.34L285.82 15.32L285.83 15.3L285.83 15.29L285.84 15.27L285.84 15.25L285.85 15.23L285.86 15.21L285.86 15.2L285.87 15.18L285.88 15.16L285.89 15.14L285.89 15.12L285.9 15.11L285.9 14.75L285.93 14.66L285.96 14.57L285.98 14.48L286.01 14.4L286.04 14.31L286.07 14.22L286.1 14.14L286.13 14.05L286.16 13.96L286.19 13.88L286.22 13.79L286.25 13.71L286.28 13.63L286.32 13.54L286.35 13.46L286.38 13.38L286.41 13.3L286.45 13.22L286.48 13.13L286.51 13.05L286.55 12.97L286.58 12.89L286.61 12.81L286.65 12.74L286.68 12.66L286.72 12.58L286.75 12.5L286.79 12.42L286.82 12.35L286.86 12.27L286.89 12.2L286.93 12.12L286.96 12.05L287 11.97L287.03 11.9L287.07 11.82L287.1 11.75L287.14 11.68L287.18 11.61L287.21 11.54L287.39 11.23L287.58 10.92L287.79 10.63L288.01 10.34L288.25 10.06L288.5 9.79L288.76 9.53L289.03 9.28L289.31 9.04L289.6 8.8L289.9 8.58L290.21 8.38L290.53 8.18L290.85 8L291.18 7.83L291.51 7.67L291.84 7.53L292.18 7.4L292.52 7.29L292.87 7.19L293.21 7.11L293.55 7.04L293.9 7L294.24 6.97L294.58 6.95L294.92 6.96L295.25 6.99L295.58 7.03L295.9 7.1L296.22 7.18L296.53 7.29L296.83 7.42L297.12 7.57L297.41 7.74L297.68 7.94L297.95 8.15L298.2 8.4L298.44 8.66L298.67 8.96L298.88 9.27L298.96 9.25L299.05 9.23L299.14 9.23L299.24 9.24L299.34 9.27L299.44 9.3L299.55 9.35L299.66 9.41L299.77 9.47L299.89 9.55L300 9.63L300.12 9.73L300.24 9.83L300.36 9.93L300.47 10.04L300.59 10.16L300.71 10.28L300.82 10.41L300.94 10.54L301.05 10.67L301.16 10.81L301.27 10.94L301.37 11.08L301.48 11.22L301.57 11.36L301.67 11.49L301.76 11.63L301.84 11.76L301.92 11.89L301.99 12.02L302.06 12.14L302.12 12.26L302.17 12.37L302.22 12.48L302.26 12.58L302.29 12.67L302.32 12.76L302.33 12.84L302.34 12.91L302.33 12.96L302.25 13.26L302.17 13.55L302.1 13.84L302.03 14.12L301.96 14.4L301.89 14.68L301.82 14.96L301.76 15.23L301.7 15.5L301.64 15.77L301.58 16.04L301.52 16.3L301.47 16.56L301.42 16.82L301.37 17.07L301.32 17.32L301.28 17.57L301.24 17.81L301.19 18.05L301.16 18.29L301.12 18.53L301.08 18.76L301.05 18.99L301.02 19.21L300.99 19.44L300.96 19.65L300.94 19.87L300.92 20.08L300.89 20.29L300.87 20.5L300.86 20.7L300.84 20.9L300.83 21.1L300.82 21.29L300.81 21.48L300.8 21.66L300.79 21.84L300.79 22.02L300.78 22.2L300.78 22.37L300.79 22.7L300.79 23.02L300.8 23.32L300.81 23.61L300.82 23.89L300.84 24.15L300.87 24.39L300.89 24.62L300.92 24.84L300.96 25.04L301 25.23L301.04 25.4L301.09 25.56L301.14 25.7L301.2 25.83L301.26 25.94L301.33 26.04L301.4 26.12L301.48 26.19L301.56 26.24L301.64 26.28L301.74 26.3L301.84 26.3L301.94 26.3L302.05 26.27L302.17 26.23L302.29 26.18L302.42 26.11L302.55 26.02L302.69 25.92L302.84 25.8L302.99 25.67L303.15 25.52L303.32 25.36L303.5 25.18L303.68 24.98L303.86 24.77L304.06 24.54L304.26 24.3L304.47 24.04L304.62 23.87L304.76 23.7L304.91 23.53L305.06 23.34L305.21 23.15L305.36 22.96L305.51 22.76L305.66 22.55L305.81 22.34L305.97 22.12L306.12 21.89L306.28 21.66L306.44 21.42L306.6 21.17L306.76 20.92L306.92 20.66L307.09 20.4L307.25 20.13L307.42 19.85L307.58 19.57L307.75 19.28L307.92 18.99L308.09 18.69L308.26 18.38L308.44 18.06L308.61 17.74L308.78 17.42L308.96 17.09L309.14 16.75L309.31 16.4L309.49 16.05L309.67 15.69L309.85 15.33L310.03 14.96L310.21 14.58L310.4 14.2L310.58 13.81L310.77 13.42L310.95 13.01L311.14 12.61L311.18 12.47L311.21 12.34L311.25 12.21L311.28 12.07L311.31 11.94L311.35 11.81L311.38 11.68L311.41 11.55L311.45 11.42L311.48 11.29L311.51 11.16L311.54 11.04L311.57 10.91L311.6 10.78L311.63 10.65L311.66 10.53L311.69 10.4L311.72 10.28L311.75 10.16L311.78 10.03L311.81 9.91L311.84 9.79L311.87 9.67L311.9 9.55L311.92 9.43L311.95 9.31L311.98 9.19L312.01 9.07L312.03 8.96L312.06 8.84L312.09 8.73L312.12 8.61L312.14 8.5L312.17 8.38L312.2 8.27L312.22 8.16L312.25 8.05L312.28 7.94L312.3 7.83L312.33 7.73L312.37 7.58L312.42 7.46L312.49 7.36L312.57 7.27L312.66 7.2L312.77 7.14L312.89 7.11L313.02 7.08L313.17 7.07L313.32 7.08L313.47 7.1L313.64 7.13L313.81 7.17L313.99 7.22L314.17 7.28L314.36 7.35L314.54 7.44L314.73 7.52L314.92 7.62L315.11 7.73L315.3 7.84L315.49 7.95L315.67 8.07L315.85 8.2L316.03 8.33L316.2 8.46L316.36 8.59L316.52 8.73L316.66 8.86L316.8 9L316.93 9.13L317.04 9.27L317.15 9.4L317.24 9.53L317.31 9.66L317.38 9.78L317.42 9.9L317.45 10.02L317.46 10.12L317.45 10.23L317.38 10.55L317.31 10.87L317.23 11.19L317.16 11.52L317.09 11.84L317.02 12.16L316.94 12.49L316.87 12.81L316.8 13.14L316.72 13.46L316.65 13.79L316.57 14.11L316.5 14.44L316.43 14.76L316.35 15.09L316.28 15.42L316.21 15.75L316.14 16.07L316.06 16.4L315.99 16.73L315.92 17.06L315.85 17.39L315.78 17.71L315.71 18.04L315.64 18.37L315.57 18.7L315.51 19.03L315.44 19.36L315.37 19.69L315.31 20.02L315.24 20.35L315.18 20.68L315.12 21.01L315.06 21.34L315 21.67L314.94 22L314.88 22.33L314.82 22.66L314.77 22.99L314.71 23.32L314.84 23.05L314.96 22.79L315.09 22.52L315.21 22.25L315.34 21.98L315.46 21.72L315.59 21.45L315.72 21.18L315.84 20.91L315.97 20.65L316.1 20.38L316.22 20.11L316.35 19.85L316.48 19.58L316.61 19.32L316.74 19.05L316.87 18.79L317 18.52L317.13 18.26L317.26 17.99L317.39 17.73L317.52 17.47L317.66 17.21L317.79 16.94L317.92 16.68L318.06 16.42L318.2 16.16L318.34 15.9L318.47 15.64L318.61 15.39L318.75 15.13L318.9 14.87L319.04 14.62L319.18 14.36L319.33 14.11L319.47 13.85L319.62 13.6L319.77 13.35L319.92 13.1L320.07 12.85L320.35 12.39L320.63 11.96L320.92 11.57L321.21 11.2L321.51 10.86L321.8 10.56L322.1 10.29L322.4 10.04L322.7 9.82L322.99 9.64L323.29 9.48L323.58 9.35L323.87 9.25L324.16 9.18L324.44 9.14L324.72 9.12L324.99 9.13L325.26 9.17L325.52 9.24L325.77 9.33L326.01 9.45L326.25 9.6L326.47 9.77L326.69 9.97L326.89 10.2L327.08 10.45L327.26 10.73L327.43 11.03L327.58 11.36L327.72 11.71L327.84 12.08L327.95 12.48L328.04 12.91L328.12 13.36L328.17 13.83L328.21 14.32L328.23 14.84L328.23 15.38L328.21 15.95L328.17 16.54L328.16 16.64L328.14 16.76L328.13 16.89L328.11 17.03L328.09 17.18L328.07 17.35L328.05 17.53L328.03 17.71L328.01 17.91L327.98 18.11L327.95 18.33L327.92 18.55L327.89 18.78L327.86 19.02L327.83 19.26L327.8 19.52L327.76 19.78L327.73 20.04L327.7 20.31L327.66 20.58L327.62 20.86L327.59 21.15L327.55 21.43L327.51 21.72L327.48 22.01L327.44 22.31L327.4 22.6L327.37 22.9L327.33 23.2L327.29 23.5L327.26 23.8L327.22 24.1L327.19 24.4L327.16 24.69L327.12 24.99L327.09 25.28L327.06 25.57L327.03 25.86L327 26.14L326.98 26.42L326.96 26.65L326.94 26.87L326.93 27.09L326.91 27.3L326.9 27.51L326.89 27.71L326.88 27.9L326.87 28.09L326.87 28.26L326.87 28.43L326.86 28.59L326.87 28.75L326.87 28.89L326.88 29.02L326.89 29.15L326.9 29.26L326.92 29.36L326.94 29.45L326.96 29.53L326.99 29.6L327.02 29.66L327.06 29.7L327.09 29.73L327.14 29.75L327.19 29.76L327.24 29.75L327.29 29.72L327.36 29.69L327.42 29.63L327.49 29.56L327.57 29.48L327.65 29.38L327.74 29.26L327.83 29.13L327.93 28.98L328.04 28.81L328.15 28.63L328.27 28.43L328.39 28.21L328.52 27.96L328.62 27.79L328.72 27.61L328.83 27.43L328.93 27.24L329.04 27.04L329.15 26.84L329.27 26.63L329.38 26.42L329.5 26.19L329.62 25.97L329.75 25.73L329.87 25.49L330 25.24L330.13 24.99L330.27 24.73L330.4 24.46L330.54 24.19L330.68 23.91L330.83 23.62L330.98 23.32L331.13 23.02L331.28 22.71L331.44 22.39L331.6 22.07L331.76 21.74L331.93 21.4L332.1 21.05L332.27 20.69L332.45 20.33L332.62 19.96L332.81 19.58L332.99 19.2L333.18 18.81L333.37 18.4L333.57 17.99L333.77 17.58L333.97 17.15L334.17 16.72L334.38 16.27L334.59 15.82L334.66 15.52L334.73 15.22L334.81 14.92L334.9 14.63L334.99 14.34L335.09 14.05L335.19 13.77L335.31 13.49L335.42 13.21L335.55 12.94L335.68 12.67L335.82 12.41L335.96 12.16L336.11 11.91L336.27 11.66L336.43 11.43L336.6 11.19L336.77 10.97L336.95 10.75L337.14 10.54L337.33 10.33L337.53 10.14L337.74 9.95L337.95 9.77L338.16 9.6L338.38 9.43L338.61 9.28L338.85 9.14L339.09 9L339.33 8.87L339.58 8.76L339.84 8.65L340.1 8.56L340.37 8.47L340.64 8.4L340.92 8.34L341.21 8.28L341.5 8.24L341.79 8.22L342.09 8.2L342.41 8.2L342.73 8.21L343.04 8.23L343.35 8.27L343.65 8.31L343.94 8.37L344.24 8.44L344.52 8.52L344.8 8.62L345.08 8.72L345.35 8.83L345.61 8.96L345.86 9.09L346.11 9.23L346.36 9.39L346.59 9.55L346.82 9.72L347.05 9.9L347.26 10.09L347.47 10.29L347.67 10.49L347.86 10.7L348.04 10.92L348.21 11.15L348.38 11.39L348.54 11.63L348.69 11.87L348.83 12.13L348.96 12.39L349.08 12.66L349.19 12.93L349.29 13.2L349.38 13.49L349.46 13.77L349.53 14.06L349.59 14.36L349.64 14.66L349.67 14.96L349.7 15.27L349.71 15.58L349.84 15.67L349.95 15.75L350.06 15.84L350.16 15.94L350.25 16.04L350.34 16.14L350.42 16.25L350.5 16.35L350.57 16.47L350.63 16.58L350.69 16.7L350.75 16.82L350.8 16.94L350.84 17.07L350.88 17.2L350.91 17.33L350.94 17.46L350.97 17.59L350.99 17.72L351.01 17.86L351.02 18L351.03 18.13L351.04 18.27L351.04 18.41L351.04 18.55L351.04 18.69L351.03 18.83L351.03 18.97L351.02 19.11L351 19.25L350.99 19.39L350.97 19.53L350.95 19.66L350.93 19.8L350.91 19.93L350.89 20.07L350.86 20.2L350.84 20.33L350.81 20.46L350.79 20.58L350.91 20.52L351.04 20.45L351.17 20.37L351.3 20.29L351.43 20.2L351.57 20.1L351.7 20L351.84 19.89L351.98 19.77L352.12 19.65L352.27 19.52L352.41 19.38L352.56 19.24L352.71 19.08L352.86 18.92L353.01 18.76L353.17 18.58L353.32 18.4L353.48 18.21L353.64 18.01L353.8 17.8L353.97 17.59L354.13 17.36L354.3 17.13L354.47 16.89L354.64 16.64L354.81 16.38L354.99 16.11L355.16 15.83L355.34 15.54L355.52 15.25L355.7 14.94L355.88 14.63L356.07 14.3L356.25 13.96L356.44 13.62L356.63 13.26L356.82 12.9L357.02 12.52L357.21 12.13L357.18 12.03L357.14 11.93L357.11 11.83L357.07 11.73L357.04 11.63L357.01 11.53L356.98 11.43L356.94 11.33L356.91 11.23L356.88 11.13L356.85 11.03L356.82 10.92L356.79 10.82L356.76 10.72L356.73 10.61L356.7 10.51L356.67 10.41L356.64 10.3L356.62 10.2L356.59 10.09L356.56 9.99L356.54 9.88L356.51 9.78L356.49 9.67L356.46 9.56L356.44 9.46L356.41 9.35L356.39 9.25L356.37 9.14L356.34 9.03L356.32 8.93L356.3 8.82L356.28 8.71L356.26 8.61L356.24 8.5L356.22 8.39L356.2 8.29L356.18 8.18L356.16 8.07L356.14 7.96L356.06 7.25L356.04 6.58L356.07 5.95L356.15 5.37L356.28 4.83L356.45 4.34L356.66 3.89L356.91 3.49L357.2 3.12L357.51 2.79L357.86 2.51L358.24 2.26L358.63 2.05L359.05 1.88L359.49 1.75L359.94 1.65L360.41 1.59L360.88 1.56L361.36 1.57L361.84 1.61L362.33 1.68L362.81 1.78L363.29 1.92L363.75 2.08L364.21 2.28L364.66 2.5L365.08 2.75L365.49 3.03L365.88 3.33L366.24 3.66L366.57 4.02L366.87 4.39L367.14 4.8L367.37 5.22L367.56 5.67L367.7 6.13L367.81 6.62L367.86 7.13L367.86 7.66L367.81 8.2L367.79 8.31L367.76 8.42L367.72 8.52L367.67 8.61L367.61 8.7L367.55 8.78L367.48 8.85L367.41 8.92L367.33 8.98L367.25 9.04L367.16 9.09L367.07 9.13L366.97 9.17L366.88 9.2L366.78 9.22L366.67 9.24L366.57 9.25L366.47 9.26L366.37 9.26L366.26 9.26L366.16 9.25L366.06 9.23L365.96 9.21L365.86 9.19L365.77 9.16L365.68 9.12L365.59 9.08L365.51 9.03L365.44 8.98L365.37 8.92L365.3 8.86L365.24 8.79L365.19 8.72L365.15 8.64L365.11 8.56L365.08 8.48L365.07 8.38L365.06 8.29L365.06 8.19L365.07 8.08L365.06 7.96L365.04 7.84L365 7.71L364.95 7.6L364.88 7.48L364.8 7.37L364.71 7.26L364.61 7.16L364.5 7.06L364.38 6.97L364.25 6.88L364.11 6.8L363.97 6.73L363.83 6.67L363.68 6.61L363.52 6.56L363.37 6.53L363.21 6.5L363.06 6.48L362.9 6.48L362.74 6.48L362.59 6.5L362.44 6.53L362.29 6.57L362.15 6.63L362.02 6.7L361.89 6.79L361.77 6.89L361.66 7.01L361.56 7.15L361.46 7.3L361.38 7.47L361.32 7.65L361.26 7.86L361.22 8.08L361.2 8.33L361.19 8.59L361.19 8.88L361.22 9.18L361.26 9.51L361.3 9.78L361.34 10.05L361.39 10.32L361.45 10.59L361.51 10.86L361.57 11.13L361.64 11.41L361.72 11.68L361.79 11.95L361.87 12.23L361.96 12.5L362.05 12.77L362.14 13.05L362.23 13.32L362.33 13.6L362.43 13.87L362.53 14.15L362.64 14.42L362.75 14.7L362.85 14.97L362.96 15.25L363.08 15.52L363.19 15.8L363.3 16.07L363.42 16.34L363.53 16.61L363.65 16.89L363.76 17.16L363.88 17.43L363.99 17.7L364.1 17.97L364.22 18.24L364.33 18.5L364.44 18.77L364.55 19.04L364.66 19.3L364.77 19.56L364.87 19.82L364.97 20.09L365.07 20.35L365.3 20.21L365.52 20.08L365.75 19.94L365.98 19.8L366.21 19.66L366.44 19.52L366.68 19.38L366.91 19.23L367.14 19.08L367.38 18.93L367.61 18.78L367.85 18.63L368.08 18.47L368.31 18.31L368.55 18.14L368.78 17.97L369.01 17.8L369.23 17.63L369.46 17.45L369.68 17.26L369.91 17.08L370.13 16.89L370.34 16.69L370.56 16.49L370.77 16.28L370.98 16.07L371.18 15.85L371.38 15.63L371.58 15.41L371.77 15.17L371.96 14.93L372.14 14.69L372.32 14.44L372.49 14.18L372.66 13.91L372.82 13.64L372.97 13.37L373.12 13.08L373.27 12.79L373.41 12.49L373.41 12.48L373.42 12.47L373.43 12.45L373.44 12.44L373.45 12.42L373.46 12.41L373.47 12.39L373.48 12.37L373.49 12.35L373.49 12.32L373.5 12.3L373.51 12.28L373.52 12.25L373.53 12.23L373.54 12.2L373.55 12.18L373.56 12.15L373.57 12.12L373.57 12.1L373.59 12.04L373.6 12.02L373.61 11.99L373.62 11.97L373.63 11.94L373.64 11.91L373.65 11.89L373.66 11.86L373.66 11.84L373.67 11.82L373.68 11.8L373.69 11.78L373.7 11.76L373.71 11.74L373.72 11.72L373.73 11.7L373.74 11.69L373.74 11.68L373.75 11.66L373.76 11.65L373.86 11.41L373.96 11.18L374.07 10.96L374.18 10.76L374.31 10.56L374.44 10.38L374.58 10.21L374.73 10.05L374.88 9.9L375.04 9.77L375.2 9.64L375.37 9.53L375.55 9.42L375.73 9.33L375.91 9.25L376.1 9.17L376.3 9.11L376.49 9.06L376.7 9.01L376.9 8.98L377.11 8.95L377.32 8.93L377.54 8.92L377.76 8.92L377.98 8.93L378.2 8.94L378.42 8.96L378.65 8.99L378.88 9.03L379.1 9.08L379.33 9.13L379.56 9.19L379.79 9.25L380.02 9.32L380.25 9.4L380.48 9.48L380.71 9.57L380.93 9.66L381.16 9.76L381.38 9.87L381.53 9.94L381.68 10.01L381.83 10.09L381.98 10.16L382.13 10.24L382.28 10.32L382.42 10.4L382.57 10.48L382.72 10.56L382.86 10.64L383.01 10.72L383.15 10.8L383.3 10.89L383.44 10.97L383.58 11.05L383.73 11.14L383.87 11.22L384.01 11.31L384.16 11.39L384.44 11.56L384.58 11.65L384.73 11.73L384.87 11.81L385.01 11.9L385.16 11.98L385.3 12.07L385.45 12.15L385.59 12.23L385.73 12.31L385.88 12.39L386.03 12.47L386.17 12.55L386.32 12.63L386.47 12.71L386.61 12.79L386.76 12.86L386.91 12.94L387.06 13.01L387.22 13.08L387.47 13.2L387.72 13.32L387.97 13.44L388.22 13.56L388.47 13.68L388.72 13.8L388.97 13.92L389.22 14.04L389.47 14.17L389.97 14.41L390.22 14.54L390.47 14.66L390.73 14.78L390.98 14.91L391.23 15.03L391.48 15.15L391.74 15.27L391.99 15.39L392.25 15.51L392.5 15.63L392.76 15.74L393.01 15.86L393.27 15.97L393.52 16.08L393.78 16.19L394.04 16.3L394.3 16.41L394.56 16.51L394.82 16.62L395.08 16.72L395.34 16.81L395.6 16.91L395.86 17L396.13 17.09L396.39 17.18L396.65 17.26L396.92 17.34L397.19 17.41L397.45 17.49L398.05 17.65L398.65 17.81L399.25 17.95L399.85 18.08L400.46 18.21L401.06 18.32L401.66 18.43L402.27 18.53L402.87 18.61L403.48 18.7L404.08 18.77L404.69 18.83L405.3 18.89L405.91 18.94L406.52 18.98L407.12 19.02L407.73 19.05L408.34 19.08L408.96 19.1L409.57 19.11L410.18 19.12L410.79 19.12L411.4 19.12L412.02 19.12L412.63 19.11L413.24 19.09L413.86 19.08L414.47 19.06L415.09 19.04L415.7 19.01L416.32 18.98L416.93 18.95L417.55 18.92L418.16 18.89L418.78 18.86L419.4 18.82L420.01 18.79L420.63 18.75L421.24 18.71L421.86 18.68L422.43 18.64L423 18.61L423.57 18.58L424.14 18.55L424.71 18.52L425.28 18.5L425.85 18.47L426.42 18.45L426.99 18.43L427.56 18.41L428.12 18.39L428.69 18.37L429.26 18.36L429.83 18.34L430.39 18.33L430.96 18.32L431.53 18.31L432.09 18.3L432.66 18.3L433.23 18.29L433.8 18.29L434.36 18.29L434.93 18.28L435.5 18.28L436.06 18.29L436.63 18.29L437.2 18.29L437.77 18.3L438.33 18.3L438.9 18.31L439.47 18.32L440.04 18.33L440.61 18.34L441.18 18.35L441.75 18.36L442.32 18.38L442.89 18.39L443.46 18.41L444.03 18.42L444.6 18.44L444.88 18.45L445.15 18.47L445.43 18.49L445.7 18.51L445.98 18.54L446.25 18.58L446.53 18.62L446.8 18.66L447.07 18.71L447.34 18.77L447.61 18.83L447.88 18.89L448.15 18.97L448.41 19.04L448.67 19.13L448.94 19.22L449.19 19.31L449.45 19.41L449.7 19.52L449.96 19.63L450.2 19.75L450.45 19.88L450.69 20.01L450.93 20.15L451.17 20.29L451.4 20.44L451.63 20.6L451.86 20.77L452.08 20.94L452.3 21.12L452.51 21.31L452.72 21.5L452.93 21.7L453.13 21.91L453.33 22.13L453.52 22.35L453.71 22.58L453.89 22.82L454.07 23.07L454.24 23.32L454.26 23.36L454.27 23.4L454.29 23.43L454.3 23.47L454.31 23.52L454.32 23.56L454.33 23.6L454.33 23.64L454.34 23.69L454.34 23.73L454.34 23.78L454.35 23.82L454.35 23.87L454.35 23.91L454.35 23.96L454.34 24L454.34 24.05L454.34 24.09L454.34 24.14L454.33 24.18L454.33 24.23L454.32 24.27L454.32 24.32L454.31 24.36L454.3 24.4L454.3 24.44L454.29 24.48L454.29 24.52L454.28 24.56L454.27 24.63L454.26 24.66L454.26 24.69L454.26 24.73L454.25 24.75L454.25 24.78L454.25 24.81L454.24 24.83L454.24 24.85L454.24 24.87L454.19 24.86L454.13 24.85L454.08 24.85L454.02 24.84L453.96 24.83L453.9 24.83L453.84 24.82L453.78 24.82L453.72 24.82L453.66 24.81L453.6 24.81L453.53 24.81L453.47 24.8L453.41 24.8L453.35 24.8L453.29 24.8L453.23 24.79L453.17 24.79L453.11 24.78L453.05 24.78L452.99 24.78L452.94 24.77L452.88 24.76L452.83 24.76L452.77 24.75L452.72 24.74L452.67 24.73L452.62 24.72L452.58 24.71L452.53 24.7L452.49 24.69L452.45 24.68L452.41 24.66L452.38 24.64L452.34 24.63L452.31 24.61L452.28 24.58L452.26 24.56L452.24 24.54L452.22 24.51L452.11 24.35L452 24.2L451.88 24.05L451.77 23.9L451.65 23.76L451.53 23.63L451.4 23.49L451.28 23.37L451.15 23.24L451.02 23.12L450.89 23L450.75 22.89L450.61 22.78L450.48 22.68L450.33 22.58L450.19 22.48L450.05 22.39L449.9 22.3L449.75 22.21L449.6 22.13L449.45 22.05L449.29 21.98L449.14 21.91L448.98 21.84L448.82 21.77L448.66 21.71L448.49 21.65L448.33 21.6L448.17 21.55L448 21.5L447.83 21.45L447.66 21.41L447.49 21.37L447.32 21.34L447.15 21.3L446.97 21.27L446.8 21.24L446.62 21.22L446.44 21.2L446.27 21.18L445.86 21.15L445.46 21.13L445.06 21.1L444.66 21.07L444.26 21.05L443.85 21.02L443.45 20.99L443.05 20.97L442.65 20.94L442.25 20.92L441.85 20.89L441.44 20.87L441.04 20.85L440.64 20.82L440.24 20.8L439.84 20.78L439.43 20.76L439.03 20.74L438.63 20.72L438.23 20.7L437.83 20.69L437.43 20.67L437.02 20.65L436.62 20.64L436.22 20.63L435.82 20.61L435.42 20.6L435.01 20.59L434.61 20.58L434.21 20.58L433.81 20.57L433.41 20.57L433.01 20.56L432.6 20.56L432.2 20.56L431.8 20.56L431.4 20.56L431 20.57L430.59 20.58L430.19 20.58L429.69 20.59L429.19 20.61L428.69 20.62L428.2 20.64L427.7 20.66L427.2 20.68L426.7 20.7L426.21 20.73L425.71 20.75L425.21 20.78L424.71 20.81L424.22 20.84L423.72 20.87L423.23 20.9L422.73 20.94L422.23 20.97L421.74 21L421.24 21.04L420.75 21.07L420.25 21.1L419.76 21.14L419.26 21.17L418.77 21.2L418.27 21.23L417.77 21.27L417.28 21.3L416.78 21.32L416.29 21.35L415.79 21.38L415.29 21.4L414.8 21.43L414.3 21.45L413.8 21.47L413.3 21.48L412.81 21.5L412.31 21.51L411.81 21.52L411.31 21.53L410.81 21.53L410.31 21.54L409.57 21.53L408.83 21.52L408.1 21.5L407.36 21.48L406.63 21.45L405.9 21.41L405.17 21.36L404.45 21.3L403.73 21.23L403.01 21.15L402.29 21.07L401.58 20.97L400.86 20.87L400.16 20.75L399.45 20.63L398.75 20.49L398.05 20.34L397.36 20.18L396.67 20.01L395.98 19.82L395.3 19.63L394.62 19.42L393.94 19.2L393.27 18.96L392.6 18.72L391.94 18.46L391.28 18.18L390.63 17.89L389.98 17.59L389.33 17.27L388.69 16.93L388.06 16.58L387.43 16.22L386.8 15.84L386.18 15.44L385.57 15.03L384.96 14.6L384.36 14.15L383.76 13.68L383.17 13.2L383.14 13.18L383.11 13.15L383.09 13.12L383.06 13.1L383.03 13.07L383 13.05L382.97 13.03L382.94 13L382.91 12.98L382.88 12.95L382.85 12.93L382.82 12.91L382.79 12.89L382.75 12.87L382.72 12.84L382.69 12.82L382.66 12.8L382.62 12.78L382.59 12.76L382.56 12.74L382.52 12.72L382.49 12.7L382.46 12.68L382.42 12.66L382.39 12.64L382.35 12.62L382.32 12.61L382.28 12.59L382.25 12.57L382.21 12.55L382.18 12.53L382.14 12.51L382.11 12.49L382.07 12.48L382.04 12.46L382 12.44L381.97 12.42L381.93 12.4L381.89 12.39L381.86 12.37L381.7 12.28L381.53 12.2L381.37 12.12L381.21 12.05L381.04 11.98L380.87 11.91L380.71 11.85L380.54 11.79L380.37 11.74L380.2 11.7L380.04 11.66L379.87 11.62L379.7 11.59L379.53 11.57L379.37 11.55L379.2 11.54L379.03 11.53L378.87 11.53L378.7 11.54L378.54 11.55L378.38 11.57L378.22 11.59L378.06 11.63L377.9 11.67L377.74 11.71L377.59 11.77L377.43 11.83L377.28 11.89L377.13 11.97L376.99 12.05L376.84 12.14L376.7 12.24L376.56 12.35L376.42 12.46L376.29 12.58L376.16 12.71L376.03 12.85L375.91 13L375.79 13.16L375.67 13.32L375.66 13.34L375.65 13.37L375.63 13.4L375.61 13.43L375.58 13.51L375.56 13.55L375.53 13.6L375.51 13.65L375.48 13.7L375.45 13.76L375.43 13.82L375.4 13.88L375.36 13.94L375.33 14L375.3 14.07L375.27 14.13L375.23 14.2L375.2 14.27L375.16 14.33L375.13 14.4L375.09 14.47L375.05 14.53L375.02 14.6L374.98 14.66L374.94 14.73L374.91 14.79L374.87 14.85L374.83 14.91L374.8 14.96L374.76 15.02L374.73 15.07L374.69 15.11L374.66 15.16L374.63 15.2L374.59 15.24L374.56 15.27L374.53 15.3L374.5 15.32L374.48 15.35L374.3 15.59L374.11 15.84L373.93 16.08L373.74 16.31L373.55 16.54L373.35 16.77L373.16 16.99L372.96 17.21L372.76 17.42L372.55 17.63L372.35 17.84L372.14 18.04L371.93 18.24L371.72 18.44L371.51 18.63L371.3 18.82L371.08 19.01L370.86 19.19L370.65 19.37L370.43 19.54L370.21 19.71L369.99 19.88L369.77 20.05L369.55 20.21L369.33 20.37L369.1 20.53L368.88 20.69L368.66 20.84L368.44 20.99L368.22 21.14L367.99 21.28L367.77 21.43L367.55 21.57L367.33 21.7L367.11 21.84L366.89 21.97L366.67 22.1L366.46 22.23L366.24 22.36L366.02 22.49L366.1 22.79L366.18 23.11L366.25 23.45L366.32 23.81L366.39 24.17L366.45 24.55L366.5 24.95L366.55 25.35L366.59 25.76L366.63 26.18L366.65 26.6L366.67 27.03L366.68 27.46L366.69 27.89L366.68 28.33L366.66 28.76L366.63 29.19L366.59 29.62L366.54 30.05L366.47 30.46L366.39 30.88L366.3 31.28L366.2 31.67L366.08 32.05L365.94 32.42L365.79 32.78L365.62 33.12L365.44 33.45L365.24 33.75L365.02 34.04L364.78 34.31L364.53 34.55L364.25 34.78L363.96 34.98L363.64 35.15L363.3 35.29L362.95 35.41L362.57 35.5L362.16 35.56L361.74 35.58L361.21 35.58L360.7 35.55L360.22 35.48L359.77 35.37L359.34 35.24L358.94 35.08L358.56 34.88L358.21 34.67L357.89 34.42L357.59 34.15L357.32 33.86L357.08 33.55L356.86 33.22L356.67 32.87L356.5 32.51L356.36 32.12L356.25 31.73L356.16 31.32L356.1 30.91L356.07 30.48L356.06 30.05L356.08 29.6L356.13 29.16L356.2 28.71L356.3 28.26L356.43 27.81L356.58 27.36L356.76 26.91L356.97 26.46L357.2 26.02L357.46 25.59L357.75 25.17L358.06 24.75L358.41 24.35L358.77 23.96L359.17 23.58L359.59 23.22L360.04 22.88L360.52 22.56L361.02 22.25L360.98 22.06L360.93 21.88L360.88 21.69L360.83 21.51L360.78 21.32L360.73 21.14L360.67 20.96L360.61 20.78L360.56 20.59L360.5 20.41L360.44 20.23L360.38 20.05L360.31 19.88L360.25 19.7L360.18 19.52L360.12 19.34L360.05 19.16L359.99 18.99L359.92 18.81L359.85 18.63L359.78 18.46L359.71 18.28L359.64 18.11L359.57 17.93L359.5 17.75L359.42 17.58L359.35 17.4L359.28 17.23L359.21 17.05L359.13 16.88L359.06 16.7L358.99 16.52L358.91 16.35L358.84 16.17L358.77 16L358.69 15.82L358.62 15.64L358.55 15.46L358.48 15.29L358.4 15.11L358.25 15.38L358.09 15.65L357.93 15.92ZM358.7 28.68L358.45 30.35L359.36 31.06L360.12 30.47L360.76 28.99L361.17 27.09L361.26 25.23L359.76 26.74L358.7 28.68ZM341.98 13.2L340.75 14.71L339.88 16.78L339.41 19.13L339.4 21.46L339.9 23.49L340.98 24.92L342.69 25.46L343.34 25.39L343.96 25.2L344.55 24.89L345.11 24.5L345.64 24.03L346.14 23.52L346.62 22.96L345.95 22.34L345.39 21.62L344.94 20.81L344.64 19.96L344.49 19.08L344.51 18.21L344.71 17.37L344.84 16.93L345.03 16.52L345.26 16.15L345.54 15.83L345.87 15.57L346.23 15.36L346.62 15.23L346.26 14.27L345.78 13.47L345.2 12.87L344.53 12.5L343.76 12.41L342.91 12.63L341.98 13.2ZM292.05 14.96L291.02 17.69L290.57 20.6L290.55 23.2L291.93 21.27L293.22 19.02L294.39 16.62L295.45 14.23L296.38 12.01L293.78 12.9L292.05 14.96ZM347.97 19.36L347.77 19.47L347.57 19.51L348.05 20.23L348.12 19.96L348.17 19.68L348.21 19.37L348.29 19.04L348.16 19.21L347.97 19.36Z" id="daBOfQm82"></path></defs><g><g><g><use xlink:href="#a33Br37ULX" opacity="1" fill="#ffffff" fill-opacity="1"></use><g><use xlink:href="#a33Br37ULX" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#b1wo3AJ1nn" opacity="1" fill="#dbc88e" fill-opacity="1"></use><g><use xlink:href="#b1wo3AJ1nn" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#aiCUc2mrk" opacity="1" fill="#dbc88e" fill-opacity="1"></use><g><use xlink:href="#aiCUc2mrk" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#b1rSZFoSlf" opacity="1" fill="url(#gradientb8LshbB9K)"></use><g><use xlink:href="#b1rSZFoSlf" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#f1iHFbza4l" opacity="1" fill="#ffffff" fill-opacity="1"></use><g><use xlink:href="#f1iHFbza4l" opacity="1" fill-opacity="0" stroke="#ffffff" stroke-width="1" stroke-opacity="1"></use></g></g><g><use xlink:href="#e3r9KQ8Zu" opacity="1" fill="#dbc88e" fill-opacity="1"></use><g><use xlink:href="#e3r9KQ8Zu" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#bPdgjcKJz" opacity="1" fill="#dbc88e" fill-opacity="1"></use><g><use xlink:href="#bPdgjcKJz" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#dy4R0iZm" opacity="1" fill="#dbc88e" fill-opacity="1"></use><g><use xlink:href="#dy4R0iZm" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#akTwt95qh" opacity="1" fill="#dbc88e" fill-opacity="1"></use><g><use xlink:href="#akTwt95qh" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#daBOfQm82" opacity="1" fill="#ffffff" fill-opacity="1"></use><g><use xlink:href="#daBOfQm82" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g></g></g></svg><style>
+                                    
+                                    
+                                    
+                                    .logo-container {
+                                            width: 210px;                                     
+                                    }
+                                    
+
+                                    .logo-container svg{
+                                        max-width: 86%;
+                                        margin-top: 5%;
+                                        margin-left: -3px;}
+
+                                    body.header-encolhido .logo-container{
+                                        width:140px;
+                                        margin-top: -92px;                                        
+                                    }
+                                    
+                                    .site-header__breadcrumb ul.breadcrumb{
+                                        margin-left: 215px;
+                                    }
+
+                                    body.mobile .logo-container {
+                                        width: 120px;
+                                        margin-top: -92px;
+                                    }
+
+                                    @media (min-width: 992px) and (max-width: 1199px) {
+                                        .logo-container {
+                                                width: 190px;
+                                                height: auto;
+                                        }
+                                        
+                                        body.header-encolhido .logo-container {                                      
+                                            margin-top: -106px;
+                                        }
+                                    }
+                                    
+                                    </style>                                
+                                
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <nav class="navbar site-header__faixa1">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a  class="icone-mobile" type="button" aria-expanded="false">
+                                <span>Menu Toggle</span>
+                            </a>
+                        </div>
+
+                        <div id="menu-principal" class="menu-principal">
+                            <div class="site-header__busca ">
+                                <form role="search" method="get" class="searchform group site-header__busca form-inline" action="https://www.uerj.br/">
+    <label>
+        <!--<span class="offscreen">Pesquisar por:</span>-->
+        <input type="search" class="search-field form-control"
+               placeholder="Buscar"
+               value="" name="s"
+               title="Pesquisar por:" />
+    </label>
+    <input hidden type="image" alt="Submit search query"
+           src="https://www.uerj.br/wp-content/themes/uerj/images/search-icon.png">
+</form>
+                            </div>
+
+                            <div class="menu-principal-container"><ul id="menu-principal-navegacao" class="nav navbar-nav menu-principal-navegacao navbar-right"><li id="menu-item-365" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-365 dropdown"><a title="A Uerj" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">A Uerj <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-16 dropdown"><a title="A Universidade" href="https://www.uerj.br/a-uerj/a-universidade/">A Universidade</a></li>
+	<li id="menu-item-103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-103 dropdown"><a title="Institucional" href="https://www.uerj.br/a-uerj/institucional/">Institucional</a></li>
+	<li id="menu-item-227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227"><a title="Comunidade" href="https://www.uerj.br/a-uerj/comunidade/">Comunidade</a></li>
+	<li id="menu-item-335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-335"><a title="Campi" href="https://www.uerj.br/a-uerj/campi/">Campi</a></li>
+	<li id="menu-item-338" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-338"><a title="Unidades de saúde" href="https://www.uerj.br/a-uerj/servicos-de-saude/">Unidades de saúde</a></li>
+	<li id="menu-item-1871" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1871"><a title="Ouvidoria" target="_blank" href="http://www.ouvidoria.uerj.br">Ouvidoria</a></li>
+</ul>
+</li>
+<li id="menu-item-361" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-361 dropdown"><a title="Ensino" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Ensino <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-362"><a title="Ensino na UERJ" href="https://www.uerj.br/ensino/ensino-na-uerj/">Ensino na UERJ</a></li>
+	<li id="menu-item-378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-378"><a title="Cursos de Graduação" href="https://www.uerj.br/ensino/cursos-de-graduacao/">Cursos de Graduação</a></li>
+	<li id="menu-item-2051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2051"><a title="Cursos de Pós-Graduação" href="https://www.uerj.br/pesquisa/cursos-de-pos-graduacao/">Cursos de Pós-Graduação</a></li>
+	<li id="menu-item-385" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-385"><a title="Educação Básica" href="https://www.uerj.br/ensino/educacao-basica/">Educação Básica</a></li>
+	<li id="menu-item-390" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-390"><a title="Ensino a distância" href="https://www.uerj.br/ensino/ensino-a-distancia/">Ensino a distância</a></li>
+	<li id="menu-item-393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-393"><a title="Estude na Uerj" href="https://www.uerj.br/ensino/estude-na-uerj/">Estude na Uerj</a></li>
+	<li id="menu-item-413" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-413"><a title="Departamentos SR1" href="https://www.uerj.br/ensino/departamentos/">Departamentos SR1</a></li>
+	<li id="menu-item-527" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-527"><a title="Calendário Acadêmico" href="https://www.uerj.br/ensino/calendario-academico/">Calendário Acadêmico</a></li>
+</ul>
+</li>
+<li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-424 dropdown"><a title="Pesquisa" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Pesquisa <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-423"><a title="Pesquisa na Uerj" href="https://www.uerj.br/pesquisa/pesquisa-na-uerj/">Pesquisa na Uerj</a></li>
+	<li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-431"><a title="Cursos de Pós-Graduação" href="https://www.uerj.br/pesquisa/cursos-de-pos-graduacao/">Cursos de Pós-Graduação</a></li>
+	<li id="menu-item-444" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-444"><a title="Departamentos SR2" href="https://www.uerj.br/pesquisa/departamentos/">Departamentos SR2</a></li>
+</ul>
+</li>
+<li id="menu-item-453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-453 dropdown"><a title="Extensão" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Extensão <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-454" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-454"><a title="Extensão na Uerj" href="https://www.uerj.br/extensao/extensao-na-uerj/">Extensão na Uerj</a></li>
+	<li id="menu-item-462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-462"><a title="Espaços Culturais" href="https://www.uerj.br/extensao/espacos-culturais/">Espaços Culturais</a></li>
+	<li id="menu-item-471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-471"><a title="Departamentos SR3" href="https://www.uerj.br/extensao/departamentos/">Departamentos SR3</a></li>
+</ul>
+</li>
+<li id="menu-item-6272" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6272 dropdown"><a title="Serviços TIC" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Serviços TIC <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-6620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6620"><a title="ID Único Uerj" href="https://www.uerj.br/servicos-tic/id-unico/">ID Único Uerj</a></li>
+	<li id="menu-item-6275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6275"><a title="Wi-Fi Uerj" href="https://www.uerj.br/servicos-tic/wi-fi-uerj/">Wi-Fi Uerj</a></li>
+	<li id="menu-item-6619" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6619"><a title="Eduroam" href="https://www.uerj.br/servicos-tic/eduroam/">Eduroam</a></li>
+	<li id="menu-item-6809" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6809"><a title="CAFe" href="https://www.uerj.br/servicos-tic/cafe/">CAFe</a></li>
+	<li id="menu-item-6274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6274 dropdown"><a title="Sistemas Web" href="https://www.uerj.br/servicos-tic/sistemas-web/">Sistemas Web</a></li>
+	<li id="menu-item-6273" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6273 dropdown"><a title="Sistemas Corporativos" href="https://www.uerj.br/servicos-tic/sistemas-corporativos/">Sistemas Corporativos</a></li>
+</ul>
+</li>
+<li id="menu-item-9158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9158 dropdown"><a title="Webmail" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Webmail <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-7967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7967"><a title="Servidor/Institucional" href="https://www.uerj.br/webmail/">Servidor/Institucional</a></li>
+	<li id="menu-item-9159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9159"><a title="Aluno" href="https://www.uerj.br/aluno/">Aluno</a></li>
+</ul>
+</li>
+<li id="menu-item-11255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11255"><a title="Transparência" target="_blank" href="https://www.transparencia.uerj.br"><span class="glyphicon Transparência Uerj"></span>&nbsp;Transparência</a></li>
+</ul></div>                            <div class="hidden-lg hidden-md">
+                                <ul id="menu-social" class="nav navbar-nav menu-social-media navbar-right"><li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a title="Facebook" target="_blank" href="https://www.facebook.com/UERJoficial/"><i class="_mi dashicons dashicons-facebook-alt" aria-hidden="true" style="font-size:1.7em;"></i><span class="visuallyhidden">Facebook</span></a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a title="Twitter" target="_blank" href="https://twitter.com/UERJ_oficial"><i class="_mi dashicons dashicons-twitter" aria-hidden="true" style="font-size:1.5em;vertical-align:text-bottom;"></i><span class="visuallyhidden">Twitter</span></a></li>
+<li id="menu-item-12" class="youtube-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCBwzg_NTU0FKg6mdP988B6Q"><img width="26" height="18" src="https://www.uerj.br/wp-content/uploads/2020/06/youtube_social_icon_white.png" class="_mi _image" alt="" aria-hidden="true" style="vertical-align:bottom;" /><span class="visuallyhidden">Youtube</span></a></li>
+<li id="menu-item-1729" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1729"><a title="Instagram" target="_blank" href="https://www.instagram.com/uerj.oficial/?hl=pt-br"><i class="_mi fa fa-instagram" aria-hidden="true" style="font-size:1.6em;"></i><span class="visuallyhidden">Instagram</span></a></li>
+</ul>                                <br>
+                                <div class="clearfix" style="border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 15px"></div>
+                                <div class="text-right" style="color: #fff;  font-size: 1.5rem; font-weight:200">Opções de Acessibilidade:</div>
+                                <div class="icones-acessibilidade-mobile pull-right">
+                                   <!--Ícones são apendados aqui via jquery-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <nav class="navbar site-header__faixa2">
+                    <div class="container" style="position: relative">
+                        <div class="icones-acessibilidade pull-right">
+
+                            <a href="#" id="aciona_acesssibilidade" title="Ícone acessibilidade">
+                                <i class="fa fa-wheelchair pull-right icone-acessibilidade"></i>
+                            </a>
+
+                            <div id="uerj-vlibras" title="Tradução em Libras">
+                                <a class="logo-vlibras" href="#"></a>
+                            </div>
+                            <a href="#" id="alto_contraste" title="Alto Contraste">
+                                <i class="pull-right icone-acessibilidade"></i>
+                            </a>
+                            <a href="#" id="aumenta_fonte" title="Aumentar Fonte">
+                                <i class="pull-right icone-acessibilidade"></i>
+                            </a>
+                            <a href="#" id="diminui_fonte" title="Diminuir Fonte">
+                                <i class="pull-right icone-acessibilidade"></i>
+                            </a>
+                            <a href="#" id="reset_fonte" title="Reiniciar tamanho da fonte">
+                                <i class="pull-right icone-acessibilidade"></i>
+                            </a>
+                        </div>
+                        <div class="link-vlibras">
+                            <img src="https://www.uerj.br/wp-content/themes/uerj/img/vlibras.gif">
+                            <span>Acessível na Língua Brasileira de Sinais (LIBRAS) <a target="_blank" href="http://www.vlibras.gov.br">VLibras</a></span>
+                        </div>
+                        <script>
+                            jQuery(document).ready(function ($) {
+
+//                                  
+                            });
+                        </script>
+                        <style>
+
+                            #alto_contraste i{
+                                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDVGM0NFQUQ2OUMwMTFFODgxQkVDNTU5QzQxMzkyRTAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDVGM0NFQUU2OUMwMTFFODgxQkVDNTU5QzQxMzkyRTAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpENUYzQ0VBQjY5QzAxMUU4ODFCRUM1NTlDNDEzOTJFMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpENUYzQ0VBQzY5QzAxMUU4ODFCRUM1NTlDNDEzOTJFMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuYC04oAAAFRSURBVHjapJTdSgJBGIan7QfBMs9DTOkgQlosuoboMjzxJoz0oOMyq4MOpFvosG4htDIyPRKrGxDsx0ya3g+/gWHY2aXdDx6W2d155t2f+YSUUniwCY5AG3zJadHxGVSB6zXPPLHEkqH0r3dwAhI22Qq4NSZ9c7o3i7QJUqZsETS0mz7AIVgHs2DfJ+W9Sqhkx9rFV7BjPP5BwGOfKdmG9pIp0ZbHyy0HyMb00RwhRBHExLSq4E78v+bJQ7I9PjEGlyJ87ZIsw4MeE7ZWHY5INQC/EWRzJPvhQRI4EWQTmtznQZaiRpC9kOyaBwugEEF2Q/9QDoy0PeeG/M9cSvYELtgeB1cgb6wqA1LVQUutnOA9poq6RgWsgRlQ8kn1CJJm10hxF9CLtlkL9C2iB5C29bNlUOM96lef4FwlsskUeW5+Ha0J0EfqglOw7TXvT4ABANDB+Dul2ZDDAAAAAElFTkSuQmCC') center center no-repeat;
+                            }
+                            #aumenta_fonte i{
+                                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAATCAYAAACKsM07AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NEYxMTdFMTU2OUJGMTFFODk4NTdBNjg3QUFGQjYyRDEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NEYxMTdFMTY2OUJGMTFFODk4NTdBNjg3QUFGQjYyRDEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0RjExN0UxMzY5QkYxMUU4OTg1N0E2ODdBQUZCNjJEMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0RjExN0UxNDY5QkYxMUU4OTg1N0E2ODdBQUZCNjJEMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PplZ7boAAAG/SURBVHjalJS/L0NRFMfv09Jo0lQk3YguIrHoRghCRYT6kUYwmC1ildhsBuEPIAazka1BGoNBIoqgCQbC0BhKEwR9z/fVvelxvPuqJ/nkvfPj3nPPuT+EZVnCgXGQA2+EUxDQxNeDtByzDgzlE5oB25azxDTxvSTmFniVr0L8lRDoFM4S19g/yP8n+FKK1yG4GwQ1E/UDP3gFDWAZ1IBaElMHEsAEKadyN0m5eZBlbYrKuBnLRUzTLMBbZK8uSvR7sMpixuT3WbiIYRg/FHa6KD1gj+g7YA5cA4+03YBmqU/KdjaCWel/AksgDy54e1ZYpfPSfsns7WxcG/GlqY+2yF7RAKs0Kb8HzD7C9Cr2Xzw8JFvE3huykjtQLX0TrIJz4CFj/WARrIE4rYAmWGCTbBBfELzQQyIXJEpB70GMlV0Jpu0DIfUsCKhDAobBiSglMlMYvFvlyRF9c3SoTbbPvk+UJxHQVCpItWiI2R/BA787oEW2To0dBFelWhQCGVb+qKbkBItL/qdFffIFVZIDh5r17DK9FYTdCrATTLHn4hhkNPH7TPc5tPd3AkzeQXT7/dhyiU+BM2brckvwLcAAI8/Ca+xFtQoAAAAASUVORK5CYII=') center center no-repeat;
+                            }
+                            #diminui_fonte i{
+                                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAATCAYAAACKsM07AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDI0NjU4Qzc2OUMwMTFFOEE4RTk5MEUyNDAwRjIwRDkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDI0NjU4Qzg2OUMwMTFFOEE4RTk5MEUyNDAwRjIwRDkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowMjQ2NThDNTY5QzAxMUU4QThFOTkwRTI0MDBGMjBEOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowMjQ2NThDNjY5QzAxMUU4QThFOTkwRTI0MDBGMjBEOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvinuFsAAAGCSURBVHjanJQ9SwNBEIb3jBIUgjapTScIYjpBUZGI+BE/EFELaztb/4Tof7C21EaCSrCwCIhfqIU2ihapIgFjk1vfPedwHXfXWwceLjM7udl5d26FlFIYWAJ10NC4AhlLvhXbwr40W9G3QIv4bVkwLMy2KDyt1RAbBZ2W/AnQAd5BN9gCXY73X5ja2tUkaYIak6lAeevSYWEYRnCJ1O4Kmv8MdljOAj3fXNIEQfBFdNLfNgaONf8AbIAHkKLYI+glf4UkkpY6t1yebdbpJsXvWHzwP1OkdjTJdlCm5ymLzyUeI61aXp2Ntssn0E5ry6yDG5Dy7WBKnY3ml0CDfh+CuramzqDP9zsosrU2sKYVrYFMPCRgNprzhBLlwIf0swoIkkqkZj/teQvkQU9SiWZY/BW88G8H9JN08X+nwf1fEmVBlbU/b2m5xPLKSSQapxs0NjUtZ5b9HDF/AORcDagCq+y6OAdVS/4J89MGeX8WwMuHNL8J9hz5l+CaxUZcBT4FGAD2HGVf/AoSogAAAABJRU5ErkJggg==') center center no-repeat;
+                            }
+                            #reset_fonte i{
+                                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAATCAYAAACKsM07AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjEwQjQyODg2OUMwMTFFOEE4N0FFOTkzRkU0RkE3OUUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjEwQjQyODk2OUMwMTFFOEE4N0FFOTkzRkU0RkE3OUUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyMTBCNDI4NjY5QzAxMUU4QTg3QUU5OTNGRTRGQTc5RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyMTBCNDI4NzY5QzAxMUU4QTg3QUU5OTNGRTRGQTc5RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvHVJt8AAAFYSURBVHjaYvj//z8DFhwCxJ+B+DsSvgTEvDjU48S4JDb/xw58SLWAiQETiAKxLQN2EMRAIsBmgT0Q8+NQ7wbEXJRa4IvE/gfEH5H40kBsSYkFINc5I/EfA3EfmpoAksIILVIc0SIVFNkKQPwHSewOELORG8k+aPzDQPwAiG8jiSkDsQk5QcQMxB5o8geRLEIGfuQEkQEQ/0MKikdAzAmVC0MLuitAzExqEHkCMSMSfzcQf4eydwLxZyQ5LSDWJcYDLHjCnxWIY5As/QDEvFA2IzQ5XyA2iEAp5cd/0sBpIGYkNohAaZ+dxFLAAIjViQ0ibzTxZ0D8FE0MFCz60KCD6fUC4huEgkgUiF+hed8fh5d3o6k7SEwQuUBLUBgApZbjONyzF41vDsQKhDJaBLhiQIBzQPwKh/r9aHx2LMGLagHQcGsk/l8gXo1H/UUgvowmZofPAoAAAwA0lAVcTbH0rwAAAABJRU5ErkJggg==') center center no-repeat;
+                            }
+
+                            /* VLibras */
+                            #uerj-vlibras{
+                                margin-top: 7px;
+                                margin-left: 7px;
+                                float: right;
+                            }
+
+                            #uerj-vlibras .logo-vlibras{
+                                background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOSIgaGVpZ2h0PSIyOSI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI2Ni4yNTAzOCwtMjMxLjY4NTk0KSI+PHBhdGggZD0ibTI5Mi40IDIzNy44Yy0wLjEgMC0wLjItMC4xLTAuMi0wLjIgMC0xLTEuOC0yLjYtNC4xLTIuNmwtMi41IDAtNC44IDMuNi00LjgtMy42LTIuNSAwYy0yLjQgMC00LjEgMS42LTQuMSAyLjYgMCAwLjEtMC4xIDAuMi0wLjIgMC4yLTAuMSAwLTAuMi0wLjEtMC4yLTAuMiAwLTEuNCAyLjEtMy4xIDQuNi0zLjFsMi40IDAgMC42LTAuNmMwLjEtMC4xIDAuMi0wLjEgMC4zIDBsMy45IDQuNiAzLjktNC42YzAuMS0wLjEgMC4yLTAuMSAwLjMgMGwwLjYgMC42IDIuNCAwYzIuNSAwIDQuNiAxLjcgNC42IDMuMSAwIDAuMS0wLjEgMC4yLTAuMiAwLjJ6bS0zIDEwLjRjLTAuMSAwLjctMC4yIDEtMC4zIDEgMCAwLjEtMC4xIDAuMS0wLjIgMC4xLTAuMSAwLTAuMS0wLjEtMC4xLTAuMiAwIDAgMC4xLTAuMyAwLjItMC45IDAuMS0wLjYtMC4yLTEuMS0wLjItMS4xIDAtMC4xIDAtMC4yIDAuMS0wLjIgMC4xIDAgMC4xIDAgMC4yIDAgMCAwIDAgMCAwIDAuMSAwIDAgMC4zIDAuNiAwLjIgMS4zem0tMSAwLjhjMCAwLjEtMC4xIDAuMS0wLjIgMC4xLTAuMSAwLTAuMS0wLjEtMC4xLTAuMiAwIDAgMC4xLTAuMyAwLjEtMC45IDAtMC42LTAuMy0xLjEtMC4zLTEuMSAwLTAuMSAwLTAuMiAwLjEtMC4yIDAuMSAwIDAuMSAwIDAuMiAwIDAgMCAwIDAgMCAwIDAgMCAwLjMgMC42IDAuMyAxLjMgMCAwLjctMC4xIDEtMC4yIDF6bS0wLjctMC40Yy0wLjMgMS4yLTAuOCAyLjItMC45IDIuNi0wLjIgMC40LTAuMyAwLjktMC4yIDIuMiAwIDEuMyAwIDIuMi0wLjEgMi41IDAgMC4yLTAuMiAwLjMtMC40IDAuMy0wLjIgMC0wLjMtMC4xLTAuNC0wLjQtMC4xLTAuNS0wLjMtMi42LTAuMy0yLjkgMC0wLjItMC4yLTAuNC0wLjMtMC40LTAuMSAwLTAuMiAwLjEtMC4zIDAuNS0wLjIgMC45LTAuNSAzLjEtMC42IDMuNi0wLjEgMC41LTAuMyAwLjYtMC40IDAuNi0wLjEgMC0wLjEgMC0wLjEgMCAwIDAgMCAwIDAgMC0wLjEgMC0wLjQgMC0wLjQtMC40IDAtMC41IDAuNC0zLjUgMC40LTMuOCAwLTAuMiAwLTAuMy0wLjEtMC4zLTAuMSAwLTAuMSAwLjEtMC4yIDAuMi0wLjMgMC40LTEuNyAyLjktMi4xIDMuNy0wLjEgMC4yLTAuMiAwLjItMC40IDAuMi0wLjEgMC0wLjIgMC0wLjMtMC4xLTAuMS0wLjEtMC4zLTAuNC0wLjItMC42IDAuMS0wLjIgMS41LTMuNCAxLjctMy44IDAuMS0wLjMgMC4xLTAuNS0wLjEtMC41LTAuMSAwLTAuMiAwLjEtMC40IDAuMi0wLjUgMC41LTIuNCAyLjUtMi43IDIuNy0wLjEgMC4xLTAuMiAwLjItMC4zIDAuMi0wLjEgMC0wLjItMC4xLTAuMy0wLjItMC4yLTAuMi0wLjItMC40LTAuMS0wLjYgMC4yLTAuMiAyLjYtMy4zIDMtNC4xIDAuNC0wLjcgMS0xLjktMC4yLTEuOS0wLjEgMC0wLjEgMC0wLjIgMC0wLjUgMC0wLjggMC4xLTEuMSAwLjEtMC41IDAtMC43LTAuMS0wLjgtMC4xLTAuMi0wLjEtMC42LTAuMy0wLjUtMC42IDAuMS0wLjIgMC43LTAuMSAxLTAuMiAwLjItMC4xIDAuMi0wLjEgMC4yLTAuMSAwIDAgMS4xLTAuMyAxLjgtMC43IDAuNy0wLjQgMi4zLTEuMSAyLjctMS4xIDAuMiAwIDAuNC0wLjEgMC42LTAuMSAwLjMgMCAwLjYgMCAwLjcgMC4xIDAuMyAwLjEgMC42IDAuOSAyIDEuNSAwIDAgMC42IDAuNiAwLjMgMS44em0tMTEuNyAyLjJjLTAuNC0xLjItMC42LTIuMy0wLjYtMi43LTAuMS0wLjQtMC4zLTAuOS0xLTEuOS0wLjctMS0xLjItMS44LTEuMy0yLjEtMC4xLTAuMiAwLjEtMC41IDAuNC0wLjUgMC4xIDAgMC4yIDAgMC4zIDAuMiAwLjQgMC40IDEuNyAyIDEuOSAyLjIgMC4xIDAuMSAwLjMgMC4yIDAuNCAwLjIgMC4yIDAgMC4yLTAuMSAwLjEtMC42LTAuMy0wLjktMS4zLTIuOS0xLjUtMy4zLTAuMy0wLjcgMC4xLTAuNyAwLjEtMC43IDAgMCAwLjEtMC4xIDAuMi0wLjEgMC4xIDAgMC4yIDAgMC4zIDAuMiAwLjIgMC40IDEuNiAzLjIgMS44IDMuNCAwLjEgMC4xIDAuMiAwLjIgMC4zIDAuMiAwLjEgMCAwLjEtMC4xIDAuMS0wLjMgMC0wLjUtMC4yLTMuMy0wLjMtNC4yIDAtMC4zIDAuMy0wLjUgMC41LTAuNSAwIDAgMCAwIDAgMCAwLjIgMCAwLjQgMC4yIDAuNSAwLjQgMC4xIDAuMiAwLjYgMy43IDAuNyA0LjIgMCAwLjIgMC4yIDAuNCAwLjMgMC40IDAuMSAwIDAuMi0wLjEgMC4zLTAuNCAwLjEtMC43IDAuNy0zLjQgMC43LTMuNyAwLTAuMyAwLjItMC40IDAuNC0wLjQgMCAwIDAuMSAwIDAuMSAwIDAuMiAwIDAuNCAwLjIgMC40IDAuNSAwIDAuMy0wLjMgMy43LTAuMiA0LjgtMC41IDAuMi0xIDAuNC0xLjMgMC40bDAgMCAwIDAtMC4yIDAuMWMwIDAtMC4xIDAtMC4yIDAtMC40IDAtMSAwLTEuMyAwLjYtMC4xIDAuMy0wLjIgMC42LTAuMSAwLjggMC4yIDAuNSAwLjggMC44IDAuOSAwLjkgMCAwIDAgMCAwIDAgMC4yIDAuMSAwLjUgMC4yIDEuMSAwLjIgMC4zIDAgMC42IDAgMS4xLTAuMS0wLjEgMC4yLTAuMiAwLjQtMC4zIDAuNmwtMC4xIDAuMWMtMC4yIDAuMy0wLjggMS4yLTEuOCAyLjUtMC4yIDAtMC4zIDAtMC41IDAtMC4zIDAtMC42IDAtMC45IDAuMSAwIDAtMC44LTAuMS0xLjMtMS4zem0wLjggMi4yYzAgMC4xLTAuMSAwLjEtMC4yIDAuMSAwIDAgMCAwLTAuMSAwIDAgMC0wLjYtMC4yLTEtMC44LTAuNC0wLjYtMC41LTAuOS0wLjUtMC45IDAtMC4xIDAtMC4yIDAuMS0wLjIgMC4xIDAgMC4yIDAgMC4yIDAuMSAwIDAgMC4xIDAuMyAwLjQgMC44IDAuNCAwLjUgMC45IDAuNyAwLjkgMC43IDAuMSAwIDAuMSAwLjEgMC4xIDAuMnptLTAuOSAwLjRjMCAwLjEtMC4xIDAuMS0wLjEgMC4xIDAgMC0wLjEgMC0wLjEgMCAwIDAtMC42LTAuMy0wLjktMC45LTAuNC0wLjYtMC40LTAuOS0wLjQtMSAwLTAuMSAwLjEtMC4yIDAuMS0wLjIgMC4xIDAgMC4yIDAuMSAwLjIgMC4xIDAgMCAwIDAuMyAwLjQgMC44IDAuMyAwLjUgMC44IDAuOCAwLjggMC44IDAuMSAwIDAuMSAwLjEgMC4xIDAuMnptMTQuOS0yMS44LTIwLjIgMGMtMi40IDAtNC40IDItNC40IDQuNGwwIDIwLjJjMCAyLjQgMiA0LjQgNC40IDQuNGwyMC4yIDBjMi40IDAgNC40LTIgNC40LTQuNGwwLTIwLjJjMC0yLjQtMi00LjQtNC40LTQuNCIgZmlsbD0iIzFjNGY5YyIvPjwvZz48L3N2Zz4K") 1px center no-repeat;
+                                /*                                position: absolute;
+                                                                top: 0;
+                                                                right: 0;*/
+                                float: right;                                
+                                width: 31px;
+                                height: 31px;
+                                display: block;
+                                background-color: #fff;
+                                border-radius: 6px;
+                            }
+                            .link-vlibras img{
+                                margin-bottom: 8px;
+                            }
+                            .link-vlibras{
+                                font-size: 1.5rem;
+                                text-align: center;
+                                padding: 10px;
+                                transition: 0.1s;
+                                width: 156px !important;
+
+                                /*border: 2px solid #ccc;*/
+                                box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+                                border-top: none;
+                                display: block;
+                                border-radius: 0px 0px 5px 5px;
+                                color: #606060;
+                                visibility: hidden;
+                                position: absolute;
+                                right: 15px;
+                                top: 45px;
+                                background-color: rgba(255,255,255);
+                                overflow: auto;
+
+
+                                /*float: right;*/
+                            }
+                            .link-vlibras.visivel{
+                                visibility: visible;
+                            }
+                            #uerj-vlibras .logo-vlibras:hover + .link-vlibras, 
+                            #uerj-vlibras .logo-vlibras:active + .link-vlibras, 
+                            #uerj-vlibras .logo-vlibras:focus + .link-vlibras, 
+                            #uerj-vlibras .link-vlibras:hover, 
+                            #uerj-vlibras .link-vlibras:active, 
+                            #uerj-vlibras .link-vlibras:focus{
+                                width: 156px !important;
+                                height: 31px !important;
+                                display: inline-table;
+                                border: 2px solid #dfdfdf;
+                                padding: 10px;
+                                visibility: visible;
+                                background: #f1f1f1;
+                                z-index: 8;
+                                /*margin-top: 30px;*/
+                                margin-right: -31px;
+                            }
+
+                            /* VLibras - FIM */                            
+
+
+                            .icones-acessibilidade{
+                                width: 50px;
+                                overflow: hidden;
+                                transition: 0.25s width ease;
+                                height: 45px;
+                                background-color: rgba(0,0,0,0.25);
+                                margin-left: 8px;
+                                position: relative;
+                                /*margin-right: 40px;*/
+                            }
+                            body.mobile .icones-acessibilidade{
+                                background-color: transparent;
+                               
+                                /*margin-right: 10px;*/
+                            }
+                            .icones-acessibilidade.aberto{
+                                overflow: hidden;
+                            }
+
+                        </style>
+                        <form role="search" method="get" class="searchform group site-header__busca form-inline" action="https://www.uerj.br/">
+    <label>
+        <!--<span class="offscreen">Pesquisar por:</span>-->
+        <input type="search" class="search-field form-control"
+               placeholder="Buscar"
+               value="" name="s"
+               title="Pesquisar por:" />
+    </label>
+    <input hidden type="image" alt="Submit search query"
+           src="https://www.uerj.br/wp-content/themes/uerj/images/search-icon.png">
+</form>
+     
+                        <ul id="menu-social" class="nav navbar-nav menu-social-media navbar-right"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a title="Facebook" target="_blank" href="https://www.facebook.com/UERJoficial/"><i class="_mi dashicons dashicons-facebook-alt" aria-hidden="true" style="font-size:1.7em;"></i><span class="visuallyhidden">Facebook</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a title="Twitter" target="_blank" href="https://twitter.com/UERJ_oficial"><i class="_mi dashicons dashicons-twitter" aria-hidden="true" style="font-size:1.5em;vertical-align:text-bottom;"></i><span class="visuallyhidden">Twitter</span></a></li>
+<li class="youtube-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCBwzg_NTU0FKg6mdP988B6Q"><img width="26" height="18" src="https://www.uerj.br/wp-content/uploads/2020/06/youtube_social_icon_white.png" class="_mi _image" alt="" aria-hidden="true" style="vertical-align:bottom;" /><span class="visuallyhidden">Youtube</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1729"><a title="Instagram" target="_blank" href="https://www.instagram.com/uerj.oficial/?hl=pt-br"><i class="_mi fa fa-instagram" aria-hidden="true" style="font-size:1.6em;"></i><span class="visuallyhidden">Instagram</span></a></li>
+</ul>                    </div>
+                </nav>
+
+
+
+
+                <!--<div class="site-branding">-->
+                <!--
+                                                                                                                                                        <p class="site-title"><a href="https://www.uerj.br/" rel="home">UERJ &#8211; Universidade do Estado do Rio de Janeiro</a></p>
+                                                                                                                                                        <p class="site-description">Universidade do Estado do Rio de Janeiro</p>
+                            </div>
+                -->
+                <!-- .site-branding -->
+
+                <!--<nav id="site-navigation" class="main-navigation" role="navigation">-->
+                    <!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>-->
+
+                <!--</nav> #site-navigation -->
+            </header><!-- #masthead -->
+
+                                            <nav class="site-header__breadcrumb" typeof="BreadcrumbList" vocab="https://schema.org/">
+                    <ul class="breadcrumb">
+                        <!-- Breadcrumb NavXT 6.0.4 -->
+<li><a property="item" typeof="WebPage" title="Ir para UERJ - Universidade do Estado do Rio de Janeiro." href="https://www.uerj.br" class="home"><span property="name">Home</span></a><meta property="position" content="1"></li>                    </ul>
+                </nav>
+                <div id="content" class="site-content container">
+
+                    <div class="row">
+
+                        <div id="primary" class="content-area col-md-12">
+        <main id="main" class="site-main" role="main">
+
+            <header class="entry-header">
+                <h1 class="entry-title">Concursos e Editais</h1>            </header><!-- .page-header -->
+            <div class="entry-content">
+
+                            
+            <div class="row concursos-e-editais">
+                <div class="col-md-3">
+                    <div class="concursos-e-editais__grupo concursos">
+                        <h2 class="titulo">Concursos</h2>
+                        <article class="concursos-e-editais__item">
+                            <h1 class="titulo">Docente</h1>
+                            <div class="edital"><a target="_blank" href="http://www.srh.uerj.br/site/index.php/concursos.html">Editais</a></div>
+                        </article>
+                        <article class="concursos-e-editais__item">
+                            <h1 class="titulo">Tecnico-Universitários</h1>
+                            <div class="edital"><a target="_blank" href="http://concursos.srh.uerj.br/">Editais</a></div>
+                        </article>
+                    </div>
+                </div>
+                                
+            </div>
+        </div>
+
+    </main><!-- #main -->
+</div><!-- #primary -->
+
+                </div><!-- .row -->
+    </div><!-- #content -->
+                        
+            
+
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="container" >
+        <div class="row">
+            <div class="col-sm-8" style="overflow: auto">
+                <div class="site-footer__logouerj-container">
+                    <img src="https://www.uerj.br/wp-content/themes/uerj/img/logo_uerj_branca.svg" alt="Logomarca UERJ">
+                </div>
+                <h3>Universidade do Estado do Rio de Janeiro</h3>
+                <ul id="menu-social" class="nav navbar-nav menu-social-media navbar-right hidden-xs pull-left"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a title="Facebook" target="_blank" href="https://www.facebook.com/UERJoficial/"><i class="_mi dashicons dashicons-facebook-alt" aria-hidden="true" style="font-size:1.7em;"></i><span class="visuallyhidden">Facebook</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a title="Twitter" target="_blank" href="https://twitter.com/UERJ_oficial"><i class="_mi dashicons dashicons-twitter" aria-hidden="true" style="font-size:1.5em;vertical-align:text-bottom;"></i><span class="visuallyhidden">Twitter</span></a></li>
+<li class="youtube-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCBwzg_NTU0FKg6mdP988B6Q"><img width="26" height="18" src="https://www.uerj.br/wp-content/uploads/2020/06/youtube_social_icon_white.png" class="_mi _image" alt="" aria-hidden="true" style="vertical-align:bottom;" /><span class="visuallyhidden">Youtube</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1729"><a title="Instagram" target="_blank" href="https://www.instagram.com/uerj.oficial/?hl=pt-br"><i class="_mi fa fa-instagram" aria-hidden="true" style="font-size:1.6em;"></i><span class="visuallyhidden">Instagram</span></a></li>
+</ul>            </div>
+            <div class="col-sm-4 site-footer__menu" style="overflow: auto">
+                <ul id="menu-footer" class="nav nav-stacked"><li id="menu-item-955" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-955"><a href="https://www.uerj.br/a-uerj/institucional/pessoas-e-unidades/">Pessoas e Unidades</a></li>
+<li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18"><a target="_blank" href="http://www.uerj.br/wp-content/uploads/2019/01/guia-ramais.pdf">Guia Uerj de ramais</a></li>
+<li id="menu-item-1785" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1785"><a target="_blank" href="https://www.estacionamento.uerj.br/">Cadastre seu veículo</a></li>
+<li id="menu-item-1845" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1845"><a target="_blank" href="http://www.prefeitura.uerj.br/">Prefeitura dos Campi</a></li>
+<li id="menu-item-272" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-272"><a target="_blank" href="http://www.cetreina.uerj.br/">Bolsas e estágios</a></li>
+<li id="menu-item-273" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-273"><a target="_blank" href="http://www.boluerj.uerj.br/">Legislação interna</a></li>
+<li id="menu-item-274" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-274"><a target="_blank" href="http://www.ouvidoria.uerj.br/">Ouvidoria</a></li>
+<li id="menu-item-275" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-275"><a target="_blank" href="http://www.eduerj.uerj.br/">Editora</a></li>
+<li id="menu-item-396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396"><a href="https://www.uerj.br/como-chegar/">Como chegar</a></li>
+<li id="menu-item-972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-972"><a href="https://www.uerj.br/mapa-do-site/">Mapa do Site</a></li>
+</ul>            </div>
+
+        </div>
+    </div>
+    <div class="site-footer__logos clearfix" style="overflow">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">                    
+                    <ul class="logos-menu">
+                        <li class="nav-item">
+                            <a href="http://www.rj.gov.br/web/secti" target="_blank" class="nav-link"><img height="40px" src="https://www.uerj.br/wp-content/themes/uerj/img/Estado_RJ_Educacao.png"></a>
+                        </li>
+						<li class="nav-item">
+                            <a href="http://www.esicrj.rj.gov.br/" target="_blank" class="nav-link"><img width="100px" src="https://www.uerj.br/wp-content/themes/uerj/img/esic_logo_sem_nome.png"></a>
+                        </li>40
+                        <li class="nav-item">
+                            <a href="http://www.finep.gov.br/" target="_blank" class="nav-link"><img height="40px" src="https://www.uerj.br/wp-content/themes/uerj/img/Finep.png"></a>
+                        </li>
+                        <li class="nav-item">
+                             <a href="http://www.sr2.uerj.br/capesprint/" target="_blank" class="nav-link"><img height="25px" src="https://www.uerj.br/wp-content/themes/uerj/img/logo_UERJ_PrInt.png"></a>                             
+                        </li>
+                        <li class="nav-item">
+                             <a href="http://www.faperj.br/" target="_blank" class="nav-link"><img height="40px" src="https://www.uerj.br/wp-content/themes/uerj/img/faperj.png"></a>                             
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://www.rederio.br/" target="_blank" class="nav-link"><img height="40px" src="https://www.uerj.br/wp-content/themes/uerj/img/rederio.png"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://www.cnpq.br/" target="_blank" class="nav-link"><img height="30px" src="https://www.uerj.br/wp-content/themes/uerj/img/cnpq.png"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://www.capes.gov.br/" target="_blank" class="nav-link"><img height="40px" src="https://www.uerj.br/wp-content/themes/uerj/img/capes.png"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://novo.periodicos.capes.gov.br/" target="_blank" class="nav-link"><img height="40px" src="https://www.uerj.br/wp-content/themes/uerj/img/periodicos.png"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>
+            A UERJ está conectada à internet por meio da Rede Rio de Computadores. © 2018 - Universidade do Estado do Rio de Janeiro. Todos os direitos reservados.
+        </p>
+    </div>
+    <a href="#" class="scrollToTop"><i class="fa fa-arrow-circle-up fa-5x"></i></a>    
+</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type='text/javascript' src='https://www.uerj.br/wp-content/themes/uerj/js/skip-link-focus-fix.js?ver=20151215'></script>
+<script type='text/javascript' src='https://www.uerj.br/wp-includes/js/wp-embed.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://www.uerj.br/wp-content/themes/uerj/js/exibe_menu_filhos.js?ver=4.9.10'></script>
+    
+</body>
+</html>

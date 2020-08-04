@@ -1,0 +1,121 @@
+#slides {
+    position: relative;
+}
+#slides .slides-container {
+    display: none;
+}
+#slides .scrollable {
+    *zoom: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+#slides .scrollable:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.slides-navigation {
+    margin: -19% auto 0 auto;
+    position: absolute;
+    z-index: 3;
+    /*top: 46%;*/
+    width: calc(100% - 30px);
+}
+.slides-navigation a {
+    position: absolute;
+    display: block;
+}
+.slides-navigation a.prev {
+    left: 0;
+}
+.slides-navigation a.next {
+    right: 0;
+}
+.slides-pagination {
+    display: none;
+}
+
+.slides-navigation a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 35px;
+    margin: 0 25px;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    top: -10px;
+    -webkit-transition: background 0.15s ease;
+    -moz-transition: background 0.15s ease;
+    -o-transition: background 0.15s ease;
+    transition: background 0.15s ease;
+}
+.slides-navigation a.next {
+    padding: 5px 0 5px 6px;
+}
+.slides-navigation a.prev {
+    padding: 5px 5px 5px 0px;
+
+}
+
+
+@media (max-width: 1200px) {
+    
+}
+@media (max-width: 992px) {
+    
+    .slideshow h2{
+     text-align: left;
+     left: 50%;
+     width: 100%;
+     max-width: 90%;
+     transform: translateX(-50%);
+     bottom: 50px;
+    }
+    
+    .slides-navigation{
+        display: none;
+    }
+    
+    .slides-pagination {
+        display: block;
+        position: absolute;
+        z-index: 3;
+        bottom: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    .slides-pagination a {
+        border: 2px solid #fff;
+        border-radius: 15px;
+        width: 10px;
+        height: 10px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=");
+        margin: 2px;
+        overflow: hidden;
+        text-indent: -200%;
+    }
+
+
+    .slides-pagination a.current {
+        background: #0080c6;
+    }
+}
+@media (max-width: 767px) {
+    
+}
+
+
