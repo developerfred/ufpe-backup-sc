@@ -1,0 +1,413 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: =?Windows-1252?Q?Processos_e_Linhas_de_Processo_-_oic=ECliS_=A9?=
+Date: Thu, 29 Sep 2005 16:29:47 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0037_01C5C513.01C2EED0";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1506
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0037_01C5C513.01C2EED0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/processo.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- =A9sobMedida by vickiSoft 18.02.02 ver 1.0 --><!-- 05.04.03 ver 1.1 =
+- PHP --><!-- 02.08.03 ver 1.2 - referElo =
+--><HTML><HEAD><TITLE>Processos e Linhas de Processo - oic=ECliS =
+=A9</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"oiciliS - Assembly para Iniciantes" name=3Ddescription>
+<META=20
+content=3D"tutorial, tutoriais, assembly, assembler, processos, linha de =
+processo, thread, threads"=20
+name=3Dkeywords><LINK=20
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAsse=
+mbly.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.2800.1515" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3><IMG height=3D32=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/inte=
+rAni.gif"=20
+      width=3D32 align=3DabsMiddle border=3D0> PROCESSOS e LINHAS DE =
+PROCESSO=20
+    (Threads)</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D20 align=3Dleft>
+        <TBODY>
+        <TR>
+          <TD align=3Dmiddle><A=20
+            =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/index.php"><IMG=20
+            height=3D57 alt=3D"Sil=EDcio Reverso"=20
+            =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif"=20
+            width=3D106 border=3D0></A>oic=ECliS =A9<BR>Assembly =
+Intermedi=E1rio<BR>TEXTOS=20
+            ACESS=D3RIOS<BR><FONT size=3D-2>(ver 1.2 de 02.08.03)</FONT> =
+
+        </TD></TR></TBODY></TABLE>
+      <P>Simplificando ao extremo, um PROCESSO =E9 simplesmente um =
+programa em=20
+      execu=E7=E3o. A execu=E7=E3o do programa segue uma sequ=EAncia de =
+instru=E7=F5es.=20
+      Podemos dizer que o programa segue o "fio da meada" das =
+instru=E7=F5es, ou=20
+      seja, possui no m=EDnimo uma LINHA DE PROCESSO. Esta linha de =
+processo ocupa=20
+      tempo do processador, onde as instru=E7=F5es s=E3o executadas. =
+Da=ED a defini=E7=E3o:=20
+      linha de processo =E9 a unidade b=E1sica para a qual o sistema =
+operacional=20
+      aloca tempo do processador. Uma linha de processo pode executar =
+qualquer=20
+      parte do c=F3digo do processo, inclusive partes que estejam sendo =
+utilizadas=20
+      por outra linha de processo.</P><BR>
+      <CENTER><IMG height=3D282=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/gra=
+fs/threadAnim.gif"=20
+      width=3D323></CENTER><BR>
+      <P>Mas nem s=F3 de c=F3digo vive um processo. Cada processo =
+precisa fornecer=20
+      todos os recursos necess=E1rios para que o programa possa ser =
+executado. Um=20
+      processo possui um espa=E7o de endere=E7amento virtual, c=F3digo =
+execut=E1vel,=20
+      dados, manipuladores (handles) de objetos, vari=E1veis do ambiente =
+e uma=20
+      prioridade b=E1sica. Para cada processo que =E9 iniciado, o =
+sistema=20
+      operacional atribui uma linha de processo inicial, geralmente =
+chamada de=20
+      <I>linha de processo prim=E1ria</I>. Depois, se for necess=E1rio, =
+o processo=20
+      pode criar linhas de processo adicionais.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> A Multitarefa</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Imagine um processo e sua linha de processo prim=E1ria ocupando =
+todo o=20
+      tempo do processador. A uma certa altura, o processo cria uma =
+segunda=20
+      linha de processo que vai percorrer um caminho diferente na =
+sequ=EAncia de=20
+      instru=E7=F5es. Neste caso, o processador precisa prestar =
+servi=E7os =E0s duas=20
+      linhas de processo, dividindo o tempo entre as duas. Pronto, =
+nasceu a=20
+      <B>MULTITAREFA</B>!</P>
+      <P>O Windows foi desenhado para realizar multitarefas preemptivas. =
+Para=20
+      quem n=E3o sabe, preemp=E7=E3o =E9 o mesmo que prioridade, =
+prefer=EAncia, direito de=20
+      aquisi=E7=E3o. E =E9 isso mesmo o que acontece: cada linha de =
+processo passa a=20
+      ter direito a uma parte do tempo do processador. =C9 claro que o =
+processador=20
+      n=E3o pode atender todas as linhas de processo de todos os =
+processos em=20
+      execu=E7=E3o ao mesmo tempo. =C9 a=ED que ele pratica a =
+preemp=E7=E3o... faz rod=EDzio=20
+      de atendimento e aloca uma fatia do seu tempo para cada linha de=20
+      processo.</P>
+      <P>A dura=E7=E3o da fatia de tempo depende do sistema operacional =
+e do=20
+      processador. De qualquer maneira, como as fatias de tempo s=E3o =
+muito=20
+      pequenas (aproximadamente 20 milisegundos), o processamento de =
+m=FAltiplas=20
+      linhas de processo d=E1 a impress=E3o de ser simult=E2neo. Para o =
+usu=E1rio, =E9=20
+      como se fosse "assobiar e chupar cana ao mesmo tempo". Para o =
+processador=20
+      =E9 uma roda viva! Se houver processos demais e/ou linhas de =
+processo em=20
+      excesso, o processador perde o f=F4lego e o rendimento do sistema =
+pode cair=20
+      muito.</P>
+      <P>Todas a linhas de processo de um determinado processo =
+compartilham seu=20
+      espa=E7o de endere=E7amento virtual e os recursos do sistema. =C9 =
+claro que=20
+      tenha que ser assim, sen=E3o as linhas de processo iriam se =
+estranhar.=20
+      Adicionalmente, cada linha de processo mant=E9m manipuladores de =
+exce=E7=E3o=20
+      (que controlam erros que possam ocorrer), a sua prioridade de =
+atendimento=20
+      e um jogo de estruturas que o sistema usa para guardar o contexto =
+da linha=20
+      de processo enquanto ela n=E3o =E9 atendida.</P>
+      <P>Para o usu=E1rio, a vantagem de um sistema multitarefa est=E1 =
+no fato de=20
+      poder usar v=E1rios aplicativos que trabalhem simultaneamente. Por =
+exemplo,=20
+      enquanto estiver trabalhando num editor de texto, outro aplicativo =
+pode=20
+      estar recalculando uma extensa planilha de c=E1lculos.</P>
+      <P>Para o programador tamb=E9m existem vantagens. Ele pode criar =
+aplicativos=20
+      que utilizem mais de um processo, cada um deles com uma ou mais =
+linhas de=20
+      processo. Por exemplo, um aplicativo pode ter uma linha de =
+processo para a=20
+      interface do usu=E1rio que gerencia a entrada do teclado e do =
+mouse,=20
+      enquanto uma segunda linha de processo realiza um trabalho =
+diferente.=20
+      Dando uma prioridade maior =E0 linha de processo que atende o =
+usu=E1rio, este=20
+      estar=E1 sendo atendido rapidamente e o trabalho de fundo usar=E1 =
+o=20
+      processador com efici=EAncia sempre que a primeira estiver =
+ociosa.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Prioridades <IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O processador n=E3o atende as linhas de processo "a la burra",=20
+      simplesmente atendendo uma ap=F3s a outra. Cada linha de processo =
+possui uma=20
+      prioridade de atendimento. O n=EDvel de prioridade varia de zero =
+(a=20
+      prioridade mais baixa) a 31 (a prioridade mais alta). Apenas a =
+linha de=20
+      processo da p=E1gina zero possui prioridade zero. Esta linha =E9 =
+uma linha de=20
+      processo do sistema.</P>
+      <P>Cada processo em execu=E7=E3o pertence a uma determinada =
+<I>classe de=20
+      prioridade</I>: ociosa, normal, alta prioridade ou tempo real. A=20
+      prioridade da classe tempo real =E9 do tipo alerta vermelho - =
+interrompe=20
+      todas as linhas de processo do sistema que gerenciam as entradas =
+do mouse,=20
+      do teclado e que realizam tarefas de manuten=E7=E3o de disco - =
+sequestra o=20
+      processador. A alta prioridade ocupa a maior parte do tempo do=20
+      processador, deixando muito pouco para as outras classes. A =
+normal, bem...=20
+      =E9 apenas a normal, e a ociosa =E9 quando o processo est=E1 =
+tirando uma=20
+      soneca.</P>
+      <P>Cada linha de processo possui um determinado <I>n=EDvel de=20
+      prioridade</I>: ocioso, baixo, abaixo do normal, normal, acima do =
+normal,=20
+      alto e cr=EDtico. A combina=E7=E3o da classe de prioridade do =
+processo com o=20
+      n=EDvel de prioridade da linha de processo resulta na chamada =
+<I>prioridade=20
+      b=E1sica da linha de processo</I>. A tabela abaixo mostra as =
+composi=E7=F5es=20
+      poss=EDveis para a prioridade b=E1sica:</P>
+      <TABLE cellSpacing=3D1 width=3D"65%" align=3Dcenter =
+bgColor=3Dblack>
+        <TBODY>
+        <TR align=3Dmiddle bgColor=3D#006699>
+          <TD>N=EDvel</TD>
+          <TD>Classe do Processo</TD>
+          <TD>N=EDvel da Linha</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>1</TD>
+          <TD>ociosa, normal ou alta</TD>
+          <TD>ocioso</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>2</TD>
+          <TD>ociosa</TD>
+          <TD>baixo</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>3</TD>
+          <TD>ociosa</TD>
+          <TD>abaixo do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>4</TD>
+          <TD>ociosa</TD>
+          <TD>normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>5</TD>
+          <TD>(processos de fundo) normal, ociosa</TD>
+          <TD>acima do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>6</TD>
+          <TD>(processos de fundo) normal</TD>
+          <TD>abaixo do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>&nbsp;</TD>
+          <TD>ociosa</TD>
+          <TD>alto</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>7</TD>
+          <TD>(processos de frente) normal</TD>
+          <TD>abaixo do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>&nbsp;</TD>
+          <TD>(processos de fundo) normal</TD>
+          <TD>normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>8</TD>
+          <TD>(processos de frente) normal</TD>
+          <TD>abaixo do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>&nbsp;</TD>
+          <TD>normal</TD>
+          <TD>acima do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>9</TD>
+          <TD>(processos de frente) normal</TD>
+          <TD>normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>&nbsp;</TD>
+          <TD>normal</TD>
+          <TD>alto</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>10</TD>
+          <TD>(processos de frente) normal</TD>
+          <TD>acima do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>11</TD>
+          <TD>alta prioridade</TD>
+          <TD>baixo</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>&nbsp;</TD>
+          <TD>(processos de frente) normal</TD>
+          <TD>alto</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>12</TD>
+          <TD>alta prioridade</TD>
+          <TD>abaixo do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>13</TD>
+          <TD>alta prioridade</TD>
+          <TD>normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>14</TD>
+          <TD>alta prioridade</TD>
+          <TD>acima do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>15</TD>
+          <TD>ociosa, normal, alta prioridade</TD>
+          <TD>cr=EDtico</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>&nbsp;</TD>
+          <TD>alta prioridade</TD>
+          <TD>alto</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>16</TD>
+          <TD>tempo real</TD>
+          <TD>ocioso</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>22</TD>
+          <TD>tempo real</TD>
+          <TD>baixo</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>23</TD>
+          <TD>tempo real</TD>
+          <TD>abaixo do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>24</TD>
+          <TD>tempo real</TD>
+          <TD>normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>25</TD>
+          <TD>tempo real</TD>
+          <TD>acima do normal</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>26</TD>
+          <TD>tempo real</TD>
+          <TD>alto</TD></TR>
+        <TR class=3Dmeio1>
+          <TD align=3Dmiddle>31</TD>
+          <TD>tempo real</TD>
+          <TD>cr=EDtico</TD></TR></TBODY></TABLE>
+      <P>Tanto a classe de prioridade do processo quanto o n=EDvel de =
+prioridade=20
+      da linha de processo podem ser alteradas durante a execu=E7=E3o. =
+Por exemplo,=20
+      determinado processo (normal) pode ter uma miss=E3o cr=EDtica =
+guiada por uma=20
+      linha de processo (cr=EDtico). Durante o tempo em que esta tarefa =
+precisa=20
+      ser realizada, o n=EDvel de prioridade da linha pode estar em =
+cr=EDtico.=20
+      Depois de realizada a tarefa, pode-se baixar o n=EDvel para ocioso =
+para n=E3o=20
+      "amarrar" a execu=E7=E3o.</P><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3>Localizador</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1 align=3Dmiddle>
+      <SCRIPT language=3DJavaScript>=0A=
+function setFontSize(fontVal) {=0A=
+var fontSet =3D document.getElementById('fontSet');=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('table');=0A=
+if (!fontVal) {fontVal =3D document.getElementById('fontSet').value;}=0A=
+var docSize =3D fontVal+'pt';=0A=
+for(var i=3D0;i<docBase.length;i++)=0A=
+docBase[i].style.fontSize =3D docSize;=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('body');=0A=
+docBase[0].style.fontSize =3D docSize;=0A=
+docSize =3D (fontVal-2)+'pt';=0A=
+document.getElementById('xxpe').style.fontSize =3D docSize;=0A=
+if (fontSet) {fontSet.value =3D fontVal;}=0A=
+}=0A=
+</SCRIPT>
+
+      <DIV id=3Dxxpe style=3D"FONT-SIZE: 8pt">
+      <HR>
+
+      <CENTER>| <A href=3D"javascript:setFontSize(15)"><SPAN=20
+      style=3D"FONT-SIZE: 15pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(13)"><SPAN=20
+      style=3D"FONT-SIZE: 13pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(11)"><SPAN=20
+      style=3D"FONT-SIZE: 11pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(9)"><SPAN style=3D"FONT-SIZE: =
+9pt">A</SPAN></A>=20
+      | <A=20
+      onmouseover=3D"status=3D'A Aldeia onde as coisas acontecem =
+numaboa';return true"=20
+      href=3D"http://www.numaboa.com.br/index.php"><IMG height=3D15=20
+      alt=3D"P=E1gina Inicial" =
+src=3D"http://www.numaboa.com.br/img/haus2.png"=20
+      width=3D15 align=3Dbottom border=3D0></A> | <A=20
+      onmouseover=3D"status=3D'Saiba o que a Aldeia tem para =
+oferecer';return true"=

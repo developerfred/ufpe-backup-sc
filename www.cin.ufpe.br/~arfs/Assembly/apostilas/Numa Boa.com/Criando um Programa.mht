@@ -1,0 +1,693 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: =?Windows-1252?Q?Criando_um_Programa_-_oic=ECliS_=A9?=
+Date: Thu, 29 Sep 2005 16:37:07 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0060_01C5C514.07D5D840";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1506
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0060_01C5C514.07D5D840
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/criandoProg.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- =A9sobMedida by vickiSoft 06.04.03 ver 1.0 --><!-- 01.08.03 ver 1.1 =
+- referElo --><HTML><HEAD><TITLE>Criando um Programa - oic=ECliS =
+=A9</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1"><LINK=20
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAsse=
+mbly.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"oiciliS - Assembly para Iniciantes" name=3Ddescription>
+<META=20
+content=3D"tutorial, tutoriais, assembly, assembler, codigo fonte, =
+recursos, arquivos objeto, compilador"=20
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.2800.1515" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3><IMG height=3D32=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/iniA=
+ni.gif"=20
+      width=3D32 align=3DabsMiddle border=3D0>Criando um =
+Programa</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D20 align=3Dleft>
+        <TBODY>
+        <TR>
+          <TD align=3Dmiddle><A=20
+            =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/index.php"><IMG=20
+            height=3D57 alt=3D"Sil=EDcio Reverso"=20
+            =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif"=20
+            width=3D106 border=3D0></A>oic=ECliS =A9<BR>Assembly para=20
+            Iniciantes<BR>TEXTOS ACESS=D3RIOS<BR><FONT size=3D-2>(ver =
+1.1 de=20
+            02.08.03)</FONT> </TD></TR></TBODY></TABLE>
+      <P>Para criar um programa que rode no ambiente Windows v=E1rias =
+etapas=20
+      precisam ser cumpridas. Inicialmente escreve-se o chamado =
+<B>c=F3digo=20
+      fonte</B> ou script do programa e, se necess=E1rio, um <B>arquivo =
+de=20
+      recursos</B>. Estes arquivos, em texto raso, ser=E3o transformados =
+em=20
+      <B>arquivos objeto</B> os quais, por sua vez, ser=E3o utilizados =
+para compor=20
+      o <B>execut=E1vel</B>. Observe que s=E3o tr=EAs etapas distintas: =
+elabora=E7=E3o de=20
+      fontes, compila=E7=E3o e linkedi=E7=E3o.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Etapas</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D1 width=3D"75%" align=3Dcenter =
+bgColor=3Dblack>
+        <TBODY>
+        <TR align=3Dmiddle bgColor=3D#006699>
+          <TD>Elabora=E7=E3o</TD>
+          <TD>Compila=E7=E3o</TD>
+          <TD>Linkedi=E7=E3o</TD></TR>
+        <TR align=3Dmiddle bgColor=3D#0099cc>
+          <TD>Arquivos fonte</TD>
+          <TD>Arquivos objeto</TD>
+          <TD>Execut=E1vel</TD></TR>
+        <TR class=3Dmeio1 align=3Dmiddle>
+          <TD>.asm</TD>
+          <TD>.obj</TD>
+          <TD rowSpan=3D2>.exe ou .dll</TD></TR>
+        <TR class=3Dmeio1 align=3Dmiddle>
+          <TD>.rc</TD>
+          <TD>.res</TD></TR></TBODY></TABLE>
+      <P>Os arquivos de recursos s=F3 s=E3o necess=E1rios quando se quer =
+utilizar=20
+      recursos adicionais, como menus e bitmaps. Isto significa que =
+podem ou n=E3o=20
+      estar presentes no seu projeto. Vamos explorar cada uma das =
+fases.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> O C=F3digo Fonte</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O(s) arquivo(s) que cont=E9m o c=F3digo fonte devem ser =
+gravados em texto=20
+      raso, ou seja, n=E3o devem conter caracteres especiais de =
+formata=E7=E3o. Podem=20
+      ser produzidos em qualquer editor de texto que ofere=E7a a =
+possibilidade de=20
+      salvar arquivos neste formato (geralmente chamado simplesmente de =
+formato=20
+      texto).</P>
+      <P>O bloco de notas do Windows =E9 um bom editor para este =
+trabalho, mas=20
+      voc=EA pode usar o editor que mais lhe convier, inclusive o editor =
+oficial=20
+      da Aldeia: o SilicioPad nada mais =E9 do que o bloco de notas =
+modificado=20
+      para mostrar o n=FAmero de linha no rodap=E9 da janela (como fazer =
+esta=20
+      mandrakaria ser=E1 tema de um tutorial avan=E7ado). Se quiser =
+experimentar,=20
+      fa=E7a o <A title=3D"Link n=E3o monitorado"=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/tools/files/silicio=
+Pad.exe">download=20
+      do SilicioPad</A> (56 Kb).</P>
+      <P>=C9 h=E1bito dos programadores indicar a linguagem usada na =
+extens=E3o do=20
+      arquivo fonte. Por exemplo, .asm para c=F3digo fonte em Assembly, =
+.c para a=20
+      linguagem C, .cpp para a C++ ou .pas para Pascal (Delphi). O =
+programa=20
+      assembler (ou compilador) aceita qualquer extens=E3o, contanto que =
+o c=F3digo=20
+      fonte seja o que ele espera.</P>
+      <P>O arquivo .asm cont=E9m as instru=E7=F5es para o processador na =
+forma de=20
+      palavras e n=FAmeros. Estas instru=E7=F5es ser=E3o executadas pelo =
+processador=20
+      quando o programa rodar. Acontece que o processador n=E3o entende =
+o c=F3digo=20
+      fonte: ele precisa ser transformado em "linguagem de m=E1quina" e =
+estar=20
+      "arrumado" de acordo com um padr=E3o que o sistema operacional =
+consiga=20
+      identificar. Esta transforma=E7=E3o =E9 feita em duas etapas: o =
+compilador=20
+      prepara seu c=F3digo fonte guardando o c=F3digo fornecido no =
+formato COFF=20
+      (Common Object File Format) num arquivo objeto (.obj) e este, por =
+sua vez,=20
+      =E9 transformado pelo linkeditor num arquivo execut=E1vel (.exe) =
+no formato PE=20
+      (Portable Executable).</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> O Arquivo Objeto</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>=C9 o arquivo feito pelo compilador ou assembler a partir de um =
+arquivo=20
+      .asm. O compilador pega as instru=E7=F5es do arquivo .asm, que =
+est=E3o em=20
+      palavras e n=FAmeros, e as transforma no formato objeto COFF, que =
+=E9 o=20
+      formato que o linker espera. O compilador concatena todo o =
+c=F3digo e os=20
+      dados de instru=E7=E3o presentes no c=F3digo fonte e os coloca em =
+se=E7=F5es de=20
+      c=F3digo e de dados no arquivo .obj. A se=E7=E3o de c=F3digo =
+cont=E9m as instru=E7=F5es,=20
+      os chamados c=F3digos operacionais (opcodes) que o processador =
+executa=20
+      quando o programa =E9 rodado. A se=E7=E3o de dados cont=E9m =
+informa=E7=F5es que ser=E3o=20
+      mantidas na mem=F3ria enquanto o programa estiver sendo =
+executado.</P>
+      <P>N=E3o =E9 poss=EDvel rodar um arquivo .obj como um programa =
+porque n=E3o tem a=20
+      forma final de um execut=E1vel. O formato de um execut=E1vel =
+esperado pelo=20
+      Windows =E9 o formato PE. Algumas vezes o arquivo .obj =E9 chamado =
+de arquivo=20
+      "bin=E1rio" ou simplesmente "bin", o que se justifica porque n=E3o =
+cont=E9m mais=20
+      mneum=F4nicos, apenas n=FAmeros.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> O C=F3digo Fonte de =
+Recursos</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Como todo c=F3digo fonte, este tamb=E9m =E9 um arquivo texto =
+produzido com um=20
+      editor de texto. Deve conter palavras e n=FAmeros que o sistema =
+operacional=20
+      usa para montar os recursos do programa que ser=E1 executado e =
+que,=20
+      geralmente, s=E3o menus, di=E1logos e tabelas de strings. Tamb=E9m =
+serve de=20
+      fonte de refer=EAncia para outros arquivos como =EDcones, bitmaps =
+e cursores.=20
+      Maiores detalhes em como criar um arquivo de recursos voc=EA =
+encontra nos=20
+      tutoriais.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> O "Arquivo Objeto" de =
+Recursos</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O arquivo de recursos compilado =E9 como se fosse o "arquivo =
+objeto" dos=20
+      recursos. Normalmente n=E3o se usa este termo, mas a =
+compara=E7=E3o =E9=20
+      perfeitamente v=E1lida. Este arquivo =E9 produzido por um =
+compilador de=20
+      recursos, o qual formata as instru=E7=F5es contidas num arquivo =
+.rc (palavras=20
+      e n=FAmeros), convertendo-o num arquivo .res pronto para ser =
+inserido na=20
+      se=E7=E3o de recursos de um execut=E1vel final por um =
+linker.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> O Execut=E1vel</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O arquivo execut=E1vel =E9 o arquivo final que pode ser =
+executado pelo=20
+      sistema operacional. Geralmente est=E1 no formato PE, reconhecido =
+pelo Unix,=20
+      Linux, Windows, etc. O programa =E9 produzido por um linker, o =
+qual usa um=20
+      ou mais arquivos .obj e .res e os combina num execut=E1vel final. =
+O formato=20
+      PE tamb=E9m exige que o execut=E1vel tenha um cabe=E7alho com =
+informa=E7=F5es a=20
+      respeito do arquivo .exe. O linker fornece estas =
+informa=E7=F5es.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Arquivos DLL</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Este tipo de arquivo cont=E9m fun=E7=F5es e dados que outros =
+execut=E1veis=20
+      podem utilizar quando estiverem rodando. S=E3o =FAteis quando =
+cont=E9m fun=E7=F5es=20
+      que ser=E3o chamadas repetidas vezes por v=E1rios execut=E1veis. =
+Ao inv=E9s de=20
+      repetir estas fun=E7=F5es em cada um dos execut=E1veis, estes =
+utilizam uma fonte=20
+      comum: as DLLs. O acr=F4nimo DLL origina-se de Dinamic Link =
+Library -=20
+      Biblioteca de V=EDnculo Din=E2mico.</P><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3>Localizador</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1 align=3Dmiddle>
+      <SCRIPT language=3DJavaScript>=0A=
+function setFontSize(fontVal) {=0A=
+var fontSet =3D document.getElementById('fontSet');=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('table');=0A=
+if (!fontVal) {fontVal =3D document.getElementById('fontSet').value;}=0A=
+var docSize =3D fontVal+'pt';=0A=
+for(var i=3D0;i<docBase.length;i++)=0A=
+docBase[i].style.fontSize =3D docSize;=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('body');=0A=
+docBase[0].style.fontSize =3D docSize;=0A=
+docSize =3D (fontVal-2)+'pt';=0A=
+document.getElementById('xxpe').style.fontSize =3D docSize;=0A=
+if (fontSet) {fontSet.value =3D fontVal;}=0A=
+}=0A=
+</SCRIPT>
+
+      <DIV id=3Dxxpe style=3D"FONT-SIZE: 8pt">
+      <HR>
+
+      <CENTER>| <A href=3D"javascript:setFontSize(15)"><SPAN=20
+      style=3D"FONT-SIZE: 15pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(13)"><SPAN=20
+      style=3D"FONT-SIZE: 13pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(11)"><SPAN=20
+      style=3D"FONT-SIZE: 11pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(9)"><SPAN style=3D"FONT-SIZE: =
+9pt">A</SPAN></A>=20
+      | <A=20
+      onmouseover=3D"status=3D'A Aldeia onde as coisas acontecem =
+numaboa';return true"=20
+      href=3D"http://www.numaboa.com.br/index.php"><IMG height=3D15=20
+      alt=3D"P=E1gina Inicial" =
+src=3D"http://www.numaboa.com.br/img/haus2.png"=20
+      width=3D15 align=3Dbottom border=3D0></A> | <A=20
+      onmouseover=3D"status=3D'Saiba o que a Aldeia tem para =
+oferecer';return true"=20
+      title=3D"Mapa do site"=20
+      href=3D"http://www.numaboa.com.br/aldeia/index.php">Mapa do =
+Site</A> | <A=20
+      onmouseover=3D"status=3D'Fique por dentro das novidades';return =
+true"=20
+      title=3D"Novidades na Aldeia"=20
+      =
+href=3D"http://www.numaboa.com.br/aldeia/destaques.php">Novidades</A> | =
+<A=20
+      onmouseover=3D"status=3D'Procure na Aldeia';return true"=20
+      title=3D"Abre em nova janela"=20
+      href=3D"http://www.numaboa.com.br/portal/index.php" =
+target=3D_blank>Busca</A>=20
+      | <A onmouseover=3D"status=3D'Indique esta p=E1gina aos =
+amigos';return true"=20
+      title=3D"Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/indica.php?page=3D/informatica/=
+oiciliS/assembler/textos/criandoProg.php&amp;indica=3DoiciliS - Assembly =
+- Textos - Criando um programa"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Indique esta p=E1gina</A> | <A=20
+      onmouseover=3D"status=3D'Fale com a vov=F3 da Aldeia';return true" =
+
+      title=3D"webmaster - Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/contato.php?page=3D/informatica=
+/oiciliS/assembler/textos/criandoProg.php"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Mestre da Teia</A> | <A=20
+      onmouseover=3D"status=3D'Marcha-R=E9';return true" title=3D"Meia =
+volta voooolver"=20
+      href=3D"javascript:history.back()">Voltar</A> |<BR>| <A=20
+      =
+href=3D"http://www.numaboa.com.br/foot/localizador.php?file=3Dinfo.txt&am=
+p;page=3D/informatica/oiciliS/assembler/textos/criandoProg.php"=20
+      target=3D_blank>Localizador</A> || @ <A=20
+      href=3D"http://www.numaboa.com.br/informatica/">Info NumaBoa</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/">oic=ECliS</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/">Assembl=
+y</A>=20
+      &gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/">=
+Textos</A>=20
+      &gt; <B>Criando um programa</B>
+      <HR>
+      Cr=E9ditos: vov=F3 Vicki<BR><BR>webdesign sobMedida by vickiSoft - =
+
+      /informatica/oiciliS/assembler/textos/criandoProg.php (06.04.03) =
+vers=E3o=20
+      1.1 de 02.08.03<BR>Licen=E7a Creative Commons 1998-2005 Aldeia =
+NumaBoa<BR><!-- Creative Commons License -->Exceto onde especificamente=20
+      declarado, todo material deste site =E9 disponibilizado de acordo =
+com a <A=20
+      =
+href=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt"=20
+      target=3D_blank rel=3Dlicense>Licen=E7a Creative Commons</A>. <!-- =
+/Creative Commons License --><!--=0A=
+<rdf:RDF xmlns=3D"http://web.resource.org/cc/"=0A=
+xmlns:dc=3D"http://purl.org/dc/elements/1.1/"=0A=
+xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#">=0A=
+<Work rdf:about=3D"">=0A=
+<dc:type rdf:resource=3D"http://purl.org/dc/dcmitype/Text" />=0A=
+<license =
+rdf:resource=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/" />=0A=
+</Work>=0A=
+=0A=
+<License =
+rdf:about=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/">=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Reproduction" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Distribution" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Notice" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Attribution" />=0A=
+<prohibits rdf:resource=3D"http://web.resource.org/cc/CommercialUse" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/DerivativeWorks" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/ShareAlike" />=0A=
+</License>=0A=
+</rdf:RDF>=0A=
+--></CENTER></DIV></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0060_01C5C514.07D5D840
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/iniAni.gif
+
+R0lGODlhIAAgAOIAADMAZv///wAAAP//AGYz//9mM/+ZZgAAACH/C05FVFNDQVBFMi4wAwEAAAAh
++QQJFAAAACwAAAAAIAAgAAIDQwi63P4wykmrvTjrzbu/QRh8i2iO3nl2qsq1qwa72RyD9l3lOsWb
+mJ8oKERZisZdkShk/mpPKG8zpeZYsw+MpAByPQkAIfkECRQAAAAsBgAIABEAGAACA0UIutGxELr5
+oqLU4iZEi1vgfUw4kkAoTpeJpeobd6w40g7+cN2Zj7CYbSesbXyO4ASZVHI2JV5I8oRSV9ZrFrS1
+KL3gcAIAIfkECRQAAAAsBgAQABEAEAACA0EIujA+LK73ohCTVoDDVc4lVEIABB42XKnDmWjKoiJ7
+xnNJ63dM+z4F0DM0CXG6IQNXNC6YRUkTJTkqq88YdltNAAAh+QQJFAAAACwGABAAEQAQAAIDQQi6
+MD4srveiEJNWgMNVziVUQgAEHjZcqcOZaMqiInvGc0nrd0z7PgXQMzQJcbohA1c0LphFSRMlOSqr
+zxh2W00AACH5BAkUAAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXrZ+WSAyk6CMDGx
+5sgzIABBDcczQYDXw8WKFCGxeAwwj8uiUzilRp09rHZ4zW650eaXgaWOydOvM6LGZtoshTZOXyQA
+ACH5BAkUAAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXoacz4L1Z7SKQgTM8sYIAAB
+fc2+hyDA6/lmRsqwaEQGmkim8TmkVqXPXnZLxGq5XakTzMhWyWUq+BlZZzPuzGIrr0MSACH5BAkU
+AAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXoacz4L1Z7SKQgTM8sYIAABfc2+hyDA
+6/lmRsqwaEQGmkim8TmkVqXPXnZLxGq5XakTzMhWyWUq+BlZZzPuzGIrr0MSACH5BAkUAAAALAYA
+CQASABcAAgNeCLo6wzA6B00EMysrMyFOcWEeOHBXlonNs6gUwMWtusywIEyQnmsAgSKwy+iKD0Fg
+SCzqmhQls/kMUJ/TplW55WatRLB4+Q2PydnqGQLmrtnbs/UiB48A9ftCrO9DEgAh+QQJFAAAACwG
+AAkAEgAXAAIDXgi6OsMwOgdNBDMrKzMhTnFhHjhwV5aJzbOoFMDFrbrMsCBMkJ5rAIEisMvoig9B
+YEgs6poUJbP5DFCf06ZVueVmrUSwePkNj8nZ6hkC5q7Z27P1IgePAPX7QqzvQxIAOw==
+
+------=_NextPart_000_0060_01C5C514.07D5D840
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif
+
+R0lGODlhagA5APcAAFqvsWrJ0Gu+02XDxnO342G7vlabsV0W/msX/0mLkDMpaTNaZVGYoFKKs3q0
+8ncY/UN4hYgZ+ggJEVekrjgld0pinGWRylJ8pkAkh2tX03GY21p+uREPJluSvi8NZmavyRgrMUg0
+nXaT5zNJZVsS6z8TlzgMfkJkhSsrVzlfcGZ8yTw9gCUMSUYRqS49Xmyv13V542lm1UwUu1Y8wSEz
+Qmc87VdmsxcJQUBPhE1MnCtPVUwQygAAAFcZ2lJRtnk/6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADwALAAAAABqADkA
+AAj+AHkIHEiwoEGDHBIYuHCChoSDECNKnEixosWLJwAAMDChQ4cRDy+KHEmypEQOGjV2tGBhAwiT
+MGPKjHghJYACH3Jq0OBips+fJHHYZFChgwUCBByIUAC0qdODKFMySHBhgw0VMEQ4cPDyqVegHBhM
+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
+jjRfr5YZf6QDIMCIPBAQAAA7
+
+------=_NextPart_000_0060_01C5C514.07D5D840
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1.gif
+
+R0lGODlhcwAMAPcAAAAAABg5SiFSYzFrjDmMta3nKcbGAP//xv//////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH5BAEAAAUALAAAAABzAAwA
+AAjRAAMAGDiwgMGDCBMqXMiwocOHDAlKnEixokUABQIQGMBRAEaIIEOKHFkAAIGTKFOqXMkS5YED
+GDVy7PiRpM2bIWXO3Mmzp8+dBoLG3LjTI86jSBPq/Mm06YCgQjMSLRqgqtWrWLNq3cq1q9eqU4sK
+GEu2rNmzZ4cOqLqzpdu3cOPKVenT48W7F6UGeBnAqd+/gAP7FRAg6UKrBwz0Fcy4sWOehA0f3sj2
+seXLg2tKRrgUs+fPM41uVqgRrenTqFOrXm268GjSX2PLnk2b6+uFAQEAOw==
+
+------=_NextPart_000_0060_01C5C514.07D5D840
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/haus2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAF7D1XuAAAABlBMVEUAAACCkb4DVVPxAAAAAXRS
+TlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAQlJREFUeNoB/gAB/wAAAAAAAAAAAAAAAQAA
+AQABAAABAAEAAAABAAAAAAEAAAEAAAAAAQAAAAAAAAABAQAAAQAAAQAAAAABAAAAAQEAAQEBAAAA
+AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAQABAAAAAAAAAQAAAAEAAQEAAAAAAAABAAAAAQAA
+AAEBAAAAAAEBAAAAAAAAAAAAAQEAAAAAAQABAQAAAQEBAAEAAAAAAAEAAQEAAAEBAQABAAAAAAAB
+AQEBAQEBAQEBAQAAGqcAQv1LH7cAAAAASUVORK5CYII=
+
+------=_NextPart_000_0060_01C5C514.07D5D840
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/mailto.gif
+
+R0lGODdhDgAKAKIAAP////r7v+rrl8TFDKOkAH1+AElKAAAAACwAAAAADgAKAAADLWi63AQwynEM
+KCLrXEgFAraFgmdxm2iCpdhla8mpZRUQo0aYw+7/u8phSCwSEwA7
+
+------=_NextPart_000_0060_01C5C514.07D5D840
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAssembly.css
+
+A {
+	COLOR: #00ccff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #cccccc
+}
+A:hover {
+	TEXT-DECORATION: underline overline
+}
+A:active {
+	COLOR: #99ffcc
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #236282; FONT-SIZE: 10pt; =
+SCROLLBAR-HIGHLIGHT-COLOR: #003399; SCROLLBAR-SHADOW-COLOR: #505050; =
+COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #505050; SCROLLBAR-ARROW-COLOR: =
+#00ccff; SCROLLBAR-TRACK-COLOR: #084a6b; FONT-FAMILY: Verdana, Arial, =
+Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #000000; BACKGROUND-COLOR: =
+#084a6b; TEXT-ALIGN: center
+}
+.borda {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.bordaI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid
+}
+.bordaCor {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; =
+BACKGROUND-COLOR: #006699
+}
+.bordaCorI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid; BACKGROUND-COLOR: #006699
+}
+TR.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+TD.cab1 {
+	FONT-WEIGHT: bold; BACKGROUND: url(grafs/cab1.gif); COLOR: #00ccff; =
+HEIGHT: 32px; TEXT-ALIGN: center
+}
+TD.cab1a {
+	BACKGROUND: url(grafs/cab1a.gif) #006699; WIDTH: 27px
+}
+TD.pto1 {
+	FONT-WEIGHT: bold; HEIGHT: 40px; BACKGROUND-COLOR: #236282
+}
+TD.pe1 {
+	BACKGROUND: url(grafs/pe1.gif); HEIGHT: 18px
+}
+TD.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD.c66CC {
+	PADDING-RIGHT: 10px; BACKGROUND-COLOR: #0066cc; TEXT-ALIGN: right
+}
+HR {
+	COLOR: #00ccff; HEIGHT: 1px
+}
+H1 {
+	MARGIN-TOP: 1px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: =
+1px; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+H2 {
+	MARGIN-TOP: 0px; FONT-SIZE: xx-small; MARGIN-BOTTOM: 0px; FONT-FAMILY: =
+Verdana, Arial, Helvetica
+}
+H3 {
+	MARGIN-TOP: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; COLOR: #666666; =
+FONT-FAMILY: Verdana, Arial, Helvetica
+}
+P {
+	MARGIN: 10px 50px; TEXT-INDENT: 20pt; TEXT-ALIGN: justify
+}
+BLOCKQUOTE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; TEXT-ALIGN: justify
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 40pt; FONT-FAMILY: Verdana, Arial, =
+Helvetica
+}
+.asmcode {
+	BORDER-RIGHT: #236282 2px dotted; PADDING-RIGHT: 20px; BORDER-TOP: =
+#236282 2px dotted; PADDING-LEFT: 20px; FONT-SIZE: 14px; PADDING-BOTTOM: =
+20px; MARGIN: 10px 50px; BORDER-LEFT: #236282 2px dotted; COLOR: =
+#00ccff; PADDING-TOP: 20px; BORDER-BOTTOM: #236282 2px dotted; =
+FONT-FAMILY: "Courier new"; BACKGROUND-COLOR: #337292
+}
+OL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+UL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+
+------=_NextPart_000_0060_01C5C514.07D5D840--

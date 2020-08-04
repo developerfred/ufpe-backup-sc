@@ -1,0 +1,1239 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: =?Windows-1252?Q?A_Pilha_=28II=29_-_oic=ECliS_=A9?=
+Date: Thu, 29 Sep 2005 16:39:55 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_00CE_01C5C514.6BEA4460";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1506
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/stack2.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- =A9sobMedida by vickiSoft 04.08.03 ver 1.0 - referElo =
+--><HTML><HEAD><TITLE>A Pilha (II) - oic=ECliS =A9</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1"><LINK=20
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAsse=
+mbly.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"oiciliS - Assembly Intermedi=E1rio: a pilha (2)" =
+name=3Ddescription>
+<META content=3D"tutorial, tutoriais, assembly, assembler, pilha, stack" =
+
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.2800.1515" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3><IMG height=3D32=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/iniA=
+ni.gif"=20
+      width=3D32 align=3DabsMiddle border=3D0> A PILHA II</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D20 align=3Dleft>
+        <TBODY>
+        <TR>
+          <TD align=3Dmiddle><A=20
+            =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/index.php"><IMG=20
+            height=3D57 alt=3D"Sil=EDcio Reverso"=20
+            =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif"=20
+            width=3D106 border=3D0></A>oic=ECliS =A9<BR>Assembly =
+Intermedi=E1rio<BR>TEXTOS=20
+            ACESS=D3RIOS<BR><FONT size=3D-2>(ver 1.0 de 04.08.03)</FONT> =
+
+        </TD></TR></TBODY></TABLE>
+      <P>A segunda parte deste artigo n=E3o =E9 essencial para os =
+programadores em=20
+      Assembly por=E9m cont=E9m informa=E7=F5es muito interessantes.</P>
+      <P>Por ser um assunto extenso, o artigo foi dividido em duas =
+partes. Neste=20
+      segundo bloco abordaremos os seguintes t=F3picos:</P>
+      <UL>
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#virtual">A=20
+        pilha est=E1 num espa=E7o virtual de mem=F3ria</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#conteudo">Conte=FAdo=20
+        inicial da pilha</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#espaco">Espa=E7o=20
+        inicial da pilha</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#amplia">Ampliando=20
+        a pilha em tempo de execu=E7=E3o</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#permite">=C1rea=20
+        de uso permitido</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#fluxo">Usando=20
+        a pilha para manter um fluxo de dados</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#multithread">A=20
+        pilha em aplica=E7=F5es multi-thread</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#quadro">Quadro=20
+        da pilha e dados locais</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#locais">Endere=E7ando=20
+        dados locais</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#param">Acessando=20
+        par=E2metros atrav=E9s da pilha</A>=20
+        <LI><A=20
+        =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack2.php#callback">A=20
+        pilha e procedimentos callback do Windows</A> </LI></UL>
+      <P>Todos os t=F3picos s=E3o muito interessantes, portanto, vamos =
+ao=20
+      trabalho.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dvirtual></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> A pilha est=E1 num =
+espa=E7o virtual de=20
+      mem=F3ria</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O valor em ESP =E9 um endere=E7o virtual. Se, por exemplo, no =
+in=EDcio, for=20
+      64FE3Ch, n=E3o estar=E1 se referindo a um endere=E7o de mem=F3ria =
+existente na=20
+      mem=F3ria f=EDsica real. Para obter o endere=E7o f=EDsico da =
+mem=F3ria, o sistema=20
+      precisa converter (ou "mapear") 64FE3Ch de acordo com seus =
+pr=F3prios=20
+      registros internos. Por exemplo, este endere=E7o pode muito bem =
+corresponder=20
+      a 2FE3Ch na mem=F3ria f=EDsica real. Portanto, um endere=E7o =
+virtual =E9 apenas=20
+      uma representa=E7=E3o conveniente de uma posi=E7=E3o na mem=F3ria. =
+Costuma-se dizer=20
+      que cada aplica=E7=E3o roda no seu pr=F3prio espa=E7o virtual de =
+endere=E7os. Na=20
+      teoria, toda a extens=E3o de endere=E7os de 32 bits (zero a 4 Gb) =
+est=E1=20
+      dispon=EDvel para cada uma das aplica=E7=F5es. Na pr=E1tica, a =
+coisa muda de=20
+      figura, mas continua sendo verdade que cada aplica=E7=E3o que =
+esteja rodando=20
+      no sistema pode usar a mesma extens=E3o de endere=E7os virtuais. =
+N=E3o ocorrem=20
+      conflitos porque o sistema sabe o tempo todo qual aplica=E7=E3o =
+est=E1=20
+      endere=E7ando mem=F3ria. Portanto, pode indicar =E0s =
+aplica=E7=F5es o local correto=20
+      na mem=F3ria f=EDsica. Deste modo, =E9 poss=EDvel que v=E1rias =
+aplica=E7=F5es apresentem=20
+      simultaneamente o mesmo valor em ESP por=E9m cada um destes =
+valores estar=E1=20
+      apontando para um local diferente da mem=F3ria f=EDsica.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dconteudo></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Conte=FAdo inicial da =
+pilha</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O Windows aloca uma =E1rea de pilha espec=EDfica para o thread =
+principal=20
+      quando este =E9 carregado. O pr=F3prio sistema faz uso deste =
+thread e da sua=20
+      =E1rea de pilha antes de chamar o endere=E7o de entrada do =
+programa. Voc=EA pode=20
+      ver isto no debugger. Inicie seu programa, deixe chegar no =
+endere=E7o de=20
+      entrada e observe o valor de ESP. Agora abra uma janela de =
+inspe=E7=E3o para o=20
+      valor de ESP. Talvez voc=EA imagine estar na base da =E1rea de =
+mem=F3ria, s=F3 que=20
+      n=E3o =E9 este o caso. Se voc=EA rolar a janela de inspe=E7=E3o =
+para a base da=20
+      mem=F3ria (role para o maior endere=E7o) voc=EA ver=E1 que j=E1 =
+houve muita=20
+      atividade na pilha durante a prepara=E7=E3o do sistema para chamar =
+o endere=E7o=20
+      de entrada do programa. =C9 interessante que o =FAltimo valor da =
+pilha, antes=20
+      da aplica=E7=E3o ser chamada, =E9 um endere=E7o de retorno na =
+Kernel32.dll. Isto=20
+      indica que uma fun=E7=E3o da Kernel32.dll chamou a aplica=E7=E3o. =
+Devido =E0=20
+      exist=EAncia deste endere=E7o de retorno =E9 poss=EDvel usar um =
+simples RET para=20
+      terminar o processo, ao inv=E9s de chamar ExitProcess. =C9 claro =
+que isto s=F3=20
+      funciona se a pilha estiver em equil=EDbrio de modo que a =
+execu=E7=E3o do c=F3digo=20
+      continue na fun=E7=E3o chamadora da Kernel32.dll.</P>
+      <P>Um pouco mais adiante, podemos ver na pilha o nome do arquivo =
+da=20
+      aplica=E7=E3o e, mais adiante ainda, podemos observar o endere=E7o =
+do=20
+      manipulador de exce=E7=F5es que o pr=F3prio sistema alocou para o =
+thread=20
+      principal da aplica=E7=E3o. Todas estas coisas mostram que a =
+=E1rea de pilha da=20
+      aplica=E7=E3o (assim como seu thread) =E9 utilizada pelo sistema =
+para preparar a=20
+      chamada a esta aplica=E7=E3o.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Despaco></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Espa=E7o inicial da =
+pilha</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>No Windows, quando alguma mem=F3ria =E9 reservada para o uso de =
+uma=20
+      aplica=E7=E3o, uma quantidade de endere=E7os virtuais s=E3o =
+<I>alocados</I> pelo=20
+      sistema. Esta aloca=E7=E3o preserva estes endere=E7os para que a =
+aplica=E7=E3o possa=20
+      utiliz=E1-los. Se a aplica=E7=E3o precisar de mais mem=F3ria, os =
+mesmos endere=E7os=20
+      n=E3o podem ser reutilizados. Nenhuma mem=F3ria f=EDsica =E9 =
+utilizada enquanto a=20
+      mem=F3ria n=E3o tiver sido <I>consignada</I>. Neste ponto, os =
+endere=E7os=20
+      virtuais que foram alocados s=E3o mapeados para a =E1rea ou =
+=E1reas da mem=F3ria=20
+      f=EDsica que estejam dispon=EDveis para o sistema.</P>
+      <P>Obviamente, para que este processo funcione, o sistema precisa =
+saber do=20
+      tamanho m=E1ximo de mem=F3ria cont=EDgua que dever=E1 ser =
+consignada. Esta passa a=20
+      ser a extens=E3o de endere=E7os alocados.</P>
+      <P>O mesmo se aplica quando alguma mem=F3ria =E9 reservada para o =
+uso da=20
+      pilha. No in=EDcio de uma aplica=E7=E3o, o sistema precisa saber =
+quanta mem=F3ria=20
+      alocar=E1 para a pilha e quanto dever=E1 consignar na primeira =
+inst=E2ncia.=20
+      Estas duas quantidades est=E3o referenciadas no arquivo PE em +48h =
+e +4Ch no=20
+      cabe=E7alho opcional. Como veremos abaixo, referem-se n=E3o =
+somente ao thread=20
+      principal da aplica=E7=E3o mas tamb=E9m a novos threads criados =
+pela=20
+      aplica=E7=E3o.</P>
+      <P>A maioria dos linkers utilizam, respectivamente, 1Mb e 4 Kb (o =
+tamanho=20
+      normal de p=E1gina) para estes valores. Com o GoLink voc=EA pode =
+alterar estes=20
+      valores default usando, respectivamente, /stacksize e /stackinit =
+(veja o=20
+      manual do GoLink para saber como us=E1-los).</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Damplia></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Ampliando a pilha em =
+tempo de=20
+    execu=E7=E3o</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O sistema percebe se uma aplica=E7=E3o estiver tentando ler ou =
+escrever=20
+      al=E9m da =E1rea de pilha consignada usando manipula=E7=E3o de =
+exce=E7=E3o.=20
+      Considerando que a tentativa ocorra dentro da =E1rea permitida da =
+pilha,=20
+      mais mem=F3ria ser=E1 consignada de acordo com a necessidade. =
+Mesmo que ocorra=20
+      uma tentativa de aumentar a pilha al=E9m da =E1rea alocada, o =
+sistema NT (mas=20
+      n=E3o o W9x) tentar=E1 alocar mais mem=F3ria, o que s=F3 n=E3o =
+ocorre se os=20
+      endere=E7os virtuais requeridos tenham sido alocados para outras =
+=E1reas de=20
+      mem=F3ria.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dpermite></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> =C1rea de uso =
+permitido</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>A pilha n=E3o =E9 considerada como apropriada para manter =
+grandes=20
+      quantidades de dados e este enfoque =E9 refor=E7ado pelo Windows =
+atrav=E9s do=20
+      seu mecanismo de exce=E7=E3o. No W9x, a =E1rea de pilha us=E1vel =
+permitida=20
+      situa-se entre o ESP corrente e o limite da pr=F3xima p=E1gina =
+mais o tamanho=20
+      da p=E1gina. Por exemplo, se ESP for 64FE3Ch, ent=E3o o limite da =
+pr=F3xima=20
+      p=E1gina ser=E1 64F000h e o tamanho da p=E1gina extra (que =
+geralmente =E9 fixada=20
+      em 4K pelo sistema) nos leva para 64E000h:</P>
+      <TABLE align=3Dcenter>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD></TD>
+          <TD>64D000h</TD></TR>
+        <TR align=3Dmiddle>
+          <TD></TD>
+          <TD class=3DbordaCor>P=E1gina 4K<BR><FONT=20
+            color=3D#ff0000>indispon=EDvel</FONT></TD>
+          <TD vAlign=3Dbottom>64E000h</TD></TR>
+        <TR align=3Dmiddle>
+          <TD></TD>
+          <TD class=3DbordaCor>P=E1gina 4K<BR><FONT=20
+          color=3D#00ff00>dispon=EDvel</FONT></TD>
+          <TD vAlign=3Dbottom>64F000h</TD></TR>
+        <TR align=3Dmiddle>
+          <TD>ESP (64FE3Ch) est=E1 aqui &#8594;</TD>
+          <TD class=3DbordaCor>P=E1gina 4K<BR><FONT=20
+          color=3D#00ff00>dispon=EDvel</FONT></TD>
+          <TD vAlign=3Dbottom>650000h</TD></TR></TBODY></TABLE>
+      <P>Desta forma, se ESP for 64FE3Ch, a instru=E7=E3o</P><PRE =
+class=3Dasmcode>MOV D[ESP-1E40h],0
+</PRE>
+      <P>causar=E1 uma exce=E7=E3o porque o ponto atual da pilha que =
+est=E1 sendo=20
+      endere=E7ado =E9 64DFFCh, uma =E1rea n=E3o dispon=EDvel porque =
+ainda n=E3o foi=20
+      consignada pelo sistema.</P>
+      <P>Tamb=E9m n=E3o =E9 poss=EDvel contornar o problema movendo ESP. =
+No W9x, o=20
+      sistema permite que o ESP seja movido apenas at=E9 ao limite da =
+pr=F3xima=20
+      p=E1gina + o tamanho da p=E1gina menos quatro bytes. Por exemplo, =
+se ESP for=20
+      64FE3Ch, s=F3 ser=E1 permitida uma =FAnica instru=E7=E3o para =
+mover ESP em 1E38h (em=20
+      decimal isto corresponde a 7836 bytes). Isto significa que a =
+instru=E7=E3o</P><PRE class=3Dasmcode>SUB ESP,1E38h=20
+</PRE>
+      <P>faz com que ESP se torne 64E004h e isto =E9 permitido. Mas a=20
+instru=E7=E3o</P><PRE class=3Dasmcode>SUB ESP,1E3Ch
+</PRE>
+      <P>causar=E1 uma exce=E7=E3o. A diferen=E7a de 4 bytes na =
+posi=E7=E3o que dispara a=20
+      exce=E7=E3o sugere que existam dois tipos de prote=E7=E3o.</P>
+      <P>Pelo acima exposto pode parecer que o tamanho dos dados que =
+podem ser=20
+      colocados na pilha esteja limitado a 4K, por=E9m isto n=E3o =E9 =
+verdade. Existem=20
+      duas maneiras de se evitar estas exce=E7=F5es e, desta forma, usar =
+a pilha=20
+      para uma quantidade maior de dados. A primeira forma =E9 mover e =
+usar o ESP=20
+      incrementalmente. Isto assegurar=E1 que o sistema consigne =
+mem=F3ria=20
+      progressivamente, como desejado. O seguinte c=F3digo cria com =
+seguran=E7a uma=20
+      =E1rea de 40K bytes na pilha:</P><PRE class=3Dasmcode>MOV ECX,10
+L0:
+SUB ESP,1000h
+MOV D[ESP],0
+LOOP L0
+</PRE>
+      <P>Aqui se obriga o sistema a consignar 10 blocos de 4K de =
+mem=F3ria de=20
+      pilha. O ESP acaba ficando no topo desta =E1rea de pilha. Este =
+processo n=E3o=20
+      =E9 particularmente r=E1pido porque o sistema precisa consignar =
+mem=F3ria dez=20
+      vezes. Um m=E9todo mais r=E1pido =E9 instruir o sistema a =
+consignar uma=20
+      quantidade maior que a usual de mem=F3ria para a pilha quando a =
+aplica=E7=E3o=20
+      for carregada. Com o GoLink =E9 poss=EDvel faz=EA-lo usando =
+/stackinit. Por=20
+      exemplo,</P><PRE class=3Dasmcode>/stackinit 0A000
+</PRE>
+      <P>garantir=E1 que 40K de mem=F3ria seja consignada para a pilha =
+no in=EDcio.=20
+      Voc=EA vai poder mover o ESP com seguran=E7a usando a =
+instru=E7=E3o</P><PRE class=3Dasmcode>SUB ESP,0A000h</PRE>
+      <P>e ter=E1 um espa=E7o de 40K de mem=F3ria para brincar.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dfluxo></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Usando a pilha para =
+manter um fluxo de=20
+      dados</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Com as devidas precau=E7=F5es, a pilha pode ser usada para =
+armazenar um=20
+      fluxo razo=E1vel de dados. Os pontos que devem ser lembrados =
+s=E3o:</P>
+      <UL>
+        <LI>Sempre restaure o equil=EDbrio de ESP quando voc=EA tiver =
+terminado a=20
+        opera=E7=E3o com a pilha.=20
+        <LI>Nunca escreva para [ESP], a n=E3o ser que voc=EA tenha =
+subtraido pelo=20
+        menos 4 bytes do valor original de ESP porque estes cont=E9m o =
+endere=E7o de=20
+        retorno do procedimento.<BR>Nunca escreva para [ESP+n], a n=E3o =
+ser que um=20
+        n=FAmero suficiente de bytes tenha sido subtra=EDdo de ESP para =
+evitar que=20
+        outros dados importantes sejam sobrescritos.=20
+        <LI>Se voc=EA n=E3o mover o ESP para o topo da =E1rea de dados =
+ent=E3o ser=E1=20
+        preciso escrever os dados na dire=E7=E3o inversa, isto =E9, para =
+endere=E7os=20
+        progressivamente decrescentes. Isto pode ser feito de v=E1rios =
+modos, o=20
+        mais conveniente sendo provavelmente ativando a flag de =
+dire=E7=E3o usando=20
+        STD e depois usando instru=E7=F5es MOV. Por exemplo: <PRE =
+class=3Dasmcode>MOV ECX,8000
+MOV EDI,ESP
+SUB EDI,4
+STD         ;ativa a flag de dire=E7=E3o
+REP MOVSD   ;move dwords de ECX de [ESI] para [EDI]
+CLD         ;limpa a flag de dire=E7=E3o
+</PRE>Este c=F3digo escreve 8.000 dwords na pilha. Observe como SUB =
+EDI,4=20
+        evita a escrita sobre [ESP], o qual cont=E9m o endere=E7o de =
+retorno do=20
+        procedimento. N=E3o h=E1 problema com o aumento da mem=F3ria =
+porque a escrita=20
+        =E9 incremental e o sistema apropriadamente cria novas =E1reas =
+de mem=F3ria de=20
+        4K =E0 medida que se tornam necess=E1rias.=20
+        <LI>Se voc=EA mover ESP para o topo da =E1rea de dados, ser=E1 =
+preciso tomar=20
+        as precau=E7=F5es citadas no t=F3pico "=C1rea de uso permitido". =
+Respeitando as=20
+        premissas ser=E1 poss=EDvel escrever na dire=E7=E3o =
+normal.</LI></UL></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dmultithread></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> A pilha em =
+aplica=E7=F5es multi-thread</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Cada thread do seu aplicativo possui seus pr=F3prios =
+registradores e=20
+      pilha. Isto quer dizer que, quando o sistema delegar tempo de=20
+      processamento ao thread, ele entrar=E1 no contexto de =
+registradores deste=20
+      thread. O contexto cont=E9m todos os valores dos registradores =
+existentes no=20
+      momento em que, da =FAltima vez, o tempo de processamento foi =
+tirado do=20
+      thread. Como os registradores incluem o ESP, seu valor tamb=E9m =
+ser=E1=20
+      corretamente trocado de modo que a =E1rea de mem=F3ria f=EDsica =
+correta ser=E1=20
+      usada pelo thread como sua pilha. O resultado =E9 que thread pode =
+se apoiar=20
+      no fato de que pode usar sua pilha como uma =E1rea particular da =
+mem=F3ria que=20
+      recebe interfer=EAncias de outros threads. Voc=EA pode observar =
+isto no=20
+      debugger. Ser=E1 poss=EDvel ver que o ESP sempre muda =
+substancialmente quando=20
+      a execu=E7=E3o troca de thread.</P>
+      <P>Quando um thread =E9 iniciado, sua =E1rea de pilha =E9 alocada. =
+Como exemplo=20
+      pr=E1tico, verificou-se que o thread principal de um aplicativo =
+rodava a=20
+      partir de 64FE3Ch (para baixo) e, quando um novo thread era feito, =
+sua=20
+      pilha rodava a partir de 75FF9Ch (para baixo). Num outro teste, =
+quando=20
+      seis threads novos foram feitos, suas pilhas foram iniciadas=20
+      respectivamente em 19DEF9Ch, 1AFFF9Ch, 1C1FF9Ch, 1D3FF9Ch, =
+1E5FF9Ch e=20
+      1F7FF9Ch. Aqui voc=EA pode notar que o sistema est=E1 separando o =
+endere=E7o=20
+      virtual de cada =E1rea de pilha com 128Kb a mais do que o default =
+de 1Mb.=20
+      Provavelmente isto tenha ocorrido para abrir espa=E7o para o uso =
+da pilha=20
+      pelo sistema e tamb=E9m alguma folga. Alterando a aloca=E7=E3o do =
+tamanho da=20
+      pilha para 200000h (2Mb) atrav=E9s do uso de /stacksize e depois =
+criando=20
+      seis threads novos teve como resultado a separa=E7=E3o das =E1reas =
+de pilha com=20
+      128Kb a mais que os 2 Mb.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dquadro></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Quadro da pilha e dados =
+locais</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Um quadro de pilha =E9 uma =E1rea particular da pilha que =
+cont=E9m um=20
+      endere=E7o de retorno de uma fun=E7=E3o e dados usados por esta =
+fun=E7=E3o, sem o=20
+      risco de sobre-escrita porque o valor de ESP foi decrementado. Os =
+dados=20
+      mantidos num quadro da pilha s=E3o denominados "dados locais". =
+Isto porque=20
+      s=E3o usados apenas dentro do referido quadro de pilha e n=E3o =
+est=E1 previsto=20
+      que sejam endere=E7ados pelo programa de forma feral. Vejamos este =
+exemplo=20
+      simples:</P><PRE class=3Dasmcode>PROCEDURE1:
+SUB ESP,20h          ;faz espa=E7o na pilha para dados locais
+;                    ;usa a =E1rea de dados locais
+CALL PROCEDURE2
+;                    ;retorna de PROCEDURE2
+;                    ;continua a usar dados locais
+ADD ESP,20h          ;restaura o equil=EDbrio de ESP
+RET
+</PRE>
+      <P>e</P><PRE class=3Dasmcode>PROCEDURE2:
+PUSH EAX,EBX,ECX
+;                    ;faz v=E1rios c=E1lculos
+POP ECX,EBX,EAX
+RET
+</PRE>
+      <P>Aqui o quadro da pilha =E9 criado usando a instru=E7=E3o SUB =
+ESP,20h. Isto=20
+      diminui o valor de ESP em 32 bytes, criando espa=E7o na pilha para =
+8 dwords.=20
+      Agora, como o ESP foi mudado, qualquer coisa que ocorrer na =
+PROCEDURE2=20
+      nunca vai sobre-escrever estes 8 dwords. Vamos conferir isto =
+visualmente=20
+      imaginando que ESP contenha 64FE38h no in=EDcio da PROCEDURE1:</P>
+      <TABLE align=3Dcenter>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD class=3Dborda>64FE08h</TD>
+          <TD>cont=E9m valor em ECX inserido pela PROCEDURE2</TD></TR>
+        <TR>
+          <TD></TD>
+          <TD class=3Dborda>64FE0Ch</TD>
+          <TD>cont=E9m valor em EBX inserido pela PROCEDURE2</TD></TR>
+        <TR>
+          <TD></TD>
+          <TD class=3Dborda>64FE10h</TD>
+          <TD>cont=E9m valor em EAX inserido pela PROCEDURE2</TD></TR>
+        <TR>
+          <TD>ESP aqui no in=EDcio da PROCEDURE2&#8594;</TD>
+          <TD class=3Dborda>64FE14h</TD>
+          <TD>cont=E9m o endere=E7o de retorno da PROCEDURE2</TD></TR>
+        <TR align=3Dmiddle>
+          <TD class=3DbordaCor rowSpan=3D2>Quadro de pilha da =
+PROCEDURE1</TD>
+          <TD class=3DbordaCor>64FE18h<BR>a<BR>64FE34h</TD>
+          <TD class=3DbordaCor>8 dwords para dados locais</TD></TR>
+        <TR align=3Dmiddle>
+          <TD class=3DbordaCor>64FE38h</TD>
+          <TD class=3DbordaCor>cont=E9m o endere=E7o de retorno da=20
+        PROCEDURE1</TD></TR></TBODY></TABLE><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dlocais></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Endere=E7ando dados =
+locais</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P><I>Observa=E7=E3o: isto =E9 automatizado no GoAsm usando =
+FRAME..ENDF e no=20
+      MASM usando PROC..ENDP.</I></P>
+      <P>Uma vez que ESP aponta para o topo da =E1rea de dados locais, =
+=E9 poss=EDvel=20
+      endere=E7ar os dados usando ESP. Assim, no exemplo acima, o =
+primeiro dado=20
+      local dword estaria dispon=EDvel em [ESP] imediatamente ap=F3s o =
+SUB ESP,20h.=20
+      Por=E9m, usando ESP para gerenciar os dados locais na pilha pode =
+ser=20
+      complicado porque ESP mudar=E1 a cada CALL ou PUSH dentro do =
+procedimento.=20
+      Por esta raz=E3o costuma-se usar o registrador EBP e n=E3o o ESP. =
+Atribui-se=20
+      um valor ao EBP logo no in=EDcio do frame de pilha, na base dos =
+dados=20
+      locais, e o valor n=E3o =E9 alterado enquanto a execu=E7=E3o n=E3o =
+abandonar o=20
+      quadro. Desta forma, pode-se ter certeza de que os dados locais =
+possam=20
+      sempre ser endere=E7ados usando um deslocamento (offset) de EBP. =
+Agora, o=20
+      c=F3digo para um quadro de pilha t=EDpico passa a ter a seguinte=20
+apar=EAncia:</P><PRE class=3Dasmcode>QuadroPilhaTipico:
+PUSH EBP     ;salva o valor de ebp que ser=E1 alterado      }
+MOV EBP,ESP  ;p=F5e valor atual do ponteiro de pilha em ebp } =
+"pr=F3logo"
+SUB ESP,0Ch  ;make space for local data                   }
+;            ;PONTO "X"
+;
+;            ;c=F3digo dentro do procedimento
+;
+MOV ESP,EBP  ;restaura o ponteiro da pilha                }
+POP EBP      ;restaura o valor de ebp                     } "ep=EDlogo"
+RET          ;retorna ao chamador ajustando o ponteiro    }
+              da pilha                                    }
+</PRE>
+      <P>Aqui mudamos o ponteiro da pilha em 12 bytes. No ponto "X", a =
+pilha em=20
+      rela=E7=E3o a EBP tem o seguinte aspecto:</P>
+      <TABLE align=3Dcenter>
+        <TBODY>
+        <TR>
+          <TD></TD>
+          <TD class=3Dborda>ebp-10h</TD>
+          <TD>o pr=F3ximo push entrar=E1 aqui</TD></TR>
+        <TR>
+          <TD>ESP aqui no ponto "X"&#8594;</TD>
+          <TD class=3DbordaCor>ebp-0Ch</TD>
+          <TD>cont=E9m espa=E7o para dado local</TD></TR>
+        <TR>
+          <TD></TD>
+          <TD class=3DbordaCor>ebp-8h</TD>
+          <TD>cont=E9m espa=E7o para dado local</TD></TR>
+        <TR>
+          <TD></TD>
+          <TD class=3DbordaCor>ebp-4h</TD>
+          <TD>cont=E9m espa=E7o para dado local</TD></TR>
+        <TR>
+          <TD></TD>
+          <TD class=3DbordaCor>ebp</TD>
+          <TD>cont=E9m valor original de ebp</TD></TR>
+        <TR>
+          <TD></TD>
+          <TD class=3DbordaCor>ebp+4h</TD>
+          <TD>cont=E9m o endere=E7o de retorno de=20
+      QuadroPilhaTipico</TD></TR></TBODY></TABLE>
+      <P>Agora, por todo o quadro de pilha, seja o que for que acontecer =
+a ESP,=20
+      os dados locais estar=E3o acess=EDveis em [EBP-4H], [EBP-8h] e =
+[EBP-0Ch].</P>
+      <P>Observe como o equil=EDbrio de ESP =E9 restaurado =
+automaticamente pelo uso=20
+      de MOV ESP,EBP pouco antes de retornar ao chamador.</P>
+      <P>N=E3o =E9 obrigat=F3rio usar EBP para este fim, qualquer =
+registrador =E9=20
+      adequado. Acontece que o EBP =E9 tradicionalmente usado para este =
+fim e seu=20
+      c=F3digo ser=E1 mais facilmente entendido por outros =
+programadores.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dparam></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Acessando par=E2metros =
+atrav=E9s da=20
+    pilha</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>J=E1 vimos como passar par=E2metros para outros procedimentos =
+usando a=20
+      pilha. Agora vamos analisar como usar par=E2metros passados para=20
+      procedimentos no seu pr=F3prio c=F3digo. Basicamente, estes =
+par=E2metros est=E3o=20
+      mais em baixo na pilha para que n=E3o sejam sobre-escritos em =
+circunst=E2ncias=20
+      normais. Por esta raz=E3o n=E3o h=E1 necessidade nenhuma de =
+salv=E1-los ou=20
+      resgat=E1-los. Depois de entrar num procedimento, ESP estar=E1 =
+apontando para=20
+      o endere=E7o de retorno deste procedimento (inserido pelo CALL). =
+Por isto,=20
+      os par=E2metros estar=E3o em [ESP+4h], [ESP+8h], [ESP+0Ch] e assim =
+por diante,=20
+      dependendo de quantos par=E2metros existirem. Mas pode ser =
+dif=EDcil localizar=20
+      onde exatamente estejam os par=E2metros usando ESP porque o valor =
+deste=20
+      registrador mudar=E1 no pr=F3ximo PUSH ou CALL. Mais uma vez o EBP =
+pode ser=20
+      usado para apontar os par=E2metros.</P>
+      <P>Se o c=F3digo pr=F3logo for</P><PRE class=3Dasmcode>PUSH EBP    =
+ ;salva o valor de ebp que ser=E1 alterado      }
+MOV EBP,ESP  ;p=F5e valor do ponteiro da pilha atual em ebp } =
+"pr=F3logo"
+SUB ESP,0Ch  ;cria espa=E7o para dados locais               }
+</PRE>
+      <P>quando ESP for passado para EBP, ele ter=E1 4 bytes a menos do =
+que tinha=20
+      no in=EDcio da chamada (devido ao primeiro PUSH EBP). Portanto, os =
+
+      par=E2metros agora podem ser acessados usando [EBP+8h], [EBP+0Ch], =
+[EBP+10h]=20
+      e asiim por diante, dependendo do n=FAmero de par=E2meros =
+existentes.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a><A name=3Dcallback></A></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> A pilha e procedimentos =
+callback do=20
+      Windows</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>As duas t=E9cnicas utilizadas (criando espa=E7o para dados =
+locais e=20
+      endere=E7ando par=E2metros) s=E3o requeridas em procedimentos de =
+callback do=20
+      Windows. O procedimento callback mais comum em programas Windows =
+=E9 o=20
+      procedimento janela. =C9 para este procedimento que o Windows =
+envia=20
+      "mensagens" e o Windows espera uma resposta correta. O que =
+acontece neste=20
+      caso =E9 que o Windows chama o procedimento janela usando o thread =
+do=20
+      pr=F3prio programa. Isto geralmente ocorre enquanto o programa =
+estiver num=20
+      loop de mensagem esperando um retorno da API GetMessage ou ent=E3o =
+
+      executando a API DispatchMessage.</P>
+      <P>Por sorte voc=EA pode usar FRAME..ENDF no GoAsm para obter os =
+par=E2metros=20
+      enviados por janelas e tamb=E9m endere=E7=E1-los por nome. Voc=EA =
+tamb=E9m pode=20
+      criar com facilidade =E1reas de dados locais endere=E7=E1veis por =
+nome. E voc=EA=20
+      pode preservar registradores e restaurar o equil=EDbrio da pilha=20
+      automaticamente. Veja o manual do GoAsm para uma descri=E7=E3o =
+completa ou=20
+      retorne para a <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/st=
+ack1.php">parte=20
+      1</A> deste texto.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 width=3D650 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dmeio1><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+.gif"=20
+      width=3D115 border=3D0> UFA!!!</TD></TR>
+  <TR>
+    <TD class=3Dmeio1>
+      <P>Bel=EDssimo texto, n=E9 n=E3o? Se agora voc=EA ainda n=E3o sabe =
+o que =E9 e como=20
+      funciona a pilha...</P>
+      <P>N=E3o posso deixar de agradecer Jeremy Gordon pelos seus =
+excelentes=20
+      artigos sobre a pilha. O presente texto =E9 (praticamente) apenas =
+a tradu=E7=E3o=20
+      de <A title=3D" Link externo "=20
+      href=3D"http://www.jorgon.freeserve.co.uk/GoasmHelp/usstack2.htm"=20
+      target=3D_blank><I>Understand the stack (part 2)</I></A> do =
+referido=20
+      autor.</P></TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3D#236282><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+a.gif"=20
+      width=3D115 border=3D0></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3>Localizador</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1 align=3Dmiddle>
+      <SCRIPT language=3DJavaScript>=0A=
+function setFontSize(fontVal) {=0A=
+var fontSet =3D document.getElementById('fontSet');=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('table');=0A=
+if (!fontVal) {fontVal =3D document.getElementById('fontSet').value;}=0A=
+var docSize =3D fontVal+'pt';=0A=
+for(var i=3D0;i<docBase.length;i++)=0A=
+docBase[i].style.fontSize =3D docSize;=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('body');=0A=
+docBase[0].style.fontSize =3D docSize;=0A=
+docSize =3D (fontVal-2)+'pt';=0A=
+document.getElementById('xxpe').style.fontSize =3D docSize;=0A=
+if (fontSet) {fontSet.value =3D fontVal;}=0A=
+}=0A=
+</SCRIPT>
+
+      <DIV id=3Dxxpe style=3D"FONT-SIZE: 8pt">
+      <HR>
+
+      <CENTER>| <A href=3D"javascript:setFontSize(15)"><SPAN=20
+      style=3D"FONT-SIZE: 15pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(13)"><SPAN=20
+      style=3D"FONT-SIZE: 13pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(11)"><SPAN=20
+      style=3D"FONT-SIZE: 11pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(9)"><SPAN style=3D"FONT-SIZE: =
+9pt">A</SPAN></A>=20
+      | <A=20
+      onmouseover=3D"status=3D'A Aldeia onde as coisas acontecem =
+numaboa';return true"=20
+      href=3D"http://www.numaboa.com.br/index.php"><IMG height=3D15=20
+      alt=3D"P=E1gina Inicial" =
+src=3D"http://www.numaboa.com.br/img/haus2.png"=20
+      width=3D15 align=3Dbottom border=3D0></A> | <A=20
+      onmouseover=3D"status=3D'Saiba o que a Aldeia tem para =
+oferecer';return true"=20
+      title=3D"Mapa do site"=20
+      href=3D"http://www.numaboa.com.br/aldeia/index.php">Mapa do =
+Site</A> | <A=20
+      onmouseover=3D"status=3D'Fique por dentro das novidades';return =
+true"=20
+      title=3D"Novidades na Aldeia"=20
+      =
+href=3D"http://www.numaboa.com.br/aldeia/destaques.php">Novidades</A> | =
+<A=20
+      onmouseover=3D"status=3D'Procure na Aldeia';return true"=20
+      title=3D"Abre em nova janela"=20
+      href=3D"http://www.numaboa.com.br/portal/index.php" =
+target=3D_blank>Busca</A>=20
+      | <A onmouseover=3D"status=3D'Indique esta p=E1gina aos =
+amigos';return true"=20
+      title=3D"Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/indica.php?page=3D/informatica/=
+oiciliS/assembler/textos/stack2.php&amp;indica=3DoiciliS - Assembly - =
+Textos - A Pilha II"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Indique esta p=E1gina</A> | <A=20
+      onmouseover=3D"status=3D'Fale com a vov=F3 da Aldeia';return true" =
+
+      title=3D"webmaster - Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/contato.php?page=3D/informatica=
+/oiciliS/assembler/textos/stack2.php"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Mestre da Teia</A> | <A=20
+      onmouseover=3D"status=3D'Marcha-R=E9';return true" title=3D"Meia =
+volta voooolver"=20
+      href=3D"javascript:history.back()">Voltar</A> |<BR>| <A=20
+      =
+href=3D"http://www.numaboa.com.br/foot/localizador.php?file=3Dinfo.txt&am=
+p;page=3D/informatica/oiciliS/assembler/textos/stack2.php"=20
+      target=3D_blank>Localizador</A> || @ <A=20
+      href=3D"http://www.numaboa.com.br/informatica/">Info NumaBoa</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/">oic=ECliS</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/">Assembl=
+y</A>=20
+      &gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/">=
+Textos</A>=20
+      &gt; <B>A Pilha II</B>
+      <HR>
+      Cr=E9ditos: vov=F3 Vicki<BR><BR>webdesign sobMedida by vickiSoft - =
+
+      /informatica/oiciliS/assembler/textos/stack2.php (04.08.03) =
+vers=E3o 1.0 de=20
+      04.08.03<BR>Licen=E7a Creative Commons 1998-2005 Aldeia =
+NumaBoa<BR><!-- Creative Commons License -->Exceto onde especificamente=20
+      declarado, todo material deste site =E9 disponibilizado de acordo =
+com a <A=20
+      =
+href=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt"=20
+      target=3D_blank rel=3Dlicense>Licen=E7a Creative Commons</A>. <!-- =
+/Creative Commons License --><!--=0A=
+<rdf:RDF xmlns=3D"http://web.resource.org/cc/"=0A=
+xmlns:dc=3D"http://purl.org/dc/elements/1.1/"=0A=
+xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#">=0A=
+<Work rdf:about=3D"">=0A=
+<dc:type rdf:resource=3D"http://purl.org/dc/dcmitype/Text" />=0A=
+<license =
+rdf:resource=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/" />=0A=
+</Work>=0A=
+=0A=
+<License =
+rdf:about=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/">=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Reproduction" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Distribution" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Notice" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Attribution" />=0A=
+<prohibits rdf:resource=3D"http://web.resource.org/cc/CommercialUse" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/DerivativeWorks" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/ShareAlike" />=0A=
+</License>=0A=
+</rdf:RDF>=0A=
+--></CENTER></DIV></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/iniAni.gif
+
+R0lGODlhIAAgAOIAADMAZv///wAAAP//AGYz//9mM/+ZZgAAACH/C05FVFNDQVBFMi4wAwEAAAAh
++QQJFAAAACwAAAAAIAAgAAIDQwi63P4wykmrvTjrzbu/QRh8i2iO3nl2qsq1qwa72RyD9l3lOsWb
+mJ8oKERZisZdkShk/mpPKG8zpeZYsw+MpAByPQkAIfkECRQAAAAsBgAIABEAGAACA0UIutGxELr5
+oqLU4iZEi1vgfUw4kkAoTpeJpeobd6w40g7+cN2Zj7CYbSesbXyO4ASZVHI2JV5I8oRSV9ZrFrS1
+KL3gcAIAIfkECRQAAAAsBgAQABEAEAACA0EIujA+LK73ohCTVoDDVc4lVEIABB42XKnDmWjKoiJ7
+xnNJ63dM+z4F0DM0CXG6IQNXNC6YRUkTJTkqq88YdltNAAAh+QQJFAAAACwGABAAEQAQAAIDQQi6
+MD4srveiEJNWgMNVziVUQgAEHjZcqcOZaMqiInvGc0nrd0z7PgXQMzQJcbohA1c0LphFSRMlOSqr
+zxh2W00AACH5BAkUAAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXrZ+WSAyk6CMDGx
+5sgzIABBDcczQYDXw8WKFCGxeAwwj8uiUzilRp09rHZ4zW650eaXgaWOydOvM6LGZtoshTZOXyQA
+ACH5BAkUAAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXoacz4L1Z7SKQgTM8sYIAAB
+fc2+hyDA6/lmRsqwaEQGmkim8TmkVqXPXnZLxGq5XakTzMhWyWUq+BlZZzPuzGIrr0MSACH5BAkU
+AAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXoacz4L1Z7SKQgTM8sYIAABfc2+hyDA
+6/lmRsqwaEQGmkim8TmkVqXPXnZLxGq5XakTzMhWyWUq+BlZZzPuzGIrr0MSACH5BAkUAAAALAYA
+CQASABcAAgNeCLo6wzA6B00EMysrMyFOcWEeOHBXlonNs6gUwMWtusywIEyQnmsAgSKwy+iKD0Fg
+SCzqmhQls/kMUJ/TplW55WatRLB4+Q2PydnqGQLmrtnbs/UiB48A9ftCrO9DEgAh+QQJFAAAACwG
+AAkAEgAXAAIDXgi6OsMwOgdNBDMrKzMhTnFhHjhwV5aJzbOoFMDFrbrMsCBMkJ5rAIEisMvoig9B
+YEgs6poUJbP5DFCf06ZVueVmrUSwePkNj8nZ6hkC5q7Z27P1IgePAPX7QqzvQxIAOw==
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif
+
+R0lGODlhagA5APcAAFqvsWrJ0Gu+02XDxnO342G7vlabsV0W/msX/0mLkDMpaTNaZVGYoFKKs3q0
+8ncY/UN4hYgZ+ggJEVekrjgld0pinGWRylJ8pkAkh2tX03GY21p+uREPJluSvi8NZmavyRgrMUg0
+nXaT5zNJZVsS6z8TlzgMfkJkhSsrVzlfcGZ8yTw9gCUMSUYRqS49Xmyv13V542lm1UwUu1Y8wSEz
+Qmc87VdmsxcJQUBPhE1MnCtPVUwQygAAAFcZ2lJRtnk/6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADwALAAAAABqADkA
+AAj+AHkIHEiwoEGDHBIYuHCChoSDECNKnEixosWLJwAAMDChQ4cRDy+KHEmypEQOGjV2tGBhAwiT
+MGPKjHghJYACH3Jq0OBips+fJHHYZFChgwUCBByIUAC0qdODKFMySHBhgw0VMEQ4cPDyqVegHBhM
+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
+jjRfr5YZf6QDIMCIPBAQAAA7
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1.gif
+
+R0lGODlhcwAMAPcAAAAAABg5SiFSYzFrjDmMta3nKcbGAP//xv//////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH5BAEAAAUALAAAAABzAAwA
+AAjRAAMAGDiwgMGDCBMqXMiwocOHDAlKnEixokUABQIQGMBRAEaIIEOKHFkAAIGTKFOqXMkS5YED
+GDVy7PiRpM2bIWXO3Mmzp8+dBoLG3LjTI86jSBPq/Mm06YCgQjMSLRqgqtWrWLNq3cq1q9eqU4sK
+GEu2rNmzZ4cOqLqzpdu3cOPKVenT48W7F6UGeBnAqd+/gAP7FRAg6UKrBwz0Fcy4sWOehA0f3sj2
+seXLg2tKRrgUs+fPM41uVqgRrenTqFOrXm268GjSX2PLnk2b6+uFAQEAOw==
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+MEgpqr046827/2CITYFgGINQmEW6nnAsz3Rt33iu08LE
+uj8Vq0AsGo/IpHLJbDqfxhTF0BJSgVSodsuFDgbHbxhclAZfVXTry2673/C4fE5vZ4mDxIHcSgD4
+eXtlFVdWaUN8XYqLTHctB3tZAwB/kpADkoRYh5KMnp9HjmsnZZh3X6RVApubeKCvijFIqUW0RLQp
+FWitrrC+T6KgubuGUb/HS8HCFoVqxsjQtUh11LnNQ2HR0cG5Ih6cSonasNwCCOfo6err66vFSeLj
+n+Xs9fbputjw8uTT5vcA2b0Lxw8UvYAI8ekLt6Ohw4b+Eko8t7BgwRQTJ1a0OA5jRokYq6qJHEly
+5L+PCRWoXKnSm8uXMCugnBgBADs=
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2a.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+EMlJq71X6M27/2AojuFQFIaArWw2vHAsz3Rt3/h9pm3P
+CqaTcEgsGo/IpHLJ8zkpwKV0Sq0im09nlGjoer/gsHhMLoODyZQq69sODda4vIg+pgpr9q++m/vn
+fFwCeHl6LkVwf4pVgUJ3QIWGUIGJi5ZLjSiDUSSdG5SXoUqNjyZqOaigoqtGlJumn6yVrLQnfKWa
+hJl+s7W0dbiPGmhdXL3Fxsi+vsSvuZBbXS+OBtM71bfL2rY7zqWnOwMHB0HVAADlAxLA28vl3vBu
+4gloAwD0Qur4jqn9/v81uuGBNVBTADcFrOXjo7Bdu2DwAhzc5bBiGngFU0g8aKajx48WIEOGxAik
+i4CNBz2pXMmypUsRKANEAAA7
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/haus2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAF7D1XuAAAABlBMVEUAAACCkb4DVVPxAAAAAXRS
+TlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAQlJREFUeNoB/gAB/wAAAAAAAAAAAAAAAQAA
+AQABAAABAAEAAAABAAAAAAEAAAEAAAAAAQAAAAAAAAABAQAAAQAAAQAAAAABAAAAAQEAAQEBAAAA
+AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAQABAAAAAAAAAQAAAAEAAQEAAAAAAAABAAAAAQAA
+AAEBAAAAAAEBAAAAAAAAAAAAAQEAAAAAAQABAQAAAQEBAAEAAAAAAAEAAQEAAAEBAQABAAAAAAAB
+AQEBAQEBAQEBAQAAGqcAQv1LH7cAAAAASUVORK5CYII=
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/mailto.gif
+
+R0lGODdhDgAKAKIAAP////r7v+rrl8TFDKOkAH1+AElKAAAAACwAAAAADgAKAAADLWi63AQwynEM
+KCLrXEgFAraFgmdxm2iCpdhla8mpZRUQo0aYw+7/u8phSCwSEwA7
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAssembly.css
+
+A {
+	COLOR: #00ccff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #cccccc
+}
+A:hover {
+	TEXT-DECORATION: underline overline
+}
+A:active {
+	COLOR: #99ffcc
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #236282; FONT-SIZE: 10pt; =
+SCROLLBAR-HIGHLIGHT-COLOR: #003399; SCROLLBAR-SHADOW-COLOR: #505050; =
+COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #505050; SCROLLBAR-ARROW-COLOR: =
+#00ccff; SCROLLBAR-TRACK-COLOR: #084a6b; FONT-FAMILY: Verdana, Arial, =
+Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #000000; BACKGROUND-COLOR: =
+#084a6b; TEXT-ALIGN: center
+}
+.borda {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.bordaI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid
+}
+.bordaCor {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; =
+BACKGROUND-COLOR: #006699
+}
+.bordaCorI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid; BACKGROUND-COLOR: #006699
+}
+TR.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+TD.cab1 {
+	FONT-WEIGHT: bold; BACKGROUND: url(grafs/cab1.gif); COLOR: #00ccff; =
+HEIGHT: 32px; TEXT-ALIGN: center
+}
+TD.cab1a {
+	BACKGROUND: url(grafs/cab1a.gif) #006699; WIDTH: 27px
+}
+TD.pto1 {
+	FONT-WEIGHT: bold; HEIGHT: 40px; BACKGROUND-COLOR: #236282
+}
+TD.pe1 {
+	BACKGROUND: url(grafs/pe1.gif); HEIGHT: 18px
+}
+TD.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD.c66CC {
+	PADDING-RIGHT: 10px; BACKGROUND-COLOR: #0066cc; TEXT-ALIGN: right
+}
+HR {
+	COLOR: #00ccff; HEIGHT: 1px
+}
+H1 {
+	MARGIN-TOP: 1px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: =
+1px; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+H2 {
+	MARGIN-TOP: 0px; FONT-SIZE: xx-small; MARGIN-BOTTOM: 0px; FONT-FAMILY: =
+Verdana, Arial, Helvetica
+}
+H3 {
+	MARGIN-TOP: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; COLOR: #666666; =
+FONT-FAMILY: Verdana, Arial, Helvetica
+}
+P {
+	MARGIN: 10px 50px; TEXT-INDENT: 20pt; TEXT-ALIGN: justify
+}
+BLOCKQUOTE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; TEXT-ALIGN: justify
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 40pt; FONT-FAMILY: Verdana, Arial, =
+Helvetica
+}
+.asmcode {
+	BORDER-RIGHT: #236282 2px dotted; PADDING-RIGHT: 20px; BORDER-TOP: =
+#236282 2px dotted; PADDING-LEFT: 20px; FONT-SIZE: 14px; PADDING-BOTTOM: =
+20px; MARGIN: 10px 50px; BORDER-LEFT: #236282 2px dotted; COLOR: =
+#00ccff; PADDING-TOP: 20px; BORDER-BOTTOM: #236282 2px dotted; =
+FONT-FAMILY: "Courier new"; BACKGROUND-COLOR: #337292
+}
+OL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+UL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+
+------=_NextPart_000_00CE_01C5C514.6BEA4460--

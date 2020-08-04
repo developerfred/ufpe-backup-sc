@@ -1,0 +1,282 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin - Parte 1</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+
+<A NAME="over"><H2>Revis&atilde;o da Fam&iacute;lia 80x86 </H2></A>
+
+A fam&iacute;lia 80x86 surgiu em 1981 com o 8086 e seu membro mais
+novo &eacute; o Pentium que foi lan&ccedil;ado treze anos depois,
+em 1994. Estes processadores s&atilde;o sempre compat&iacute;veis
+com seus respectivos antecessores mas cada nova gera&ccedil;&atilde;o
+recebeu novas caracter&iacute;sticas e maior velocidade que a
+anterior. Hoje existem poucos computadores utilizando os processadores
+8088 e 8086 uma vez que s&atilde;o desatualizados e lentos. O
+n&uacute;mero de computadores baseados no 286 e 386 est&aacute;
+em franco decl&iacute;nio em fun&ccedil;&atilde;o da grande demanda
+por desempenho nos softwares recentes. Mesmo os 486 est&atilde;o sendo
+substitu&iacute;dos por Pentiums. Com as CPUs Pentium PRO e MMX a
+Intel continua acrescentando novas fun&ccedil;&otilde;es e ampliando
+o desempenho de seus processadores.
+
+<A NAME="binary"><H2>Representa&ccedil;&atilde;o de
+n&uacute;meros em bin&aacute;rio</H2></A>
+
+Antes de come&ccedil;armos a entender como programar em assembly ser&aacute;
+melhor tentar entender como s&atilde;o representados n&uacute;meros em
+computadores. N&uacute;meros s&atilde;o armazenados em bin&aacute;rio,
+ou seja, na base 2. Existem v&aacute;rios termos que s&atilde;o utilizados
+para descrever diferentes tamanhos de n&uacute;meros e eu descreverei
+o que eles significam.
+
+<P>
+
+1 BIT: 0
+
+<P>
+
+Um bit &eacute; a mais simples por&ccedil;&atilde;o de dados que existe.
+Pode valer um ou zero.
+
+<P>
+
+1 NIBBLE: 0000
+<BR>4 BITS
+
+<P>
+
+O NIBBLE possui 4 bits, ou meio byte. Observe que ele pode atingir o
+valor m&aacute;ximo de 15 (1111 = 15). Esta &eacute; a base do sistema
+de numera&ccedil;&atilde;o hexadecimal (base 16) o qual &eacute; utilizado
+pela facilidade de seu entendimento. Os n&uacute;meros hexadecimais se
+utilizam dos algarismos 0 (zero) ao F e s&atilde;o terminados por um h
+para se indicar que se tratam de n&uacute;meros de base 16. Portanto
+Fh = 15 decimal. N&uacute;meros hexadecimais que come&ccedil;am com uma
+letra recebem um 0 (zero) como prefixo.
+
+<P>
+
+1 BYTE 00000000
+<BR>2 NIBBLES
+<BR>8 BITS
+
+<P>
+
+Um BYTE possui 8 bits ou 2 nibbles. Um BYTE possui um valor m&aacute;ximo
+de 0FFh (255 decimal). Uma vez que um BYTE equivale a 2 nibbles a sua
+representa&ccedil;&atilde;o hexadecimal &eacute; feita com dois d&iacute;gitos
+hexadecimais em seq&uuml;&ecirc;ncia, por exemplo 3Dh. O byte possui o
+mesmo tamanho dos registradores de 8 bits sobre os quais discutiremos mais
+tarde.
+
+<P>
+
+1 WORD 0000000000000000
+<BR>2 BYTES
+<BR>4 NIBBLES 
+<BR>16 BITS
+
+<P>
+
+Uma WORD (ou palavra) constitui-se de dois bytes reunidos. Uma WORD possui
+o valor m&aacute;ximo de 0FFFFh (65.535). Uma vez que uma WORD &eacute;
+igual a quatro nibbles ela &eacute; representada por quatro d&iacute;gitos
+hexadecimais. Ela tem o mesmo tamanho dos registradores de 16 bits.
+
+<A NAME="registers"><H2>Registradores</H2></A>
+
+<P>
+
+Registradores são o local da CPU onde um n&uacute;mero pode ser armazenado
+e manipulado. Existem tr&ecirc;s tamanhos de registradores: 8 bits, 16 bits
+e no 386 em diante 32 bits. H&aacute; quatro tipos diferentes de registradores;
+registradores de uso geral, registradores de segmento, registradores de
+&iacute;ndice e registradores de pilha. Aqui est&atilde;o, primeiramente,
+as descri&ccedil;&otilde;es dos registradores principais. Os Registradores
+de pilha e de segmento ser&atilde;o abordados mais tarde.
+
+<P>
+
+<CENTER>
+<IMG SRC="register.gif" ALT="Conjunto de registradores do 8086/88" WIDTH=163 HEIGHT=107>
+<BR>
+<I>Registradores de Uso Geral</I>
+</CENTER>
+
+<H3>Registradores de Uso Geral</H3>
+
+Estes s&atilde;o registradores de 16 bits. Existem quatro registradores
+de uso geral; AX, BX, CX e DX. Eles s&atilde;o divididos em registradores
+de 8 bits. AX &eacute; dividido em AH, o qual cont&eacute;m o byte mais
+significativo, e AL, que cont&eacute;m o byte menos significativo. No
+386 em diante tamb&eacute;m existem registradores de 32 bits, estes
+possuem os mesmos nomes dos registradores de 16 bits mas com um 'E' na
+frente, por exemplo EAX. Voc&ecirc; pode usar AL, AH, AX e EAX
+separadamente e trat&aacute;-los como registradores separados em
+alguns casos.
+
+<P>
+
+Se AX contiver o n&uacute;mero 24689 decimal:
+
+<P>
+
+<TABLE BORDER = 1>
+<TR>
+<TD>AH</TD>
+<TD>AL</TD> 
+</TR>
+
+<TR>
+<TD>01100000</TD>
+<TD>01110001</TD>
+</TR>
+
+</TABLE>
+
+<P> 
+
+AH ter&aacute; o valor 96 e AL o valor 113. Se voc&ecirc; somar um
+a AL ele ter&aacute; o valor 114 e AH n&atilde;o ser&aacute; modificado.
+SI, DI, SP e BP tamb&eacute;m podem ser utilizados como registradores
+de uso geral mas possuem usos mais espec&iacute;ficos. Eles n&atilde;o
+se dividem em duas metades.
+
+<H3>Registradores de &Iacute;ndice</H3>
+
+Estes s&atilde;o chamados, algumas vezes, de registradores de
+ponteiros e possuem 16 bits. S&atilde;o utilizados principalmente para
+instru&ccedil;&otilde;es com strings. Existem tr&ecirc;s registradores
+de &iacute;ndice: SI (source index), DI (destination index) e IP
+(instruction pointer). No 386 em diante tamb&eacute;m existem
+registradores de &iacute;ndice com 32 bits: EDI e ESI. Voc&ecirc; tamb&eacute;m 
+pode usar BX para indexar strings.
+
+<P>
+
+IP &eacute; um registrador de &iacute;ndice mas n&atilde;o pode ser
+manipulado diretamente j&aacute; que ele armazena o endere&ccedil;o da
+pr&oacute;xima instru&ccedil;&atilde;o a ser executada.
+
+<H3>Registradores de pilha</H3>
+
+BP e SP s&atilde;o registradores de pilha e s&atilde;o utilizados quando
+se est&aacute; trabalhando com a pilha. Eles ser&atilde;o analisados
+quando estivermos falando sobre a pilha, mais tarde.
+
+<A NAME="segoff"><H2>Segmentos e offsets</H2></A>
+
+Os projetistas originais do 8088 decidiram que ningu&eacute;m jamais
+precisaria utilizar mais que um megabyte de mem&oacute;ria ent&atilde;o
+eles criaram a CPU que n&atilde;o tinha a capacidade de acessar mais do
+que isto. Havia o problema de que para acessar um megabyte completamente
+s&atilde;o necess&aacute;rios 20 bits para o endere&ccedil;o. Os
+registradores s&oacute; possuem 16 bits e eles n&atilde;o queriam usar
+dois registradores lado a lado porque isto resultaria em um endere&ccedil;o
+de 32 bits e eles achavam isto demais para qualquer usu&aacute;rio.
+Eles surgiram com o que consideraram uma maneira inteligente de resolver
+este problema: segmentos e offsets. &Eacute; uma forma de criar
+endere&ccedil;amento com dois registradores mas n&atilde;o em 32 bits.
+
+<P>
+
+OFFSET = SEGMENTO * 16
+<BR>SEGMENTO = OFFSET / 16 (os 4 bits inferiores s&atilde;o perdidos)
+
+<P>
+
+Um registrador cont&eacute;m o segmento e outro registrador cont&eacute;m
+o offset. Se voc&ecirc; colocar os dois registradores juntos voc&ecirc;
+obt&eacute;m um endere&ccedil;o de 20 bits.
+
+<P>
+
+<!-- Segment/Offset Explanation -->
+
+<TABLE BORDER = 1>
+<TR>
+<TD>SEGMENTO</TD> 
+<TD>0010010000010000----</TD>
+</TR>
+<TR>
+<TD>OFFSET</TD> 
+<TD>----0100100000100010</TD>
+</TR>
+<TR>
+<TD>endere&ccedil;o de 20 bits</TD>
+<TD>00101000100100100010</TD>
+</TR>
+</TABLE>
+
+<P>
+
+DS armazena o Segmento e SI armazena o offset. Como ambos possuem 16 bits
+os endere&ccedil;os se sobrep&otilde;em.
+
+Desta forma o par DS:SI &eacute; usado para formar um endere&ccedil;o de 20
+bits. O segmento est&aacute; em DS e o offset est&aacute; em SI. A
+nota&ccedil;&atilde;o padr&atilde;o para um par Segmento/Offset &eacute;:
+SEGMENTO:OFFSET
+
+<P>
+
+Os registradores de segmentos s&atilde;o: CS, DS, ES, SS. No 386 e demais
+CPUs tamb&eacute;m existem o FS e o GS.
+
+<P>
+
+Os registradores de offset s&atilde;o: BX, DI, SI, BP, SP, IP. No 386 e
+demais CPUs, no modo protegido, QUALQUER registrador de uso geral
+(mas n&atilde;o registradores de segmento) pode ser usado como um registrador
+de Offset. (Exceto o IP, o qual voc&ecirc; n&atilde;o pode manipular
+diretamente).
+
+<P>
+
+Se voc&ecirc; est&aacute; pensando agora que assembly deve ser realmente
+dif&iacute;cil e que voc&ecirc; n&atilde;o entendeu nada de segmentos e
+offsets ent&atilde;o n&atilde;o se preocupe. Eu n&atilde;o os entendi no
+come&ccedil;o mas insisti e acabei descobrindo que eles n&atilde;o s&atilde;o
+t&atilde;o dif&iacute;ceis de usar na pr&aacute;tica.
+
+<A NAME="stack"><H2>A Pilha</H2></A>
+
+Como s&oacute; existem seis registradores para uso com a maioria das
+opera&ccedil;&otilde;es voc&ecirc; est&aacute; provavelmente
+imaginando como se virar com isto. &Eacute; f&aacute;cil. Existe
+uma coisa chamada de Pilha que &eacute; uma &aacute;rea de mem&oacute;ria
+na qual voc&ecirc; pode salvar e recuperar valores.
+
+<P>
+
+Esta &eacute; uma &aacute;rea de mem&oacute;ria parecida com uma pilha de
+pratos. O &uacute;ltimo que voc&ecirc; colocar &eacute; o primeiro que
+pode ser retirado. Isto &eacute; chamado, as vezes, de Last On First Off
+(LOFO) ou Last In First Out (LIFO).
+
+<P>
+
+<CENTER>
+<IMG SRC="stack.gif" ALT="Pilha do processador 8086/88" WIDTH=369 HEIGHT=265>
+<BR><I>Como a pilha &eacute; organizada</I>
+</CENTER>
+
+<P>
+
+Se outra por&ccedil;&atilde;o de dados for colocada na pilha ela cresce
+para baixo. Como voc&ecirc; pode ver a pilha come&ccedil;a em um
+endere&ccedil;o alto e cresce em dire&ccedil;&atilde;o a endere&ccedil;os
+menores. Voc&ecirc; precisa ter certeza de que n&atilde;o colocar&aacute;
+dados em excesso na pilha ou ela transbordar&aacute;.
+
+<P>
+
+<H3><A HREF="asm1.htm#toc">Retornar para o Sum&aacute;rio</A></H3>
+
+</BODY>
+</HTML>

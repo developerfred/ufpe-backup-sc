@@ -1,0 +1,635 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin - Parte 5</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+
+<A NAME="files"><H2>Arquivos e como utiliz&aacute;-los</H2></A>
+
+Arquivos podem ser abertos, lidos e escritos. O DOS possui formas de
+executar estas opera&ccedil;&otilde;es poupando-nos de escrever nossas
+pr&oacute;prias rotinas. &Eacute; isto mesmo, mais interrup&ccedil;&otilde;es.
+A seguir temos uma lista de fun&ccedil;&otilde;es &uacute;teis da
+interrup&ccedil;&atilde;o 21h que manipulam arquivos.
+
+<P>
+
+Observa&ccedil;&atilde;o: Os bits s&atilde;o numerados da direita para a
+esquerda. 
+
+<P>
+
+<B>Fun&ccedil;&atilde;o 3Dh: abrir arquivo</B>
+
+<BR>
+Abre um arquivo j&aacute; existente para leitura, escrita ou acr&eacute;scimos
+no drive e com o nome especificados.
+
+<P>
+
+<B>ENTRADA:</B>
+
+<P>
+
+AH = 3Dh
+
+<BR>AL = bits 0-2 Modo de acesso
+
+<UL>
+000 = somente leitura
+<BR>001 = somente escrita
+<BR>010 = leitura/escrita
+</UL>
+
+bits 4-6 Modo de compartilhamento (DOS 3+)
+
+<UL>
+
+000 = Modo de compatibilidade
+<BR>001 = negar tudo
+<BR>010 = negar escrita 
+<BR>011 = negar leitura
+<BR>100 = n&atilde;o negar
+
+</UL>
+
+DS:DX = segment:offset do caminho e nome no formato ASCIIZ
+
+<P>
+
+<B>SA&Iacute;DA:</B>
+
+<P>
+
+CF = 0 fun&ccedil;&atilde;o executada com sucesso
+<BR>AX = manipulador
+<BR>CF = 1 ocorreu um erro
+<BR>AX = c&oacute;digo do erro
+
+<UL>
+
+01h compartilhamento de arquivo n&atilde;o habilitado
+<BR>02h arquivo n&atilde;o encontrado
+<BR>03h caminho n&atilde;o encontrado ou arquivo n&atilde;o existe
+<BR>04h nenhum manipulador dispon&iacute;vel
+<BR>05h acesso negado
+<BR>0Ch modo de acesso n&atilde;o permitido
+
+</UL>
+
+<P>
+
+O que significa ASCIIZ? Uma string ASCIIZ &eacute; como uma string ASCII mas
+com um zero no final ao inv&eacute;s de um cifr&atilde;o.
+
+<P>
+
+Importante: Lembre-se de guardar o manipulador do arquivo se for precisar
+dele mais tarde.
+
+<A NAME="handle"><H2>Como salvar o manipulador do arquivo</H2></A>
+
+&Eacute; importante salvar o manipulador do arquivo porque ele ser&aacute;
+necess&aacute;rio para tudo que for feito com o arquivo. Como fazer isto?
+Existem dois m&eacute;todos que podemos usar: Copiar o manipulador de
+arquivo para outro registrador e n&atilde;o usar este registrador ou
+copi&aacute;-lo para uma vari&aacute;vel na mem&oacute;ria.
+
+<P>
+
+As desvantagens do primeiro m&eacute;todo s&atilde;o que voc&ecirc;
+ter&aacute; que se lembrar de n&atilde;o usar o registrador para onde foi
+copiado o manipulador e que estar&aacute; sendo desperdi&ccedil;ado
+um registrador que poderia ter um uso mais produtivo. Vamos utilizar o
+segundo m&eacute;todo. Isto &eacute; feito da seguinte maneira:
+
+<BLOCKQUOTE><PRE>
+FileHandle DW 0 	; use isto para armazenar o manipulador do arquivo
+.
+.
+.
+mov FileHandle,ax 	; armazene o manipulador do arquivo
+</PRE></BLOCKQUOTE>
+
+<B>Fun&ccedil;&atilde;o 3Eh: fechar arquivo</B>
+
+<BR>
+
+Fecha um arquivo que foi aberto.
+
+<P>
+
+<B>ENTRADA:</B>
+
+<P>
+
+AX = 3Eh
+<BR>BX = manipulador do arquivo
+
+<P>
+
+<B>SA&Iacute;DA:</B>
+
+<P>
+
+CF = 0 fun&ccedil;&atilde;o executada com sucesso
+<BR>AX = destru&iacute;do
+<BR>
+CF = 1 fun&ccedil;&atilde;o n&atilde;o foi executada com sucesso
+<BR>
+AX = c&oacute;digo de erro - 06h arquivo n&atilde;o aberto ou manipulador
+n&atilde;o autorizado.
+
+<P>
+
+Importante: N&atildeo chame esta fun&ccedil;&atilde;o com o manipulador
+zero porque isto ir&aacute; fechar a entrada padr&atilde;o (o teclado) e
+voc&ecirc; n&atilde;o poder&aacute; entrar dado algum pelo teclado.
+
+<P>
+
+<B>Fun&ccedil;&atilde;o 3Fh: ler arquivo/dispositivo</B>
+
+<P>
+
+L&ecirc; bytes de um arquivo ou dispositivo para um buffer.
+
+<P>
+
+<B>ENTRADA:</B>
+
+<P>
+
+AH = 3Fh
+<BR>BX = manipulador
+<BR>CX = n&uacute;mero de bytes a serem lidos
+<BR>DS:DX = segment:offset de um buffer
+
+<P>
+
+<B>SA&Iacute;DA:</B>
+
+<P>
+
+CF = 0 fun&ccedil;&atilde;o executada com sucesso
+<BR>AX = n&uacute;mero de bytes realmente lidos
+<BR>CF = 1 ocorreu um erro
+
+<UL>
+
+05h acesso negado
+<BR>06h manipulador ilegal ou o arquivo n&atilde;o est&aacute; aberto
+
+</UL>
+
+Se CF = 0 e AX = 0 ent&atilde;o o ponteiro do arquivo j&aacute; estava no fim
+do mesmo e n&atilde;o ser&aacute; poss&iacute;vel ler mais nada. Se CF = 0 e
+AX for menor que CX ent&atilde;o somente parte da leitura foi efetuada porque
+foi atingido o fim do arquivo ou ocorreu um erro.
+<P>
+
+Esta fun&ccedil;&atilde;o tamb&eacute;m pode ser usada para obter entrada do
+teclado. Utilize um manipulador de valor zero e ele finalizar&aacute; a
+leitura ap&oacute;s o primeiro CR (carriage return), ou quando houver
+sido lido o n&uacute;mero de caracteres especificado. Este &eacute; um
+m&eacute;todo eficiente e simples para se limitar a quantidade de caracteres
+que pode ser digitada pelo teclado.
+
+<BLOCKQUOTE><PRE>
+Listagem 7: READFILE.ASM
+
+; um programa que demonstra a cria&ccedil;&atilde;o de um arquivo e a
+; leitura do mesmo
+
+.model small
+.stack
+.code 
+
+start:
+
+mov ax,@data 		; endere&ccedil;o de base do segmento de dados
+mov ds,ax 		; &eacute; colocado em ds
+
+mov dx,OFFSET FileName 	; coloca o endere&ccedil;o do nome do arquivo em dx
+mov al,2 		; modo de acesso - leitura e escrita
+mov ah,3Dh 		; fun&ccedil;&atilde;o 3Dh - abre um arquivo
+int 21h 		; chama servi&ccedil;o do DOS
+
+mov Handle,ax 		; guarda o manipulador do arquivo para mais tarde
+jc ErrorOpening 	; desvia se carry flag estiver ligada - erro!
+
+mov dx,offset Buffer 	; endere&ccedil;o do buffer em dx
+mov bx,Handle 		; manipulador em bx
+mov cx,100 		; quantidade de bytes a serem lidos
+mov ah,3Fh 		; fun&ccedil;&atilde;o 3Fh - leitura de arquivo
+int 21h 		; chama servi&ccedil;o do DOS
+
+jc ErrorReading 	; desvia se carry flag estiver ligada - erro!
+
+mov bx,Handle 		; coloca manipulador do arquivo em bx
+mov ah,3Eh 		; fun&ccedil;&atilde;o 3Eh - fechar um arquivo
+int 21h 		; chama servi&ccedil;o do DOS
+
+mov cx,100 		; comprimento da string
+mov si,OFFSET Buffer 	; DS:SI - endere&ccedil;o da string
+xor bh,bh 		; p&aacute;gina de v&iacute;deo - 0
+mov ah,0Eh 		; fun&ccedil;&atilde;o 0Eh - escrever caracter
+
+NextChar:
+
+lodsb 			; AL = pr&oacute;ximo caracter da string
+int 10h 		; chama servi&ccedil;o da BIOS
+loop NextChar
+
+mov ax,4C00h 		; termina programa
+int 21h 
+
+ErrorOpening:
+
+mov dx,offset OpenError ; exibe um erro
+mov ah,09h 		; usando a fun&ccedil;&atilde;o 09h
+int 21h 		; chama servi&ccedil;o do DOS
+mov ax,4C01h 		; termina programa com um errorlevel =1 
+int 21h 
+
+ErrorReading:
+mov dx,offset ReadError ; exibe um erro
+mov ah,09h 		; usando a fun&ccedil;&atilde;o 09h
+int 21h 		; chama servi&ccedil;o do DOS
+mov ax,4C02h 		; termina programa com um errorlevel =2
+int 21h
+
+.data
+Handle DW ? 			; para guardar o manipulador do arquivo
+FileName DB "C:\test.txt",0 	; arquivo a ser aberto
+OpenError DB "Ocorreu um erro(abrindo)!$"
+ReadError DB "Ocorreu um erro(lendo)!$"
+Buffer DB 100 dup (?) 	; buffer para armazenar dados
+
+END start
+</PRE></BLOCKQUOTE>
+
+<P>
+
+<B>Fun&ccedil;&atilde;o 3Ch: Criar arquivo</B>
+
+<P>
+
+Cria um arquivo novo vazio em um drive especificado, com um pathname
+especificado
+
+<P>
+
+<B>ENTRADA:</B>
+
+<P>
+
+AH = 3Ch
+<BR>CX = atributos do arquivo
+
+<BLOCKQUOTE>
+bit 0 = 1 arquivo somente para leitura
+<BR>bit 1 = 1 arquivo oculto
+<BR>bit 2 = 1 arquivo de sistema
+<BR>bit 3 = 1 volume (ignorado)
+<BR>bit 4 = 1 reservado (0) - diret&oacute;rio
+<BR>bit 5 = 1 bit de arquivo
+<BR>bits 6-15 reservado (0)
+</BLOCKQUOTE>
+
+DS:DX = segment:offset do pathname no formato ASCIIZ
+
+<P>
+
+<B>SA&Iacute;DA:</B>
+
+<P>
+CF = 0 fun&ccedil;&atilde;o executada com sucesso
+<BR>AX = manipulador
+<BR>CF = 1 ocorreu um erro
+
+<BLOCKQUOTE>
+03h caminho n&atilde;o localizado
+<BR>04h nenhum manipulador dispon&iacute;vel
+<BR>05h acesso negado
+</BLOCKQUOTE>
+
+<P>
+
+Importante: Se j&aacute; existir um arquivo com o mesmo nome ele ser&aacute;
+apagado. Tenha certeza de que n&atilde;o haja outro arquivo com o mesmo nome.
+Isto pode ser feito com a fun&ccedil;&atilde;o abaixo.
+
+<P>
+
+<B>Fun&ccedil;&atilde;o 4Eh: localizar o primeiro arquivo que atende &agrave
+especifica&ccedil;&atilde;o do nome</B>
+
+<P>
+
+Busca o primeiro arquivo que possui o nome especificado.
+
+<P>
+
+<B>ENTRADA:</B>
+
+<P>
+AH = 4Eh
+CX = m&aacute;scara de atributos de arquivo (bits podem ser combinados)
+
+<P>
+
+<BLOCKQUOTE>
+bit 0 = 1 somente leitura
+<BR>bit 1 = 1 oculto
+<BR>bit 2 = 1 de sistema
+<BR>bit 3 = 1 r&oacute;tulo de volume
+<BR>bit 4 = 1 diret&oacute;rio
+<BR>bit 5 = 1 arquivo
+<BR>bit 6-15 reservado
+</BLOCKQUOTE>
+
+DS:DX = segment:offset do pathname no formato ASCIIZ
+
+<P>
+
+<B>SA&Iacute;DA:</B>
+
+<P>
+
+CF = 0 fun&ccedil;&atilde;o executada com sucesso
+<BR>[DTA] Disk Transfer Area = &Aacute;rea de Transfer&ecirc;ncia do Disco.
+&Eacute; onde se localiza o bloco de dados que descreve o primeiro arquivo
+localizado.
+
+<P>
+
+<B>O bloco DTA :</B>
+
+<PRE>
+<B>Offset   Tamanho em bytes   Significado</B>
+
+0        21                 Reservado
+21       1                  Atributos do arquivo
+22       2                  Hor&aacute;rio da &uacute;ltima modifica&ccedil;&atilde;o
+24       2                  Data da &uacute;ltima modifica&ccedil;&atilde;o
+26       4                  Tamanho do arquivo (em bytes)
+30       13                 Nome do arquivo (ASCIIZ)
+
+</PRE>
+
+Um exemplo da verifica&ccedil;&atilde;o de exist&ecirc;ncia de um arquivo:
+
+<BLOCKQUOTE><PRE>
+File DB "C:\file.txt",0	  ; nome do arquivo que queremos
+mov dx,OFFSET File 	  ; endere&ccedil;o do nome do arquivo
+mov cx,3Fh 		  ; m&aacute;scara do arquivo 3Fh - qualquer arquivo
+mov ah,4Eh 		  ; fun&ccedil;&atilde;o 4Eh - encontrar o primeiro arquivo
+int 21h 		  ; chamada a servi&ccedil;o DOS
+
+jc NoFile
+
+; imprime mensagem dizendo que o arquivo existe
+
+NoFile:
+
+; continua com a cria&ccedil;&atilde;o do arquivo
+</PRE></BLOCKQUOTE>
+
+Este &eacute; um exemplo da cria&ccedil;&atilde;o de um arquivo e da escrita
+neste.
+
+<BLOCKQUOTE><PRE>
+Listagem 8: CREATE.ASM
+; Este programa exemplo cria um arquivo e ent&atilde;o escreve nele.
+.model small
+.stack
+.code 
+
+start:
+
+mov ax,@data 	; endere&ccedil;o base do segmento de dados
+mov ds,ax 	; &eacute; colocado em ds
+mov dx,offset StartMessage 
+mov ah,09h 
+int 21h 
+
+mov dx,offset FileName 	; coloca offset de filename em dx
+xor cx,cx 		; zera cx - produz arquivo comum
+mov ah,3Ch 		; fun&ccedil;&atilde;o 3Ch - cria um arquivo
+int 21h 		; chamada a servi&ccedil;o DOS
+
+jc CreateError 		; desvia se houver um erro
+
+mov dx,offset FileName 	; coloca offset de filename em dx
+mov al,2 		; modo de acesso - leitura e escrita
+mov ah,3Dh 		; fun&ccedil;&atilde;o 3Dh - abre o arquivo
+int 21h 		; chamada a servi&ccedil;o DOS
+
+jc OpenError 		; desvia se houver um erro
+mov Handle,ax 		; guarda valor do manipulador
+
+mov dx,offset WriteMe 	; endere&ccedil;o da informa&ccedil;&atilde;o a ser escrita
+mov bx,Handle 		; manipulador do arquivo
+mov cx,38 		; ser&atilde;o escritos 38 bytes
+mov ah,40h 		; fun&ccedil;&atilde;o 40h - escrever no arquivo
+int 21h 		; chamada a servi&ccedil;o DOS
+
+jc WriteError 		; desvia se houver erro
+cmp ax,cx 		; todos os dados foram escritos?
+jne WriteError 		; n&atilde;o foram - erro!
+
+mov bx,Handle 		; coloca manipulador do arquivo em bx
+mov ah,3Eh 		; fun&ccedil;&atilde;o 3Eh - fechar arquivo
+int 21h 		; chamada a servi&ccedil;o DOS
+
+mov dx,offset EndMessage 
+mov ah,09h 
+int 21h 
+
+ReturnToDOS:
+
+mov ax,4C00h 		; termina programa
+int 21h 
+
+WriteError:
+mov dx,offset WriteMessage 
+jmp EndError
+
+OpenError:
+mov dx,offset OpenMessage 
+jmp EndError
+
+CreateError:
+mov dx,offset CreateMessage 
+
+EndError:
+mov ah,09h 
+int 21h 
+mov ax,4C01h 
+int 21h 
+
+.data 
+CR equ 13
+LF equ 10
+
+StartMessage DB "Este programa cria um arquivo chamado NEW.TXT"
+	     DB ,"no drive C.$"
+
+EndMessage DB CR,LF,"Arquivo criado, confira o arquivo"
+	   DB ,"para ter certeza.$"
+
+WriteMessage  DB "Ocorreu um erro (DE ESCRITA)$"
+OpenMessage   DB "Ocorreu um erro (DE ABERTURA)$"
+CreateMessage DB "Ocorreu um erro (NA CRIA&Ccedil;&Atilde;O)$"
+
+WriteMe  DB "HELLO, THIS IS A TEST, HAS IT WORKED?",0
+FileName DB "C:\new.txt",0 ; nome do arquivo a ser aberto
+Handle   DW ? 	; para armazenar o manipulador do arquivo
+
+END start
+</PRE></BLOCKQUOTE>
+
+Este &eacute; um exemplo de como apagar um arquivo depois de verificar que
+ele existe:
+
+<PRE><BLOCKQUOTE>
+Listagem 9: DELFILE.ASM
+; uma demonstra&ccedil;&atilde;o de como apagar um arquivo. O arquivo new.txt
+; em c: &eacute; apagado (este arquivo foi criado por create.exe).
+;Tamb&eacute;m verificamos se o arquivo existe antes de tentar apag&aacute;-lo.
+
+.model small
+.stack
+.data
+
+CR equ 13
+LF equ 10
+
+File 	db "C:\new.txt",0 
+Deleted db "Deleted file c:\new.txt$"
+NoFile 	db "c:\new.txt n&atilde;o existe - encerrando$"
+ErrDel 	db "O Arquivo n&atilde;o pode ser apagado - possivelmente &eacute; protegido contra escrita$"
+
+.code
+
+start:
+
+mov ax,@data 
+mov ds,ax 
+
+mov dx,OFFSET File 	; endere&ccedil;o do filename para consultar
+mov cx,3Fh 		; m&aacute;scara de arquivo 3Fh - qualquer arquivo
+mov ah,4Eh 		; fun&ccedil;&atilde;o 4Eh - encontrar primeiro arquivo
+int 21h 		; chamada a servi&ccedil;o DOS
+jc FileDontExist
+
+mov dx,OFFSET File 	; DS:DX aponta para arquivo a ser eliminado 
+mov ah,41h 		; fun&ccedil;&atilde;o 41h - apagar arquivo
+int 21h 		; chamada a servi&ccedil;o DOS
+jc ErrorDeleting 	; desviar se houver um erro
+
+mov dx,OFFSET Deleted 	; exibe mensagem
+jmp Endit
+
+ErrorDeleting:
+mov dx,OFFSET ErrDel 
+jmp Endit
+
+FileDontExist:
+mov dx,OFFSET NoFile 
+
+EndIt:
+mov ah,9
+int 21h
+mov ax,4C00h 		; termina programa e sai para o DOS
+int 21h 		; chamada a servi&ccedil;o DOS
+end start
+</BLOCKQUOTE></PRE>
+
+<A NAME="find"><H2>Utilizando as fun&ccedil;&otilde;es
+FindFirst e FindNext</H2></A>
+
+<BLOCKQUOTE><PRE>
+Listagem 10: DIRC.ASM
+
+; este programa demonstra como procurar arquivos. Ele imprime os
+; nomes de todos os arquivos no drive c:\ e os nomes de todos os
+; sub-diret&oacute;rios.
+
+.model small
+.stack
+.data
+
+FileName db "c:\*.*",0 ;nome do arquivo
+DTA 	 db 128 dup(?) ;buffer para armazenar o DTA 
+ErrorMsg db "Ocorreu um erro - encerrando.$"
+
+.code
+
+start:
+
+mov ax,@data 	; iguala o valor de ds ao do
+mov ds,ax	; segmento de dados
+mov es,ax 	; es tamb&eacute;m
+
+mov dx,OFFSET DTA 	; DS:DX aponta para DTA 
+mov ah,1AH 		; fun&ccedil;&atilde;o 1Ah - prepara DTA
+int 21h 		; chamada a servi&ccedil;o DOS
+
+mov cx,3Fh 		; m&aacute;scara de atributos - todos os arquivos
+mov dx,OFFSET FileName 	; DS:DX aponta para o filename no formato ASCIZ
+mov ah,4Eh 		; fun&ccedil;&atilde;o 4Eh - encontrar o primeiro
+int 21h 		; chamada a servi&ccedil;o DOS
+
+jc error 	; desviar se carry flag estiver ligada
+
+LoopCycle:
+
+mov dx,OFFSET FileName 	; DS:DX aponta para o nome do arquivo
+mov ah,4Fh 		; fun&ccedil;&atilde;o 4fh - encontrar o pr&oacute;ximo
+int 21h 		; chamada a servi&ccedil;o DOS
+
+jc exit 	; sair se carry flag estiver ligada
+
+mov cx,13 		; comprimento de filename
+mov si,OFFSET DTA+30 	; DS:SI aponta para o filename em DTA
+xor bh,bh 		; p&aacute;gina de v&iacute;deo - 0
+mov ah,0Eh 		; fun&ccedil;&atilde;o 0Eh - escrever caracter
+
+NextChar:
+
+lodsb 		; AL = pr&oacute;ximo caracter da string
+int 10h 	; chamada a servi&ccedil;o BIOS
+
+loop NextChar
+
+mov di,OFFSET DTA+30 	; ES:DI aponta para DTA
+mov cx,13 		; comprimento de filename
+xor al,al 		; preencher com zeros
+rep stosb 		; apagar DTA
+
+jmp LoopCycle 	; continuar busca
+
+error: 
+
+mov dx,OFFSET ErrorMsg 	; exibe messagem de erro
+mov ah,9
+int 21h
+
+exit:
+
+mov ax,4C00h 	; sair para o DOS
+int 21h
+
+end start
+</PRE></BLOCKQUOTE>
+
+<H3><A HREF="asm1.htm#toc">Retornar para o Sum&aacute;rio</A></H3>
+
+</BODY>
+</HTML>

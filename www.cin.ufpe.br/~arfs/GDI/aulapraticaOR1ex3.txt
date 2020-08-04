@@ -1,0 +1,54 @@
+
+
+-------------------------------EXERCICIO 3------------------------------------
+
+--Remoção de tipos e tabelas modificados
+
+DROP TABLE EMPREGADO;
+DROP TYPE EMPREGADO_TYPE;
+DROP TABLE DEPARTAMENTO;
+DROP TYPE DEPARTAMENTO_TYPE;
+
+--Criação de tipos
+
+CREATE TYPE EMPREGADO_TYPE AS OBJECT(
+       MATRICULA NUMBER,
+       NOME VARCHAR2(40)
+);
+/
+CREATE TYPE EMP_NESTED AS TABLE OF EMPREGADO_TYPE;
+/
+CREATE TYPE DEPARTAMENTO_TYPE AS OBJECT(
+       CODIGO NUMBER,
+       NOME VARCHAR2(40),
+       EMPREGADOS EMP_NESTED
+);
+/
+
+--Criação de tabelas
+
+CREATE TABLE DEPARTAMENTO OF DEPARTAMENTO_TYPE
+(CODIGO PRIMARY KEY)
+NESTED TABLE EMPREGADOS STORE AS EMP_T;
+
+--Inserção de dados
+
+INSERT INTO DEPARTAMENTO VALUES (1,
+       'Depto_Compras', EMP_NESTED(
+       EMPREGADO_TYPE(1, 'Marcelo'),
+       EMPREGADO_TYPE(2, 'Joana')
+       )
+);
+
+INSERT INTO THE(SELECT d.empregados FROM departamento d WHERE d.nome = 'Depto_Compras')
+VALUES (3,'Joca');
+
+--Consultas
+
+SELECT e.* FROM DEPARTAMENTO d, TABLE(d.EMPREGADOS) e WHERE d.NOME = 'Depto_Compras';
+
+SELECT * FROM DEPARTAMENTO;
+
+SELECT * FROM DEPARTAMENTO d, TABLE(d.EMPREGADOS);
+
+

@@ -1,0 +1,54 @@
+        {-
+Aula Pratica Tipos Algebricos
+===============================
+
+  - Um sistema operacional possui estruturas de dados para manipular
+    arquivos e diretorios (sistemas de arquivos). Arquivos podem
+    ser arquivos simples (com nome e conteudo) ou diretorios (com
+    nome e outros arquivos dentro deles). Baseado nos tipos de
+    dados definidos abaixo, que representam esses tipos de arquivos,
+    defina as funcoes solicitadas:
+-}
+
+type Name = String    -- nome do arquivo ou diretorio
+type Content = String -- conteudo do arquivo simples
+data File = SimpleFile Name Content -- arquivo simples, com nome e conteudo
+          | Directory Name [File] deriving (Show, Eq) -- diretorio, com nome e arquivos
+
+{-
+*** MUITA ATENCAO PARA OS TIPOS E NOMES DAS FUNCOES SOLICITADAS ***
+*** Se as funcoes nao puderem ser executadas com sucesso elas devem
+    retornar a mesma lista de arquivos que foi passada para elas.
+  
+  1 defina uma funcao dir, que retorne o nome de todos os 
+    arquivos (simples ou diretorios) de uma lista de arquivos. -}
+--dir :: [File] -> [Name]
+
+getNameOfFile :: File -> String
+getNameOfFile (SimpleFile f c) = f
+getNameOfFile (Directory n lf) = n
+
+dir :: [File] -> [Name]
+
+
+{-2 defina uma funcao cd, que retorna a lista de arquivos do
+    diretorio para o qual se deseja mudar, se ele existir.-}
+--cd :: [File] -> Name -> [File]
+
+{-3 cria um novo diretorio, vazio, na lista de arquivos.
+    garanta que o arquivo/diretorio nao existe antes de cria-lo.-}
+--mkdir :: [File] -> Name -> [File]
+
+{-4 retorna uma lista com os nomes de todos os arquivos
+    SIMPLES existentes em todos os niveis de diretorios,
+    recursivamente.-}
+--allfiles :: [File] -> [Name]
+
+exemplo :: [File]
+exemplo = [SimpleFile "config.sys" "xyzxyz",
+           SimpleFile "autoexec.bat" "bbb",
+           Directory "Windows" [SimpleFile "win.ini" "xxx",
+                                SimpleFile "win.exe" "sss"],
+           SimpleFile "autoexec.bak" "rrr"
+          ]
+

@@ -1,0 +1,433 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin - Parte 7</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+
+<A NAME="text"><H2>Mais sa&iacute;das em modo texto</H2></A>
+
+Vou expor, agora, mais formas de sa&iacute;da de texto com modos texto de
+v&iacute;deo. O primeiro programa &eacute; um exemplo de como deslocar o
+cursor para exibir uma string aonde voc&ecirc; desejar.
+
+<BLOCKQUOTE><PRE>
+Listagem 13: TEXT1.ASM
+
+.model tiny 
+.code
+org 100h
+start:
+
+mov dh,12 			; coluna do cursor
+mov dl,32 			; linha do cursor
+mov ah,02h 			; move o cursor para o lugar certo
+xor bh,bh 			; p&aacute;gina de v&iacute;deo 0
+int 10h 			; chamada de servi&ccedil;o bios
+
+mov dx,OFFSET Text		; DS:DX aponta para mensagem
+mov ah,9 			; fun&ccedil;&atilde;o 9 - exibir string
+int 21h 			; chamada de servi&ccedil;o dos
+
+mov ax,4C00h  			; sair para o dos
+int 21h
+
+Text DB "This is some text$" 
+
+end start
+</PRE></BLOCKQUOTE>
+
+O pr&oacute;ximo exemplo demonstra como escrever na tela usando a
+fun&ccedil;&atilde;o de arquivo 40h da interrup&ccedil;&atilde;o 21h.
+
+<BLOCKQUOTE><PRE>
+Listagem 14: TEXT2.ASM
+
+.model small
+.stack
+.code
+
+start:
+
+mov ax,@data 		; programa ds como segmento de dados
+mov ds,ax 		
+
+mov ah,40h 		; fun&ccedil;&atilde;o 40h - escrever arquivo
+mov bx,1 		; manipulador = 1 (tela)
+mov cx,17 		; comprimento da string
+mov dx,OFFSET Text 	; DS:DX aponta para a string
+int 21h 		; chamada de servi&ccedil;o dos
+
+mov ax,4C00h 		; termina programa
+int 21h
+
+.data
+
+Text DB "This is some text"
+
+end start
+</PRE></BLOCKQUOTE>
+
+O pr&oacute;ximo programa mostra como preparar e chamar a fun&ccedil;&atilde;o
+13h da interrup&ccedil;&atilde;o 10h - escrever string. Ela possui a vantagem
+de poder escrever a string em qualquer lugar da tela em uma cor escolhida mas
+&eacute; dif&iacute;cil de ser preparada.
+
+<BLOCKQUOTE><PRE>
+Listagem 15: TEXT3.ASM
+
+.model small
+.stack
+.code
+
+start:
+
+mov ax,@data 		; programa ax com o segmento de dados
+mov es,ax 		; coloca em es
+
+mov bp,OFFSET Text 	; ES:BP aponta para a mensagem
+mov ah,13h 		; fun&ccedil;&atilde;o 13 - escrever string
+mov al,01h 		; atributo em bl,move cursor
+xor bh,bh 		; p&aacute;gina de v&iacute;deo 0
+mov bl,5 		; atributo - magenta
+mov cx,17 		; comprimento da string
+mov dh,5 		; linha para colocar a string
+mov dl,5 		; coluna para colocar a string
+int 10h 		; chamada de servi&ccedil;o bios
+
+mov ax,4C00h 		; retornar para o DOS
+int 21h
+
+.data
+
+Text DB "This is some text"
+
+end start
+</PRE></BLOCKQUOTE>
+
+O pr&oacute;ximo programa demonstra como escrever na tela utilizando
+rep stosw para colocar os caracteres diretamente na mem&oacute;ria de
+v&iacute;deo.
+
+<BLOCKQUOTE><PRE>
+Listagem 16: TEXT4.ASM
+
+.model small
+.stack
+.code
+
+start:
+
+mov ax,0B800h 	; segmento do buffer de v&iacute;deo
+mov es,ax 	; coloca em es
+xor di,di 	; zerar di, ES:DI aponta para mem&oacute;ria v&iacute;deo
+mov ah,4 	; atributo - vermelho
+mov al,"G" 	; caracter para colocar l&aacute;
+mov cx,4000 	; quantidade de vezes que deve escrever
+cld 		; dire&ccedil;&atilde;o - para a frente
+rep stosw 	; escreve caracter em ES:[DI]
+
+mov ax,4C00h 	; retornar para o DOS
+int 21h
+
+end start
+</PRE></BLOCKQUOTE>
+
+O pr&oacute;ximo programa demonstra como escrever uma string na mem&oacute;ria
+de v&iacute;deo.
+
+<BLOCKQUOTE><PRE>
+Listagem 17: DIRECTWR.ASM
+
+; escreve uma string diretamente na mem&oacute;ria de v&iacute;deo
+
+.model small
+.stack
+.code
+
+start:
+
+mov ax,@data
+mov ds,ax
+
+mov ax,0B800h 		; segmento do buffer de v&iacute;deo
+mov es,ax 		; coloca em es
+mov ah,3 		; atributo - ciano
+mov cx,17 		; comprimento da string a escrever
+mov si,OFFSET Text 	; DX:SI aponta para a string
+xor di,di
+
+Wr_Char:
+
+lodsb 			; coloca pr&oacute;ximo caracter em al 
+mov es:[di],al 		; escreve caracter na mem&oacute;ria de video
+inc di 			; move para a pr&oacute;xima coluna
+mov es:[di],ah 		; escreve atributo na mem&oacute;ria de video
+inc di
+
+loop Wr_Char 		; repetir at&eacute; terminar
+
+mov ax,4C00h 		; retornar para o DOS
+int 21h
+
+.data
+
+Text DB "This is some text" 
+
+end start
+</PRE></BLOCKQUOTE>
+
+Ser&aacute; deixado como um exerc&iacute;cio para o leitor modificar o
+programa anterior para que seja declarada somente uma escrita na
+mem&oacute;ria de v&iacute;deo.
+
+<A NAME="mode13"><H2>Modo 13h</H2></A>
+
+O modo 13h s&oacute; est&aacute; dispon&iacute;vel em placas VGA, MCGA ou
+superiores. Estou falando sobre estas placas porque elas s&atilde;o muito
+f&aacute;ceis de usar para gr&aacute;ficos em fun&ccedil;&atilde;o da
+forma como a mem&oacute;ria est&aacute; organizada.
+
+<A NAME="isposs"><H2>Primeiro, verifique se o modo 13h
+&eacute; poss&iacute;vel</H2></A>
+
+Seria educado avisar o usu&aacute;rio se o seu computador n&atilde;o puder
+suportar o modo 13h ao inv&eacute;s de simplesmente trav&aacute;-lo
+sem aviso. Isto &eacute; feito da seguinte maneira:
+
+<BLOCKQUOTE><PRE>
+Listagem 18: CHECK13.ASM
+
+.model small
+.stack
+.data
+
+NoSupport db "Mode 13h is not supported on this computer."
+	  db ,"You need either a MCGA or VGA video" 
+	  db ,"card/monitor.$"
+
+Supported db "Mode 13h is supported on this computer.$"
+
+.code
+
+start:
+
+mov ax,@data 		; faz DS apontar para segmento de dados
+mov ds,ax 		; usa ax 
+
+call Check_Mode_13h 	; verifica se o modo 13h &eacute; poss&iacute;vel
+
+jc Error 		; se cf=1 ocorreu um erro
+
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibir string
+mov dx,OFFSET Supported ; DS:DX aponta para mensagem
+int 21h 		; chamada de servi&ccedil;o dos
+
+jmp To_DOS 		; sair para o dos
+
+Error:
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibir string
+mov dx,OFFSET NoSupport ; DS:DX aponta para mensagem
+int 21h 		; chamada de servi&ccedil;o dos
+
+To_DOS:
+mov ax,4C00h 		; sair para o dos 
+int 21h
+
+Check_Mode_13h PROC 	; Retorna: CF = 1 Modo 13h n&atilde;o &eacute; poss&iacute;vel
+
+mov ax,1A00h 		; Requisita informa&ccedil;&atilde;o de v&iacute;deo do VGA
+int 10h 		; Obt&eacute;m C&oacute;digo de Combina&ccedil;&atilde;o do Display
+cmp al,1Ah 		; VGA ou MCGA est&aacute; presente?
+je Mode_13h_OK 		; modo 13h &eacute; suportado
+stc 			; modo 13h n&atilde;o &eacute; suportado CF=1
+
+Mode_13h_OK:
+
+ret 
+Check_Mode_13h ENDP
+
+end start
+</PRE></BLOCKQUOTE>
+
+&Eacute; s&oacute; usar isto para verificar se o modo 13h &eacute;
+suportado, no in&iacute;cio de seu programa, para ter certeza de que
+voc&ecirc; poder&aacute; us&aacute;-lo.
+
+<A NAME="vidmode"><H2>Estabelecendo o Modo de V&iacute;deo</H2></A>
+
+&Eacute; muito simples ligar o modo. Isto &eacute; feito assim:
+
+<BLOCKQUOTE><PRE>
+mov ax,13h 	; programa modo 13h
+int 10h 	; chamada de servi&ccedil;o bios
+</PRE></BLOCKQUOTE>
+
+Se voc&ecirc; estiver no modo 13h e j&aacute; acabou de fazer o que
+queria ser&aacute; necess&aacute;rio retornar ao modo de v&iacute;deo
+em que o computador estava anteriormente.
+
+<P>
+
+Isto &eacute; feito em duas partes. Primeiramente precisamos salvar o modo
+de v&iacute;deo e ent&atilde;o reiniciar aquele modo.
+
+<BLOCKQUOTE><PRE>
+VideoMode db ?
+.
+.
+mov ah,0Fh 	 ; fun&ccedil;&atilde;o 0Fh - obt&eacute;m modo atual
+int 10h 	 ; Chamada a servi&ccedil;o de v&iacute;deo da bios
+mov VideoMode,al ; salva modo atual
+
+; coloque o c&oacute;digo do programa aqui
+
+mov al,VideoMode ; programar modo de v&iacute;deo anterior
+xor ah,ah 	 ; zerar ah - programar modo
+int 10h 	 ; chamada de servi&ccedil;o bios
+
+mov ax,4C00h 	 ; sair para o dos
+int 21h 	 ; chamar fun&ccedil;&atilde;o dos
+</PRE></BLOCKQUOTE>
+
+Agora que entramos no modo 13h vamos fazer algumas coisas. Primeiro vamos
+ligar alguns pixels na tela.
+
+<P>
+
+<B>Fun&ccedil;&atilde;o 0Ch:</B> Escrever pixels gr&aacute;ficos
+
+<P>
+
+Isto coloca um ponto colorido na tela nas coordenadas gr&aacute;ficas
+especificadas.
+
+<P>
+
+ENTRADA:
+
+<P>
+
+AH = 0Ch
+<BR>AL = Cor do ponto
+<BR>CX = Coluna na tela (coordenada x)
+<BR>DX = Linha na tela (coordenada y)
+
+<P>
+
+SA&Iacute;DA:
+
+<P>
+
+Nada al&eacute;m do pixel na tela.
+
+<P>
+
+Observa&ccedil;&atilde;o: Esta fun&ccedil;&atilde;o executa um OU exclusivo
+(XOR) entre o novo valor da cor e o contexto atual do pixel se o bit 7 de AL
+estiver ligado.
+
+<P>
+
+Este programa demonstra como tra&ccedil;ar pixels. Ele ir&aacute; colocar
+quatro pontos vermelhos no meio da tela..
+
+<BLOCKQUOTE><PRE>
+Listagem 19: PIXINT.ASM
+
+; exemplo de tra&ccedil;ado de pixels no modo 13 usando servi&ccedil;os da bios - 
+; INT 10h
+
+.model tiny
+.code
+org 100h
+start:
+
+mov ax,13 	; modo = 13h 
+int 10h 	; chamada de servi&ccedil;o bios
+
+mov ah,0Ch 	; fun&ccedil;&atilde;o 0Ch
+mov al,4 	; cor 4 - vermelho
+mov cx,160 	; posi&ccedil;&atilde;o x = 160
+mov dx,100 	; posi&ccedil;&atilde;o y = 100
+int 10h 	; chamada de servi&ccedil;o bios
+
+inc dx 		; escreve pixel de cima para baixo
+int 10h 	; chamada de servi&ccedil;o bios
+inc cx 		; escreve pixel para a direita
+int 10h 	; chamada de servi&ccedil;o bios
+dec dx 		; escreve pixel para cima
+int 10h 	; chamada de servi&ccedil;o bios
+
+xor ax,ax 	; fun&ccedil;&atilde;o 00h - obt&eacute;m uma tecla
+int 16h 	; chamada de servi&ccedil;o bios
+
+mov ax,3 	; modo = 3
+int 10h 	; chamada de servi&ccedil;o bios
+
+mov ax,4C00h 	; sair para o dos
+int 21h
+
+end start
+</PRE></BLOCKQUOTE>
+
+<A NAME="optimize"><H2>Algumas
+Otimiza&ccedil;&otilde;es</H2></A>
+
+Este m&eacute;todo n&atilde;o &eacute; muito r&aacute;pido e n&oacute;s
+poder&iacute;amos faz&ecirc;-lo muito mais r&aacute;pido. Como? Escrevendo
+diretamente na mem&oacute;ria de v&iacute;deo. &Eacute; muito f&aacute;cil
+fazer isto.
+
+<P>
+
+O segmento VGA come&ccedil;a em 0A000h. Para calcular onde fica cada pixel
+utilize esta f&oacute;rmula simples para obter o offset.
+
+<P>
+
+Offset = X + ( Y * 320 )
+
+<P>
+
+Tudo o que precisamos fazer &eacute; colocar um n&uacute;mero nesta
+posi&ccedil;&atilde;o e ent&atilde;o haver&aacute; um ponto na tela. O
+n&uacute;mero determina sua cor. H&aacute; duas instru&ccedil;&otilde;es
+que podemos usar para colocar um pixel na tela. Podemos usar stosb para
+colocar o valor de AL em ES:DI ou podemos usar uma nova forma da
+instru&ccedil;&atilde;o MOV, assim:
+
+<BLOCKQUOTE><PRE>
+mov es:[di], color
+</PRE></BLOCKQUOTE>
+
+Qual devemos usar? Quando formos escrever pixels na tela precisamos
+faz&ecirc;-lo da forma mais r&aacute;pida poss&iacute;vel.
+
+<PRE>
+<B>		Total de ciclos gastos por tipo de CPU</B>
+<B>Instru&ccedil;&atilde;o 	   Pentium  486   386   286   86</B>
+
+STOSB 	              3      5     4     3    11
+MOV AL para SEG:OFF   1      1     4     3    10
+</PRE>
+
+Se voc&ecirc; usar a instru&ccedil;&atilde;o MOV poder&aacute; ser
+necess&aacute;rio incrementar DI (o que STOSB faz sozinha).
+
+<P>
+
+Se tivessemos um programa que mostrasse uma figura que precisasse ser
+continuamente desenhada, apagada e redesenhada ter&iacute;amos problemas
+com cintila&ccedil;&otilde;es. Para evitar isto voc&ecirc; pode usar um
+'buffer duplo'. Isto &eacute; uma outra parte da mem&oacute;ria na qual
+voc&ecirc; escreve e ent&atilde;o copia toda a informa&ccedil;&atilde;o,
+no caso a figura, para a tela.
+
+<H3><A HREF="asm1.htm#toc">Retornar para o Sum&aacute;rio</A></H3>
+
+</BODY>
+</HTML>

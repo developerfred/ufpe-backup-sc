@@ -1,0 +1,325 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin - Parte 2</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+
+<A NAME="intro"><H2>Uma Introdu&ccedil;&atilde;o a
+Instru&ccedil;&otilde;es Assembly</H2></A>
+
+Existem muitas instru&ccedil;&otilde;es em assembly mas apenas por
+volta de vinte delas voc&ecirc; dever&aacute; conhecer e utilizar&aacute;
+muito freq&uuml;entemente. A maioria das instru&ccedil;&otilde;es
+s&atilde;o compostas por tr&ecirc;s caracteres e possuem um operando
+ent&atilde;o uma v&iacute;rgula e ent&atilde;o outro operando. Por
+exemplo, para copiar um dado para um registrador voc&ecirc; utiliza
+a instru&ccedil;&atilde;o MOV.
+
+<BLOCKQUOTE><PRE>
+mov ax,10	; copia 10 para ax
+mov bx,20 	; copia 20 para bx
+mov cx,30 	; copia 30 para cx
+mov dx,40 	; copia 40 para dx
+</PRE></BLOCKQUOTE>
+
+<P>
+
+Observe que em assembly tudo que estiver ap&oacute;s um ; (ponto e
+v&iacute;rgula) &eacute; ignorado. Isto &eacute; muito &uacute;til para
+se colocar coment&aacute;rios em seu c&oacute;digo.
+
+<A NAME="pushpop"><H2>Push e Pop: Duas Instru&ccedil;&otilde;es
+para manuseio da Pilha</H2></A>
+
+Voc&ecirc; j&aacute; conhece a pilha mas n&atilde;o sabe como colocar e retirar dados dela. Existem duas instru&ccedil;&otilde;es simples que voc&ecirc;
+precisa conhecer: push e pop. Eis a sintaxe para o seu uso:
+
+<P>
+
+<B>PUSH:</B> 
+Coloca dados no topo da pilha.
+<BR>Sintaxe:
+
+<PRE>push dados</PRE>
+
+<P>
+
+<B>POP:</B> 
+Recupera o dado do topo da pilha para um registrador especificado ou
+uma vari&aacute;vel.
+<BR>Sintaxe:
+
+<PRE>pop registrador (ou vari&aacute;vel) </PRE>
+
+<P>
+
+Este exemplo de c&oacute;digo demonstra como utilizar as
+intru&ccedil;&otilde;es push e pop
+
+<BLOCKQUOTE><PRE>
+push cx 	; copia cx na pilha
+push ax 	; copia ax na pilha
+pop cx 		; recupera valor do topo da pilha para cx
+pop ax		; recupera valor do topo da pilha para ax
+</PRE></BLOCKQUOTE>
+
+<P>
+
+Veja que os valores de CX e AX ser&atilde;o trocados. H&aacute; uma
+instru&ccedil;&atilde;o para trocar o conte&uacute;do de dois registradores:
+XCHG, que reduziria o fragmento de c&oacute;digo anterior para &quot;xchg
+ax,cx&quot;.
+
+<A NAME="operand"><H2>Tipos de Operandos</H2></A>
+
+Existem tr&ecirc;s tipos de operandos em assembly: imediato, registrador e
+mem&oacute;ria. Imediato &eacute; aquele valor que ser&aacute; conhecido
+na compila&ccedil;&atilde;o e sempre ser&aacute; o mesmo, por exemplo '20'
+ou 'A'.
+
+Um operando do tipo registrador &eacute; qualquer registrador de uso geral
+ou de &iacute;ndice, por exemplo AX ou SI. Um operando do tipo mem&oacute;ria
+&eacute; uma vari&aacute;vel que est&aacute; armazenada em mem&oacute;ria e
+ser&aacute; detalhado mais tarde.
+
+<A NAME="instructions"><H2>Algumas Instru&ccedil;&otilde;es
+que voc&ecirc; precisar&aacute; conhecer</H2></A>
+
+Esta &eacute; uma lista de algumas instru&ccedil;&otilde;es importantes
+que voc&ecirc; precisa conhecer antes de conseguir entender ou escrever
+programas em assembly.
+
+<P>
+
+<B>MOV:</B> move um valor de um lugar para outro.
+<BR>Sintaxe:
+
+<PRE>MOV destino, origem</PRE>
+
+por exemplo:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+mov ax,10 	; move um valor imediato para ax 
+mov bx,cx 	; move o valor de cx para bx
+mov dx,Number 	; moves o valor de Number para dx
+</PRE></BLOCKQUOTE>
+
+<P>
+
+<B>INT:</B> chama uma fun&ccedil;&atilde;o DOS ou BIOS que s&atilde;o
+subrotinas para fazer coisas para o que n&atilde;o criar&iacute;amos uma
+fun&ccedil;&atilde;o, por exemplo alterar o modo de v&iacute;deo, abrir
+um arquivo, etc.
+
+<BR>Sintaxe:
+
+<PRE>INT n&uacute;mero da interrup&ccedil;&atilde;o</PRE>
+
+<P>
+
+Por exemplo:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+int 21h		; Chama servi&ccedil;os do DOS
+int 10h 	; Chama a interrup&ccedil;&atilde;o de V&iacute;deo da BIOS
+</PRE></BLOCKQUOTE>
+
+<P>
+
+A maior parte das interrup&ccedil;&otilde;es possuem mais de uma
+fun&ccedil;&atilde;o, significando que voc&ecirc; deve passar o
+n&uacute;mero da fun&ccedil;&atilde;o desejada. Este &eacute;
+normalmente colocado em AH. Para imprimir uma mensagem na tela do
+monitor tudo que voc&ecirc; precisa fazer &eacute; isto:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+mov ah,9 	; n&uacute;mero da subrotina 9
+int 21h 	; chama a interrup&ccedil;&atilde;o
+</PRE></BLOCKQUOTE>
+
+<P>
+
+Mas primeiro voc&ecirc; deve especificar o que imprimir. Esta
+fun&ccedil;&atilde;o precisa que
+DS:DX seja um ponteiro do tipo far para onde a string estiver. A string
+deve ser terminada com um caracter cifr&atilde;o ($). Isto seria f&aacute;cil
+se DS pudesse ser manipulado diretamente, para contornar isto n&oacute;s
+teremos que usar AX.
+
+<P>
+
+Este exemplo mostra como isto funciona:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+mov dx,OFFSET Message 	; DX cont&eacute;m o offset da messagem
+mov ax,SEG Message 	; AX cont&eacute;m o segmento da messagem
+mov ds,ax 		; DS:DX aponta para a messagem
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe a string
+int 21h 		; chama servi&ccedil;o do DOS
+</PRE></BLOCKQUOTE>
+
+<P>
+
+As palavras OFFSET e SEG dizem ao montador que voc&ecirc; quer o segmento
+ou o offset da mensagem colocado no registrador, n&atilde;o o conte&uacute;do
+da mensagem. Agora que sabemos como preparar o c&oacute;digo para exibir a
+mensagem, precisaremos declarar a mensagem. No segmento de dados n&oacute;s
+declaramos a mensagem da seguinte forma:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+Message DB "Hello World!$"
+</PRE></BLOCKQUOTE>
+
+<P>
+Observe que a string est&aacute; terminada com um cifr&atilde;o. O que
+significa 'DB'? DB &eacute; a abrevia&ccedil;&atilde;o de Definir Byte
+e a mensagem &eacute; um conjunto de bytes (um caracter ASCII ocupa um
+byte). Dados podem ser declarados em v&aacute;rios tamanhos: bytes (DB),
+words (DW) e double words (DD). Voc&ecirc; n&atilde;o precisa se
+preocupar com double words por enquanto uma vez que voc&ecirc; precisa de
+um registrador de 32 bits, tal como o EAX, para coloc&aacute;-las.
+
+<P>
+
+Aqui est&atilde;o alguns exemplos de declara&ccedil;&atilde;o de dados:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+Number1 db ?
+Number2 dw ?
+</PRE></BLOCKQUOTE>
+
+<P>
+
+O sinal de interroga&ccedil;&atilde;o (?) no final significa que
+o dado n&atilde;o &eacute; iniciado, isto &eacute;, ele n&atilde;o
+possui um valor definido no in&iacute;cio da execu&ccedil;&atilde;o.
+Isto poderia ser escrito facilmente como:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+Number1 db 0
+Number2 dw 1
+</PRE></BLOCKQUOTE>
+
+<P>
+
+Desta vez Number1 &eacute; igual a 0 e Number2 &eacute; igual a 1
+quando o seu programa &eacute; carregado. Seu programa tamb&eacute;m
+ter&aacute; um tamanho de 3 bytes.
+
+<P>
+
+Se voc&ecirc; declarar uma vari&aacute;vel como uma word voc&ecirc;
+n&atilde;o poder&aacute; mover o valor desta vari&aacute;vel para um
+registrador de 8 bits e voc&ecirc; n&atilde;o poder&aacute; declarar
+uma vari&aacute;vel como um byte e mover seu valor para um registrador
+de 16 bits. Por exemplo:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+mov al,Number1 		; ok
+mov ax,Number1 		; erro
+
+mov bx,Number2 		; ok
+mov bl,Number2 		; erro
+</PRE></BLOCKQUOTE>
+
+<P>
+
+Tudo o que voc&ecirc; dever&aacute; lembrar &eacute; que voc&ecirc; s&oacute;
+pode colocar bytes dentro de registradores de 8 bits, e words em registradores
+de 16 bits.
+
+<P>
+
+<A NAME="first"><H2>Seu primeiro programa assembly</H2></A>
+
+<P>
+Agora que voc&ecirc; conhece algumas instru&ccedil;&otilde;es b&aacute;sicas
+e um pouco sobre dados &eacute; hora de dar uma olhada em um programa
+assembly completo que possa ser montado.
+
+<P>
+
+<BLOCKQUOTE><PRE>
+Listagem 1: 1STPROG.ASM
+; Este &eacute; um programa simples que exibe "Hello World!"
+; na tela do monitor.
+ 
+.model small
+.stack 
+.data 
+
+Message db "Hello World!$" 	; messagem a ser exibida
+
+.code 
+
+start:
+
+mov dx,OFFSET Message 	; offset da Messagem est&aacute; em DX 
+mov ax,SEG Message 	; segmento da Messagem est&aacute; em AX
+mov ds,ax 		; DS:DX aponta para a string 
+
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string 
+int 21h 		; chama servi&ccedil;o DOS 
+mov ax,4c00h 		; retorna ao DOS 
+int 21h 
+
+END start 		;termina aqui
+</PRE></BLOCKQUOTE>
+
+<A NAME="compile"><H2>Instru&ccedil;&otilde;es de
+Montagem</H2></A>
+
+Existem algumas instru&ccedil;&otilde;es para montar e ligar programas.
+Se voc&ecirc; tiver um montador que n&atilde;o o TASM ou o A86 ent&atilde;o
+consulte seu manual de instru&ccedil;&otilde;es.
+
+<P>
+
+<H3>Turbo Assembler</H3>
+
+<BLOCKQUOTE><PRE>
+tasm file.asm
+tlink file [/t]
+</PRE></BLOCKQUOTE>
+
+A op&ccedil;&atilde;o /t cria um arquivo .COM . Isto s&oacute; ir&aacute;
+funcionar se for declarado o modelo de mem&oacute;ria tiny no arquivo
+fonte.
+
+<P>
+
+<H3>A86</H3>
+
+<BLOCKQUOTE><PRE>
+a86 file.asm
+</PRE></BLOCKQUOTE>
+
+<P>
+
+Isto ir&aacute; gerar o programa em um arquivo .COM . N&atilde;o importa
+qual seja o modelo de mem&oacute;ria.
+
+<H3><A HREF="asm1.htm#toc">Retornar para o Sum&aacute;rio</A></H3>
+
+</BODY>
+</HTML>

@@ -1,0 +1,1182 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: =?Windows-1252?Q?O_SISTEMA_WIN_32_-_oic=ECliS_=A9?=
+Date: Thu, 29 Sep 2005 16:28:43 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_000F_01C5C512.DBB78D90";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1506
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/winSys.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- =A9sobMedida by vickiSoft 20.02.02 ver 1.0 --><!-- 13.03.03 ver 1.1 =
+- PHP --><!-- 03.08.03 ver 1.2 - referElo --><HTML><HEAD><TITLE>O =
+SISTEMA WIN 32 - oic=ECliS =A9</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"oiciliS - O sistema Win32" name=3Ddescription>
+<META=20
+content=3D"tutorial, tutoriais, assembly, assembler, sistema =
+operacional, win32, windows 32 bits"=20
+name=3Dkeywords><LINK=20
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAsse=
+mbly.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"MSHTML 6.00.2800.1515" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3><IMG height=3D32=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/inte=
+rAni.gif"=20
+      width=3D32 align=3DabsMiddle border=3D0> O SISTEMA WINDOWS 32 =
+BITS</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D20 align=3Dleft>
+        <TBODY>
+        <TR>
+          <TD align=3Dmiddle><A=20
+            =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/index.php"><IMG=20
+            height=3D57 alt=3D"Sil=EDcio Reverso"=20
+            =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif"=20
+            width=3D106 border=3D0></A>oic=ECliS =A9<BR>Assembly =
+Intermedi=E1rio<BR>TEXTOS=20
+            ACESS=D3RIOS<BR><FONT size=3D-2>(ver 1.2 de 03.08.03)</FONT> =
+
+        </TD></TR></TBODY></TABLE>
+      <P>A arquitetura do Windows 32 bits =E9 composta por diversos =
+elementos,=20
+      como mostra a figura abaixo. Cada elemento cuida de uma parte do =
+ambiente=20
+      do Windows. Por exemplo, a camada API (Application Programming =
+Interface)=20
+      permite que os aplicativos se comuniquem com os elementos internos =
+do=20
+      sistema b=E1sico.</P>
+      <P>Antes de analisar cada um dos elementos, =E9 necess=E1rio =
+conhecer alguma=20
+      coisa sobre o sistema de an=E9is de prote=E7=E3o fornecidos pelo =
+processador=20
+      80386 e mais avan=E7ados. Existem quatro an=E9is de seguran=E7a no =
+esquema de=20
+      prote=E7=E3o da Intel, mas a maioria dos sistemas operacionais =
+utiliza apenas=20
+      dois deles (=E0s vezes tr=EAs). O anel de seguran=E7a m=E1xima, o =
+mais interno, =E9=20
+      o Ring 0. =C9 onde est=E1 o sistema operacional. O anel mais =
+afastado, onde=20
+      reside o aplicativo, =E9 o Ring 3. Em diversas situa=E7=F5es, o =
+acesso a alguns=20
+      recursos do sistema =E9 facilitado se puderem ser executados a =
+partir do=20
+      Ring 1 ou Ring 2. Mas o Windows n=E3o faz qualquer tipo de =
+concess=E3o: os=20
+      drivers de dispositivos s=E3o executados apenas nos an=E9is 0 e 3, =
+dependendo=20
+      da sua finalidade.</P>
+      <P>O Windows utiliza estes an=E9is de prote=E7=E3o para assegurar =
+que apenas os=20
+      componentes do sistema possam acessar os componentes internos, =
+impedindo=20
+      que um aplicativo possa alterar par=E2metros do sistema b=E1sico e =
+provocar=20
+      uma paraliza=E7=E3o do sistema. Por exemplo, o Windows se reserva =
+o direito de=20
+      alocar mem=F3ria a partir do pool global; deste modo, os recursos=20
+      necess=E1rios para desempenhar esta tarefa residem no Ring 0. Por =
+outro=20
+      lado, os aplicativos precisam acessar a mem=F3ria atribu=EDda a =
+eles. =C9 por=20
+      isso que o sistema atribui =E0 mem=F3ria local o valor 3.</P>
+      <CENTER><IMG height=3D329 alt=3D"An=E9is (23K)"=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/gra=
+fs/aneis.gif"=20
+      width=3D327></CENTER>
+      <P>Imagine cada anel como uma barreira de seguran=E7a. Antes de =
+ultrapassar=20
+      esta barreira voc=EA precisa fornecer uma senha para obter a =
+permiss=E3o. O=20
+      Windows apenas fornece a senha para aplicativos nos quais ele =
+confia, os=20
+      que possuem "documentos de identifica=E7=E3o" em ordem porque =
+est=E3o=20
+      registrados no sistema. Sempre que um aplicativo tentar burlar a=20
+      seguran=E7a, o processador d=E1 o alerta emitindo uma exce=E7=E3o. =
+Ao receber este=20
+      alarme de seguran=E7a, o sistema "captura" e desativa o aplicativo =
+infrator=20
+      e avisa o usu=E1rio. Deu para entender porque o sistema Windows =
+=E9 chamado de=20
+      Sistema Fechado? =C9 porque o usu=E1rio n=E3o tem como acessar =
+diretamente o=20
+      sistema b=E1sico.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> O Sistema B=E1sico do =
+Windows</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O componente <B>Sistema B=E1sico</B> (Basic System) cont=E9m =
+todos os=20
+      servi=E7os espec=EDficos do sistema operacional. =C9 o n=FAcleo do =
+Windows, a=20
+      parte que sempre precisa estar em opera=E7=E3o para que o Windows =
+funcione=20
+      adequadamente. Est=E1 no Ring 0, sob prote=E7=E3o m=E1xima. O =
+Sistema B=E1sico =E9=20
+      composto por diversos subsistemas: o subsistema de Gerenciamento =
+de=20
+      Arquivos (File Management Subsystem), o susistema de Rede (Network =
+
+      Subsystem), os Servi=E7os do Sistema Operacional (Operating System =
+
+      Services), o Gerenciador da M=E1quina Virtual (Virtual Machine =
+Manager) e os=20
+      Controladores de Dispositivos (Device Drivers). Apesar de n=E3o =
+poderem ser=20
+      acessados diretamente pelo programador (n=E3o?), cada um deles =
+ter=E1 sua=20
+      fun=E7=E3o explicada.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Subsistema de Gerenciamento de =
+Arquivos <IMG=20
+      height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>=C9 respons=E1vel pelo gerenciamento de arquivos em =
+dispositivos de=20
+      armazenamento de dados como disquetes, disco r=EDgido, CD-ROM etc. =
+Muita=20
+      coisa mudou nas sucessivas vers=F5es do Windows. Veja maiores =
+detalhes em=20
+      "<A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/fi=
+leMan.php">Sistema=20
+      de Gerenciamento de Arquivos</A>".</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Subsistema de Rede <IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Torna poss=EDvel executar a rede n=E3o hier=E1rquica da =
+Microsoft al=E9m de=20
+      fornecer ganchos (hooks) de modo protegido para a maioria das =
+redes locais=20
+      de terceiros. =C9 poss=EDvel manter mais de uma rede ativa por =
+vez. A natureza=20
+      modular do subsistema de rede permite incluir recursos atrav=E9s =
+da=20
+      utiliza=E7=E3o de VxDs.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Servi=E7os do Sistema Operacional =
+<IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>=C9 o componente do sistema que lida com recursos como o Plug =
+and Play.=20
+      Atende diversas solicita=E7=F5es, tanto do pr=F3prio sistema =
+operacional quanto=20
+      do usu=E1rio. Por exemplo, fornecendo a hora atual.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Gerenciador da M=E1quina Virtual <IMG =
+height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>=C9 a alma do sistema Windows, onde todas as coisas s=E3o =
+ligadas. O=20
+      gerenciador da m=E1quina virtual cuida do agendamento de tarefas e =
+da=20
+      inicializa=E7=E3o e interrup=E7=E3o de cada aplicativo. =C9 =
+tamb=E9m o componente que=20
+      gerencia a mem=F3ria virtual e, como trata de todas as =
+aloca=E7=F5es de mem=F3ria,=20
+      atua tamb=E9m como um servidor DPMI (DOS Protected Mode =
+Interface). Por fim,=20
+      o gerenciador da m=E1quina virtual =E9 respons=E1vel pela =
+comunica=E7=E3o entre=20
+      tarefas. Isto significa que todas as solicita=E7=F5es DDE e OLE =
+s=E3o filtradas=20
+      atrav=E9s desta se=E7=E3o do sistema operacional.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Controladores de Dispositivos <IMG =
+height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O Windows simplesmente ignora os mais diversos dispositivos se =
+n=E3o=20
+      houver o driver correspondente. O driver, ou controlador, nada =
+mais =E9 do=20
+      que um c=F3digo especial que atua como int=E9rprete. Ele =
+transforma as=20
+      solicita=E7=F5es do sistema operacional para um formato que o =
+dispositivo=20
+      possa compreender. Por exemplo, a impressora s=F3 pode imprimir o =
+texto=20
+      solicitado se "entender" o que o sistema quer. Para isso s=E3o =
+necess=E1rios=20
+      drivers da impressora associados ao sistema. Os Virtual Device =
+Drivers, ou=20
+      VxD como s=E3o conhecidos, s=E3o controladores especiais que =
+permitem ao=20
+      Windows se comunicar com os dispositivos do sistema sem precisar =
+alternar=20
+      para o modo real.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> A camada API</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>A camada API do Windows pode ser considerada como o porteiro do =
+Ring 0.=20
+      S=F3 atrav=E9s dela =E9 que os aplicativos podem se comunicar com =
+o Sistema=20
+      B=E1sico. Existem tr=EAs componentes principais nesta camada: =
+s=E3o os arquivos=20
+      KERNEL32.DLL, USER32.DLL e GDI32.DLL. Arquivos DLL s=E3o =
+execut=E1veis=20
+      especiais que cont=E9m as fun=E7=F5es necess=E1rias para que um =
+aplicativo possa=20
+      ser executado no ambiente Windows. J=E1 existiam nas vers=F5es de =
+16 bits do=20
+      Windows sob os nomes de KRNL386.EXE, USER.EXE e GDI.EXE.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>KERNEL32 <IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Fornece suporte para as fun=E7=F5es de baixo n=EDvel que um =
+aplicativo=20
+      necessita para ser executado. Por exemplo, toda vez que o =
+aplicativo=20
+      precisar de mem=F3ria, ele ir=E1 obt=EA-la no Kernel do Windows. =
+Da mesma=20
+      maneira, opera=E7=F5es em disco, com arquivos, o rel=F3gio do =
+sistema, s=E3o=20
+      atribui=E7=F5es do Kernel. Este componente n=E3o lida com a =
+interface ou com os=20
+      dispositivos - ele apenas interage com o Windows propriamente =
+dito.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>USER32 <IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O Windows, como o pr=F3prio nome indica, =E9 um sistema baseado =
+em janelas.=20
+      Bem por isso, ele precisa de um gerente para acompanhar todas as =
+janelas=20
+      criadas por aplicativos. Esse gerente =E9 o User, que trata =
+principalmente=20
+      da interface com o usu=E1rio.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>GDI32 <IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>GDI vem de Graphical Device Interface - interface do ambiente =
+gr=E1fico.=20
+      Este componente cuida de v=EDdeo, gerenciamento de cores, fontes e =
+outros=20
+      aspectos ditos art=EDsticos.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> A M=E1quina Virtual do =
+Sistema (System=20
+      Virtual Machine ou VM)</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>A System Virtual Machine possui dois elementos principais: =
+aplicativos=20
+      win32 e a shell. Os aplicativos win32 s=E3o programas que podem =
+rodar=20
+      simultaneamente (o Win32 =E9 multitarefa) fazendo uso dos =
+servi=E7os e recuros=20
+      que o sistema operacional oferece. Uma shell (a tradu=E7=E3o =E9 =
+casca ou=20
+      concha) tamb=E9m =E9 um aplicativo, mas de um tipo especial que o =
+sistema=20
+      oferece. Com uma shell =E9 poss=EDvel agrupar, iniciar e de alguma =
+forma=20
+      controlar outros aplicativos. O Windows Explorer =E9 uma shell =
+para o=20
+      gerenciamento de arquivos em disco; =E9 um utilit=E1rio, como =
+tantos outros,=20
+      que acompanha o Windows. Existe um tratamento especial para as =
+shells pela=20
+      API, obtido atrav=E9s da SHELL32.DLL.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Outros Aspectos =
+Importantes</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O Windows =E9 um sistema operacional <B>multitarefa</B> e =
+<B>orientado a=20
+      eventos</B>. Para conhecer mais sobre multitarefa, leia "<A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/pr=
+ocesso.php">Processos=20
+      e Linhas de Processo</A>". Agora, o que =E9 um evento para o =
+Windows?=20
+      Praticamente tudo. Quando se pressiona uma tecla, quando se toca =
+no mouse=20
+      ou se altera algum par=E2metro, o Windows reconhece isto como um =
+evento. O=20
+      sistema executa uma tarefa para cada evento, chamando o aplicativo =
+que=20
+      pode tratar do evento ou tratando-o por conta pr=F3pria. Uma das=20
+      consequ=EAncias da natureza multitarefa do Windows =E9 que os =
+eventos podem=20
+      ocorrer em diversos aplicativos diferentes, por isso =E9 preciso =
+tratar os=20
+      eventos de forma coordenada para que cada aplicativo receba as =
+informa=E7=F5es=20
+      que lhe competem e a integridade, tanto do sistema como dos =
+aplicativos,=20
+      seja preservada.</P><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3>Localizador</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1 align=3Dmiddle>
+      <SCRIPT language=3DJavaScript>=0A=
+function setFontSize(fontVal) {=0A=
+var fontSet =3D document.getElementById('fontSet');=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('table');=0A=
+if (!fontVal) {fontVal =3D document.getElementById('fontSet').value;}=0A=
+var docSize =3D fontVal+'pt';=0A=
+for(var i=3D0;i<docBase.length;i++)=0A=
+docBase[i].style.fontSize =3D docSize;=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('body');=0A=
+docBase[0].style.fontSize =3D docSize;=0A=
+docSize =3D (fontVal-2)+'pt';=0A=
+document.getElementById('xxpe').style.fontSize =3D docSize;=0A=
+if (fontSet) {fontSet.value =3D fontVal;}=0A=
+}=0A=
+</SCRIPT>
+
+      <DIV id=3Dxxpe style=3D"FONT-SIZE: 8pt">
+      <HR>
+
+      <CENTER>| <A href=3D"javascript:setFontSize(15)"><SPAN=20
+      style=3D"FONT-SIZE: 15pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(13)"><SPAN=20
+      style=3D"FONT-SIZE: 13pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(11)"><SPAN=20
+      style=3D"FONT-SIZE: 11pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(9)"><SPAN style=3D"FONT-SIZE: =
+9pt">A</SPAN></A>=20
+      | <A=20
+      onmouseover=3D"status=3D'A Aldeia onde as coisas acontecem =
+numaboa';return true"=20
+      href=3D"http://www.numaboa.com.br/index.php"><IMG height=3D15=20
+      alt=3D"P=E1gina Inicial" =
+src=3D"http://www.numaboa.com.br/img/haus2.png"=20
+      width=3D15 align=3Dbottom border=3D0></A> | <A=20
+      onmouseover=3D"status=3D'Saiba o que a Aldeia tem para =
+oferecer';return true"=20
+      title=3D"Mapa do site"=20
+      href=3D"http://www.numaboa.com.br/aldeia/index.php">Mapa do =
+Site</A> | <A=20
+      onmouseover=3D"status=3D'Fique por dentro das novidades';return =
+true"=20
+      title=3D"Novidades na Aldeia"=20
+      =
+href=3D"http://www.numaboa.com.br/aldeia/destaques.php">Novidades</A> | =
+<A=20
+      onmouseover=3D"status=3D'Procure na Aldeia';return true"=20
+      title=3D"Abre em nova janela"=20
+      href=3D"http://www.numaboa.com.br/portal/index.php" =
+target=3D_blank>Busca</A>=20
+      | <A onmouseover=3D"status=3D'Indique esta p=E1gina aos =
+amigos';return true"=20
+      title=3D"Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/indica.php?page=3D/informatica/=
+oiciliS/assembler/textos/winSys.php&amp;indica=3DoiciliS - Assembly - =
+Textos - Windows 32 bits"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Indique esta p=E1gina</A> | <A=20
+      onmouseover=3D"status=3D'Fale com a vov=F3 da Aldeia';return true" =
+
+      title=3D"webmaster - Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/contato.php?page=3D/informatica=
+/oiciliS/assembler/textos/winSys.php"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Mestre da Teia</A> | <A=20
+      onmouseover=3D"status=3D'Marcha-R=E9';return true" title=3D"Meia =
+volta voooolver"=20
+      href=3D"javascript:history.back()">Voltar</A> |<BR>| <A=20
+      =
+href=3D"http://www.numaboa.com.br/foot/localizador.php?file=3Dinfo.txt&am=
+p;page=3D/informatica/oiciliS/assembler/textos/winSys.php"=20
+      target=3D_blank>Localizador</A> || @ <A=20
+      href=3D"http://www.numaboa.com.br/informatica/">Info NumaBoa</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/">oic=ECliS</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/">Assembl=
+y</A>=20
+      &gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/">=
+Textos</A>=20
+      &gt; <B>Windows 32 bits</B>
+      <HR>
+      Cr=E9ditos: vov=F3 Vicki<BR><BR>webdesign sobMedida by vickiSoft - =
+
+      /informatica/oiciliS/assembler/textos/winSys.php (20.02.02) =
+vers=E3o 1.2 de=20
+      03.08.03<BR>Licen=E7a Creative Commons 1998-2005 Aldeia =
+NumaBoa<BR><!-- Creative Commons License -->Exceto onde especificamente=20
+      declarado, todo material deste site =E9 disponibilizado de acordo =
+com a <A=20
+      =
+href=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt"=20
+      target=3D_blank rel=3Dlicense>Licen=E7a Creative Commons</A>. <!-- =
+/Creative Commons License --><!--=0A=
+<rdf:RDF xmlns=3D"http://web.resource.org/cc/"=0A=
+xmlns:dc=3D"http://purl.org/dc/elements/1.1/"=0A=
+xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#">=0A=
+<Work rdf:about=3D"">=0A=
+<dc:type rdf:resource=3D"http://purl.org/dc/dcmitype/Text" />=0A=
+<license =
+rdf:resource=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/" />=0A=
+</Work>=0A=
+=0A=
+<License =
+rdf:about=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/">=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Reproduction" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Distribution" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Notice" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Attribution" />=0A=
+<prohibits rdf:resource=3D"http://web.resource.org/cc/CommercialUse" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/DerivativeWorks" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/ShareAlike" />=0A=
+</License>=0A=
+</rdf:RDF>=0A=
+--></CENTER></DIV></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/interAni.gif
+
+R0lGODlhIAAgAIIAAAD/////QP//AG9AAP+wQP/AYP+gAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh
++QQJFAAAACwAAAAAIAAgAEIDiQi63P4wyqmCvVY4gfETHMaBDBiEF0mtbOteREycWyDPlgTu+q65
+wKBwCOxIjBHLwDcIOALLXdO5Cfl4i6vp9GtsRbWOCkIoAMwTc4FAbLvf8Lh8Tj92qM97UpQJo3IP
+dxd5ghAYMX1eFoiDVSlXJVePVX8ZXQBfj5eRYB8imw9qFKItBWgQphEJACH5BAkQAAAALAAAAAAg
+ACAAAgOHCLrc/jDKSau9OOvNuw0g6DFhOQJCaXpp0IZjMAi0MIieunYp4ROwiMpRA/lKtIcuwKg5
+aSBnY+laPIvR2hQZbUJfWYEDNKvdiLqkkopWqcfGX7WdFYaOc6IUAnVdIQUAgRF9fnsOgQUEhGAu
+fg8FgxJYSGI8jXmXSCcKT5wLiZ+ggoufPicJACH5BAkUAAAALAAAAAAgACAAAgOSCLrcHhC6SVu8
+NduLtYYDJISB94XDOJZmxXUtIwgARNyEIM0xMM+Rmy7w47WKoqKSFvsll8Ye8BVh9hZUybUxvVi3
+iy7xA5soyZyMAbDOZL+NddvlFVEM8vkEVAxV5GgvYAxBOGODChc3dohTUI1DRGeDYkSSkJFVcFeV
+h4g+mZuURZ8OBQCnpQwEp6mqDQWuWwkAIfkECRAAAAAsAAAAACAAIAACA4cIutz+MMpJq7046827
+DSDoMWE5AkJpemnQhmMwCLQwiJ66dinhE7CIylED+Uq0hy7AqDlpIGdj6Vo8i9HaFBltQl9ZgQM0
+q92IuqSSilapx8ZftZ0Vho5zohQCdV0hBQCBEX1+ew6BBQSEYC5+DwWDElhIYjyNeZdIJwpPnAuJ
+n6CCi58+JwkAIfkECRQAAAAsAAAAACAAIAACA4oIutz+MMpJq7046827/2AojmS5BSgqperKts4L
+x3IgOEIdQG9u4yhfihcYCI6Cwa5RRCZnDN0yqiMGCFjCr5HLaqELFjYIvH7BgGPQeWSw1bYbV/h2
+s1PteS9ut/XkdkJ4gGmCa4QLcCyIaTJ5D4pbZWsTbBKWFAUAmhOanBMEnpmbBBcFnw+nEQkAIfkE
+CRAAAAAsAAAAACAAIAACA4YIutz+MMpJq7046815+F/XgKSokKRgosKnit8gzMIQrCiIB0RPBK/N
+jNRzzRyoB60FXC4ZuVtjCXLSFsycg8ZqBgHMbEgpdiFlNJt0WwYio2t2Ssnz6SJOCLN4jxQAf2RO
+RhJ/BYFTg4QQhxJDZUccQyyRkjmVHWKYInkmDIaen6ChDY0NCQAh+QQJFAAAACwAAAAAIAAgAAID
+igi60b0wygmcpXhaK7JXzdAIYvdlwUCu4okKASzMgTvRDaET8WwvM5hDNwr+AEFhcnlE4nrMpnMj
+M0mn1CtQyNFuu96tEbM5FQBn8qbmORfSEm4Z8/Yo59pUUsTOrx9eMDs8gFpCRA6BS0pWTYsOPlc0
+cj2GlFCBa5GZkI2KY2ELbqERbgSkCjoYCQAh+QQJEAAAACwAAAAAIAAgAAIDhgi63P4wykmrvTjr
+zXn4X9eApKiQpGCiwqeK3yDMwhCsKIgHRE8Er82M1HPNHKgHrQVcLhm5W2MJctIWzJyDxmoGAcxs
+SCl2IWU0m3RbBiKja3ZKyfPpIk4Is3iPFAB/ZE5GEn8FgVODhBCHEkNlRxxDLJGSOZUdYpgieSYM
+hp6foKENjQ0JACH+CShjKUZ1bWllAAA7
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif
+
+R0lGODlhagA5APcAAFqvsWrJ0Gu+02XDxnO342G7vlabsV0W/msX/0mLkDMpaTNaZVGYoFKKs3q0
+8ncY/UN4hYgZ+ggJEVekrjgld0pinGWRylJ8pkAkh2tX03GY21p+uREPJluSvi8NZmavyRgrMUg0
+nXaT5zNJZVsS6z8TlzgMfkJkhSsrVzlfcGZ8yTw9gCUMSUYRqS49Xmyv13V542lm1UwUu1Y8wSEz
+Qmc87VdmsxcJQUBPhE1MnCtPVUwQygAAAFcZ2lJRtnk/6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADwALAAAAABqADkA
+AAj+AHkIHEiwoEGDHBIYuHCChoSDECNKnEixosWLJwAAMDChQ4cRDy+KHEmypEQOGjV2tGBhAwiT
+MGPKjHghJYACH3Jq0OBips+fJHHYZFChgwUCBByIUAC0qdODKFMySHBhgw0VMEQ4cPDyqVegHBhM
+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
+jjRfr5YZf6QDIMCIPBAQAAA7
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/grafs/aneis.gif
+
+R0lGODlhRwFJAfcAAAAAAAgIIQgIKQgIMQgIORAQEBAQORAQQhAQShAQUhAQWhAQYxgYGBgYWhgY
+YxgYaxgYcxgYexgYhCEhISEhOSEhSiEhUiEhWiEhYyEhayEheyEhhCEhjCEhlCEhnCEhpSEpcykp
+KSkpQikpSikpUikpWikpYykpaykpcykpeykpjCkpnCkppSkprSkptSkpvSkpxjEAADEICDExMTEx
+QjExSjExUjExWjExazExczExezExlDExnDExvTExxjExzjEx1jEx3jEx5zkAADkQEDkYGDkhITkp
+KTk5OTk5Sjk5Wjk5Yzk5azk5ezk5nDk5vTk5zjk53jk55zk57zk59zk5/zlCrTlC7zlC9zlC/0IQ
+EEJCQkJCSkJCUkJCWkJCY0JCc0JCvUJCzkJC3kJC70JC90JC/0JKvUJK70JK90JK/0oYGEopKUpK
+SkpKWkpKY0pKc0pKzkpK3kpK70pK90pK/0pS3kpS70pS91IYGFJCQlJSUlJSY1JSa1JSe1JS71JS
+/1Ja71oICFoYGFo5OVpKSlpaWlpaY1paa1pac1pa/2MAAGMICGMhIWNSUmNjY2Nja2Njc2Nje2sA
+AGsICGsQEGspKWtra2tre3MAAHMQEHNzc3Nze3NzhHsAAHt7e3t7hHt7jIQAAISEhISEjIwAAIyM
+jJQAAJSUlJSUnJwAAJwICJycnKUAAKWlpa0AAK2trbUAALW1tb0AAL29vcYAAMbGxs4AAM7OztYA
+ANbW1t4AAN7e3ucAAO8AAPcAAP8AAP8A////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH5BAEAAMEALAAAAABHAUkB
+AAj+AIMJHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuX
+MGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXcq0qdODW6JKjfokjNUwT7Jq3cr1iZOpU5+K
+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
+9a553esFBwQAADs=
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1.gif
+
+R0lGODlhcwAMAPcAAAAAABg5SiFSYzFrjDmMta3nKcbGAP//xv//////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH5BAEAAAUALAAAAABzAAwA
+AAjRAAMAGDiwgMGDCBMqXMiwocOHDAlKnEixokUABQIQGMBRAEaIIEOKHFkAAIGTKFOqXMkS5YED
+GDVy7PiRpM2bIWXO3Mmzp8+dBoLG3LjTI86jSBPq/Mm06YCgQjMSLRqgqtWrWLNq3cq1q9eqU4sK
+GEu2rNmzZ4cOqLqzpdu3cOPKVenT48W7F6UGeBnAqd+/gAP7FRAg6UKrBwz0Fcy4sWOehA0f3sj2
+seXLg2tKRrgUs+fPM41uVqgRrenTqFOrXm268GjSX2PLnk2b6+uFAQEAOw==
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1a.gif
+
+R0lGODlhcwAMALMAAABrCAhKaxg5SiFSYyFjhDJvjjmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzAAwAAASdEKlJq734os27/2AojmRoCZKhrmzrvq1SznRtb8pQ7Aaq
+7MCgcEgc9m7IpC0XPP6K0KgRpaxaO8ymb8Dter/gMLEnKJvP6LR6zW67BTqhM0OvZ+WwvH7P77OC
+ZQVHVx9wUoeIiYqHAgcHAoOEHoaLlZaXQgIFj2WSIHeYoaJRgZGeWHGjqqtapyBwYbGys7S1tmGm
+rhxvvL2+v20RAAA7
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/haus2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAF7D1XuAAAABlBMVEUAAACCkb4DVVPxAAAAAXRS
+TlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAQlJREFUeNoB/gAB/wAAAAAAAAAAAAAAAQAA
+AQABAAABAAEAAAABAAAAAAEAAAEAAAAAAQAAAAAAAAABAQAAAQAAAQAAAAABAAAAAQEAAQEBAAAA
+AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAQABAAAAAAAAAQAAAAEAAQEAAAAAAAABAAAAAQAA
+AAEBAAAAAAEBAAAAAAAAAAAAAQEAAAAAAQABAQAAAQEBAAEAAAAAAAEAAQEAAAEBAQABAAAAAAAB
+AQEBAQEBAQEBAQAAGqcAQv1LH7cAAAAASUVORK5CYII=
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/mailto.gif
+
+R0lGODdhDgAKAKIAAP////r7v+rrl8TFDKOkAH1+AElKAAAAACwAAAAADgAKAAADLWi63AQwynEM
+KCLrXEgFAraFgmdxm2iCpdhla8mpZRUQo0aYw+7/u8phSCwSEwA7
+
+------=_NextPart_000_000F_01C5C512.DBB78D90
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAssembly.css
+
+A {
+	COLOR: #00ccff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #cccccc
+}
+A:hover {
+	TEXT-DECORATION: underline overline
+}
+A:active {
+	COLOR: #99ffcc
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #236282; FONT-SIZE: 10pt; =
+SCROLLBAR-HIGHLIGHT-COLOR: #003399; SCROLLBAR-SHADOW-COLOR: #505050; =
+COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #505050; SCROLLBAR-ARROW-COLOR: =
+#00ccff; SCROLLBAR-TRACK-COLOR: #084a6b; FONT-FAMILY: Verdana, Arial, =
+Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #000000; BACKGROUND-COLOR: =
+#084a6b; TEXT-ALIGN: center
+}
+.borda {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.bordaI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid
+}
+.bordaCor {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; =
+BACKGROUND-COLOR: #006699
+}
+.bordaCorI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid; BACKGROUND-COLOR: #006699
+}
+TR.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+TD.cab1 {
+	FONT-WEIGHT: bold; BACKGROUND: url(grafs/cab1.gif); COLOR: #00ccff; =
+HEIGHT: 32px; TEXT-ALIGN: center
+}
+TD.cab1a {
+	BACKGROUND: url(grafs/cab1a.gif) #006699; WIDTH: 27px
+}
+TD.pto1 {
+	FONT-WEIGHT: bold; HEIGHT: 40px; BACKGROUND-COLOR: #236282
+}
+TD.pe1 {
+	BACKGROUND: url(grafs/pe1.gif); HEIGHT: 18px
+}
+TD.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD.c66CC {
+	PADDING-RIGHT: 10px; BACKGROUND-COLOR: #0066cc; TEXT-ALIGN: right
+}
+HR {
+	COLOR: #00ccff; HEIGHT: 1px
+}
+H1 {
+	MARGIN-TOP: 1px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: =
+1px; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+H2 {
+	MARGIN-TOP: 0px; FONT-SIZE: xx-small; MARGIN-BOTTOM: 0px; FONT-FAMILY: =
+Verdana, Arial, Helvetica
+}
+H3 {
+	MARGIN-TOP: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; COLOR: #666666; =
+FONT-FAMILY: Verdana, Arial, Helvetica
+}
+P {
+	MARGIN: 10px 50px; TEXT-INDENT: 20pt; TEXT-ALIGN: justify
+}
+BLOCKQUOTE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; TEXT-ALIGN: justify
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 40pt; FONT-FAMILY: Verdana, Arial, =
+Helvetica
+}
+.asmcode {
+	BORDER-RIGHT: #236282 2px dotted; PADDING-RIGHT: 20px; BORDER-TOP: =
+#236282 2px dotted; PADDING-LEFT: 20px; FONT-SIZE: 14px; PADDING-BOTTOM: =
+20px; MARGIN: 10px 50px; BORDER-LEFT: #236282 2px dotted; COLOR: =
+#00ccff; PADDING-TOP: 20px; BORDER-BOTTOM: #236282 2px dotted; =
+FONT-FAMILY: "Courier new"; BACKGROUND-COLOR: #337292
+}
+OL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+UL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+
+------=_NextPart_000_000F_01C5C512.DBB78D90--

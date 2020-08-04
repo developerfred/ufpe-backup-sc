@@ -1,0 +1,483 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin - Parte 6</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+
+<A NAME="strings"><H2>Instru&ccedil;&otilde;es para Strings</H2></A>
+
+Em assembly existem algumas instru&ccedil;&otilde;es muito &uacute;teis para
+o manuseio de strings. Aqui est&aacute; uma lista de instru&ccedil;&otilde;es
+e a sintaxe de seu uso:
+
+<P>
+
+<B>MOV*</B> Movimenta String: movimenta byte, word ou double word de DS:SI 
+para ES:DI. Na verdade &eacute uma opera&ccedil;&atilde;o de c&oacute;pia de
+string.
+
+<BR>Sintaxe:
+
+<BLOCKQUOTE><PRE>
+movsb 	; move byte
+movsw 	; move word
+movsd 	; move double word
+</PRE></BLOCKQUOTE>
+
+<B>CMPS*</B> Compara string: compara byte, word ou double word em
+DS:SI com ES:DI
+
+<BR>
+Sintaxe:
+
+<BLOCKQUOTE><PRE>
+cmpsb 	; compara byte
+cmpsw 	; compara word
+cmpsd 	; compara double word
+</PRE></BLOCKQUOTE>
+
+Observa&ccedil;&atilde;o: Estas instru&ccedil;&otilde;es s&atilde;o
+normalmente usadas com o prefixo REP
+
+<P>
+
+<B>SCAS*</B> Busca string: Busca pelo valor de AL, AX, ou EAX na string
+apontada por ES:DI
+
+<BR>
+Sintaxe:
+
+<BLOCKQUOTE><PRE>
+scasb 	; busca por AL
+scasw 	; busca por AX
+scasd 	; busca por EAX
+</PRE></BLOCKQUOTE>
+
+Observa&ccedil;&atilde;o: Estas instru&ccedil;&otilde;es s&atilde;o
+normalmente usadas com o prefixo REPZ ou REPNZ.
+
+<P>
+
+<B>REP</B> Prefixo para que a instru&ccedil;&atilde;o de string seja repetida
+CX vezes.
+
+<BR>
+Sintaxe:
+
+<BLOCKQUOTE><PRE>
+rep StringInstruction
+</PRE></BLOCKQUOTE>
+
+<B>STOS*</B> Move byte, word ou double word de AL, AX ou EAX para ES:DI
+
+<BR>
+Sintaxe:
+
+<BLOCKQUOTE><PRE>
+stosb 	; move AL para ES:DI
+stosw 	; move AX para ES:DI
+stosd 	; move EAX para ES:DI
+</PRE></BLOCKQUOTE>
+
+<B>LODS*</B> Move byte, word ou double word de DS:SI para AL, AX ou EAX
+
+<BR>
+Sintaxe:
+
+<BLOCKQUOTE><PRE>
+lodsb 	; move ES:DI para AL
+lodsw 	; move ES:DI para AX
+lodsd 	; move ES:DI para EAX
+</PRE></BLOCKQUOTE>
+
+O pr&oacute;ximo exemplo demonstra como usar estas instru&ccedil;&otilde;es.
+
+<BLOCKQUOTE><PRE>
+Listagem 11: STRINGS.ASM
+
+.model small
+.stack
+.code 
+
+start
+
+mov ax,@data 		; ax aponta para segmento de dados
+mov ds,ax 		; copia para ds
+mov es,ax 		; copia para es tamb&eacute;m
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string
+mov dx,OFFSET Message1 	; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+
+cld 			; zera a flag de dire&ccedil;&atilde;o
+mov si,OFFSET String1 	; faz ds:si apontar para String1
+mov di,OFFSET String2 	; faz es:di apontar para String2
+mov cx,18 		; comprimento das strings
+rep movsb 		; copia string1 para string2
+
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string
+mov dx,OFFSET Message2 	; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+
+mov dx,OFFSET String1 	; exibe String1
+int 21h 		; chama servi&ccedil;os do DOS
+
+mov dx,OFFSET Message3 	; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+
+mov dx,OFFSET String2 	; exibe String2
+int 21h 		; chama servi&ccedil;os do DOS
+
+mov si,OFFSET Diff1 	; faz ds:si apontar para Diff1 
+mov di,OFFSET Diff2 	; faz es:di apontar para Diff2 
+mov cx,39 		; comprimento das strings
+repz cmpsb 		; compara as strings
+jnz Not_Equal 		; desvia se elas n&atilde;o forem iguais
+
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string
+mov dx,OFFSET Message4 	; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+
+jmp Next_Operation
+
+Not_Equal:
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string
+mov dx,OFFSET Message5  ; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+
+Next_Operation:
+mov di,OFFSET SearchString 	; faz es:di apontar para string
+mov cx,36 		; comprimento da string
+mov al,'H' 		; caracter a ser procurado
+repne scasb 		; encontrar a primeira ocorr&ecirc;ncia
+jnz Not_Found
+
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string
+mov dx,OFFSET Message6 	; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+jmp Lodsb_Example
+
+Not_Found:
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string
+mov dx,OFFSET Message7 	; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+
+Lodsb_Example:
+mov ah,9 		; fun&ccedil;&atilde;o 9 - exibe string
+mov dx,OFFSET NewLine 	; ds:dx aponta para messagem
+int 21h 		; chama fun&ccedil;&atilde;o dos
+
+mov cx,17 		; comprimento string
+mov si,OFFSET Message 	; DS:SI - endere&ccedil;o da string
+xor bh,bh 		; p&aacute;gina de v&iacute;deo - 0
+mov ah,0Eh 		; fun&ccedil;&atilde;o 0Eh - escrever caracter
+
+NextChar:
+lodsb 			; AL = pr&oacute;ximo caracter da string
+int 10h 		; chamar servi&ccedil;o da BIOS
+loop NextChar
+
+mov ax,4C00h 		; retornar ao DOS
+int 21h 
+
+.data
+CR equ 13
+LF equ 10
+NewLine db CR,LF,"$"
+
+String1  db "This is a string!$"
+String2  db 18 dup(0)
+Diff1    db "This string is nearly the same as Diff2$"
+Diff2    db "This string is nearly the same as Diff1$"
+Equal1   db "The strings are equal$"
+Equal2   db "The strings are not equal$"
+Message  db "This is a message"
+SearchString db "1293ijdkfjiu938uHello983fjkfjsi98934$"
+
+Message1 db "Using String instructions example program.$"
+Message2 db CR,LF,"String1 is now: $"
+Message3 db CR,LF,"String2 is now: $"
+Message4 db CR,LF,"Strings are equal!$"
+Message5 db CR,LF,"Strings are not equal!$"
+Message6 db CR,LF,"Character was found.$"
+Message7 db CR,LF,"Character was not found.$"
+
+end start
+</PRE></BLOCKQUOTE>
+
+<A NAME="dosver"><H2>Como determinar a vers&atilde;o
+do DOS</H2></A>
+
+Em muitos programas &eacute; necess&aacute;rio descobrir qual a vers&atilde;o
+do DOS que est&aacute; sendo utilizado. Isto &eacute; necess&aacute;rio
+no caso de voc&ecirc; usar uma fun&ccedil;&atilde;o que est&aacute; presente
+a partir de uma certa vers&atilde;o do DOS.
+
+<P>
+
+Em primeiro lugar este m&eacute;todo descobre qual a vers&atilde;o do DOS.
+
+<BLOCKQUOTE><PRE>
+mov ah,30h 	; fun&ccedil;&atilde;o 30h - obt&eacute;m vers&atilde;o do MS-DOS
+int 21h 	; chama fun&ccedil;&atilde;o do DOS
+</PRE></BLOCKQUOTE>
+
+Esta fun&ccedil;&atilde;o retorna o n&uacute;mero maior da vers&atilde;o em
+AL e o n&uacute;mero menor da vers&atilde;o em AH. Por exemplo, se a
+vers&atilde;o for 4.01, AL receber&aacute; 4 e AH receber&aacute; 01. O
+problema &eacute; que, a partir do DOS 5 ...
+
+<P>
+
+SETVER pode alterar a vers&atilde;o que &eacute; retornada. A forma de se
+resolver isto &eacute; usar este m&eacute;todo:
+
+<PRE><BLOCKQUOTE>
+mov ah,33h 	; fun&ccedil;&atilde;o 33h - vers&atilde;o real do DOS
+mov al,06h 	; subfun&ccedil;&atilde;o 06h
+int 21h 	; chama interrup&ccedil;&atilde;o 21h 
+</BLOCKQUOTE></PRE>
+
+Isto funcionar&aacute; somente a partir do DOS 5, portanto voc&ecirc;
+precisa usar o m&eacute;todo anterior primeiro. Esta fun&ccedil;&atilde;o
+retorna a vers&atilde;o real do DOS mesmo se SETVER tiver alterado a
+vers&atilde;o. Ela retorna o n&uacute;mero maior da vers&atilde;o em
+BL e o n&uacute;mero menor da vers&atilde;o em BH.
+
+<A NAME="multiple"><H2>Pushes e Pops
+M&uacute;ltiplos</H2></A>
+
+Voc&ecirc; pode fazer o push e o pop de mais de um registrador em uma linha
+do TASM e do A86. Isto torna seu programa mais leg&iacute;vel.
+
+<BLOCKQUOTE><PRE>
+push ax bx cx dx 	; salva registradores
+pop dx cx bx ax 	; recupera registradores
+</PRE></BLOCKQUOTE>
+
+Quando o TASM (ou o A86) monta estas linhas ele as traduz em pushes e pops
+separados. Desta forma voc&ecirc; economiza tempo de digita&ccedil;&atilde;o
+e torna o c&oacute;digo mais f&aacute;cil de ser entendido.
+
+<P>
+
+Observa&ccedil;&atilde;o: Para que estas linhas sejam montadas pelo A86
+voc&ecirc; precisar&aacute; colocar v&iacute;rgulas (,) entre os nomes dos
+registradores.
+
+<A NAME="pushx"><H2>As Instru&ccedil;&otilde;es PUSHA/PUSHAD
+e POPA/POPAD</H2></A>
+
+PUSHA &eacute; uma instru&ccedil;&atilde;o &uacute;til que salva todos os
+registradores de uso geral na pilha. Ela provoca o mesmo efeito que o
+conjunto de instru&ccedil;&otilde;es a seguir:
+
+<BLOCKQUOTE><PRE>
+temp = SP
+push ax
+push cx
+push dx
+push bx
+push temp
+push bp
+push si
+push di
+</PRE></BLOCKQUOTE>
+
+As principais vantagens de seu uso s&atilde;o: menos digita&ccedil;&atilde;o;
+&eacute; uma instru&ccedil;&atilde;o menor; e &eacute; muito mais
+r&aacute;pida. POPA faz o inverso e recupera estes registradores da pilha.
+PUSHAD e POPAD fazem o mesmo, mas com os registradores de 32 bits ESP, EAX,
+ECX, EDX, EBX, EBP, ESI e EDI.
+
+<A NAME="shifts"><H2>Utilizando Deslocamentos para Multiplica&ccedil;&otilde;es e Divis&otilde;es mais r&aacute;pidas</H2></A>
+
+As intru&ccedil;&otilde;es MUL e DIV s&atilde;o muito lentas e s&oacute; devem
+ser utilizadas quando n&atilde;o houver necessidade de velocidade. Para
+multiplica&ccedil;&otilde;es e divis&otilde;es mais r&aacute;pidas
+voc&ecirc; pode deslocar n&uacute;meros para a direita ou para a esquerda,
+uma ou mais posi&ccedil;&otilde;es bin&aacute;rias. Cada deslocamento
+equivale a uma pot&ecirc;ncia de 2. Isto &eacute; o mesmo que usar os
+operadores &lt;&lt; e &gt;&gt; de C.
+
+<P>
+
+Existem quatro maneiras diferentes de deslocar n&uacute;meros para a
+direita ou para a esquerda, uma posi&ccedil;&atilde;o bin&aacute;ria.
+
+<P>
+
+<B>SHL</B> Multiplica&ccedil;&atilde;o sem sinal por dois
+<BR><B>SHR</B> Divis&atilde;o sem sinal por dois
+<BR><B>SAR</B> Divis&atilde;o sinalizada por dois
+<BR><B>SAL</B> o mesmo que SHL
+
+<P>
+
+A sintaxe para todas as quatro &eacute; a mesma:
+
+<BLOCKQUOTE><PRE>
+SHL operand1,operand2
+</PRE></BLOCKQUOTE>
+
+Observa&ccedil;&atilde;o: O 8086 somente aceita operand2 igual a 1.
+O 286/386 n&atilde;o podem receber operand2 maior que 31.
+
+<A NAME="loops"><H2>Repeti&ccedil;&otilde;es</H2></A>
+
+Usar Loop &eacute; uma maneira melhor de fazer repeti&ccedil;&otilde;es
+do que usar JMP's. Voc&ecirc; coloca a quantidade de repeti&ccedil;&otilde;es
+desejada no registrador CX e toda vez que for atingida a
+declara&ccedil;&atilde;o Loop ela decrementa CX (CX-1) e ent&atilde;o faz
+um salto curto para o r&oacute;tulo indicado. Um salto curto significa apenas
+128 bytes antes ou 127 bytes depois da instru&ccedil;&atilde;o Loop.
+
+<P>
+
+Sintaxe:
+
+<BLOCKQUOTE><PRE>
+mov cx,100 	; repetir 100 vezes
+Label:
+.
+. 
+.
+Loop Label: 	; decrementar CX e retornar a Label
+</PRE></BLOCKQUOTE>
+
+Isto tem exatamente o mesmo efeito que o seguinte trecho de c&oacute;digo
+sem o uso de loop:
+
+<BLOCKQUOTE><PRE>
+mov cx,100 	; repetir 100 vezes
+
+Label:
+dec cx 		; CX = CX-1
+jnz Label 	; continuar at&eacute; terminar
+</PRE></BLOCKQUOTE>
+
+O que voc&ecirc; acha mais f&aacute;cil de entender? A partir do 486 &eacute;
+mais r&aacute;pido usar DEC/JNZ o que tamb&eacute;m &eacute; &uacute;til
+por n&atilde;o ser obrigat&oacute;rio o uso de CX.
+
+<P>
+
+Isto funciona porque JNZ desviar&aacute; se o flag zero n&atilde;o estiver
+ligado. Quando CX atingir zero o flag ir&aacute; ligar.
+
+<A NAME="debug"><H2>Como utilizar um depurador</H2></A>
+
+Esta &eacute; uma boa hora de usar um depurador para descobrir o que seu
+programa est&aacute; realmente fazendo. Eu vou demonstrar como utilizar o
+Turbo Debugger para verificar a execu&ccedil;&atilde;o de um programa.
+Em primeiro lugar precisamos de um programa para ser observado.
+
+<BLOCKQUOTE><PRE>
+Listagem 12: DEBUG.ASM
+
+; programa exemplo para demonstrar como usar um depurador
+
+.model tiny 
+.code
+org 100h
+start:
+
+push ax 	; salvar valor de ax
+push bx 	; salvar valor de bx
+push cx 	; salvar valor de cx
+
+mov ax,10 	; primeiro par&acirc;metro &eacute; 10 
+mov bx,20 	; segundo par&acirc;metro &eacute; 20
+mov cx,3 	; terceiro par&acirc;metro &eacute; 3
+
+Call ChangeNumbers 	
+
+pop cx 		; recupera cx
+pop bx 		; recupera bx
+pop ax 		; recupera dx
+
+mov ax,4C00h 	; sair para o dos
+int 21h 
+
+ChangeNumbers PROC 
+
+add ax,bx 	; adiciona o n&uacute;mero em bx a ax
+mul cx 		; multiplica ax por cx
+mov dx,ax 	; devolve a resposta em dx
+ret
+ChangeNumbers ENDP 
+
+end start
+</PRE></BLOCKQUOTE>
+
+Agora gere um arquivo .COM e ent&atilde;o digite:
+
+<BLOCKQUOTE><PRE>
+td nome do arquivo
+</PRE></BLOCKQUOTE>
+
+O Turbo Debugger ser&aacute; carregado. Voc&ecirc; poder&aacute; ver as
+instru&ccedil;&otilde;es que constituem o seu programa.
+
+<P>
+
+<IMG SRC="debug.gif" ALT="Exemplo de tela do Turbo Debugger" WIDTH=641 HEIGHT=350>
+
+<P>
+
+Por exemplo, as primeiras linhas deste programa est&atilde;o mostradas como:
+
+<PRE>
+cs:0000 50 	push ax
+cs:0001 53 	push bx
+cs:0002 51 	push cx
+</PRE>
+
+Algumas teclas &uacute;teis para o Turbo Debugger:
+
+<PRE>
+F5 	Altera o tamanho da janela
+F7 	Pr&oacute;xima instru&ccedil;&atilde;o
+F9 	Executar
+ALT F4 	Reverte a dire&ccedil;&atilde;o de execu&ccedil;&atilde;o *
+
+* S&oacute; funcionar&aacute; se a op&ccedil;&atilde;o Full History estiver ligada
+  na janela Execution History
+</PRE>
+
+Os n&uacute;meros que foram colocados nos registradores s&atilde;o diferentes
+daqueles que est&atilde;o no c&oacute;digo fonte porque est&atilde;o
+representados na forma hexadecimal (base 16). Esta &eacute; uma base
+mais f&aacute;cil de se converter de, e para, bin&aacute;rio al&eacute;m de
+ser mais f&aacute;cil de entender que o bin&aacute;rio tamb&eacute;m.
+
+<P>
+
+&Agrave; esquerda desta tela h&aacute; uma caixa mostrando o conte&uacute;do
+dos registradores. Por enquanto todos os registradores principais est&atilde;o
+vazios. Agora aperte F7. Isto significa que a primeira linha do programa
+ser&aacute; executada. Como a primeira linha salva o registrador AX na pilha,
+voc&ecirc; pode ver que o ponteiro da pilha (SP) mudou. Aperte F7 at&eacute;
+que a linha que cont&eacute;m mov ax,000A seja destacada. Agora aperte F7
+de novo.
+
+<P>
+
+Se voc&ecirc; olhar agora para a caixa que cont&eacute;m o conte&uacute;do
+dos registradores voc&ecirc; pode ver que AX cont&eacute;m A. Aperte F7 de
+novo e BX agora cont&eacute;m 14, aperte F7 de novo e CX cont&eacute;m 3. Se
+voc&ecirc; apertar F7 duas vezes, agora, voc&ecirc; ver&aacute; que AX
+cont&eacute;m 1E que &eacute o resultado de A+14. Aperte F7 de novo
+e agora AX conter&aacute; 5A, 1E multiplicado por 3. Aperte F7 de novo e
+voc&ecirc; ver&aacute que DX agora tamb&eacute;m cont&eacute;m 5A. Aperte
+F7 mais quatro vezes e voc&ecirc; poder&aacute; ver que CX, BX e AX
+estar&atilde;o todos com seu conte&uacute;do original, igual a zero.
+
+<H3><A HREF="asm1.htm#toc">Retornar para o Sum&aacute;rio</A></H3>
+
+</BODY>
+
+</HTML>

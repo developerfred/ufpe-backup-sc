@@ -1,0 +1,49 @@
+
+-----------------EXERCICIO 2-------------------------------------------
+
+-- Removendo tabela e tipo empregado
+
+DROP TABLE EMPREGADO;
+
+DROP TYPE EMPREGADO_TYPE;
+
+--Criação de Tipos
+
+CREATE TYPE DEPENDENTE_TYPE AS OBJECT(
+       NOME VARCHAR2(40),
+       DT_NASC DATE
+);
+/
+CREATE TYPE DEPENDENTES_ARRAY AS VARRAY(10) OF DEPENDENTE_TYPE;
+/
+CREATE TYPE EMPREGADO_TYPE AS OBJECT(
+       MATRICULA NUMBER,
+       NOME VARCHAR(20),
+       SALARIO NUMBER,
+       DEPENDENTES DEPENDENTES_ARRAY
+);
+/
+--Criação da tabela empregado;
+
+CREATE TABLE EMPREGADO OF EMPREGADO_TYPE(
+       MATRICULA PRIMARY KEY
+);
+
+--Inserção de dados
+
+INSERT INTO EMPREGADO VALUES(1, 'Fernando', 5000,
+                             DEPENDENTES_ARRAY(dependente_type('Julia', to_date('20/05/1985','dd/mm/yyyy')),
+                                               dependente_type('Marcel', to_date('15/11/1996','dd/mm/yyyy')))
+                             );
+INSERT INTO EMPREGADO VALUES(2, 'Alicia', 5000,
+                             DEPENDENTES_ARRAY(dependente_type('Joao', to_date('20/05/1990','dd/mm/yyyy')),
+                                               dependente_type('Marcelo', to_date('15/12/1998','dd/mm/yyyy')))
+                             );
+
+--Consultas
+
+SELECT D.* FROM EMPREGADO E, TABLE(E.DEPENDENTES) D;
+
+SELECT D.* FROM EMPREGADO E, TABLE(E.DEPENDENTES) D WHERE E.NOME = 'Alicia';
+
+

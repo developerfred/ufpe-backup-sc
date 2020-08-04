@@ -1,0 +1,325 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin - Parte 3</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+
+<A NAME="easier"><H2>Tornando as coisas mais f&aacute;ceis</H2></A>
+
+O modo como declaramos o endere&ccedil;o da mensagem que quer&iacute;amos
+imprimir foi um pouco inc&ocirc;modo. Gastamos tr&ecirc;s linhas e n&atilde;o
+&eacute; a forma mais f&aacute;cil de se lembrar
+
+<BLOCKQUOTE><PRE>
+mov dx,OFFSET MyMessage 
+mov ax,SEG MyMessage 
+mov ds,ax 
+</PRE></BLOCKQUOTE>
+
+Podemos substituir tudo isto por apenas uma linha. Isto torna o c&oacute;digo
+mais f&aacute;cil de ler e mais f&aacute;cil de se lembrar.
+
+<BLOCKQUOTE><PRE>
+mov dx,OFFSET MyMessage
+</PRE></BLOCKQUOTE>
+
+Para que isto funcione no in&iacute;cio de seu c&oacute;digo adicione estas
+linhas:
+
+<BLOCKQUOTE><PRE>
+mov ax,@data 
+mov ds,ax
+</PRE></BLOCKQUOTE>
+
+Observa&ccedil;&atilde;o: para o A86 voc&ecirc; precisar&aacute; mudar a
+primeira linha para:
+
+<BLOCKQUOTE><PRE>mov ax,data</PRE></BLOCKQUOTE>
+
+A raz&atilde;o disto &eacute; que todos os dados no segmento possuem o mesmo
+valor de SEGMENTO. Ao se colocar este valor em DS evita-se ter de
+recarreg&aacute;-lo toda vez que quisermos utilizar outros dados no
+mesmo segmento.
+
+<A NAME="keyboard"><H2>Entrada pelo Teclado</H2></A>
+
+N&oacute;s vamos usar a interrup&ccedil;&atilde;o 16h, fun&ccedil;&atilde;o 00h
+para ler o teclado. Ela obt&eacute;m uma tecla do buffer do teclado. Se
+n&atilde;o houver uma, ela espera at&eacute; que haja. Ela retorna o
+c&oacute;digo de varredura em AH e o equivalente ASCII em AL.
+
+<BLOCKQUOTE><PRE>
+xor ah,ah 	; fun&ccedil;&atilde;o 00h - obter caracter
+int 16h 	; interrup&ccedil;&atilde;o 16h
+</PRE></BLOCKQUOTE>
+
+S&oacute; nos interessa, por enquanto, o valor ASCII que est&aacute; em AL.
+
+<P>
+
+Observa&ccedil;&atilde;o: XOR executa um OU Exclusivo Booleano. Ela &eacute;
+usada normalmente para zerar um registro ou vari&aacute;vel.
+
+<A NAME="printchar"><H2>Imprimindo um Caracter</H2></A>
+
+O problema &eacute; que n&oacute;s temos a tecla que foi pressionada em AH.
+Como vamos exib&iacute;-la? N&atilde;o podemos usar a fun&ccedil;&atilde;o 9h
+porque dever&iacute;amos ter definido a string que deve estar finalizada
+com um cifr&atilde;o. Ao inv&eacute;s disto vamos fazer o seguinte:
+
+<BLOCKQUOTE><PRE>
+; depois de chamar a fun&ccedil;&atilde;o 00h da interrup&ccedil;&atilde;o 16h
+
+mov dl,al 	; copia al (c&oacute;digo ascii) para dl
+mov ah,02h 	; fun&ccedil;&atilde;o 02h da interrup&ccedil;&atilde;o 21h
+int 21h 	; chama a interrup&ccedil;&atilde;o 21h
+</PRE></BLOCKQUOTE>
+
+Se voc&ecirc; quiser guardar o valor de AH ent&atilde;o fa&ccedil;a um
+push AX antes e um pop AX depois.
+
+<A NAME="control"><H2>Controle de Fluxo</H2></A>
+
+Em assembly h&aacute; um conjunto de comandos para controle de fluxo
+como em qualquer outra linguagem. Primeiro o comando mais b&aacute;sico:
+
+<BLOCKQUOTE><PRE>
+jmp label 
+</PRE></BLOCKQUOTE>
+
+Tudo o que isto faz &eacute; mudar o ponteiro de instru&ccedil;&atilde;o para
+o valor especificado por label e come&ccedil;ar a execu&ccedil;&atilde;o do
+c&oacute;digo que se encontra l&aacute;. Por exemplo:
+
+<BLOCKQUOTE><PRE>
+jmp ALabel
+.
+.
+. 
+ALabel:
+</PRE></BLOCKQUOTE>
+
+O que fazer se quisermos comparar algo? Acabamos de obter uma tecla do
+usu&aacute;rio mas n&oacute;s queremos fazer algo com ela. Vamos
+imprimir um mensagem se ela for igual a algum valor. Como fazer isto?
+&Eacute; f&aacute;cil. N&oacute;s utilizaremos instru&ccedil;&otilde;es de
+desvio condicional.
+
+<P>
+
+Primeiramente voc&ecirc; compara o operando com o valor e ent&atilde;o utiliza
+o comando apropriado.
+
+<BLOCKQUOTE><PRE>
+cmp ax,3		; AX = 3?
+je correct		; sim
+</PRE></BLOCKQUOTE>
+
+Eis uma lista deles:
+
+<A NAME="jumps"><H2>Instru&ccedil;&otilde;es de Desvio
+Condicional</H2></A>
+
+<TABLE BORDER="1">
+
+<TR>
+<TD>JA</TD>
+<TD>desviar se o primeiro n&uacute;mero estiver acima do segundo
+n&uacute;mero</TD>
+</TR>
+
+<TR>
+<TD>JAE</TD>
+<TD>o mesmo que o anterior, mas tamb&eacute;m desviar&aacute; se eles forem
+iguais</TD>
+</TR>
+
+<TR>
+<TD>JB</TD>
+<TD>desviar se o primeiro n&uacute;mero estiver abaixo do segundo
+n&uacute;mero</TD>
+</TR>
+
+<TR>
+<TD>JBE</TD>
+<TD>o mesmo que o anterior, mas tamb&eacute;m desviar&aacute; se eles forem
+iguais</TD>
+</TR>
+
+<TR>
+<TD>JNA</TD>
+<TD>desviar se o primeiro n&uacute;mero N&Atilde;O estiver acima do segundo
+n&uacute;mero (JBE)</TD>
+</TR>
+
+<TR>
+<TD>JNAE</TD>
+<TD>desviar se o primeiro n&uacute;mero N&Atilde;O estiver acima do segundo
+n&uacute;mero ou for igual (JNB)</TD>
+</TR>
+
+<TR>
+<TD>JNB</TD>
+<TD>desviar se o primeiro n&uacute;mero N&Atilde;O estiver abaixo do segundo
+n&uacute;mero (JAE)</TD>
+</TR>
+
+<TR>
+<TD>JNBE</TD>
+<TD>desviar se o primeiro n&uacute;mero N&Atilde;O estiver abaixo do segundo
+n&uacute;mero ou for igual (JA)</TD>
+</TR>
+
+<TR>
+<TD>JZ</TD>
+<TD>desviar se os dois n&uacute;meros forem iguais</TD>
+</TR>
+
+<TR>
+<TD>JE</TD>
+<TD>o mesmo que JZ, apenas com um nome diferente</TD>
+</TR>
+
+<TR>
+<TD>JNZ</TD>
+<TD>desviar se os dois n&uacute;meros N&Atilde;O forem iguais</TD>
+</TR>
+
+<TR>
+<TD>JNE</TD>
+<TD>o mesmo que o anterior</TD>
+</TR>
+
+<TR>
+<TD>JC</TD>
+<TD>desviar se o indicador carry for igual a um</TD>
+</TR>
+
+</TABLE>
+
+<P>
+
+Observa&ccedil;&atilde;o: O desvio pode ser de no m&aacute;ximo 127 bytes
+em qualquer dire&ccedil;&atilde;o.
+
+<P>
+
+<B>CMP:</B> comparar um valor
+<BR>
+Sintaxe:
+
+<PRE>CMP registrador ou vari&aacute;vel, valor
+jxx destino
+</PRE>
+
+Um exemplo disto:
+
+<PRE>
+cmp al,'Y' 	; compara o valor em al com Y
+je ItsYES 	; se for igual ent&atilde;o desvia para ItsYES
+</PRE>
+
+Toda instru&ccedil;&atilde;o ocupa uma certa quantidade de espa&ccedil;o de
+c&oacute;digo. Voc&ecirc; receber&aacute; uma warning do montador se tentar
+saltar mais de 127 bytes em qualquer dire&ccedil;&atilde;o. Voc&ecirc; pode
+resolver isto modificando uma seq&uuml;&ecirc;ncia como esta:
+
+<BLOCKQUOTE><PRE>
+cmp ax,10 	; AX = 10?
+je done 	; sim, acabamos
+</PRE></BLOCKQUOTE>
+
+Para algo como isto:
+
+<PRE><BLOCKQUOTE>
+cmp ax,10 	; AX = 10?
+jne notdone 	; n&atilde;o &eacute;
+jmp done 	; agora acabamos
+</BLOCKQUOTE>
+notdone:
+</PRE>
+
+Isto resolve o problema mas &eacute; melhor pensar em reordenar seu
+c&oacute;digo ou utilizar procedimentos se isto ocorrer com
+freq&uuml;&ecirc;ncia.
+
+<P>
+
+Vamos observar, agora, um programa que demonstra entrada, sa&iacute;da e
+controle de fluxo.
+
+<A NAME="example"></A>
+
+<BLOCKQUOTE><PRE>
+Listagem 2: PROGFLOW.ASM
+; um programa para demonstrar fluxo de execu&ccedil;&atilde;o e entrada/sa&iacute;da
+
+.model tiny
+.code 
+org 100h
+start:
+
+mov dx,OFFSET Message 	; exibe uma mensagem na tela
+mov ah,9 		; utilizando a fun&ccedil;&atilde;o 09h
+int 21h 		; da interrup&ccedil;&atilde;o 21h
+
+mov dx,OFFSET Prompt 	; exibe uma mensagem na tela
+mov ah,9 		; utilizando a fun&ccedil;&atilde;o 09h
+int 21h 		; da interrup&ccedil;&atilde;o 21h
+
+jmp First_Time
+Prompt_Again:
+
+mov dx,OFFSET Another 	; exibe uma mensagem na tela
+mov ah,9 		; utilizando a fun&ccedil;&atilde;o 09h
+int 21h 		; da interrup&ccedil;&atilde;o 21h 
+
+First_Time:
+
+mov dx,OFFSET Again 	; exibe uma mensagem na tela 
+mov ah,9 		; utilizando a fun&ccedil;&atilde;o 09h
+int 21h 		; da interrup&ccedil;&atilde;o 21h
+xor ah,ah 		; fun&ccedil;&atilde;o 00h da
+
+int 16h 		; interrup&ccedil;&atilde;o 16h obt&eacute;m um caracter 
+mov bl,al 		; armazenar em bl 
+mov dl,al 		; copiar al para dl
+mov ah,02h 		; fun&ccedil;&atilde;o 02h - exibe caracter
+int 21h 		; chama servi&ccedil;o DOS
+
+cmp bl,'Y' 		; al=Y?
+je Prompt_Again 	; se for ent&atilde;o exibe novamente
+cmp bl,'y' 		; al=y?
+je Prompt_Again 	; se for ent&atilde;o exibe novamente
+
+theEnd:
+
+mov dx,OFFSET GoodBye 	; exibe mensagem de adeus
+mov ah,9 		; utilizando a fun&ccedil;&atilde;o 09h
+int 21h 		; da interrup&ccedil;&atilde;o 21h
+
+mov ah,4Ch 		; encerra o programa 
+int 21h
+ 
+.DATA 
+CR equ 13 		; enter 
+LF equ 10 		; line-feed
+
+Message DB "A Simple Input/Output Program$" 
+Prompt  DB CR,LF,"Here is your first prompt.$" 
+Again   DB CR,LF,"Do you want to be prompted again? $"
+Another DB CR,LF,"Here is another prompt!$" 
+GoodBye DB CR,LF,"Goodbye then.$"
+
+end start
+
+</PRE></BLOCKQUOTE>
+
+<H3><A HREF="asm1.htm#toc">Retornar para o Sum&aacute;rio</A></H3>
+
+</BODY>
+</HTML>

@@ -1,0 +1,141 @@
+                        
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.text.DecimalFormat;
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class GerarRelatorio {
+	private int municipio;
+
+	private String sequencial;
+
+	private char parcela;
+
+	private double valor;
+
+	private String data;
+
+	public GerarRelatorio() {
+		this.municipio = 0;
+		this.sequencial = "0000000";
+		this.parcela = '0';
+		this.valor = 00.00;
+		this.data = "00000000";
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public int getMunicipio() {
+		return municipio;
+	}
+
+	public void setMunicipio(int municipio) {
+		this.municipio = municipio;
+	}
+
+	public char getParcela() {
+		return parcela;
+	}
+
+	public void setParcela(char parcela) {
+		this.parcela = parcela;
+	}
+
+	public String getSequencial() {
+		return sequencial;
+	}
+
+	public void setSequencial(String sequencial) {
+		this.sequencial = sequencial;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public static void main(String[] args) {
+		Scanner input = null;
+		String linha = "";
+		Vector<String> repetidos = new Vector<String>();
+
+		try {
+			input = new Scanner(new FileInputStream("sfar.bomb2005.txt"));
+		} catch (FileNotFoundException fileNotFound) {
+			System.err.println("error");
+			System.exit(1);
+		}
+		
+		int imovelPago = 0;
+		double valor = 0.0;
+		
+		DecimalFormat d = new DecimalFormat("0.00");
+		
+		
+		/*tenta acessar o arquivo de leitura*/
+		try {
+			
+			/*cria um arquivo pra escrita*/
+			
+			BufferedWriter b = new BufferedWriter(new FileWriter("pgto2005Out.txt"));
+						
+			while (input.hasNextLine()) {
+				/*le a primeira linha*/
+				linha = input.nextLine();
+				
+				/*compara as posicoes de indice 2 a 3
+				if (linha.substring(2, 4).equals("09")) {
+					//System.out.println(linha);
+					b.write(linha);
+					b.newLine();
+					String sequencial = linha.substring(4, 11);
+					char parcela = linha.charAt(11);
+					if(parcela != '0' && !repetidos.contains(sequencial)){
+						imovelPago++;
+						repetidos.add(sequencial);
+					}else if(parcela == '0'){
+						imovelPago++;
+					}
+					valor += Double.parseDouble(linha.substring(15, 29)) / 100;
+					
+					System.out.println(imovelPago + " " + valor);
+				}*/
+
+				repetidos.add(linha);
+			}
+			System.out.println("Digite algo");
+			new Scanner(System.in).next();
+			
+			Collections.sort(repetidos);
+			System.out.println(repetidos.size());
+			//b.newLine();
+			//b.write("Existem " + imovelPago + " imóveis pagantes em pnz num valor total de " +
+					//d.format(valor));
+			System.out.println("ha " + imovelPago
+					+ " imóveis pagantes em pnz num valor total de "
+					+ d.format(valor));
+			
+			input.close();
+			b.close();
+			
+		} catch (Exception e) {
+			System.err.println("error");
+			System.exit(1);
+		}
+// arquivo de saida BufferedWriter b = new BufferedWriter(new FileWriter("pgto2005Out.txt"));
+
+	}
+}

@@ -1,0 +1,237 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+
+<CENTER>
+
+<A NAME="top"><H1>Guia para o Assembly 80x86, de Gavin</H1></A>
+<H4>Copyright (c) Gavin Estey, 1995, 1996. Todos os direitos reservados.</H4>
+
+</CENTER>
+
+<P>
+
+Este guia foi escrito originalmente para a Revista <I>Game Developer's</I>
+, de Phil Inch e ap&oacute;s receber v&aacute;rias respostas positivas eu o
+expandi e melhorei. Tenho dispendido muito tempo trabalhando nele e gostaria
+de saber sua opini&atilde;o.
+
+<P>
+
+Aqui est&atilde;o alguns dos <A HREF="feedback.htm">coment&aacute;rios</A> que tenho recebido.
+
+<P>
+
+Se voc&ecirc; quiser entrar em contato comigo utilize o e-mail:
+<A HREF="mailto:gavin@senator.demon.co.uk">gavin@senator.demon.co.uk</A>
+ou, atrav&eacute;s da CompuServe, o endere&ccedil;o
+<TT><B>100767,1325</B></TT>. (Em ingl&ecirc;s, por favor)
+
+<H2>Recursos &Uacute;teis</H2>
+
+H&aacute; v&aacute;rios recursos que voc&ecirc; pode considerar &uacute;teis.
+
+<DL>
+
+<DT><B>Lista de Instru&ccedil;&otilde;es e temporiza&ccedil;&otilde;es</B>
+<DD>
+
+Se voc&ecirc; possuir o TASM ent&atilde;o o &quot;Borland Turbo
+Assembler Quick Reference&quot; possui uma lista de instru&ccedil;&otilde;es
+e temporiza&ccedil;&otilde;es atualizada at&eacute; o 486. O
+&quot;Intel Pentium Family User's Manual: Volume 3&quot; tamb&eacute;m
+ser&aacute; igualmente &uacute;til.
+
+<P>
+
+<UL>
+
+<LI><A HREF="http://www.inprise.com">Web Site da Inprise (ex-Borland)</A>
+<LI><A HREF="http://www.intel.com">Web Site da Intel</A>
+
+</UL>
+
+<P>
+
+<DT><B>Lista de Interrup&ccedil;&otilde;es</B>
+
+<DD>
+
+Existem v&aacute;rios livros que possuem esta informa&ccedil;&atilde;o
+mas o que h&aacute; de mais atualizado &eacute; a Lista de
+Interrup&ccedil;&otilde;es de Ralf Brown, dispon&iacute;vel
+gratuitamente em quatro partes no endere&ccedil;o abaixo:
+
+<BLOCKQUOTE><TT>
+ftp://x2ftp.oulu.fi/pub/msdos/programming/docs/interXX[a-d].zip
+</TT></BLOCKQUOTE>
+
+Onde XX &eacute; a vers&atilde;o (<A HREF="ftp://x2ftp.oulu.fi/pub/msdos/programming/docs/">v&aacute;
+at&eacute; l&aacute;</A>).
+
+</DL>
+
+<P>
+
+Um livro que cobre todos estes t&oacute;picos e &eacute; uma
+refer&ecirc;ncia &uacute;til ao assembly &eacute;:
+
+<BLOCKQUOTE>
+The Revolutionary Guide to Assembly Language 
+<BR>Vitaly Maljugin, Jacov Izrailevich et al 
+<BR>Wrox Press 
+<BR>ISBN: 1-874416-12-5 
+</BLOCKQUOTE>
+
+<A NAME="toc"></A>
+
+<H2>Sum&aacute;rio</H2>
+
+<DL>
+
+<DT><H3><A HREF="asm2.htm">Parte I - Introdu&ccedil;&atilde;o ao
+hardware</A></H3>
+
+<DD>
+
+<FONT SIZE=-1>
+
+<NOBR><A HREF="asm2.htm#over">Revis&atilde;o da Fam&iacute;lia 80x86 </A></NOBR>
+&#183; <NOBR><A HREF="asm2.htm#binary">Representa&ccedil;&atilde;o de
+n&uacute;meros em bin&aacute;rio</A></NOBR>
+&#183; <NOBR><A HREF="asm2.htm#registers">Registradores</A></NOBR>
+&#183; <NOBR><A HREF="asm2.htm#segoff">Segmentos e offsets</A></NOBR>
+&#183; <NOBR><A HREF="asm2.htm#stack">A Pilha</A></NOBR>
+
+</FONT>
+
+<DT><H3><A HREF="asm3.htm">Parte II - Uma Introdu&ccedil;&atilde;o a
+Instru&ccedil;&otilde;es Assembly</A></H3>
+
+<DD>
+
+<FONT SIZE=-1>
+
+<NOBR><A HREF="asm3.htm#pushpop">Push e Pop: Duas Instru&ccedil;&otilde;es
+para manuseio da Pilha</A></NOBR>
+&#183; <NOBR><A HREF="asm3.htm#operand">Tipos de Operandos</A></NOBR>
+&#183; <NOBR><A HREF="asm3.htm#instructions">Algumas Instru&ccedil;&otilde;es
+que voc&ecirc; precisar&aacute; conhecer</A></NOBR>
+&#183; <NOBR><A HREF="asm3.htm#first">Seu primeiro programa assembly</A></NOBR>
+&#183; <NOBR><A HREF="asm3.htm#compile">Instru&ccedil;&otilde;es de
+Montagem</A></NOBR>
+
+</FONT>
+
+<DT><H3><A HREF="asm4.htm">Parte III - Entrada e Controle de Fluxo</A></H3>
+
+<DD>
+
+<FONT SIZE=-1>
+
+<NOBR><A HREF="asm4.htm#easier">Tornando as coisas mais f&aacute;ceis
+</A></NOBR>
+&#183; <NOBR><A HREF="asm4.htm#keyboard">Entrada pelo Teclado</A></NOBR>
+&#183; <NOBR><A HREF="asm4.htm#printchar">Imprimindo um Caracter</A></NOBR>
+&#183; <NOBR><A HREF="asm4.htm#control">Controle de Fluxo</A></NOBR>
+&#183; <NOBR><A HREF="asm4.htm#jumps">Instru&ccedil;&otilde;es de Desvio
+Condicional</A></NOBR>
+&#183; <NOBR><A HREF="asm4.htm#example">Programa Exemplo</A></NOBR>
+
+</FONT>
+
+<DT><H3><A HREF="asm5.htm">Parte IV - Procedimentos e Macros</A></H3>
+
+<DD>
+
+<FONT SIZE=-1>
+
+<NOBR><A HREF="asm5.htm#need">Algumas Instru&ccedil;&otilde;es
+que voc&ecirc; precisa conhecer</A></NOBR>
+&#183; <NOBR><A HREF="asm5.htm#procedures">Introdu&ccedil;&atilde;o a Procedimentos</A></NOBR>
+&#183; <NOBR><A HREF="asm5.htm#params">Passagem de par&acirc;metros</A></NOBR>
+&#183; <NOBR><A HREF="asm5.htm#models">O que s&atilde;o "Modelos de
+Mem&oacute;ria"?</A></NOBR>
+&#183; <NOBR><A HREF="asm5.htm#macros">Macros</A></NOBR>
+&#183; <NOBR><A HREF="asm5.htm#param_macros">Macros com Par&acirc;metros</A></NOBR>
+
+</FONT>
+
+<DT><H3><A HREF="asm6.htm">Parte V - Arquivos</A></H3>
+
+<DD>
+
+<FONT SIZE=-1>
+
+<NOBR><A HREF="asm6.htm#files">Fun&ccedil;&otilde;es de Arquivos</A></NOBR>
+&#183; <NOBR><A HREF="asm6.htm#handle">Como salvar o manipulador de arquivo
+</A></NOBR>
+&#183; <NOBR><A HREF="asm6.htm#find">Utilizando as fun&ccedil;&otilde;es
+FindFirst e FindNext</A></NOBR>
+
+</FONT>
+
+<DT><H3><A HREF="asm7.htm">Parte VI - Strings, Deslocamentos e Depuradores</A></H3>
+
+<DD>
+
+<FONT SIZE=-1>
+
+<NOBR><A HREF="asm7.htm#strings">Instru&ccedil;&otilde;es para Strings</A></NOBR>
+&#183; <NOBR><A HREF="asm7.htm#dosver">Como determinar a vers&atilde;o
+do DOS</A></NOBR>
+&#183; <NOBR><A HREF="asm7.htm#multiple">Pushes e Pops
+M&uacute;ltiplos</A></NOBR>
+&#183; <NOBR><A HREF="asm7.htm#pushx">As Instru&ccedil;&otilde;es PUSHA/PUSHAD
+e POPA/POPAD</A></NOBR>
+&#183; <NOBR><A HREF="asm7.htm#shifts">Utilizando Deslocamentos para Multiplica&ccedil;&otilde;es e Divis&otilde;es mais r&aacute;pidas</A></NOBR>
+&#183; <NOBR><A HREF="asm7.htm#loops">Repeti&ccedil;&otilde;es</A></NOBR>
+&#183; <NOBR><A HREF="asm7.htm#debug">Como utilizar um depurador</A></NOBR>
+
+</FONT>
+
+<DT><H3><A HREF="asm8.htm">Parte VII - Escrevendo no V&iacute;deo</A></H3>
+
+<DD>
+
+<FONT SIZE=-1>
+
+<NOBR><A HREF="asm8.htm#text">Mais sa&iacute;das em modo texto</A></NOBR>
+&#183; <NOBR><A HREF="asm8.htm#mode13">Modo 13h</A></NOBR>
+&#183; <NOBR><A HREF="asm8.htm#isposs">Primeiro, verifique se o modo 13h
+&eacute; poss&iacute;vel</A></NOBR>
+&#183; <NOBR><A HREF="asm8.htm#vidmode">Estabelecendo o Modo de V&iacute;deo
+</A></NOBR>
+&#183; <NOBR><A HREF="asm8.htm#optimize">Algumas
+Otimiza&ccedil;&otilde;es</A></NOBR>
+
+</FONT>
+
+</DL>
+
+Bem, &eacute; isso a&iacute;. Espero que voc&ecirc; tenha apreciado
+a leitura de meu tutorial e aprendido alguma coisa. Meu tutorial n&atilde;o
+est&aacute; conclu&iacute;do. A Parte VII precisa ser mais trabalhada e eu
+gostaria de escrever cap&iacute;tulos sobre o uso de C com assembly e
+otimiza&ccedil;&atilde;o. Tamb&eacute;m est&aacute; planejado um
+&iacute;ndice.
+
+<P>
+
+Por enquanto voc&ecirc; poder&aacute;
+<A HREF="mailto:gavin@senator.demon.co.uk">
+entrar em contato comigo</A> se precisar de alguma ajuda. (Em ingl&ecirc;s,
+por favor)
+
+<P>
+
+<A HREF="#top">De volta ao topo</A>
+
+</BODY>
+</HTML>

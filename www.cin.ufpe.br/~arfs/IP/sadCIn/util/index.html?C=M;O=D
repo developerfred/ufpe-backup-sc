@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /~arfs/IP/sadCIn/util</title>
+ </head>
+ <body>
+<h1>Index of /~arfs/IP/sadCIn/util</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=A">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/~arfs/IP/sadCIn/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ExcelWorkbook.class">ExcelWorkbook.class</a></td><td align="right">2005-03-16 17:50  </td><td align="right">2.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ExcelSheet.class">ExcelSheet.class</a></td><td align="right">2005-03-16 17:50  </td><td align="right">1.6K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ExcelRow.class">ExcelRow.class</a></td><td align="right">2005-03-16 17:50  </td><td align="right">1.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ExcelCell.class">ExcelCell.class</a></td><td align="right">2005-03-16 17:50  </td><td align="right">1.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="Console.class">Console.class</a></td><td align="right">2005-03-16 17:50  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="CompararNome.class">CompararNome.class</a></td><td align="right">2005-03-16 17:50  </td><td align="right">773 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="CompararCredito.class">CompararCredito.class</a></td><td align="right">2005-03-16 17:50  </td><td align="right">791 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="ExcelWorkbook.java">ExcelWorkbook.java</a></td><td align="right">2005-03-15 15:48  </td><td align="right">2.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="ExcelSheet.java">ExcelSheet.java</a></td><td align="right">2005-03-15 15:48  </td><td align="right">1.3K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="ExcelRow.java">ExcelRow.java</a></td><td align="right">2005-03-15 15:48  </td><td align="right">1.3K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="ExcelCell.java">ExcelCell.java</a></td><td align="right">2005-03-15 15:48  </td><td align="right">1.7K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="Console.java">Console.java</a></td><td align="right">2005-03-15 15:48  </td><td align="right"> 26K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="CompararNome.java">CompararNome.java</a></td><td align="right">2005-03-15 15:48  </td><td align="right">534 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="CompararCredito.java">CompararCredito.java</a></td><td align="right">2005-03-15 15:48  </td><td align="right">847 </td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.7 (Ubuntu) Server at www.cin.ufpe.br Port 443</address>
+</body></html>

@@ -1,0 +1,911 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: =?Windows-1252?Q?Objetos_e_Manipuladores_-_oic=ECliS_=A9?=
+Date: Thu, 29 Sep 2005 16:44:39 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0180_01C5C515.158E4E80";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1506
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/handles.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- =A9sobMedida by vickiSoft 17.02.02 ver 1.0 --><!-- 12.04.03 - ver =
+1.1 - PHP --><!-- 01.08.03 ver 1.2 - referElo =
+--><HTML><HEAD><TITLE>Objetos e Manipuladores - oic=ECliS =A9</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1"><LINK=20
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAsse=
+mbly.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"oiciliS - Assembly - Objetos e Manipuladores (handles)" =
+
+name=3Ddescription>
+<META=20
+content=3D"tutorial, tutoriais, assembly, assembler, objetos, handle, =
+handles, manipuladores"=20
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.2800.1515" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3><IMG height=3D33=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/avan=
+AniT1.gif"=20
+      width=3D31 align=3DabsMiddle border=3D0> OBJETOS E =
+MANIPULADORES</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D20 align=3Dleft>
+        <TBODY>
+        <TR>
+          <TD align=3Dmiddle><A=20
+            =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/index.php"><IMG=20
+            height=3D57 alt=3D"Sil=EDcio Reverso"=20
+            =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif"=20
+            width=3D106 border=3D0></A>oic=ECliS =A9<BR>Assembly =
+Avan=E7ado<BR>TEXTOS=20
+            ACESS=D3RIOS<BR><FONT size=3D-2>(ver 1.2 de 02.08.03)</FONT> =
+
+        </TD></TR></TBODY></TABLE>
+      <P>Um <I><B>objeto</B></I> =E9 uma estrutura interna que =
+representa um=20
+      recurso do sistema, como um arquivo, uma linha de processo =
+(thread) ou uma=20
+      imagem gr=E1fica. Um aplicativo n=E3o pode acessar diretamente a =
+estrutura=20
+      interna de um objeto ou do recurso do sistema que este objeto =
+representa -=20
+      precisa obter um <I><B>manipulador</B></I> (handle) do objeto para =
+poder=20
+      examin=E1-lo e/ou modific=E1-lo.</P>
+      <P>O Windows usa objetos e manipuladores para vigiar o acesso aos =
+recursos=20
+      do sistema. Isto impede que programadores tenham acesso direto =
+=E0s=20
+      estruturas internas de baixo n=EDvel. Por outro lado, cada objeto =
+tem sua=20
+      pr=F3pria lista de controle de acessos (ACL - access-control list) =
+que=20
+      especifica os tipos de a=E7=E3o permitidos para cada objeto e o =
+sistema=20
+      operacional examina a ACL de um objeto toda vez que um aplicativo =
+tentar=20
+      criar um manipulador para ele. Para a maioria dos objetos, a API =
+Win32=20
+      oferece fun=E7=F5es para cri=E1-los, criar seus manipuladores, =
+fechar os=20
+      manipuladores e para destru=ED-los.</P>
+      <P>Manipuladores e objetos consomem mem=F3ria. Para preservar a =
+performance=20
+      do sistema, um aplicativo deve fechar manipuladores e destruir =
+objetos que=20
+      n=E3o sejam mais necess=E1rios.</P>
+      <P>O Windows oferece tr=EAs categorias de objetos: de usus=E1rios=20
+      (<I><B>user</B></I>), de interface de dispositivos gr=E1ficos=20
+      (<I><B>GDI</B></I>) e de <I><B>kernel</B></I>. O sistema utiliza =
+objetos=20
+      user para apoiar o gerenciamento de janelas, objetos GDI para =
+apoiar=20
+      gr=E1ficos e objetos kernel para apoiar o gerenciamento de =
+mem=F3ria, a=20
+      execu=E7=E3o do processo e a intercomunica=E7=E3o de =
+processos.</P>
+      <P>Alguns objetos, como os user e GDI, s=F3 podem ter um =
+manipulador. O=20
+      sistema fornece um manipulador quando o aplicativo criar o objeto =
+e=20
+      invalida o manipulador quando o aplicativo destruir o objeto. =
+Outros=20
+      objetos, como alguns do kernel, podem possuir v=E1rios =
+manipuladores. O=20
+      sistema operacional remove o objeto da mem=F3ria assim que o =
+=FAltimo=20
+      manipulador for fechado.</P>
+      <P>O n=FAmero de manipuladores abertos depende unicamente do total =
+de=20
+      mem=F3ria dispon=EDvel. Entretanto, um =FAnico processo n=E3o pode =
+ter mais do que=20
+      16.384 manipuladores de objetos GDI abertos simultaneamente. O =
+limite de=20
+      manipuladores de kernel =E9 de 2<SUP>30</SUP> por processo. Para=20
+      manipuladores user n=E3o h=E1 limite por processo, mas h=E1 o =
+limite de 65.536=20
+      do sistema.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Objetos USER e GDI</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Os objetos GDI e user podem ter apenas um manipulador. O =
+processo n=E3o=20
+      pode herdar ou duplicar estes manipuladores. Os manipuladores user =
+s=E3o=20
+      p=FAblicos para todos os processos, ou seja, qualquer processo =
+pode usar o=20
+      manipulador de um objeto user. Os manipuladores de objetos GDI =
+s=E3o=20
+      privativos de um processo, ou seja, apenas o processo que criou o =
+objeto=20
+      GDI pode usar seu manipulador.</P>
+      <P>Na figura abaixo, um aplicativo cria um objeto janela(1). A =
+fun=E7=E3o=20
+      <I>CreateWindow</I> cria um objeto janela (2) e retorna o =
+manipulador=20
+      deste objeto (3). Este manipulador do objeto janela pode ser =
+utilizado=20
+      pelo aplicativo para mostrar ou alterar a janela. O manipulador =
+=E9 v=E1lido=20
+      enquanto o objeto correspondente n=E3o for destru=EDdo.</P>
+      <CENTER><IMG height=3D170=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/gra=
+fs/handler.gif"=20
+      width=3D389></CENTER>
+      <P>Na figura abaixo, o aplicativo destr=F3i o objeto janela(1). A =
+fun=E7=E3o=20
+      DestroyWindow retira o objeto janela da mem=F3ria (2), o que =
+invalida o=20
+      manipulador (3).</P>
+      <CENTER><IMG height=3D170=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/gra=
+fs/nohandler.gif"=20
+      width=3D389></CENTER>
+      <P>A tabela abaixo cont=E9m uma lista de objetos user e as =
+fun=E7=F5es=20
+      correspondentes para cri=E1-los e destru=ED-los. As fun=E7=F5es de =
+cria=E7=E3o criam o=20
+      objeto e seu manipulador ou ent=E3o retornam simplesmente um =
+manipulador=20
+      existente. As fun=E7=F5es de destrui=E7=E3o removem o objeto da =
+mem=F3ria, o que=20
+      invalida o manipulador correspondente, com exce=E7=E3o dos objetos =
+window=20
+      station e desktop que s=E3o criados e mantidos pelo sistema (um =
+aplicativo=20
+      n=E3o consegue destruir estes dois objetos).</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Fun=E7=F5es para objetos =
+User</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D1 cellPadding=3D5 width=3D"90%" =
+align=3Dcenter=20
+        bgColor=3Dblack><TBODY>
+        <TR align=3Dmiddle bgColor=3D#006699>
+          <TD>OBJETO USER</TD>
+          <TD>Fun=E7=E3o para criar</TD>
+          <TD>Fun=E7=E3o para destruir</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Tabela de Aceleradores</TD>
+          <TD>CreateAcceleratorTable</TD>
+          <TD>DestroyAcceleratorTable</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Cursor</TD>
+          <TD>CreateCursor, LoadCursor, GetCursor, SetCursor</TD>
+          <TD>DestroyCursor</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Conversa=E7=E3o DDE</TD>
+          <TD>DdeConnect, DdeConnectList, DdeQueryNextServer, =
+DdeReconnect</TD>
+          <TD>DdeDisconnect, DdeDisconnectList</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Desktop</TD>
+          <TD>GetThreadDesktop</TD>
+          <TD></TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Hook</TD>
+          <TD>SetWindowsHook, SetWindowsHookEx</TD>
+          <TD>UnhookWindowsHook, UnhookWindowsHookEx</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Menu</TD>
+          <TD>CreateMenu, CreatePopupMenu, GetMenu, GetSubMenu, =
+GetSystemMenu,=20
+            LoadMenu, LoadMenuIndirect</TD>
+          <TD>DestroyMenu</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Janela</TD>
+          <TD>CreateWindow, CreateWindowEx, CreateDialogParam,=20
+            CreateDialogIndirectParam, CreateMDIWindow, FindWindow, =
+GetWindow,=20
+            GetClipboardOwner, GetDesktopWindow, GetDlgItem,=20
+            GetForegroundWindow, GetLastActivePopup, =
+GetOpenClipboardWindow,=20
+            GetTopWindow, WindowFromDC, WindowFromPoint e outras</TD>
+          <TD>DestroyWindow</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Posi=E7=E3o da Janela</TD>
+          <TD>BeginDeferWindowPos</TD>
+          <TD>EndDeferWindowPos</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Window station</TD>
+          <TD>GetProcessWindowStation</TD>
+          <TD></TD></TR></TBODY></TABLE><BR><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Fun=E7=F5es para objetos =
+GDI</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D1 cellPadding=3D5 width=3D"90%" =
+align=3Dcenter=20
+        bgColor=3Dblack><TBODY>
+        <TR align=3Dmiddle bgColor=3D#006699>
+          <TD>OBJETO GDI</TD>
+          <TD>Fun=E7=E3o para criar</TD>
+          <TD>Fun=E7=E3o para destruir</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Bitmap</TD>
+          <TD>CreateBitmap, CreateBitmapIndirect, =
+CreateCompatibleBitmap,=20
+            CreateDlBitmap, CreateDIBSection, =
+CreateDiscardableBitmap</TD>
+          <TD>DeleteObject</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Brush (pincel)</TD>
+          <TD>CreateBrushIndirect, CreateDIBPatternBrush,=20
+            CreateDIBPatternBrushPt, CreateHatchBrush, =
+CreatePatternBrush,=20
+            CreateSolidBrush</TD>
+          <TD>DeleteObject</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Fonte</TD>
+          <TD>CreateFont, CreateFontIndirect</TD>
+          <TD>DeleteObject</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Paleta</TD>
+          <TD>CreatePalette</TD>
+          <TD>DeleteObject</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Pen (pena)</TD>
+          <TD>CreatePen, CreatePenIndirect</TD>
+          <TD>DeleteObject</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Pena Extendida</TD>
+          <TD>ExtCreatePen</TD>
+          <TD>DeleteObject</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Regi=E3o</TD>
+          <TD>CombineRgn, CreateEllipticRgn, CreateEllipticRgnIndirect,=20
+            CreatePolygonRgn, CreatePolyPoligonRgn, CreateRectRgn,=20
+            CreateRectRgnIndirect, CreateRoundRectRgn, ExtCreateRegion,=20
+            PathToRegion</TD>
+          <TD>DeleteObject</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Contexto de Dispositivo (DC)</TD>
+          <TD>CreateDC, GetDC</TD>
+          <TD>DeleteDC, ReleaseDC</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>DC de Mem=F3ria</TD>
+          <TD>CreateCompatibleDC</TD>
+          <TD>DeleteDC</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Metafile</TD>
+          <TD>CloseMetaFile, CopyMetaFile, GetMetaFile, =
+SetMetaFileBitsEx</TD>
+          <TD>DeleteMetaFile</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>DC de Metafile</TD>
+          <TD>CreateMetafile</TD>
+          <TD>CloseMetaFile</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>Enhanced metafile</TD>
+          <TD>CloseEnhMetaFile, CopyEnhMetaFile, GetEnhMetaFile,=20
+            SetEnhMetaFileBits</TD>
+          <TD>DeleteEnhMetaFile</TD></TR>
+        <TR class=3Dmeio1>
+          <TD>DC de enhanced metafile</TD>
+          <TD>CreateEnhMetaFile</TD>
+          <TD>CloseEnhMetaFile</TD></TR></TBODY></TABLE><BR><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 width=3D650 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dmeio1><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+.gif"=20
+      width=3D115 border=3D0> TEM MAIS</TD></TR>
+  <TR>
+    <TD class=3Dmeio1>
+      <P>Os objetos Kernel s=E3o um pouco mais complexos e as =
+explica=E7=F5es=20
+      correspondentes um tanto longas. Leia sobre os <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/ha=
+ndles2.php">objetos=20
+      kernel</A> no segundo m=F3dulo deste texto de apoio.</P></TD></TR>
+  <TR>
+    <TD class=3Dmeio1 align=3Dright><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+a.gif"=20
+      width=3D115 border=3D0></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3>Localizador</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1 align=3Dmiddle>
+      <SCRIPT language=3DJavaScript>=0A=
+function setFontSize(fontVal) {=0A=
+var fontSet =3D document.getElementById('fontSet');=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('table');=0A=
+if (!fontVal) {fontVal =3D document.getElementById('fontSet').value;}=0A=
+var docSize =3D fontVal+'pt';=0A=
+for(var i=3D0;i<docBase.length;i++)=0A=
+docBase[i].style.fontSize =3D docSize;=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('body');=0A=
+docBase[0].style.fontSize =3D docSize;=0A=
+docSize =3D (fontVal-2)+'pt';=0A=
+document.getElementById('xxpe').style.fontSize =3D docSize;=0A=
+if (fontSet) {fontSet.value =3D fontVal;}=0A=
+}=0A=
+</SCRIPT>
+
+      <DIV id=3Dxxpe style=3D"FONT-SIZE: 8pt">
+      <HR>
+
+      <CENTER>| <A href=3D"javascript:setFontSize(15)"><SPAN=20
+      style=3D"FONT-SIZE: 15pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(13)"><SPAN=20
+      style=3D"FONT-SIZE: 13pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(11)"><SPAN=20
+      style=3D"FONT-SIZE: 11pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(9)"><SPAN style=3D"FONT-SIZE: =
+9pt">A</SPAN></A>=20
+      | <A=20
+      onmouseover=3D"status=3D'A Aldeia onde as coisas acontecem =
+numaboa';return true"=20
+      href=3D"http://www.numaboa.com.br/index.php"><IMG height=3D15=20
+      alt=3D"P=E1gina Inicial" =
+src=3D"http://www.numaboa.com.br/img/haus2.png"=20
+      width=3D15 align=3Dbottom border=3D0></A> | <A=20
+      onmouseover=3D"status=3D'Saiba o que a Aldeia tem para =
+oferecer';return true"=20
+      title=3D"Mapa do site"=20
+      href=3D"http://www.numaboa.com.br/aldeia/index.php">Mapa do =
+Site</A> | <A=20
+      onmouseover=3D"status=3D'Fique por dentro das novidades';return =
+true"=20
+      title=3D"Novidades na Aldeia"=20
+      =
+href=3D"http://www.numaboa.com.br/aldeia/destaques.php">Novidades</A> | =
+<A=20
+      onmouseover=3D"status=3D'Procure na Aldeia';return true"=20
+      title=3D"Abre em nova janela"=20
+      href=3D"http://www.numaboa.com.br/portal/index.php" =
+target=3D_blank>Busca</A>=20
+      | <A onmouseover=3D"status=3D'Indique esta p=E1gina aos =
+amigos';return true"=20
+      title=3D"Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/indica.php?page=3D/informatica/=
+oiciliS/assembler/textos/handles.php&amp;indica=3DoiciliS - Assembly - =
+Textos - Objetos e Manipuladores"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Indique esta p=E1gina</A> | <A=20
+      onmouseover=3D"status=3D'Fale com a vov=F3 da Aldeia';return true" =
+
+      title=3D"webmaster - Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/contato.php?page=3D/informatica=
+/oiciliS/assembler/textos/handles.php"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Mestre da Teia</A> | <A=20
+      onmouseover=3D"status=3D'Marcha-R=E9';return true" title=3D"Meia =
+volta voooolver"=20
+      href=3D"javascript:history.back()">Voltar</A> |<BR>| <A=20
+      =
+href=3D"http://www.numaboa.com.br/foot/localizador.php?file=3Dinfo.txt&am=
+p;page=3D/informatica/oiciliS/assembler/textos/handles.php"=20
+      target=3D_blank>Localizador</A> || @ <A=20
+      href=3D"http://www.numaboa.com.br/informatica/">Info NumaBoa</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/">oic=ECliS</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/">Assembl=
+y</A>=20
+      &gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/">=
+Textos</A>=20
+      &gt; <B>Objetos e Manipuladores</B>
+      <HR>
+      Cr=E9ditos: vov=F3 Vicki<BR><BR>webdesign sobMedida by vickiSoft - =
+
+      /informatica/oiciliS/assembler/textos/handles.php (17.02.02) =
+vers=E3o 1.2 de=20
+      02.08.03<BR>Licen=E7a Creative Commons 1998-2005 Aldeia =
+NumaBoa<BR><!-- Creative Commons License -->Exceto onde especificamente=20
+      declarado, todo material deste site =E9 disponibilizado de acordo =
+com a <A=20
+      =
+href=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt"=20
+      target=3D_blank rel=3Dlicense>Licen=E7a Creative Commons</A>. <!-- =
+/Creative Commons License --><!--=0A=
+<rdf:RDF xmlns=3D"http://web.resource.org/cc/"=0A=
+xmlns:dc=3D"http://purl.org/dc/elements/1.1/"=0A=
+xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#">=0A=
+<Work rdf:about=3D"">=0A=
+<dc:type rdf:resource=3D"http://purl.org/dc/dcmitype/Text" />=0A=
+<license =
+rdf:resource=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/" />=0A=
+</Work>=0A=
+=0A=
+<License =
+rdf:about=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/">=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Reproduction" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Distribution" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Notice" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Attribution" />=0A=
+<prohibits rdf:resource=3D"http://web.resource.org/cc/CommercialUse" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/DerivativeWorks" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/ShareAlike" />=0A=
+</License>=0A=
+</rdf:RDF>=0A=
+--></CENTER></DIV></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/avanAniT1.gif
+
+R0lGODlhHwAhANU9ABgkNRsxSCxIZVMKCU4fK0w2Hk4oLG8PDnAdIWczB3M5N0c1SU9HP3BMCHFN
+I3xgN09ecTlnlUpuk0t4p2R3iF2JtGSXyqETFJBpG4xrL6prCpBQT5NeYI10TpRucbRVVa5vbs8W
+FspjY7l/gKeHLJqGTpWJdq2LVqiScbmhYsiVGsmnXpSRkYWYrIykvaiVkLSij7GpqYuw1MqWl8Gy
+i8S0qumzs87Dmc3GuuLVu9LLye/n1P///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJ
+lgA9ACwAAAAAHwAhAAAG+sCecEgsGo/IpHLJbDqf0Kh0Sq0qOVbjbHQJ9TxZYfdy6YmWMotaJkNu
+DgsIRFlJq+9t4yUwgVAqJClGFWoTEhETeEYmERUSFoAvRY8VAgECEoSKRRF3FAhGE5V8joh3FoN3
+ABcGRIQSAI0CAhCad0W2PQO4FrO9ApCip3lCuSacvRC9FRF8p2pDiWtHhAKJFZW2w8WbvNrazxZ2
+00ad4GoVwuHdRC6Q2O+oPY3rp0gVPZAuPaJCpvXinOAT4qITQGJQJkhbV+XfM4RRKDi8lYWZwgkQ
+qzCgEKNAmCEdYPSQ9FEIix4PTuDI4kADih4nErzMUqPGEJtHggAAIfkECQoAPQAsAAAAAB8AIQAA
+Bv7AnnBILBqPyKRyyWw6n9CodEqtWnsWyxOFUFoqX4ts+flcQh4kWBIAQLLK8+UyuICKkkpFAGgB
+BGJIBwcLEhMSDEYRXwERehNwSAJ6EAFfNzRCFRNgXwKfEmJjRpBZYBANDZoTnHsAAQKwFaNELY5Z
+FhIcBx2aERGcjXphWkW2nVoKM0Mtn45gFRECt8VEv7hGLkISobmfnFm0QsCdSsjIuNU91+Hmeo+l
+pkN5uOJH0Xo9w+nv6epHLn4NoebPH5MKLUaxKlgwyiZ0DKVsYphuykOK9p5EI9jOip5fs64QgdCj
+hkgiMHq8ODmERY8HJ3BccaABRY8TCWxeqWFSSARPI0EAACH5BAkPAD0ALAAAAAAfACEAAAb+wJ5w
+SCwahbajclkUXRQvppQoClmtuum0eukmtVLQZSGZ9Go38BJEiFQklYymplYCJhPIBFNfCiYWFhUO
+UhWBFjJ+bhZ7TIGGholKixQOGiVHFRUCAQEVgJJGAoYLHChHE5sBEWWjoUWjFgsHHqgRAYCahhZK
+LoAUIhtGMhN/qgEteohGLREWLUqfqQICEBF4EMtFzdrMgROLnKuBrz0toJOP3wJlEuRFLoZLi4ea
+h/dE8byT9vf+hz1cyNhVjsiue/3+HSxIhNGjCkJS/fPHJJEMFwYBTXzXpwe9iQyn+NrYrY/GiR2H
+cEOZUsinfyHVVHBzsKURF9fM2DQShcUXTiM+H5zA8dNShh4nEpz6WaMG0TNKggAAIfkECQ8APQAs
+AAAAAB8AIQAABv7AnnBILBqPyKRyyWw6lSDR0wn69BTTJOiCuBhC2aPhcCAsFJDw8QOIWCaSR6mj
+JkoqFQhFpUqldEcVFoMWMkgTghV7OUl4EBGIg0cThHsnSHkBAQAUEIKGRZEWDA8pR5ABAi2QeJKh
+ghYeNoETAgKIEhKiRpEVNQovvBUCFooAAS4UEoW8xUmIeAACy4mDoEOUFkgRsBEAghItArDXQtnb
+sBSCEwGi1kTnp7CREcuE90IysJiwxf73AAGWM2KhRb+ACJklcdGjAsNEBxOqyZZwoBN3CNW4wHjP
+opMKFAXWaRjR1UgXAT2GeRRBwEgjDoTEfEnkgZAMJ3DQdKABRQ2PEwl80qxRY0jRI0EAACH5BAUU
+AD0ALAAAAAAfACEAAAb+wJ5wSCwaa70R0shsFi+hS22XclqLotCi1dOQruDeZzCZUFRhMMhQgUhO
+6auIXYl04uCIRfLAXyUWFXd+TnoVDitNFXsSEzJgixYMGExtAZcAAhVXMot9RnpljRICAZtOLosI
+G0UTFoEQpRQSERCPTZ0WHKxEEZEVFRMSAY0TTjKvlZEWE7ECAoEWTS7JldHApBCvFrdF1NJMET0T
+wK8VEpHdvdVGm8au2/HgRPBWXPDyr+ro7FZlwMu2CcnVz0kLCUN8yQs4L44LhfkEEqIVUaKfFhHw
+5SMkJAJEeer8eIwYUqTGghwpkAtUkqMQFy0ouHTCogOMmUxY9HhwAgcSzh4ONKDocSKBiZ89aixJ
+2iQIADs=
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif
+
+R0lGODlhagA5APcAAFqvsWrJ0Gu+02XDxnO342G7vlabsV0W/msX/0mLkDMpaTNaZVGYoFKKs3q0
+8ncY/UN4hYgZ+ggJEVekrjgld0pinGWRylJ8pkAkh2tX03GY21p+uREPJluSvi8NZmavyRgrMUg0
+nXaT5zNJZVsS6z8TlzgMfkJkhSsrVzlfcGZ8yTw9gCUMSUYRqS49Xmyv13V542lm1UwUu1Y8wSEz
+Qmc87VdmsxcJQUBPhE1MnCtPVUwQygAAAFcZ2lJRtnk/6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADwALAAAAABqADkA
+AAj+AHkIHEiwoEGDHBIYuHCChoSDECNKnEixosWLJwAAMDChQ4cRDy+KHEmypEQOGjV2tGBhAwiT
+MGPKjHghJYACH3Jq0OBips+fJHHYZFChgwUCBByIUAC0qdODKFMySHBhgw0VMEQ4cPDyqVegHBhM
+kMoAAoQLFS6oiAEDxde3M1PYtDmBAQMDHTbk0DFiRIUULkZkZKgg8AIffRMr7ntBRmIIEky08DBi
+gQsXNHSEhBuRxtzPG/Gq0FhAxVgAAT68IJCB9GjQKQP8SDmgx44Kp4fS4AyRQ+6yEBjMLQDgw+sC
+GoQXCLDaQWvUz1VK1yjbwM0XD2rCBqCDt8ETZQH+K/BgwgSG3AAGfLCgcYCGBtQFJI3R/jmDFPgX
+pMiY/sfYAjDMQNwEZuEHHmneFYSCBwqYh0EJGJhQQgvwtRfAa+5tcFMAAcxH3WzpVeABeSY8N0AG
+1n0Aw2sXjDhiCT2Q1lWCArFAYgkSSugBBTYFoAF1yW0onwP0pVfkAAF0QAELO5TAAgso/GAdgBpu
+NGILPTwQwX8z0lgQBxxsVkFs7KX3npAepgfDlMxdwAMHk0m25U0wVMkADzcccICWMnpZkQK0lele
+hQEMeSQMhArQQUEyRJBinRrdmScCWv43AwkkyMDCZn4SdENKyLV35nIdEtneCyaq1tNAOzhKZ4X+
+E9zggQxZPjDWADUggEAEJEDWqYKBippomgMI4N9N6nWwWaO3rpiSAgqgoEALM5CWq5bVJsApZxKA
+cBkOI7ggFHUYaqDhcobGB4MNpH2wUEiNThlgSgnUW+9pHewZwQMVasstCBU0YBRLa1nnGnHucYRa
+uqgNQICUpOFVAQc8MHuTBgdoB1sGlD5QLb3bNiWBUAYsVEEFIYTAbrvlwocusfKJ8HGkDVzgQqtT
+voDpgaQBMEECPnRMQoUgeyXBCpFCkMIKFJQwZkoTGNByfBbM8HGxSZngw1BozTDncgf00IIJT5ZN
+wQx7PoDAynN1+dPRQykd3FwMWHDkqAPg4MH+CitzmBQPJfiQWwILXOAqkpSuEK600npwwgOQz2zT
+Al6FhR5oE1yg1t0XEJeAWQUcKYAADuzmwQzoFfC1ALtuMJW99Q4AeQ+Xc/cWBykIB1sCJ9hgQwYm
+atDBXANgyBxXNcrwNAAqzFlsDRG8RvwDGX/WgAshj8TBkxR4gAEGFChAAQUhVJAA1ASmgEMOM6S8
+9cUG01ZkAfJpkLJ5Jcgg+AQ/PBDbDxGoEnFo84D3DWUBCzgB9rTHAgp873vjw0AIckBBG/ggBxhg
+ULR29MAOQssvGIBWtFbAgBCMEC0YqEALOiiDHJyABTJwQWEqUAIShNBGJPKAD2gHm7p8rjv+FblB
++EQILQqsAAc4OJkN0DJEaPVuBUQUYROjqIAVXCADQwwfDjIQQhGuoANdMQECSkBEClRAT0Ij2nbq
+koLsDYQDCkgBAkegAx24QAf6OUEFztIAG8hRPwtIQAEqAEgEGhKBfzxk7gTgg0MuwAAZqIwhEyAA
+iuHpASFwpAUO0LG1bQc0DLDklxRQu6HUiwENwAt6UhO/T86FQzEYIHUQlZsCvGAgEkBAdDQCA05i
+y5WgdBsHlgfMCUTtA2pUj/SAGRsBwEB3N1HRMjtEEErZpADXegAJoMlMqHXpfN28SQFwQjR0LbOb
+hRLB8EgzABFEZzkEqKar2lMDyCFAY1D+451ZuDmXCQxEB8ORJWwCQL9yFqpMPQNmoc5kIXf2KJ4D
+2VX8AlDPAkqHASfQQZjA1AII8eczlOMBNxMwAmit4ARouQBC01OodQrJpQA4gR4hcLIL5IADHpio
+AERAtHS+k5oRnVN7QvAA2iUgBRoNmQl6gKkQtJI0D7lmRz6AlKRsxQEIJZVBBRA/JI3OqluhAQau
+OShQBcChpAGqQCRKGxA8KUwSyZOewvZUAECABz0qFAGGdFWl5NWl6HIph+SDlKtWgAJmMUsCPmCD
+KqVnp7tUKw/Y2h63RUQCc9UTD68pAbMWqkNV7etfzSoAhHqVsFcVQchYQLQBtPOnEF3+q1DTsxuL
+ZHZPktPIAvJK2MKKNjYB2GpXBxvareTAIKylzVkj6wBcUjY9loWIXOe6KzUCAJzUGSxqt6IBti0M
+sAvtkQCYU1UNbIUFBUlueyBr1tjeYFe5GUB0D1IC6nIyAru8CW+rihQL+ECCed3qB3JTqA/IZzUE
+EIEGRCBKHrBAY0hCK3Xc+9wB1HYiEiBBZnUVgRhtR7sveIEFMPi9EIw2rR1yKZKKFeIX7GQnDB6I
+eh8rYXgO5L2zlS+eNhWRHWw4bRH4JIdyYoAcMA18GEAacB2LLkX1SD2qUY0GLKCBFTHFwY51rYRR
+Q+F5QtcDB9hBCEImgfraV20RiID+dW3iWgZcgGnjEx/5xAve0f0oNjjJiQXWwxKWwCAHEngwbdib
+1i7HFwN6ylQOLownH29YV1ry8mcKcB/MoIAGKECBCyiQzA8wuVDyaSVB17Oegang1KfGgIqX26Pm
+8kACOJ5oDea6gxyowAYhaEELZLADDVO3Y/tKnVxsUi8IfO7Y3CzABDzt2f6yuTgA8AhLOoBqFWRg
+Bq0l9IYI4IH8zQC+oJr1XEuwgQ34IAQT2oGj0UipfdXgMyAIp02ktoEBNhkpMB1AaDpggHL72wbs
+yzKrY+OACclABuCmJyd1dZsOABzdLVA3dSGnJXxelweeCaebbTADtpFqrw54wXD+otbvDZTcKuzL
+do0Lle4QPFcAuVo4CXKQF5Q9KOK+9mVRQSoQEECTOECnCwRykOsKfLq3WP2MAezCgA1ozqY5yAA0
+i6WByGpgQi0IwQFynCtd6aoEE2hABYxcgnTnHAEksDgAOAWCBST27RA4AQ5WUPYQNIAlnv3qVupq
+l6dDPQeIGvTKLXDzENQzfjD35QFIMCYDJCAHOIiQ2edKTI3ctSAeQOIKwOfAzksmBBegalb1ClYH
+8N3NmjviBUQg8Kr3aAOSybrX4ltPXTGeXnJnmoQiru5xzaXBPKDACHAQvuKLUEIrMABhR98hvjpg
+j5+ZStxxcAILqEDlP2Va2TH+EIPZUhQBi688BBYQrvGMSAHYnVxBaIBAHWD6/ZpekAsA0FvmI90C
+Ahm20PXDgA94oLUDRxrQUh4rYAE51j+3F31HhUj8RC8GAQE/A3cFYmz3RgCj91VIoQGb4QKX40Mf
+8ELYByoNgWkoAAEGGF8VkIDyRhchAwHAdFpIIT0VqAHABwLplxLKYgJZJgCuRxZ2cTE5BgEcgAJr
+1k2hdBAu6EowqAEaQyrM8QLztVs28QEjUDEA2IOggRw5didvMgIN6Eq+goQvWCgvcAES0ISD1QBu
+JBCWoxFuUjHxsxxbNhwwEGS0kQAEwQE4UErRB0QQ4YKvAztTIRxIYgC7wQFVojYAJ7CGb3Q+/sID
+JqYSyzEC+XVNMfBuoIKHX+KFPZQAjNYbErCGEkADM9ItpEiKGiUSmnFjdYRHC9AdKOBIk1QAOkAB
+jjRfr5YZf6QDIMCIPBAQAAA7
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1.gif
+
+R0lGODlhcwAMAPcAAAAAABg5SiFSYzFrjDmMta3nKcbGAP//xv//////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH5BAEAAAUALAAAAABzAAwA
+AAjRAAMAGDiwgMGDCBMqXMiwocOHDAlKnEixokUABQIQGMBRAEaIIEOKHFkAAIGTKFOqXMkS5YED
+GDVy7PiRpM2bIWXO3Mmzp8+dBoLG3LjTI86jSBPq/Mm06YCgQjMSLRqgqtWrWLNq3cq1q9eqU4sK
+GEu2rNmzZ4cOqLqzpdu3cOPKVenT48W7F6UGeBnAqd+/gAP7FRAg6UKrBwz0Fcy4sWOehA0f3sj2
+seXLg2tKRrgUs+fPM41uVqgRrenTqFOrXm268GjSX2PLnk2b6+uFAQEAOw==
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/grafs/handler.gif
+
+R0lGODlhhQGqAPcAAAAAAACAAADAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAhQGqAAAI/gAHCBxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxJsyWA
+mzhz6tzJs6fPn0CDCh1KFGjNo0iTogQgoKnTp1CjSp1KtarVq1izaqUKQKnXr2AxMt1KtqzZs2jJ
+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
+cBiHcjiHAQEAADs=
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/grafs/nohandler.gif
+
+R0lGODlhhQGqAPcAAAAAAACAAADAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAhQGqAAAI/gAHCBxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxJsyWA
+mzhz6tzJs6fPn0CDCh1KFGjNo0iTogSgtKlDpk6jSp36ECrVq1avat0aNSvXpl6/ih3rMixZmmbP
+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
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+MEgpqr046827/2CITYFgGINQmEW6nnAsz3Rt33iu08LE
+uj8Vq0AsGo/IpHLJbDqfxhTF0BJSgVSodsuFDgbHbxhclAZfVXTry2673/C4fE5vZ4mDxIHcSgD4
+eXtlFVdWaUN8XYqLTHctB3tZAwB/kpADkoRYh5KMnp9HjmsnZZh3X6RVApubeKCvijFIqUW0RLQp
+FWitrrC+T6KgubuGUb/HS8HCFoVqxsjQtUh11LnNQ2HR0cG5Ih6cSonasNwCCOfo6err66vFSeLj
+n+Xs9fbputjw8uTT5vcA2b0Lxw8UvYAI8ekLt6Ohw4b+Eko8t7BgwRQTJ1a0OA5jRokYq6qJHEly
+5L+PCRWoXKnSm8uXMCugnBgBADs=
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2a.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+EMlJq71X6M27/2AojuFQFIaArWw2vHAsz3Rt3/h9pm3P
+CqaTcEgsGo/IpHLJ8zkpwKV0Sq0im09nlGjoer/gsHhMLoODyZQq69sODda4vIg+pgpr9q++m/vn
+fFwCeHl6LkVwf4pVgUJ3QIWGUIGJi5ZLjSiDUSSdG5SXoUqNjyZqOaigoqtGlJumn6yVrLQnfKWa
+hJl+s7W0dbiPGmhdXL3Fxsi+vsSvuZBbXS+OBtM71bfL2rY7zqWnOwMHB0HVAADlAxLA28vl3vBu
+4gloAwD0Qur4jqn9/v81uuGBNVBTADcFrOXjo7Bdu2DwAhzc5bBiGngFU0g8aKajx48WIEOGxAik
+i4CNBz2pXMmypUsRKANEAAA7
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/haus2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAF7D1XuAAAABlBMVEUAAACCkb4DVVPxAAAAAXRS
+TlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAQlJREFUeNoB/gAB/wAAAAAAAAAAAAAAAQAA
+AQABAAABAAEAAAABAAAAAAEAAAEAAAAAAQAAAAAAAAABAQAAAQAAAQAAAAABAAAAAQEAAQEBAAAA
+AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAQABAAAAAAAAAQAAAAEAAQEAAAAAAAABAAAAAQAA
+AAEBAAAAAAEBAAAAAAAAAAAAAQEAAAAAAQABAQAAAQEBAAEAAAAAAAEAAQEAAAEBAQABAAAAAAAB
+AQEBAQEBAQEBAQAAGqcAQv1LH7cAAAAASUVORK5CYII=
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/mailto.gif
+
+R0lGODdhDgAKAKIAAP////r7v+rrl8TFDKOkAH1+AElKAAAAACwAAAAADgAKAAADLWi63AQwynEM
+KCLrXEgFAraFgmdxm2iCpdhla8mpZRUQo0aYw+7/u8phSCwSEwA7
+
+------=_NextPart_000_0180_01C5C515.158E4E80
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAssembly.css
+
+A {
+	COLOR: #00ccff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #cccccc
+}
+A:hover {
+	TEXT-DECORATION: underline overline
+}
+A:active {
+	COLOR: #99ffcc
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #236282; FONT-SIZE: 10pt; =
+SCROLLBAR-HIGHLIGHT-COLOR: #003399; SCROLLBAR-SHADOW-COLOR: #505050; =
+COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #505050; SCROLLBAR-ARROW-COLOR: =
+#00ccff; SCROLLBAR-TRACK-COLOR: #084a6b; FONT-FAMILY: Verdana, Arial, =
+Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #000000; BACKGROUND-COLOR: =
+#084a6b; TEXT-ALIGN: center
+}
+.borda {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.bordaI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid
+}
+.bordaCor {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; =
+BACKGROUND-COLOR: #006699
+}
+.bordaCorI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid; BACKGROUND-COLOR: #006699
+}
+TR.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+TD.cab1 {
+	FONT-WEIGHT: bold; BACKGROUND: url(grafs/cab1.gif); COLOR: #00ccff; =
+HEIGHT: 32px; TEXT-ALIGN: center
+}
+TD.cab1a {
+	BACKGROUND: url(grafs/cab1a.gif) #006699; WIDTH: 27px
+}
+TD.pto1 {
+	FONT-WEIGHT: bold; HEIGHT: 40px; BACKGROUND-COLOR: #236282
+}
+TD.pe1 {
+	BACKGROUND: url(grafs/pe1.gif); HEIGHT: 18px
+}
+TD.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD.c66CC {
+	PADDING-RIGHT: 10px; BACKGROUND-COLOR: #0066cc; TEXT-ALIGN: right
+}
+HR {
+	COLOR: #00ccff; HEIGHT: 1px
+}
+H1 {
+	MARGIN-TOP: 1px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: =
+1px; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+H2 {
+	MARGIN-TOP: 0px; FONT-SIZE: xx-small; MARGIN-BOTTOM: 0px; FONT-FAMILY: =
+Verdana, Arial, Helvetica
+}
+H3 {
+	MARGIN-TOP: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; COLOR: #666666; =
+FONT-FAMILY: Verdana, Arial, Helvetica
+}
+P {
+	MARGIN: 10px 50px; TEXT-INDENT: 20pt; TEXT-ALIGN: justify
+}
+BLOCKQUOTE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; TEXT-ALIGN: justify
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 40pt; FONT-FAMILY: Verdana, Arial, =
+Helvetica
+}
+.asmcode {
+	BORDER-RIGHT: #236282 2px dotted; PADDING-RIGHT: 20px; BORDER-TOP: =
+#236282 2px dotted; PADDING-LEFT: 20px; FONT-SIZE: 14px; PADDING-BOTTOM: =
+20px; MARGIN: 10px 50px; BORDER-LEFT: #236282 2px dotted; COLOR: =
+#00ccff; PADDING-TOP: 20px; BORDER-BOTTOM: #236282 2px dotted; =
+FONT-FAMILY: "Courier new"; BACKGROUND-COLOR: #337292
+}
+OL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+UL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+
+------=_NextPart_000_0180_01C5C515.158E4E80--

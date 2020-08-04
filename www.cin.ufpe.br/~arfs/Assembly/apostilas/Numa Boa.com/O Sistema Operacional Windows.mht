@@ -1,0 +1,1040 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: =?Windows-1252?Q?O_Sistema_Operacional_Windows_-_oic=ECliS_=A9?=
+Date: Thu, 29 Sep 2005 16:38:10 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0080_01C5C514.2D5489E0";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1506
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/winControle.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- =A9sobMedida by vickiSoft 07.04.03 ver 1.0 --><!-- 03.08.03 ver 1.1 =
+- referElo --><HTML><HEAD><TITLE>O Sistema Operacional Windows - =
+oic=ECliS =A9</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1"><LINK=20
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAsse=
+mbly.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"oiciliS - Assembly para Iniciantes" name=3Ddescription>
+<META=20
+content=3D"tutorial, tutoriais, assembly, assembler, codigos =
+operacionais, opcodes, mneumonicos, sistema operacional"=20
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.2800.1515" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3><IMG height=3D32=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/iniA=
+ni.gif"=20
+      width=3D32 align=3DabsMiddle border=3D0> O SISTEMA OPERACIONAL =
+WINDOWS</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D20 align=3Dleft>
+        <TBODY>
+        <TR>
+          <TD align=3Dmiddle><A=20
+            =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/index.php"><IMG=20
+            height=3D57 alt=3D"Sil=EDcio Reverso"=20
+            =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif"=20
+            width=3D106 border=3D0></A>oic=ECliS =A9<BR>Assembly para=20
+            Iniciantes<BR>TEXTOS ACESS=D3RIOS<BR><FONT size=3D-2>(ver =
+1.1 de=20
+            03.08.03)</FONT> </TD></TR></TBODY></TABLE>
+      <P>Quando se pretende programar em Assembly =E9 essecial se =
+conhecer o=20
+      processador e o sistema operacional para os quais o execut=E1vel =
+se destina.=20
+      Neste texto abordaremos apenas o sistema operacional Windows.</P>
+      <P>O Windows assume o controle do computador praticamente desde o =
+instante=20
+      em que =E9 iniciado at=E9 o momento em que =E9 terminado. Uma =
+aplica=E7=E3o pode=20
+      rodar apenas com a permiss=E3o do Windows, com a assit=EAncia do =
+Windows e sob=20
+      o controle do Windows. =C9 deste modo que o Windows oferece a=20
+      previsibilidade e a consist=EAncia da interface com o usu=E1rio, =
+possui a=20
+      capacidade de (aparentemente) rodar diversos programas =
+simultaneamente (a=20
+      chamada multi-tarefa). Deveria oferecer maior robustez em casos de =
+falhas=20
+      mas, isto =E9 um cap=EDtulo a parte...</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> O CONTROLE TOTAL DO =
+WINDOWS</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Em resumo, o sistema operacional Windows "sequestra" a sua =
+m=E1quina,=20
+      controlando tudo o que for poss=EDvel:</P>
+      <UL>
+        <LI>Hardware=20
+        <LI>Aplicativos=20
+        <LI>Microprocessador=20
+        <LI>Mem=F3ria e Dados=20
+        <LI>Interface do usu=E1rio=20
+        <LI>Arquivos </LI></UL></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Controle do Hardware <IMG height=3D12 =
+
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>A maioria dos microchips que trabalham com a unidade central de =
+
+      processamento (CPU) s=E3o program=E1veis. Por exemplo, a placa de =
+v=EDdeo=20
+      precisa ser informada do scan rate, resolu=E7=E3o e cores =
+corretos. Os chips=20
+      de entrada/sa=EDda da impressora precisam ser conhecer a porta =
+normalmente=20
+      utilizada e a que velocidade os dados devem ser transferidos. Os =
+chips do=20
+      teclado devem conhecer a taxa de repeti=E7=E3o que devem usar. A =
+comunica=E7=E3o=20
+      com estes dispositivos precisa ser controlada =96 cada um ter=E1 =
+sua pr=F3pria=20
+      =E1rea de mem=F3ria e precisam ser informados do que se espera e =
+quando. O=20
+      Windows realiza todas estas tarefas b=E1sicas, como qualquer outro =
+sistema=20
+      operacional.</P>
+      <P>Mas o Windows tamb=E9m assume o controle total da escrita e da =
+leitura=20
+      destes dispositivos, o que pode ser uma grande vantagem para o=20
+      programador.</P>
+      <P>Por exemplo, para imprimir um documento, o aplicativo precisa =
+apenas=20
+      informar o Windows em que parte da mem=F3ria o documento se =
+encontra e qual=20
+      o seu tamanho. O Windows se encarrega da impress=E3o usando o =
+driver de=20
+      impress=E3o adequado para a impressora em uso e colocando a tarefa =
+na=20
+      posi=E7=E3o correta da fila de impress=E3o - a qual pode conter =
+outras tarefas=20
+      de impress=E3o de outros aplicativos. A tarefa de impress=E3o =E9 =
+sempre=20
+      efetuada no modo gr=E1fico. O Windows informa a impressora onde =
+cada ponto=20
+      de impress=E3o deve ser colocado no papel para formar a imagem =
+impressa. As=20
+      vantagens do programador do aplicativo s=E3o significantes - n=E3o =
+h=E1 a=20
+      necessidade de escrever drivers de impress=E3o nem algoritmos =
+gr=E1ficos.</P>
+      <P>O Windows faz um trabalho ainda melhor na tela do monitor, que =
+tamb=E9m=20
+      sempre est=E1 no modo gr=E1fico. O Windows atende v=E1rios =
+aplicativos=20
+      simultaneamente e =E9 capaz de colocar diversas janelas na tela, =
+algumas=20
+      delas sobrepostas. Sua tarefa =E9 criar a imagem final e de =
+gerenciar cada=20
+      uma das janelas respeitando a prioridade, a ordem na tela, tipo e =
+o estilo=20
+      de cada uma delas. Uma boa parte do trabalho de programa=E7=E3o =
+consiste em=20
+      aplicar estes fatores ao programa e obter uma sa=EDda correta para =
+a=20
+      tela.</P>
+      <P>Em resumo: o Windows controla todo o hardware dos perif=E9ricos =
+e impede=20
+      (ou deveria impedir) o acesso direto a eles atrav=E9s de =
+aplicativos.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Controle dos Aplicativos <IMG =
+height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O que acontece quando se clica o =EDcone de um programa? O =
+Windows sabe=20
+      exatamente a posi=E7=E3o do clique e qual o =EDcone que se =
+encontra no campo do=20
+      cursor do mouse. Tamb=E9m sabe, atrav=E9s da sua lista de =
+"atalhos" e=20
+      "propriedades", qual programa deve ser iniciado quando este =
+=EDcone em=20
+      particular for clicado.</P>
+      <P>Para iniciar o programa, o Windows carrega o programa lendo o =
+arquivo=20
+      correspondente e colocando-o na mem=F3ria. Depois, o Windows =
+simplesmente=20
+      chama este programa, ou seja, informa o processador para ir =
+executando=20
+      todas as instru=E7=F5es a partir do endere=E7o inicial do programa =
+at=E9 encontrar=20
+      uma instru=E7=E3o RET. Ap=F3s o RET, termina o programa e volta ao =
+sistema=20
+      operacional.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Controle do Microprocessador <IMG =
+height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Ao iniciar um programa, o registrador EIP do processador recebe =
+do=20
+      Windows o endere=E7o inicial do programa. O Windows tamb=E9m =
+controla todos os=20
+      valores dos registradores do processador mantendo-os numa =E1rea =
+de mem=F3ria=20
+      chamada de contexto de registradores. O Windows pode (e o faz com=20
+      frequ=EAncia) parar o processador, armazenar os valores contidos =
+nos=20
+      registradores e solicitar que o processador rode um programa =
+diferente por=20
+      algum tempo, ou seja, fornece a outro programa uma fatia de tempo. =
+
+      Terminando o segundo programa, o Windows reconstitui os valores=20
+      armazenados e continua executando o primeiro programa a partir do =
+ponto de=20
+      interrup=E7=E3o</P>
+      <P>=C9 desta forma que funciona a multi-tarefa do Windows. Cada um =
+dos=20
+      programas que estiver sendo executado recebe uma fatia de tempo - =
+o=20
+      processador =E9 rateado entre todos eles. Em m=E1quinas com apenas =
+uma CPU, o=20
+      usu=E1rio tem a impress=E3o de que os programas s=E3o executados=20
+      simultaneamente. O Windows faz o rateio de tempo de acordo com =
+v=E1rias=20
+      prioridades. Por exemplo, opera=E7=F5es de leitura e escrita em =
+disco possuem=20
+      prioridades muito altas e podem bloquear a execu=E7=E3o de outros =
+programas=20
+      at=E9 que sejam finalizadas.</P>
+      <P>Um programa pode pedir ao Windows para que inicie uma nova =
+linha de=20
+      execu=E7=E3o (thread). Neste caso, o Windows atribuir=E1 a este =
+thread suas=20
+      pr=F3prias fatias de tempo, seus pr=F3prios valores de =
+registradores e sua=20
+      pr=F3pria pilha. A nova linha de execu=E7=E3o parece estar sendo =
+executada ao=20
+      mesmo tempo que o thread principal do programa. Isto =E9 muito =
+=FAtil quando=20
+      um programa precisar dar continuidade a uma determinada tarefa, =
+por=20
+      exemplo um c=E1lculo muito longo, e, ao mesmo tempo, manter a =
+interface do=20
+      usu=E1rio ativa. Isto =E9 chamado de multi-threading.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Controle de Mem=F3ria e Dados <IMG =
+height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Num dado momento, um programa pode ter todos os seus dados na =
+mem=F3ria.=20
+      Estes s=E3o mantidos na mem=F3ria que foi estabelecida por =
+endere=E7amento=20
+      direto ou ent=E3o na pilha. Como o Windows preserva estes dados =
+quando=20
+      ratear o tempo entre v=E1rios programas?</P>
+      <P>=C9 que o Windows mant=E9m um mapa de mem=F3ria de todos os =
+dados de=20
+      programas, ou seja, o Windows tem conhecimento do local exato dos =
+dados de=20
+      programas na mem=F3ria f=EDsica do computador. Este mapa de =
+mem=F3ria =E9 mantido=20
+      numa =E1rea de mem=F3ria chamada de contexto de mem=F3ria. Se a =
+mem=F3ria f=EDsica=20
+      come=E7ar a se esgotar, o Windows passa a usar o disco r=EDgido =
+para armazenar=20
+      os dados de programas. Isto explica porque, em sistemas com pouca =
+mem=F3ria,=20
+      a atividade de disco =E9 muito maior que em sistemas com mais =
+mem=F3ria=20
+      f=EDsica. Esta mem=F3ria em disco =E9 chamada de mem=F3ria =
+virtual.</P>
+      <P>Quando um programa precisar acessar seus dados, ele o faz =
+usando um=20
+      endere=E7o virtual. Isto significa que o endere=E7o da =E1rea de =
+mem=F3ria na=20
+      verdade n=E3o =E9 o mesmo que o endere=E7o dos dados na mem=F3ria =
+f=EDsica. O=20
+      Windows informa o processador onde as =E1reas de mem=F3ria =
+requeridas se=20
+      encontram realmente fornecendo o endere=E7o da sua tabela de =
+mapeamento de=20
+      p=E1ginas ao programa atrav=E9s do registrador CR3.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Controle da Interface do Usu=E1rio =
+<IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O Windows possui uma interface de usu=E1rio consistente e =
+largamente=20
+      difundida e utilizada. As vantagens de uma interface padronizada =
+s=E3o=20
+      =F3bvias - uma delas =E9 que independentemente do programa que =
+esteja sendo=20
+      executado, o usu=E1rio se sente "em casa".</P>
+      <P>O Windows adquiriu esta uniformidade porque fornece componentes =
+padr=E3o=20
+      que podem ser inclu=EDdos nos programas. Exemplos disso s=E3o os =
+menus que=20
+      aparecem sob a barra de t=EDtulo das janelas, di=E1logos, =
+bot=F5es, barras de=20
+      rolagem e arquivos de ajuda padronizados. O conjunto de =
+componentes padr=E3o=20
+      =E9 denominado de GUI ou Graphical User Interface.</P>
+      <P>Os aplicativos podem fazer uso destes componentes padr=E3o =
+fazendo uma=20
+      chamada a uma API (Applications Programming Interface). As APIs =
+cont=E9m=20
+      procedimentos (ou fun=E7=F5es) que podem ser chamadas por um nome =
+e que=20
+      fornecem o componente desejado. Todas as APIs s=E3o armazenadas em =
+arquivos=20
+      chamados DLL ou Dynamic Linked Library. Na verdade, as DLLs s=E3o=20
+      execut=E1veis com a extens=E3o .dll que cont=E9m fun=E7=F5es =
+nominadas que podem ser=20
+      exportadas (ou seja, um aplicativo importa fun=E7=F5es).</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1 align=3Dright>Controle de Arquivos <IMG height=3D12 =
+
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+a.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>O Windows mant=E9m registros de todos os arquivos vitais ao =
+sistema e de=20
+      drivers de dispositivos perif=E9ricos. Para isto usa o Registry, =
+uma base de=20
+      dados com informa=E7=F5es sobre a configura=E7=E3o do sistema e =
+dos aplicativos=20
+      que devem rodar neste sistema. Al=E9m disso, mant=E9m o registro =
+de todas as=20
+      pastas (diret=F3rios) com seus respectivos conte=FAdos para que =
+possam ser=20
+      localizados quando solicitados.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> A COMUNICA=C7=C3O =
+SISTEMA-APLICATIVO</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Como vimos, o sistema Windows controla todos os aspectos =
+importantes do=20
+      computador e dos aplicativos que estejam rodando. Para que este =
+controle=20
+      cerrado possa ser mantido =E9 necess=E1rio haver um <B>sistema de=20
+      comunica=E7=E3o</B> entre o sistema e os aplicativos.</P>
+      <P>Um aplicativo tem necessidade de se comunicar com o sistema =
+quando=20
+      quiser obter alguma informa=E7=E3o da GUI, por exemplo, o tamanho =
+de uma=20
+      janela em particular ou o tamanho de uma string numa determinada =
+fonte. O=20
+      mesmo acontece quando o aplicativo necessitar de algum recurso da =
+API,=20
+      pois precisa informar com exatid=E3o como este recurso deve ser=20
+aplicado.</P>
+      <P>Os m=E9todos mais comuns usados por aplicativos para se =
+comunicarem com o=20
+      sistema s=E3o:</P>
+      <UL>
+        <LI>Dados na pilha: antes de fazer uma chamada a uma API, =E9 =
+necess=E1rio=20
+        colocar na pilha, utilizando PUSH, os dados exigidos pela API. =
+Os dados,=20
+        na maioria das vezes, s=E3o valores dword. Em alguns casos podem =
+ser=20
+        ponteiros de estruturas que contenham mais dados ou ponteiros de =
+strings=20
+        de texto.=20
+        <LI>Mensagens: pode-se enviar mensagens ao sistema chamando a =
+fun=E7=E3o=20
+        <I>SendMessage</I> da API. Na realidade, a mensagem =E9 um dword =
+colocado=20
+        na pilha e que pode ser acompanhado por at=E9 3 dwrods de dados=20
+        adicionais. </LI></UL>
+      <P>O sistema tamb=E9m precisa se comunicar com o aplicativo para =
+fornecer o=20
+      resultado de uma chamada =E0 API ou para informar o aplicativo de =
+que algo=20
+      est=E1 acontecendo na GUI ou que algo importante est=E1 ocorrendo =
+com o=20
+      pr=F3prio sistema.</P>
+      <P>Os m=E9todos mais comuns de comunica=E7=E3o entre o sistema e =
+um aplicativo=20
+      s=E3o:</P>
+      <UL>
+        <LI>Retornando de uma API, o sistema geralmente p=F5e um valor =
+no=20
+        registrador EAX que representa o resultado da chamada.=20
+        <LI>Em alguns casos, retornando de uma API, o sistema deixa =
+dados na=20
+        mem=F3ria, num local especificado pelo programa quando fez a =
+chamada =E0=20
+        API. Este local deve ter sido especificado pelo aplicativo =
+PUSHando um=20
+        ponteiro para a pilha antes da chamada =E0 API.=20
+        <LI>Mensagens do sistema para o aplicativo. Quando isto ocorre, =
+o=20
+        sistema tamb=E9m envia dados para a pilha. O sistema precisa ter =
+sido=20
+        avisado pelo aplicativo do endere=E7o no seu c=F3digo que =
+corresponde ao=20
+        procedimento que gerencia este tipo de chamada. Este =
+procedimento =E9=20
+        chamado de procedimento "callback" (chamada de retorno), =
+"windows=20
+        procedure" (procedimento windows) ou simplesmente "WndProc". =
+</LI></UL></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> MANIPULADORES E =
+CONTEXTOS DE=20
+      DISPOSITIVO</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Todos os "objetos" com os quais o Windows trabalha possuem=20
+      manipuladores (handles). Estes objetos podem ser janelas, =
+controles,=20
+      menus, di=E1logos, processos, threads, =E1reas de mem=F3ria, =
+displays,=20
+      impressoras, arquivos, drives de disco e at=E9 fontes, brushes e =
+pens usados=20
+      para desenhar e escrever. Um manipulador =E9 um valor dword que =
+pode ser=20
+      requisitado pelo aplicativo. Uma vez obtido, este manipulador =E9 =
+utilizado=20
+      pelo aplicativo para se comunicar com o Windows e solicitar seu =
+uso ou=20
+      modifica=E7=F5es.</P>
+      <P>Todos os dispositivos que mostram ou produzem uma sa=EDda =
+possuem=20
+      contextos de dispositivo. O contexto de dispositivo =E9 uma =E1rea =
+de mem=F3ria,=20
+      mantida pelo Windows, que cont=E9m informa=E7=E3o sobre como o =
+dispositivo deve=20
+      mostrar sua sa=EDda. Portanto, uma janela em particular ter=E1 um =
+contexto de=20
+      dispositivo que conter=E1 informa=E7=F5es sobre a fonte e a cor =
+que devem ser=20
+      usadas para qualquer coisa que for desenhada ou escrita nesta =
+janela. Uma=20
+      impressora ter=E1 um contexto de dispositivo contendo as =
+caracter=EDsticas da=20
+      impressora, tamanho do papel, cores dispon=EDveis e assim por =
+diante.</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> TIPOS DE =
+EXECUT=C1VEIS</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Um "execut=E1vel" =E9 um arquivo que cont=E9m c=F3digo que pode =
+ser executado=20
+      pelo processador. Como iniciante s=F3 =E9 preciso conhecer dois =
+tipos: os=20
+      arquivos com extens=E3o .exe (aplicativos) e os arquivos com =
+extens=E3o .dll=20
+      (dynamic link library).</P>
+      <P>Para poder ser executado pelo Windows, um arquivo execut=E1vel =
+precisa=20
+      estar no formato PE (Portable Executable). Como o nome sugere, =
+este tipo=20
+      de arquivo possui portabilidade de modo que pode ser executado em=20
+      computadores tanto com processadores Intel, MIPS, Alpha, Power PC, =
+
+      Motorola 68000, assim como RISC. =C9 claro que, independentemente =
+do tipo de=20
+      processador, o sistema operacional precisa ser Windows e o =
+vers=E3o do=20
+      formato PE precisa corresponder ao processador utilizado.</P>
+      <P>O Windows sabe que o execut=E1vel =E9 um arquivo PE devido =E0 =
+presen=E7a da=20
+      assinatura "PE" logo no in=EDcio do arquivo. Um arquivo n=E3o-PE, =
+por exemplo=20
+      um execut=E1vel DOS, n=E3o possui esta assinatura e o Windows =
+precisa tomar=20
+      outras provid=EAncias para rod=E1-lo.</P>
+      <P>Uma Dll =E9 usada quando seu c=F3digo ou seus dados precisam =
+ser=20
+      compartilhados por diversos aplicativos. O Windows usa Dlls para =
+armazenar=20
+      o c=F3digo da sua API. Uma Dll possui exporta=E7=F5es. Isto reduz =
+sensivelmente=20
+      o tamanho de cada exe porque, quando precisarem do c=F3digo, =
+recorrem =E0 Dll.=20
+      Um campo de grande import=E2ncia num arquivo PE =E9 a lista de =
+importa=E7=E3o.=20
+      Esta =E9 uma lista das fun=E7=F5es das quais o Exe depende e que =
+poder=E1 chamar=20
+      quando estiver sendo executado. Esta lista tamb=E9m possui o nome =
+da Dll que=20
+      cont=E9m a fun=E7=E3o. Ao carregar o Exe, o Windows checa se todas =
+as fun=E7=F5es e=20
+      todas as Dlls est=E3o dispon=EDveis. Se n=E3o estiverem =
+dispon=EDveis, o sistema=20
+      n=E3o roda o programa.</P>
+      <P>Diferentes vers=F5es do Windows possuem Dlls diferentes. Fica =
+claro que,=20
+      com toda a probabilidade, um programa escrito para rodar em Win98 =
+acabe=20
+      n=E3o rodando no WinNT. Para evitar este problema pode-se utilizar =
+a fun=E7=E3o=20
+      da API <I>GetVersionEx</I>, a qual determina a vers=E3o atual do =
+Windows, e,=20
+      de posse desta informa=E7=E3o, chamar a API correta. S=F3 que h=E1 =
+um detalhe: se=20
+      a API for chamada do modo usual, a Dll entra na lista de =
+importa=E7=E3o e, se=20
+      n=E3o estiver presente, o arquivo n=E3o =E9 executado. Contorna-se =
+este problema=20
+      utilizando a fun=E7=E3o da API <I>LoadLibrary</I> (que carrega a =
+Dll desejada=20
+      se j=E1 n=E3o tiver sido carregada) e <I>GetProcAddress</I> (que =
+acha o=20
+      endere=E7o na Dll da fun=E7=E3o desejada).</P>
+      <P>Assim como o Windows usa Dlls, tamb=E9m =E9 poss=EDvel escrever =
+Dlls que=20
+      acompanham um aplicativo composto de mais de um programa. Desta =
+forma, os=20
+      programas podem compartilhar o c=F3digo e os dados existentes na =
+Dll. Existe=20
+      mais um caso no qual o uso de Dlls pode ser vantajoso: coloca-se =
+c=F3digo e=20
+      dados que precisam de manuten=E7=E3o frequente numa Dll. Ao =
+inv=E9s de ter que=20
+      atualizar todo o arquivo exe, trabalha-se com um arquivo menor e=20
+      "segregado", o que facilita a manuten=E7=E3o.</P><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 width=3D650 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dmeio1><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+.gif"=20
+      width=3D115 border=3D0> MAIS SOBRE O SISTEMA WINDOWS</TD></TR>
+  <TR>
+    <TD class=3Dmeio1>
+      <P>Se o que voc=EA leu at=E9 agora foi entendido e quiser saber =
+mais sobre o=20
+      sistema operacional Windows, encare um texto de n=EDvel =
+intermedi=E1rio e leia=20
+      <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/wi=
+nSys.php">O=20
+      Sistema Windows 32 Bits</A>.</P></TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3D#236282><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+a.gif"=20
+      width=3D115 border=3D0></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3>Localizador</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1 align=3Dmiddle>
+      <SCRIPT language=3DJavaScript>=0A=
+function setFontSize(fontVal) {=0A=
+var fontSet =3D document.getElementById('fontSet');=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('table');=0A=
+if (!fontVal) {fontVal =3D document.getElementById('fontSet').value;}=0A=
+var docSize =3D fontVal+'pt';=0A=
+for(var i=3D0;i<docBase.length;i++)=0A=
+docBase[i].style.fontSize =3D docSize;=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('body');=0A=
+docBase[0].style.fontSize =3D docSize;=0A=
+docSize =3D (fontVal-2)+'pt';=0A=
+document.getElementById('xxpe').style.fontSize =3D docSize;=0A=
+if (fontSet) {fontSet.value =3D fontVal;}=0A=
+}=0A=
+</SCRIPT>
+
+      <DIV id=3Dxxpe style=3D"FONT-SIZE: 8pt">
+      <HR>
+
+      <CENTER>| <A href=3D"javascript:setFontSize(15)"><SPAN=20
+      style=3D"FONT-SIZE: 15pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(13)"><SPAN=20
+      style=3D"FONT-SIZE: 13pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(11)"><SPAN=20
+      style=3D"FONT-SIZE: 11pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(9)"><SPAN style=3D"FONT-SIZE: =
+9pt">A</SPAN></A>=20
+      | <A=20
+      onmouseover=3D"status=3D'A Aldeia onde as coisas acontecem =
+numaboa';return true"=20
+      href=3D"http://www.numaboa.com.br/index.php"><IMG height=3D15=20
+      alt=3D"P=E1gina Inicial" =
+src=3D"http://www.numaboa.com.br/img/haus2.png"=20
+      width=3D15 align=3Dbottom border=3D0></A> | <A=20
+      onmouseover=3D"status=3D'Saiba o que a Aldeia tem para =
+oferecer';return true"=20
+      title=3D"Mapa do site"=20
+      href=3D"http://www.numaboa.com.br/aldeia/index.php">Mapa do =
+Site</A> | <A=20
+      onmouseover=3D"status=3D'Fique por dentro das novidades';return =
+true"=20
+      title=3D"Novidades na Aldeia"=20
+      =
+href=3D"http://www.numaboa.com.br/aldeia/destaques.php">Novidades</A> | =
+<A=20
+      onmouseover=3D"status=3D'Procure na Aldeia';return true"=20
+      title=3D"Abre em nova janela"=20
+      href=3D"http://www.numaboa.com.br/portal/index.php" =
+target=3D_blank>Busca</A>=20
+      | <A onmouseover=3D"status=3D'Indique esta p=E1gina aos =
+amigos';return true"=20
+      title=3D"Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/indica.php?page=3D/informatica/=
+oiciliS/assembler/textos/winControle.php&amp;indica=3DoiciliS - Assembly =
+- Textos - O Sistema Operacional Windows"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Indique esta p=E1gina</A> | <A=20
+      onmouseover=3D"status=3D'Fale com a vov=F3 da Aldeia';return true" =
+
+      title=3D"webmaster - Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/contato.php?page=3D/informatica=
+/oiciliS/assembler/textos/winControle.php"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Mestre da Teia</A> | <A=20
+      onmouseover=3D"status=3D'Marcha-R=E9';return true" title=3D"Meia =
+volta voooolver"=20
+      href=3D"javascript:history.back()">Voltar</A> |<BR>| <A=20
+      =
+href=3D"http://www.numaboa.com.br/foot/localizador.php?file=3Dinfo.txt&am=
+p;page=3D/informatica/oiciliS/assembler/textos/winControle.php"=20
+      target=3D_blank>Localizador</A> || @ <A=20
+      href=3D"http://www.numaboa.com.br/informatica/">Info NumaBoa</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/">oic=ECliS</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/">Assembl=
+y</A>=20
+      &gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/">=
+Textos</A>=20
+      &gt; <B>O Sistema Operacional Windows</B>
+      <HR>
+      Cr=E9ditos: vov=F3 Vicki<BR><BR>webdesign sobMedida by vickiSoft - =
+
+      /informatica/oiciliS/assembler/textos/winControle.php (07.04.03) =
+vers=E3o=20
+      1.1 de 03.08.03<BR>Licen=E7a Creative Commons 1998-2005 Aldeia =
+NumaBoa<BR><!-- Creative Commons License -->Exceto onde especificamente=20
+      declarado, todo material deste site =E9 disponibilizado de acordo =
+com a <A=20
+      =
+href=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt"=20
+      target=3D_blank rel=3Dlicense>Licen=E7a Creative Commons</A>. <!-- =
+/Creative Commons License --><!--=0A=
+<rdf:RDF xmlns=3D"http://web.resource.org/cc/"=0A=
+xmlns:dc=3D"http://purl.org/dc/elements/1.1/"=0A=
+xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#">=0A=
+<Work rdf:about=3D"">=0A=
+<dc:type rdf:resource=3D"http://purl.org/dc/dcmitype/Text" />=0A=
+<license =
+rdf:resource=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/" />=0A=
+</Work>=0A=
+=0A=
+<License =
+rdf:about=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/">=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Reproduction" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Distribution" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Notice" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Attribution" />=0A=
+<prohibits rdf:resource=3D"http://web.resource.org/cc/CommercialUse" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/DerivativeWorks" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/ShareAlike" />=0A=
+</License>=0A=
+</rdf:RDF>=0A=
+--></CENTER></DIV></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/iniAni.gif
+
+R0lGODlhIAAgAOIAADMAZv///wAAAP//AGYz//9mM/+ZZgAAACH/C05FVFNDQVBFMi4wAwEAAAAh
++QQJFAAAACwAAAAAIAAgAAIDQwi63P4wykmrvTjrzbu/QRh8i2iO3nl2qsq1qwa72RyD9l3lOsWb
+mJ8oKERZisZdkShk/mpPKG8zpeZYsw+MpAByPQkAIfkECRQAAAAsBgAIABEAGAACA0UIutGxELr5
+oqLU4iZEi1vgfUw4kkAoTpeJpeobd6w40g7+cN2Zj7CYbSesbXyO4ASZVHI2JV5I8oRSV9ZrFrS1
+KL3gcAIAIfkECRQAAAAsBgAQABEAEAACA0EIujA+LK73ohCTVoDDVc4lVEIABB42XKnDmWjKoiJ7
+xnNJ63dM+z4F0DM0CXG6IQNXNC6YRUkTJTkqq88YdltNAAAh+QQJFAAAACwGABAAEQAQAAIDQQi6
+MD4srveiEJNWgMNVziVUQgAEHjZcqcOZaMqiInvGc0nrd0z7PgXQMzQJcbohA1c0LphFSRMlOSqr
+zxh2W00AACH5BAkUAAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXrZ+WSAyk6CMDGx
+5sgzIABBDcczQYDXw8WKFCGxeAwwj8uiUzilRp09rHZ4zW650eaXgaWOydOvM6LGZtoshTZOXyQA
+ACH5BAkUAAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXoacz4L1Z7SKQgTM8sYIAAB
+fc2+hyDA6/lmRsqwaEQGmkim8TmkVqXPXnZLxGq5XakTzMhWyWUq+BlZZzPuzGIrr0MSACH5BAkU
+AAAALAYACQARABcAAgNXCLo6wxA6F+O8tV1CXKnXwHmfFXoacz4L1Z7SKQgTM8sYIAABfc2+hyDA
+6/lmRsqwaEQGmkim8TmkVqXPXnZLxGq5XakTzMhWyWUq+BlZZzPuzGIrr0MSACH5BAkUAAAALAYA
+CQASABcAAgNeCLo6wzA6B00EMysrMyFOcWEeOHBXlonNs6gUwMWtusywIEyQnmsAgSKwy+iKD0Fg
+SCzqmhQls/kMUJ/TplW55WatRLB4+Q2PydnqGQLmrtnbs/UiB48A9ftCrO9DEgAh+QQJFAAAACwG
+AAkAEgAXAAIDXgi6OsMwOgdNBDMrKzMhTnFhHjhwV5aJzbOoFMDFrbrMsCBMkJ5rAIEisMvoig9B
+YEgs6poUJbP5DFCf06ZVueVmrUSwePkNj8nZ6hkC5q7Z27P1IgePAPX7QqzvQxIAOw==
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif
+
+R0lGODlhagA5APcAAFqvsWrJ0Gu+02XDxnO342G7vlabsV0W/msX/0mLkDMpaTNaZVGYoFKKs3q0
+8ncY/UN4hYgZ+ggJEVekrjgld0pinGWRylJ8pkAkh2tX03GY21p+uREPJluSvi8NZmavyRgrMUg0
+nXaT5zNJZVsS6z8TlzgMfkJkhSsrVzlfcGZ8yTw9gCUMSUYRqS49Xmyv13V542lm1UwUu1Y8wSEz
+Qmc87VdmsxcJQUBPhE1MnCtPVUwQygAAAFcZ2lJRtnk/6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADwALAAAAABqADkA
+AAj+AHkIHEiwoEGDHBIYuHCChoSDECNKnEixosWLJwAAMDChQ4cRDy+KHEmypEQOGjV2tGBhAwiT
+MGPKjHghJYACH3Jq0OBips+fJHHYZFChgwUCBByIUAC0qdODKFMySHBhgw0VMEQ4cPDyqVegHBhM
+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
+jjRfr5YZf6QDIMCIPBAQAAA7
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1.gif
+
+R0lGODlhcwAMAPcAAAAAABg5SiFSYzFrjDmMta3nKcbGAP//xv//////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH5BAEAAAUALAAAAABzAAwA
+AAjRAAMAGDiwgMGDCBMqXMiwocOHDAlKnEixokUABQIQGMBRAEaIIEOKHFkAAIGTKFOqXMkS5YED
+GDVy7PiRpM2bIWXO3Mmzp8+dBoLG3LjTI86jSBPq/Mm06YCgQjMSLRqgqtWrWLNq3cq1q9eqU4sK
+GEu2rNmzZ4cOqLqzpdu3cOPKVenT48W7F6UGeBnAqd+/gAP7FRAg6UKrBwz0Fcy4sWOehA0f3sj2
+seXLg2tKRrgUs+fPM41uVqgRrenTqFOrXm268GjSX2PLnk2b6+uFAQEAOw==
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1a.gif
+
+R0lGODlhcwAMALMAAABrCAhKaxg5SiFSYyFjhDJvjjmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzAAwAAASdEKlJq734os27/2AojmRoCZKhrmzrvq1SznRtb8pQ7Aaq
+7MCgcEgc9m7IpC0XPP6K0KgRpaxaO8ymb8Dter/gMLEnKJvP6LR6zW67BTqhM0OvZ+WwvH7P77OC
+ZQVHVx9wUoeIiYqHAgcHAoOEHoaLlZaXQgIFj2WSIHeYoaJRgZGeWHGjqqtapyBwYbGys7S1tmGm
+rhxvvL2+v20RAAA7
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+MEgpqr046827/2CITYFgGINQmEW6nnAsz3Rt33iu08LE
+uj8Vq0AsGo/IpHLJbDqfxhTF0BJSgVSodsuFDgbHbxhclAZfVXTry2673/C4fE5vZ4mDxIHcSgD4
+eXtlFVdWaUN8XYqLTHctB3tZAwB/kpADkoRYh5KMnp9HjmsnZZh3X6RVApubeKCvijFIqUW0RLQp
+FWitrrC+T6KgubuGUb/HS8HCFoVqxsjQtUh11LnNQ2HR0cG5Ih6cSonasNwCCOfo6err66vFSeLj
+n+Xs9fbputjw8uTT5vcA2b0Lxw8UvYAI8ekLt6Ohw4b+Eko8t7BgwRQTJ1a0OA5jRokYq6qJHEly
+5L+PCRWoXKnSm8uXMCugnBgBADs=
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2a.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+EMlJq71X6M27/2AojuFQFIaArWw2vHAsz3Rt3/h9pm3P
+CqaTcEgsGo/IpHLJ8zkpwKV0Sq0im09nlGjoer/gsHhMLoODyZQq69sODda4vIg+pgpr9q++m/vn
+fFwCeHl6LkVwf4pVgUJ3QIWGUIGJi5ZLjSiDUSSdG5SXoUqNjyZqOaigoqtGlJumn6yVrLQnfKWa
+hJl+s7W0dbiPGmhdXL3Fxsi+vsSvuZBbXS+OBtM71bfL2rY7zqWnOwMHB0HVAADlAxLA28vl3vBu
+4gloAwD0Qur4jqn9/v81uuGBNVBTADcFrOXjo7Bdu2DwAhzc5bBiGngFU0g8aKajx48WIEOGxAik
+i4CNBz2pXMmypUsRKANEAAA7
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/haus2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAF7D1XuAAAABlBMVEUAAACCkb4DVVPxAAAAAXRS
+TlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAQlJREFUeNoB/gAB/wAAAAAAAAAAAAAAAQAA
+AQABAAABAAEAAAABAAAAAAEAAAEAAAAAAQAAAAAAAAABAQAAAQAAAQAAAAABAAAAAQEAAQEBAAAA
+AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAQABAAAAAAAAAQAAAAEAAQEAAAAAAAABAAAAAQAA
+AAEBAAAAAAEBAAAAAAAAAAAAAQEAAAAAAQABAQAAAQEBAAEAAAAAAAEAAQEAAAEBAQABAAAAAAAB
+AQEBAQEBAQEBAQAAGqcAQv1LH7cAAAAASUVORK5CYII=
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/mailto.gif
+
+R0lGODdhDgAKAKIAAP////r7v+rrl8TFDKOkAH1+AElKAAAAACwAAAAADgAKAAADLWi63AQwynEM
+KCLrXEgFAraFgmdxm2iCpdhla8mpZRUQo0aYw+7/u8phSCwSEwA7
+
+------=_NextPart_000_0080_01C5C514.2D5489E0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAssembly.css
+
+A {
+	COLOR: #00ccff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #cccccc
+}
+A:hover {
+	TEXT-DECORATION: underline overline
+}
+A:active {
+	COLOR: #99ffcc
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #236282; FONT-SIZE: 10pt; =
+SCROLLBAR-HIGHLIGHT-COLOR: #003399; SCROLLBAR-SHADOW-COLOR: #505050; =
+COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #505050; SCROLLBAR-ARROW-COLOR: =
+#00ccff; SCROLLBAR-TRACK-COLOR: #084a6b; FONT-FAMILY: Verdana, Arial, =
+Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #000000; BACKGROUND-COLOR: =
+#084a6b; TEXT-ALIGN: center
+}
+.borda {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.bordaI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid
+}
+.bordaCor {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; =
+BACKGROUND-COLOR: #006699
+}
+.bordaCorI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid; BACKGROUND-COLOR: #006699
+}
+TR.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+TD.cab1 {
+	FONT-WEIGHT: bold; BACKGROUND: url(grafs/cab1.gif); COLOR: #00ccff; =
+HEIGHT: 32px; TEXT-ALIGN: center
+}
+TD.cab1a {
+	BACKGROUND: url(grafs/cab1a.gif) #006699; WIDTH: 27px
+}
+TD.pto1 {
+	FONT-WEIGHT: bold; HEIGHT: 40px; BACKGROUND-COLOR: #236282
+}
+TD.pe1 {
+	BACKGROUND: url(grafs/pe1.gif); HEIGHT: 18px
+}
+TD.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD.c66CC {
+	PADDING-RIGHT: 10px; BACKGROUND-COLOR: #0066cc; TEXT-ALIGN: right
+}
+HR {
+	COLOR: #00ccff; HEIGHT: 1px
+}
+H1 {
+	MARGIN-TOP: 1px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: =
+1px; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+H2 {
+	MARGIN-TOP: 0px; FONT-SIZE: xx-small; MARGIN-BOTTOM: 0px; FONT-FAMILY: =
+Verdana, Arial, Helvetica
+}
+H3 {
+	MARGIN-TOP: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; COLOR: #666666; =
+FONT-FAMILY: Verdana, Arial, Helvetica
+}
+P {
+	MARGIN: 10px 50px; TEXT-INDENT: 20pt; TEXT-ALIGN: justify
+}
+BLOCKQUOTE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; TEXT-ALIGN: justify
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 40pt; FONT-FAMILY: Verdana, Arial, =
+Helvetica
+}
+.asmcode {
+	BORDER-RIGHT: #236282 2px dotted; PADDING-RIGHT: 20px; BORDER-TOP: =
+#236282 2px dotted; PADDING-LEFT: 20px; FONT-SIZE: 14px; PADDING-BOTTOM: =
+20px; MARGIN: 10px 50px; BORDER-LEFT: #236282 2px dotted; COLOR: =
+#00ccff; PADDING-TOP: 20px; BORDER-BOTTOM: #236282 2px dotted; =
+FONT-FAMILY: "Courier new"; BACKGROUND-COLOR: #337292
+}
+OL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+UL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+
+------=_NextPart_000_0080_01C5C514.2D5489E0--

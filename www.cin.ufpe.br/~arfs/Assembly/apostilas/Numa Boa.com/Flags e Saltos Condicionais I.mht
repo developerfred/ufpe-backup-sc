@@ -1,0 +1,791 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: =?Windows-1252?Q?Flags_e_Saltos_Condicionais_I_-_oic=ECliS_=A9?=
+Date: Thu, 29 Sep 2005 16:39:05 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0095_01C5C514.4EB575E0";
+	type="text/html"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1506
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/flagJmp1.php
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- =A9sobMedida by vickiSoft 10.04.03 ver 1.0 --><!-- 01.08.03 ver 1.1 =
+- referElo --><HTML><HEAD><TITLE>Flags e Saltos Condicionais I - =
+oic=ECliS =A9</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1"><LINK=20
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAsse=
+mbly.css"=20
+type=3Dtext/css rel=3Dstylesheet>
+<META content=3D"oiciliS - Assembly - Flags e Saltos Condicionais"=20
+name=3Ddescription>
+<META=20
+content=3D"tutorial, tutoriais, assembly, assembler, flags, saltos =
+condicionais, jump, jmp"=20
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.2800.1515" name=3DGENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3><IMG height=3D32=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/inte=
+rAni.gif"=20
+      width=3D32 align=3DabsMiddle border=3D0> FLAGS E SALTOS =
+CONDICIONAIS I</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <TABLE cellSpacing=3D20 align=3Dleft>
+        <TBODY>
+        <TR>
+          <TD align=3Dmiddle><A=20
+            =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/index.php"><IMG=20
+            height=3D57 alt=3D"Sil=EDcio Reverso"=20
+            =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif"=20
+            width=3D106 border=3D0></A>oic=ECliS =A9<BR>Assembly =
+Intermedi=E1rio<BR>TEXTOS=20
+            ACESS=D3RIOS<BR><FONT size=3D-2>(ver 1.1 de 02.08.03)</FONT> =
+
+        </TD></TR></TBODY></TABLE>
+      <P>A tradu=E7=E3o literal de "flag" =E9 bandeira. N=E3o =E9 =E0 =
+toa que as "flags" do=20
+      processador receberam este nome: funcionam como sinalizadores. Vou =
+manter=20
+      o nome flag e n=E3o usar algum tipo de tradu=E7=E3o porque esta =
+denomina=E7=E3o j=E1=20
+      foi incorporada ao "comput=EAs" do Brasil e n=E3o vale a pena =
+discutir ou=20
+      mudar um h=E1bito.</P>
+      <P>As flags s=E3o apenas um bit de mem=F3ria e se localizam dentro =
+do=20
+      processador. Como cada flag =E9 apenas um bit, num dado momento =
+elas s=F3=20
+      podem ser 1 ou 0 ("setada" ou "zerada"). Existem seis flags usadas =
+para=20
+      indicar o resultado de certas instru=E7=F5es. Algumas =
+instru=E7=F5es como CMP,=20
+      TEST e BT n=E3o fazem outra coisa a n=E3o ser alterar algumas =
+destas flags.=20
+      Outras instru=E7=F5es realizam outras opera=E7=F5es al=E9m de =
+alterar algumas das=20
+      flags. Algumas instru=E7=F5es simplesmente n=E3o alteram as flags. =
+Na descri=E7=E3o=20
+      dos mneum=F4nicos das instru=E7=F5es geralmente s=E3o citadas as =
+flags que s=E3o=20
+      alteradas.</P>
+      <P>Um uso comum das flags =E9 o de desviar a execu=E7=E3o para um =
+ponto em=20
+      particular do c=F3digo usando instru=E7=F5es de salto condicinal. =
+Estas=20
+      instru=E7=F5es far=E3o o salto ou n=E3o dependendo do estado de =
+uma ou mais flags.=20
+      Apenas cinco das flags podem ser usadas deste modo - zero, sinal, =
+carry,=20
+      overflow e paridade. A sexta flag (carry auxiliar) e a s=E9tima =
+flag (flag=20
+      de dire=E7=E3o) s=E3o lidas por outro tipo de instru=E7=E3o. A =
+seguir est=E3o=20
+      informa=E7=F5es adicionais a respeito das cinco flags que podem =
+ser usadas por=20
+      saltos condicionais:</P></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> Z (flag zero)</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Est=E1 setada (possui valor 1) se o resultado for zero. Se, =
+depois de uma=20
+      instru=E7=E3o aritm=E9tica, o n=FAmero deixado no registrador ou =
+na =E1rea de=20
+      mem=F3ria objeto da instru=E7=E3o for zero ent=E3o a flag =E9 =
+setada. Geralmente s=F3=20
+      =E9 preciso fazer uma simples compara=E7=E3o de dois valores sem =
+alter=E1-los.=20
+      Neste caso, pode-se usar a instru=E7=E3o CMP. CMP imita um SUB sem =
+alterar os=20
+      valores passados como operandos. Por exemplo:</P><PRE =
+class=3Dasmcode>CMP EAX,33h      ;flag zero =3D 1 se eax =3D 33h, mas =
+n=E3o altera eax
+SUB EAX,33h      ;flag zero =3D 1 se eax =3D 33h (eax diminui em 33h)
+CMP EAX,EDX      ;flag zero =3D 1 se eax =3D edx
+CMP EAX,[VALOR]  ;flag zero =3D 1 se eax =3D o n=FAmero em VALOR
+</PRE>
+      <P>A flag zero tamb=E9m pode ser usada para mostrar o resultado de =
+uma=20
+      contagem crescente ou decrescente, por exemplo:</P><PRE =
+class=3Dasmcode>DEC EAX		;flag zero =3D 1 se eax for zero depois da =
+instru=E7=E3o.
+		;flag zero =3D 0 se eax for diferente de zero.
+INC EAX		;flag zero =3D 1 se eax for zero depois da instru=E7=E3o.
+		;flag zero =3D 0 se eax for diferente de zero.
+</PRE>
+      <P>A flag zero tamb=E9m pode ser usada para controlar a =
+repeti=E7=E3o de=20
+      instru=E7=F5es de string, isto =E9, LODS, STOS e MOVS:</P><PRE =
+class=3Dasmcode>REPZ     ;repete a instru=E7=E3o string enquanto a flag =
+zero
+		estiver setada
+REPNZ    ;repete a instru=E7=E3o string enquanto a flag zero
+		estiver zerada
+</PRE>
+      <P>O retorno de uma API no Windows com frequ=EAncia indica que a =
+API falhou.=20
+      Portanto, tamb=E9m =E9 preciso checar com frequ=EAncia a =
+ocorr=EAncia deste=20
+      evento. Testando registradores voc=EA pode usar estas =
+alternativas:</P><PRE class=3Dasmcode>CMP EAX,0        ;ver se o =
+n=FAmero em eax =E9 zero
+		 ;(flag zero est=E1 setada)
+OR EAX,EAX       ;faz a mesma coisa mas usa 2 opcodes ao inv=E9s de 3
+TEST EAX,EAX     ;faz a mesma coisa e tamb=E9m s=F3 usa 2 opcodes
+</PRE>
+      <P>As vers=F5es de 16 e 8 bits das instru=E7=F5es testam apenas os =
+primeiros 16=20
+      ou 8 bits do registrador ou da =E1rea de mem=F3ria. Por =
+exemplo:</P><PRE class=3Dasmcode>CMP W[JOAO],0	;ver se os primeiros 16 =
+bits da mem=F3ria marcada
+		;como JOAO s=E3o zero
+CMP B[MARIA],0	;ver se os primeiros 8 bits da mem=F3ria marcada
+		;como MARIA s=E3o zero
+OR DX,DX	;ver se o registrador dx =E9 zero (16 bits)
+TEST DH,DH	;ver se o registrador dh =E9 zero (8 bits)
+SUB B[VALOR],2	;reduz os 8 bits em VALOR em 2
+		;(flag zero setada se for zero)
+DEC SI		;flag zero setada quando si for zero (16 bits)
+INC B[CONTA]	;flag zero setada quando os 8 bits de CONTA s=E3o zero
+</PRE>
+      <P>J=E1 que as flags s=E3o muito =FAteis para indicar se houve =
+retorno com=20
+      sucesso ou n=E3o de uma rotina, algumas vezes ser=E1 preciso =
+set=E1-las=20
+      diretamente. Para setar a flag zero pode-se usar:</P><PRE =
+class=3Dasmcode>CMP EAX,EAX      ;seta a flag zero sem alterar eax
+SUB EAX,EAX      ;seta a flag zero fazendo eax =3D 0
+CMP EAX,EDX      ;quando precisam ser diferentes, zera a flag zero
+OR EAX,EAX       ;quando eax n=E3o pode ser zero, zera a flag zero
+TEST EAX,EAX     ;mesmo efeito que OR EAX,EAX
+</PRE>
+      <P>Quando usada com TEST, a flag zero ser=E1 setada se o bit =
+testado for=20
+      zero.</P><PRE class=3Dasmcode>MOV ECX,1        ;p=F5e valor 1 em =
+ecx
+TEST ECX,1       ;a flag zero n=E3o =E9 setada
+CMP ECX,1        ;a flag zero =E9 setada
+MOV EDX,0     =20
+TEST EDX,1       ;a flag zero =E9 setada
+CMP EDX,1        ;a flag zero n=E3o =E9 setada
+MOV EBX,-1
+TEST EBX,-1      ;testa todos os 32 bits (flag zero zerada)
+CMP EBX,-1       ;ver se ebx =E9 -1 (flag zero setada)
+</PRE>
+      <P>A flag zero =E9 usada principalmente com as instru=E7=F5es de =
+salto=20
+      condicional JZ e JNZ, por exemplo:</P><PRE class=3Dasmcode>JZ =
+&gt;L10          ;salta para frente para L10 se flag zero =3D 1
+JNZ L1           ;salta para tr=E1s para L1 se flag zero =3D 0
+</PRE>
+      <P>A flag zero tamb=E9m =E9 utilizada com as instru=E7=F5es de =
+salto condicional=20
+      JA ("jump if above" - salte se acima), JB ("jump if below" - salte =
+se=20
+      abaixo) e instru=E7=F5es semelhantes.</P>
+      <P>Tamb=E9m pode ser usada em loops utilizando instru=E7=F5es =
+especiais ou=20
+      utilizando apenas a flag, por exemplo:</P><PRE class=3Dasmcode>L1:
+...              ;outro c=F3digo aqui
+CMP EDX,EAX
+LOOPZ L1         ;decrementa ecx, loop continua at=E9 que ecx =3D 0
+                 ;ou at=E9 que edx =3D eax (quando flag zero =3D 1)
+;*******
+L1:
+...              ;outro c=F3digo aqui
+CMP EDX,EAX
+LOOPNZ L1        ;decrementa ecx, loop continua at=E9 que ecx =3D 0
+                 ;ou at=E9 que edx faz not =3D eax (quando flag zero =3D =
+0)
+;*******
+L1:
+...              ;outro c=F3digo aqui
+CMP EDX,EAX
+JZ &gt;L10          ;salte para fora do loop quando edx=3Deax
+		 ;(flag zero =3D 1)
+LOOP L1          ;decrementa ecx, loop continua at=E9 que ecx =3D 0
+L10:
+;*******
+L1:
+...              ;outro c=F3digo aqui
+CMP EDX,EAX
+JNZ L1           ;loop continua at=E9 que edx =3D eax (flag zero =3D 1)
+</PRE></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dpto1><IMG height=3D12=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1=
+.gif"=20
+      width=3D115 align=3DabsMiddle border=3D0> S (flag de sinal)</TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1>
+      <P>Est=E1 setada se o bit mais significante (o bit mais =E0 =
+esquerda) do=20
+      resultado for 1. A posi=E7=E3o deste bit depende do tamanho do =
+dado. Num byte,=20
+      o bit mais significante =E9 o bit 7 (8=B0 bit dos bits 0 a 7); num =
+word =E9 o=20
+      bit 15 (16=B0 bit dos bits 0 a 15) e num dword =E9 o bit 31 (32=B0 =
+bit dos bits=20
+      0 a 31). Este bit estar=E1 setado se o resultado da instru=E7=E3o =
+for 80h ou=20
+      mais (para um byte), 8000h ou mais (para um word) ou 80000000h ou =
+mais=20
+      (para um dword). Note que em n=FAmeros com sinal, o bit mais =
+significante=20
+      indica se o n=FAmero =E9 negativo ou n=E3o.</P>
+      <P>A flag de sinal =E9 alterada por INC e DEC, que n=E3o alteram a =
+flag de=20
+      carry. Por isso pode ser muito =FAtil testar a flag de sinal em =
+loops. Por=20
+      exemplo:</P><PRE class=3Dasmcode>L0:
+;
+DEC ECX          ;reduz ecx em um
+JNS L0           ;loop de volta para L0 se ecx ainda n=E3o for -1
+</PRE>
+      <P>Seu uso tamb=E9m =E9 muito conveniente em fun=E7=F5es de =
+multi-a=E7=E3o, por=20
+      exemplo:</P><PRE class=3Dasmcode>MULTI_ACTION:    ;na entrada, al =
+guarda a a=E7=E3o desejada
+DEC AL           ;ver se al cont=E9m zero
+JS &gt;L0           ;sim
+DEC AL           ;ver se al cont=E9m um
+JS &gt;L1           ;sim
+DEC AL           ;ver se al cont=E9m dois
+JS &gt;L2           ;sim
+DEC AL           ;ver se al cont=E9m tr=EAs
+JS &gt;L3           ;sim
+DEC AL           ;ver se al cont=E9m quatro
+JS &gt;L4           ;sim
+</PRE>
+      <P>Usando a flag de sinal =E9 um jeito conveniente de ver se o bit =
+alto de=20
+      um registrador est=E1 setado ou zerado. V=E1rias insru=E7=F5es =
+setam a flag sem=20
+      alterar o registrador, por exemplo:</P><PRE class=3Dasmcode>OR =
+EDX,EDX       ;seta a flag de sinal se o bit alto de edx
+		 ;estiver setado
+CMP EDX,EDX      ;   - idem -
+TEST EDX,EDX     ;   - idem -
+OR CL,CL         ;seta a flag de sinal se o bit alto de cl
+		 ;estiver setado
+CMP CL,CL        ;   - idem -
+TEST CL,CL       ;   - idem -
+</PRE>
+      <P>Entretanto, ao checar =E1reas de mem=F3ria, pode-se apenas =
+endere=E7ar a=20
+      mem=F3ria uma vez por instru=E7=E3o. Desta forma, =E9 preciso usar =
+CMP, como por=20
+      exemplo:</P><PRE class=3Dasmcode>CMP B[DATA44],0		;seta a flag de =
+sinal se o 8=B0 bit de
+			;DATA44 estiver setado
+CMP W[DATA44],0		;seta a flag de sinal se o 16=B0 bit de
+			;DATA44 estiver setado
+CMP D[DATA44],0		;seta a flag de sinal se o 32=B0 bit de
+			;DATA44 estiver setado
+CMP B[DATA44+7],0	;seta a flag de sinal se o 64=B0 bit de
+			;DATA44 estiver setado
+CMP B[DATA44+9],0	;seta a flag de sinal se o 80=B0 bit de
+			;DATA44 estiver setado
+</PRE>
+      <P>Observe que a posi=E7=E3o do bit mais alto na =E1rea de =
+mem=F3ria chamada de=20
+      DATA44, usada nestas instru=E7=F5es, depende do tamanho do dado =
+usado na=20
+      instru=E7=E3o. Isto =E9 porque dados em =E1reas de mem=F3ria s=E3o =
+armazenados com os=20
+      bytes em ordem reversa, ou seja, o byte menos significante =
+primeiro e o=20
+      mais significante por =FAltimo. Veja <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/or=
+demRev.php">A=20
+      ordem reversa de armazenamento</A>. A instru=E7=E3o CMP =
+B[DATA44+7],0 analisa=20
+      o 8=B0 byte que cont=E9m o 64=B0 bit. Este =E9 o sinal, mas para =
+um dado de 64=20
+      bits de tamanho.</P>
+      <P>A flag de sinal =E9 usada principalmente com as instru=E7=F5es =
+de salto=20
+      condicional JS e JNS, por exemplo:</P><PRE class=3Dasmcode>JS =
+&gt;L10          ;salta para frente para L10 se a flag de sinal =3D 1
+JNS L1           ;salta para tr=E1s para L1 se a flag de sinal =3D 0
+</PRE>
+      <P>A flag de sinal tamb=E9m =E9 usada com as instru=E7=F5es de =
+salto condicional=20
+      JG ("jump if greater-than" - salte se maior que), JNG ("jump if =
+not=20
+      greater-than" - salte se n=E3o maior que) e =
+semelhantes.</P><BR></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 width=3D650 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dmeio1><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+.gif"=20
+      width=3D115 border=3D0> EST=C1 DANDO BANDEIRA...</TD></TR>
+  <TR>
+    <TD class=3Dmeio1>
+      <P>Esta =E9 a primeira parte da tradu=E7=E3o do texto de Jeremy =
+Gordon sobre=20
+      saltos condicionais e flags. A continua=E7=E3o do texto voc=EA =
+encontra em <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/fl=
+agJmp2.php">Flags=20
+      e Saltos Condicionais II</A>, onde s=E3o abordadas as flags de =
+carry, de=20
+      overflow e de paridade.</P></TD></TR>
+  <TR>
+    <TD class=3Dmeio1 align=3Dright><IMG height=3D21=20
+      =
+src=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2=
+a.gif"=20
+      width=3D115 border=3D0></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D750 align=3Dcenter>
+  <TBODY>
+  <TR>
+    <TD class=3Dcab1 colSpan=3D3>Localizador</TD></TR>
+  <TR>
+    <TD class=3Dcab1a></TD>
+    <TD class=3Dmeio1 align=3Dmiddle>
+      <SCRIPT language=3DJavaScript>=0A=
+function setFontSize(fontVal) {=0A=
+var fontSet =3D document.getElementById('fontSet');=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('table');=0A=
+if (!fontVal) {fontVal =3D document.getElementById('fontSet').value;}=0A=
+var docSize =3D fontVal+'pt';=0A=
+for(var i=3D0;i<docBase.length;i++)=0A=
+docBase[i].style.fontSize =3D docSize;=0A=
+var docBase =3D new Array(); docBase =3D =
+document.getElementsByTagName('body');=0A=
+docBase[0].style.fontSize =3D docSize;=0A=
+docSize =3D (fontVal-2)+'pt';=0A=
+document.getElementById('xxpe').style.fontSize =3D docSize;=0A=
+if (fontSet) {fontSet.value =3D fontVal;}=0A=
+}=0A=
+</SCRIPT>
+
+      <DIV id=3Dxxpe style=3D"FONT-SIZE: 8pt">
+      <HR>
+
+      <CENTER>| <A href=3D"javascript:setFontSize(15)"><SPAN=20
+      style=3D"FONT-SIZE: 15pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(13)"><SPAN=20
+      style=3D"FONT-SIZE: 13pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(11)"><SPAN=20
+      style=3D"FONT-SIZE: 11pt">A</SPAN></A><A=20
+      href=3D"javascript:setFontSize(9)"><SPAN style=3D"FONT-SIZE: =
+9pt">A</SPAN></A>=20
+      | <A=20
+      onmouseover=3D"status=3D'A Aldeia onde as coisas acontecem =
+numaboa';return true"=20
+      href=3D"http://www.numaboa.com.br/index.php"><IMG height=3D15=20
+      alt=3D"P=E1gina Inicial" =
+src=3D"http://www.numaboa.com.br/img/haus2.png"=20
+      width=3D15 align=3Dbottom border=3D0></A> | <A=20
+      onmouseover=3D"status=3D'Saiba o que a Aldeia tem para =
+oferecer';return true"=20
+      title=3D"Mapa do site"=20
+      href=3D"http://www.numaboa.com.br/aldeia/index.php">Mapa do =
+Site</A> | <A=20
+      onmouseover=3D"status=3D'Fique por dentro das novidades';return =
+true"=20
+      title=3D"Novidades na Aldeia"=20
+      =
+href=3D"http://www.numaboa.com.br/aldeia/destaques.php">Novidades</A> | =
+<A=20
+      onmouseover=3D"status=3D'Procure na Aldeia';return true"=20
+      title=3D"Abre em nova janela"=20
+      href=3D"http://www.numaboa.com.br/portal/index.php" =
+target=3D_blank>Busca</A>=20
+      | <A onmouseover=3D"status=3D'Indique esta p=E1gina aos =
+amigos';return true"=20
+      title=3D"Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/indica.php?page=3D/informatica/=
+oiciliS/assembler/textos/flagJmp1.php&amp;indica=3DoiciliS - Assembly - =
+Textos - Flags e Saltos Condicionais"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Indique esta p=E1gina</A> | <A=20
+      onmouseover=3D"status=3D'Fale com a vov=F3 da Aldeia';return true" =
+
+      title=3D"webmaster - Abre em nova janela"=20
+      =
+href=3D"http://www.numaboa.com.br/mailMan/contato.php?page=3D/informatica=
+/oiciliS/assembler/textos/flagJmp1.php"=20
+      target=3D_blank><IMG height=3D10=20
+      src=3D"http://www.numaboa.com.br/img/mailto.gif" width=3D14 =
+align=3Dbottom=20
+      border=3D0> Mestre da Teia</A> | <A=20
+      onmouseover=3D"status=3D'Marcha-R=E9';return true" title=3D"Meia =
+volta voooolver"=20
+      href=3D"javascript:history.back()">Voltar</A> |<BR>| <A=20
+      =
+href=3D"http://www.numaboa.com.br/foot/localizador.php?file=3Dinfo.txt&am=
+p;page=3D/informatica/oiciliS/assembler/textos/flagJmp1.php"=20
+      target=3D_blank>Localizador</A> || @ <A=20
+      href=3D"http://www.numaboa.com.br/informatica/">Info NumaBoa</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/">oic=ECliS</A> =
+&gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/">Assembl=
+y</A>=20
+      &gt; <A=20
+      =
+href=3D"http://www.numaboa.com.br/informatica/oiciliS/assembler/textos/">=
+Textos</A>=20
+      &gt; <B>Flags e Saltos Condicionais</B>
+      <HR>
+      Cr=E9ditos: vov=F3 Vicki<BR><BR>webdesign sobMedida by vickiSoft - =
+
+      /informatica/oiciliS/assembler/textos/flagJmp1.php (10.04.03) =
+vers=E3o 1.1=20
+      de 02.08.03<BR>Licen=E7a Creative Commons 1998-2005 Aldeia =
+NumaBoa<BR><!-- Creative Commons License -->Exceto onde especificamente=20
+      declarado, todo material deste site =E9 disponibilizado de acordo =
+com a <A=20
+      =
+href=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt"=20
+      target=3D_blank rel=3Dlicense>Licen=E7a Creative Commons</A>. <!-- =
+/Creative Commons License --><!--=0A=
+<rdf:RDF xmlns=3D"http://web.resource.org/cc/"=0A=
+xmlns:dc=3D"http://purl.org/dc/elements/1.1/"=0A=
+xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#">=0A=
+<Work rdf:about=3D"">=0A=
+<dc:type rdf:resource=3D"http://purl.org/dc/dcmitype/Text" />=0A=
+<license =
+rdf:resource=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/" />=0A=
+</Work>=0A=
+=0A=
+<License =
+rdf:about=3D"http://creativecommons.org/licenses/by-nc-sa/2.0/br/">=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Reproduction" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/Distribution" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Notice" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/Attribution" />=0A=
+<prohibits rdf:resource=3D"http://web.resource.org/cc/CommercialUse" />=0A=
+<permits rdf:resource=3D"http://web.resource.org/cc/DerivativeWorks" />=0A=
+<requires rdf:resource=3D"http://web.resource.org/cc/ShareAlike" />=0A=
+</License>=0A=
+</rdf:RDF>=0A=
+--></CENTER></DIV></TD>
+    <TD class=3Dcab1a></TD></TR>
+  <TR>
+    <TD class=3Dpe1 colSpan=3D3></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/interAni.gif
+
+R0lGODlhIAAgAIIAAAD/////QP//AG9AAP+wQP/AYP+gAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh
++QQJFAAAACwAAAAAIAAgAEIDiQi63P4wyqmCvVY4gfETHMaBDBiEF0mtbOteREycWyDPlgTu+q65
+wKBwCOxIjBHLwDcIOALLXdO5Cfl4i6vp9GtsRbWOCkIoAMwTc4FAbLvf8Lh8Tj92qM97UpQJo3IP
+dxd5ghAYMX1eFoiDVSlXJVePVX8ZXQBfj5eRYB8imw9qFKItBWgQphEJACH5BAkQAAAALAAAAAAg
+ACAAAgOHCLrc/jDKSau9OOvNuw0g6DFhOQJCaXpp0IZjMAi0MIieunYp4ROwiMpRA/lKtIcuwKg5
+aSBnY+laPIvR2hQZbUJfWYEDNKvdiLqkkopWqcfGX7WdFYaOc6IUAnVdIQUAgRF9fnsOgQUEhGAu
+fg8FgxJYSGI8jXmXSCcKT5wLiZ+ggoufPicJACH5BAkUAAAALAAAAAAgACAAAgOSCLrcHhC6SVu8
+NduLtYYDJISB94XDOJZmxXUtIwgARNyEIM0xMM+Rmy7w47WKoqKSFvsll8Ye8BVh9hZUybUxvVi3
+iy7xA5soyZyMAbDOZL+NddvlFVEM8vkEVAxV5GgvYAxBOGODChc3dohTUI1DRGeDYkSSkJFVcFeV
+h4g+mZuURZ8OBQCnpQwEp6mqDQWuWwkAIfkECRAAAAAsAAAAACAAIAACA4cIutz+MMpJq7046827
+DSDoMWE5AkJpemnQhmMwCLQwiJ66dinhE7CIylED+Uq0hy7AqDlpIGdj6Vo8i9HaFBltQl9ZgQM0
+q92IuqSSilapx8ZftZ0Vho5zohQCdV0hBQCBEX1+ew6BBQSEYC5+DwWDElhIYjyNeZdIJwpPnAuJ
+n6CCi58+JwkAIfkECRQAAAAsAAAAACAAIAACA4oIutz+MMpJq7046827/2AojmS5BSgqperKts4L
+x3IgOEIdQG9u4yhfihcYCI6Cwa5RRCZnDN0yqiMGCFjCr5HLaqELFjYIvH7BgGPQeWSw1bYbV/h2
+s1PteS9ut/XkdkJ4gGmCa4QLcCyIaTJ5D4pbZWsTbBKWFAUAmhOanBMEnpmbBBcFnw+nEQkAIfkE
+CRAAAAAsAAAAACAAIAACA4YIutz+MMpJq7046815+F/XgKSokKRgosKnit8gzMIQrCiIB0RPBK/N
+jNRzzRyoB60FXC4ZuVtjCXLSFsycg8ZqBgHMbEgpdiFlNJt0WwYio2t2Ssnz6SJOCLN4jxQAf2RO
+RhJ/BYFTg4QQhxJDZUccQyyRkjmVHWKYInkmDIaen6ChDY0NCQAh+QQJFAAAACwAAAAAIAAgAAID
+igi60b0wygmcpXhaK7JXzdAIYvdlwUCu4okKASzMgTvRDaET8WwvM5hDNwr+AEFhcnlE4nrMpnMj
+M0mn1CtQyNFuu96tEbM5FQBn8qbmORfSEm4Z8/Yo59pUUsTOrx9eMDs8gFpCRA6BS0pWTYsOPlc0
+cj2GlFCBa5GZkI2KY2ELbqERbgSkCjoYCQAh+QQJEAAAACwAAAAAIAAgAAIDhgi63P4wykmrvTjr
+zXn4X9eApKiQpGCiwqeK3yDMwhCsKIgHRE8Er82M1HPNHKgHrQVcLhm5W2MJctIWzJyDxmoGAcxs
+SCl2IWU0m3RbBiKja3ZKyfPpIk4Is3iPFAB/ZE5GEn8FgVODhBCHEkNlRxxDLJGSOZUdYpgieSYM
+hp6foKENjQ0JACH+CShjKUZ1bWllAAA7
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/grafs/logo.gif
+
+R0lGODlhagA5APcAAFqvsWrJ0Gu+02XDxnO342G7vlabsV0W/msX/0mLkDMpaTNaZVGYoFKKs3q0
+8ncY/UN4hYgZ+ggJEVekrjgld0pinGWRylJ8pkAkh2tX03GY21p+uREPJluSvi8NZmavyRgrMUg0
+nXaT5zNJZVsS6z8TlzgMfkJkhSsrVzlfcGZ8yTw9gCUMSUYRqS49Xmyv13V542lm1UwUu1Y8wSEz
+Qmc87VdmsxcJQUBPhE1MnCtPVUwQygAAAFcZ2lJRtnk/6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADwALAAAAABqADkA
+AAj+AHkIHEiwoEGDHBIYuHCChoSDECNKnEixosWLJwAAMDChQ4cRDy+KHEmypEQOGjV2tGBhAwiT
+MGPKjHghJYACH3Jq0OBips+fJHHYZFChgwUCBByIUAC0qdODKFMySHBhgw0VMEQ4cPDyqVegHBhM
+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
+jjRfr5YZf6QDIMCIPBAQAAA7
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto1.gif
+
+R0lGODlhcwAMAPcAAAAAABg5SiFSYzFrjDmMta3nKcbGAP//xv//////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH5BAEAAAUALAAAAABzAAwA
+AAjRAAMAGDiwgMGDCBMqXMiwocOHDAlKnEixokUABQIQGMBRAEaIIEOKHFkAAIGTKFOqXMkS5YED
+GDVy7PiRpM2bIWXO3Mmzp8+dBoLG3LjTI86jSBPq/Mm06YCgQjMSLRqgqtWrWLNq3cq1q9eqU4sK
+GEu2rNmzZ4cOqLqzpdu3cOPKVenT48W7F6UGeBnAqd+/gAP7FRAg6UKrBwz0Fcy4sWOehA0f3sj2
+seXLg2tKRrgUs+fPM41uVqgRrenTqFOrXm268GjSX2PLnk2b6+uFAQEAOw==
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+MEgpqr046827/2CITYFgGINQmEW6nnAsz3Rt33iu08LE
+uj8Vq0AsGo/IpHLJbDqfxhTF0BJSgVSodsuFDgbHbxhclAZfVXTry2673/C4fE5vZ4mDxIHcSgD4
+eXtlFVdWaUN8XYqLTHctB3tZAwB/kpADkoRYh5KMnp9HjmsnZZh3X6RVApubeKCvijFIqUW0RLQp
+FWitrrC+T6KgubuGUb/HS8HCFoVqxsjQtUh11LnNQ2HR0cG5Ih6cSonasNwCCOfo6err66vFSeLj
+n+Xs9fbputjw8uTT5vcA2b0Lxw8UvYAI8ekLt6Ohw4b+Eko8t7BgwRQTJ1a0OA5jRokYq6qJHEly
+5L+PCRWoXKnSm8uXMCugnBgBADs=
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/grafs/pto2a.gif
+
+R0lGODlhcwAVALMAAABrCAhKaxg5SiFSYyFjhDFrjDmMtUqM763nKe/v5wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAgALAAAAABzABUAAAT+EMlJq71X6M27/2AojuFQFIaArWw2vHAsz3Rt3/h9pm3P
+CqaTcEgsGo/IpHLJ8zkpwKV0Sq0im09nlGjoer/gsHhMLoODyZQq69sODda4vIg+pgpr9q++m/vn
+fFwCeHl6LkVwf4pVgUJ3QIWGUIGJi5ZLjSiDUSSdG5SXoUqNjyZqOaigoqtGlJumn6yVrLQnfKWa
+hJl+s7W0dbiPGmhdXL3Fxsi+vsSvuZBbXS+OBtM71bfL2rY7zqWnOwMHB0HVAADlAxLA28vl3vBu
+4gloAwD0Qur4jqn9/v81uuGBNVBTADcFrOXjo7Bdu2DwAhzc5bBiGngFU0g8aKajx48WIEOGxAik
+i4CNBz2pXMmypUsRKANEAAA7
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/haus2.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAF7D1XuAAAABlBMVEUAAACCkb4DVVPxAAAAAXRS
+TlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAQlJREFUeNoB/gAB/wAAAAAAAAAAAAAAAQAA
+AQABAAABAAEAAAABAAAAAAEAAAEAAAAAAQAAAAAAAAABAQAAAQAAAQAAAAABAAAAAQEAAQEBAAAA
+AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA
+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAQABAAAAAAAAAQAAAAEAAQEAAAAAAAABAAAAAQAA
+AAEBAAAAAAEBAAAAAAAAAAAAAQEAAAAAAQABAQAAAQEBAAEAAAAAAAEAAQEAAAEBAQABAAAAAAAB
+AQEBAQEBAQEBAQAAGqcAQv1LH7cAAAAASUVORK5CYII=
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.numaboa.com.br/img/mailto.gif
+
+R0lGODdhDgAKAKIAAP////r7v+rrl8TFDKOkAH1+AElKAAAAACwAAAAADgAKAAADLWi63AQwynEM
+KCLrXEgFAraFgmdxm2iCpdhla8mpZRUQo0aYw+7/u8phSCwSEwA7
+
+------=_NextPart_000_0095_01C5C514.4EB575E0
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.numaboa.com.br/informatica/oiciliS/assembler/styleAssembly.css
+
+A {
+	COLOR: #00ccff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #cccccc
+}
+A:hover {
+	TEXT-DECORATION: underline overline
+}
+A:active {
+	COLOR: #99ffcc
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #236282; FONT-SIZE: 10pt; =
+SCROLLBAR-HIGHLIGHT-COLOR: #003399; SCROLLBAR-SHADOW-COLOR: #505050; =
+COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #505050; SCROLLBAR-ARROW-COLOR: =
+#00ccff; SCROLLBAR-TRACK-COLOR: #084a6b; FONT-FAMILY: Verdana, Arial, =
+Helvetica; SCROLLBAR-DARKSHADOW-COLOR: #000000; BACKGROUND-COLOR: =
+#084a6b; TEXT-ALIGN: center
+}
+.borda {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.bordaI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid
+}
+.bordaCor {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; =
+BACKGROUND-COLOR: #006699
+}
+.bordaCorI {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; =
+PADDING-LEFT: 2em; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black =
+1px solid; BACKGROUND-COLOR: #006699
+}
+TR.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+TD.cab1 {
+	FONT-WEIGHT: bold; BACKGROUND: url(grafs/cab1.gif); COLOR: #00ccff; =
+HEIGHT: 32px; TEXT-ALIGN: center
+}
+TD.cab1a {
+	BACKGROUND: url(grafs/cab1a.gif) #006699; WIDTH: 27px
+}
+TD.pto1 {
+	FONT-WEIGHT: bold; HEIGHT: 40px; BACKGROUND-COLOR: #236282
+}
+TD.pe1 {
+	BACKGROUND: url(grafs/pe1.gif); HEIGHT: 18px
+}
+TD.meio1 {
+	BACKGROUND-COLOR: #236282
+}
+TD.c66CC {
+	PADDING-RIGHT: 10px; BACKGROUND-COLOR: #0066cc; TEXT-ALIGN: right
+}
+HR {
+	COLOR: #00ccff; HEIGHT: 1px
+}
+H1 {
+	MARGIN-TOP: 1px; FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: =
+1px; FONT-FAMILY: Verdana, Arial, Helvetica
+}
+H2 {
+	MARGIN-TOP: 0px; FONT-SIZE: xx-small; MARGIN-BOTTOM: 0px; FONT-FAMILY: =
+Verdana, Arial, Helvetica
+}
+H3 {
+	MARGIN-TOP: 0px; FONT-SIZE: 9px; MARGIN-BOTTOM: 0px; COLOR: #666666; =
+FONT-FAMILY: Verdana, Arial, Helvetica
+}
+P {
+	MARGIN: 10px 50px; TEXT-INDENT: 20pt; TEXT-ALIGN: justify
+}
+BLOCKQUOTE {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; TEXT-ALIGN: justify
+}
+PRE {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 40pt; FONT-FAMILY: Verdana, Arial, =
+Helvetica
+}
+.asmcode {
+	BORDER-RIGHT: #236282 2px dotted; PADDING-RIGHT: 20px; BORDER-TOP: =
+#236282 2px dotted; PADDING-LEFT: 20px; FONT-SIZE: 14px; PADDING-BOTTOM: =
+20px; MARGIN: 10px 50px; BORDER-LEFT: #236282 2px dotted; COLOR: =
+#00ccff; PADDING-TOP: 20px; BORDER-BOTTOM: #236282 2px dotted; =
+FONT-FAMILY: "Courier new"; BACKGROUND-COLOR: #337292
+}
+OL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+UL {
+	PADDING-RIGHT: 50px; PADDING-LEFT: 50px; TEXT-ALIGN: justify
+}
+
+------=_NextPart_000_0095_01C5C514.4EB575E0--

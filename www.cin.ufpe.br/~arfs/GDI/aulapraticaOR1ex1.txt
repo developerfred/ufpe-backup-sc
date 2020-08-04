@@ -1,0 +1,43 @@
+
+-- EXERCÍCIO 1. - empregado - departamento;
+
+
+CREATE TYPE EMPREGADO_TYPE AS OBJECT(
+       MATRICULA NUMBER,
+       NOME VARCHAR(20),
+       ENDERECO VARCHAR(50),
+       DT_ADMISSAO DATE,
+       CODIGO_DEP NUMBER
+)
+/
+CREATE TYPE DEPARTAMENTO_TYPE AS OBJECT(
+       CODIGO NUMBER,
+       DESCRICAO VARCHAR(100)
+)
+/
+CREATE TABLE DEPARTAMENTO OF DEPARTAMENTO_TYPE(
+       CODIGO PRIMARY KEY
+)
+/
+CREATE TABLE EMPREGADO OF EMPREGADO_TYPE(
+       MATRICULA PRIMARY KEY,
+       FOREIGN KEY (CODIGO_DEP) REFERENCES DEPARTAMENTO(CODIGO)
+)
+/
+
+-- Inserção de dados
+
+INSERT INTO DEPARTAMENTO VALUES(1, 'Centro de Informática');
+INSERT INTO DEPARTAMENTO VALUES(2, 'Departamento de Matemática');
+
+
+INSERT INTO EMPREGADO VALUES(1, 'Fernando Fonseca', 'Rua da Paz, 65',
+                             to_date('20/01/1980','dd/mm/yyyy'), 1);
+INSERT INTO EMPREGADO VALUES(2, 'Ana Maria Freitas', 'Rua B',
+                             to_date('10/11/1995','dd/mm/yyyy'), 1);
+INSERT INTO EMPREGADO VALUES(3, 'Joana Marques', 'Rua C 30',
+                             to_date('06/08/1991','dd/mm/yyyy'), 2);
+--Consulta
+
+SELECT E.NOME, D.DESCRICAO FROM EMPREGADO E, DEPARTAMENTO D WHERE E.CODIGO_DEP = D.CODIGO;
+

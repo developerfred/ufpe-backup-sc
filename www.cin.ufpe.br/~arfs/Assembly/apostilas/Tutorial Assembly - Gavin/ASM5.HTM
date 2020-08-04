@@ -1,0 +1,560 @@
+<HTML>
+<HEAD>
+<TITLE>Guia para o Assembly 80x86, de Gavin - Parte 4</TITLE>
+
+<META http-equiv="PICS-Label" content='(PICS-1.0 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "gavin@senator.demon.co.uk" for "http://www.strangecreations.com" on "1996.04.04T08:15-0500" exp "1997.07.01T08:15-0500" r (n 0 s 0 v 0 l 0))'>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC0000" ALINK="#FF3300" VLINK="#330099"> 
+ 
+<A NAME="need"><H2>Algumas Instru&ccedil;&otilde;es
+que voc&ecirc; precisa conhecer</H2></A>
+
+Esta &eacute; uma lista de algumas instru&ccedil;&otilde;es b&aacute;sicas
+do assembly que s&atilde;o muito importantes e utilizadas freq&uuml;entemente.
+
+<P>
+
+<B>ADD:</B> Adiciona um n&uacute;mero a outro<BR>
+<BR>Sintaxe: 
+
+<BLOCKQUOTE><PRE>
+ADD operando1,operando2
+</PRE></BLOCKQUOTE>
+
+Isto adiciona o operando2 ao operando1. A resposta &eacute; armazenada em
+operando1. Um dado imediato n&atilde;o pode ser utilizado como operando1
+mas pode ser utilizado como operando2.
+
+<P>
+
+<B>SUB:</B> Subtrai um n&uacute;mero de outro <BR>
+<BR>Sintaxe: 
+
+<BLOCKQUOTE><PRE>
+SUB operando1,operando2
+</PRE></BLOCKQUOTE>
+
+Isto subtrai operando2 de operando1. Um dado imediato n&atilde;o pode ser
+utilizado como operando1 mas pode ser utilizado como operando2. 
+
+<P>
+
+<B>MUL:</B> Multiplica dois inteiros n&atilde;o sinalizados (sempre positivos)
+<BR>
+<B>IMUL:</B> Multiplica dois inteiros sinalizados (ou positivo ou
+negativo)
+<BR>
+Sintaxe: 
+
+<BLOCKQUOTE><PRE>
+MUL registrador ou vari&aacute;vel
+IMUL registrador ou vari&aacute;vel
+</PRE></BLOCKQUOTE>
+
+Isto multiplica AL ou AX pelo registrador ou vari&aacute;vel indicada. AL
+&eacute; multiplicado se for indicado um operando com tamanho byte e o
+resultado &eacute; armazenado em AX. Se o operando for de tamanho word
+AX ser&aacute; utilizado e o resultado &eacute; colocado em DX:AX.
+
+<P>
+
+Em um 386, 486 ou Pentium o registrador EAX pode ser usado e a resposta
+&eacute; armazenada em EDX:EAX.
+
+<P>
+
+<B>DIV:</B> Divide dois inteiros n&atilde;o sinalizado (sempre positivo) <BR>
+<B>IDIV:</B> Divide dois inteiros sinalizado (ou positivo ou negativo)
+
+<BR>Sintaxe: 
+
+<BLOCKQUOTE><PRE>
+DIV registrador ou vari&aacute;vel
+IDIV registrador ou vari&aacute;vel
+</PRE></BLOCKQUOTE>
+
+Isto funciona da mesma forma que MUL e IMUL, dividindo o n&uacute;mero em AX
+pelo registrador ou vari&aacute;vel indicada. A resposta &eacute; armazenada
+em dois lugares. AL armazena a resposta e o resto fica em AH. Se o operando
+for um registrador de 16 bits ent&atilde;o o n&uacute;mero em DX:AX &eacute;
+dividido pelo operando e a resposta &eacute; armazenada em AX e o resto em DX.
+
+<A NAME="procedures"><H2>Introdu&ccedil;&atilde;o a Procedimentos</H2></A>
+
+Em assembly um procedimento &eacute; equivalente a uma fun&ccedil;&atilde;o em
+C ou Pascal. Um procedimento fornece uma maneira f&aacute;cil de encapsular
+alguns c&aacute;lculos que podem, ent&atilde;o, ser utilizados sem nos
+preocuparmos em como eles funcionam. Com procedimentos adequadamente
+implementados voc&ecirc; pode ignorar como sua tarefa est&aacute; sendo feita.
+
+<P>
+
+Um procedimento &eacute; definido assim:
+
+<BLOCKQUOTE><PRE>
+PROC AProcedure
+.
+. 		; algum c&oacute;digo para fazer algo 
+.
+ret		; se isto n&atilde;o estiver aqui o computador vai travar
+ENDP AProcedure
+</PRE></BLOCKQUOTE>
+
+Tamb&eacute;m &eacute; f&aacute;cil executar um procedimento. Tudo o que
+voc&ecirc; precisa fazer &eacute; isto:
+
+<BLOCKQUOTE><PRE>
+call AProcedure
+</PRE></BLOCKQUOTE>
+
+O programa a seguir &eacute; um exemplo de como usar um procedimento.
+Ele se parece com o primeiro exemplo que analisamos, tudo o que ele
+faz &eacute; imprimir &quot;Hello World!&quot; na tela.
+
+<BLOCKQUOTE><PRE>
+Listagem 3: SIMPPROC.ASM
+
+; Este &eacute; um programa simples para demonstrar procedimentos. Ele
+; dever&aacute; imprimir Hello World! na tela quando for executado.
+
+.model tiny 
+.code 
+org 100h
+
+Start: 
+
+call Display_Hi 	; Chama o procedimento
+mov ax,4C00h 		; retorna ao DOS
+int 21h 		
+
+Display_Hi PROC 
+
+mov dx,OFFSET HI 
+mov ah,9 
+int 21h 
+
+ret
+Display_Hi ENDP 
+
+HI DB "Hello World!$" 	; define uma messagem
+
+end Start
+</PRE></BLOCKQUOTE>
+
+<A NAME="params"><H2>Passagem de par&acirc;metros</H2></A>
+
+Procedimentos n&atilde;o seriam t&atilde;o &uacute;teis se voc&ecirc;
+n&atilde;o pudesse passar par&acirc;metros para serem utilizados ou
+modificados pelo procedimento. Existem tr&ecirc;s formas de fazer isto
+e iremos ver todos os tr&ecirc;s m&eacute;todos: por registradores, pela
+mem&oacute;ria e pela pilha.
+
+<P>
+
+Utilizaremos tr&ecirc;s programas exemplo que executam a mesma tarefa.
+Eles imprimem um bloco quadrado (valor ASCII 254) em um local especificado.
+
+<P>
+
+O tamanho dos arquivos quando montados s&atilde;o: 38 para registradores,
+69 para mem&oacute;ria e 52 para a pilha (em bytes).
+
+<H2>Por registradores</H2>
+
+As vantagens deste m&eacute;todo s&atilde;o a sua simplicidade e sua
+rapidez. Tudo o que voc&ecirc; precisa fazer &eacute; mover os
+par&acirc;metros para os registradores antes de chamar o procedimento.
+
+<BLOCKQUOTE><PRE>
+Listagem 4: PROC1.ASM
+
+; este &eacute; um procedimento para imprimir um bloco na tela usando
+; registradores para passagem de par&acirc;metro (posi&ccedil;&atilde;o da
+; impress&atilde;o e a cor).
+
+.model tiny 
+.code
+org 100h
+
+Start: 
+
+mov dh,4 	; linha da impress&atilde;o do caracter
+mov dl,5 	; coluna da impress&atilde;o do caracter
+mov al,254 	; valor ascii do bloco a imprimir
+mov bl,4 	; cor da impress&atilde;o do caracter
+
+call PrintChar 	; imprime o caracter
+mov ax,4C00h 	; termina programa 
+int 21h
+
+PrintChar PROC NEAR
+
+push bx 	; salva os registradores que ser&atilde;o alterados
+push cx
+
+xor bh,bh 	; limpa bh - p&aacute;gina de v&iacute;deo 0
+mov ah,2 	; fun&ccedil;&atilde;o 2 - mover o cursor
+int 10h 	; linha e coluna j&aacute; est&atilde;o em dx
+
+pop bx 		; recupera bx
+
+xor bh,bh 	; exibe p&aacute;gina - 0
+mov ah,9 	; fun&ccedil;&atilde;o 09h escreve o caracter &amp; atributos
+mov cx,1 	; imprime-o uma vez
+int 10h 	; chama subrotina da bios
+
+pop cx 		; recupera registradores
+
+ret 		; retorna ao ponto em que foi chamado
+PrintChar ENDP
+
+end Start
+</PRE></BLOCKQUOTE>
+
+<H2>Passagem pela mem&oacute;ria</H2>
+
+A vantagem deste m&eacute;todo &eacute; sua simplicidade mas ele torna
+seu programa maior e possivelmente mais lento.
+
+<P>
+
+Para passar par&acirc;metros pela mem&oacute;ria tudo o que voc&ecirc;
+precisa fazer &eacute; copi&aacute;-los para vari&aacute;veis que estejam
+armazenadas na mem&oacute;ria. Voc&ecirc; pode utilizar uma vari&aacute;vel
+da mesma forma com que voc&ecirc; usa um registrador mas os comandos que
+utilizam registradores s&atilde;o muito mais r&aacute;pidos.
+
+<BLOCKQUOTE><PRE>
+Listagem 5: PROC2.ASM 
+
+; este &eacute; um procedimento para imprimir um bloco na tela usando a
+; mem&oacute;ria para passagem de par&acirc;metro (posi&ccedil;&atilde;o da
+; impress&atilde;o e a cor).
+
+.model tiny 
+.code
+org 100h
+
+Start: 
+
+mov Row,4 	; linha da impress&atilde;o do caracter
+mov Col,5 	; coluna da impress&atilde;o do caracter
+mov Char,254 	; valor ascii do bloco a imprimir
+mov Colour,4 	; cor da impress&atilde;o do caracter
+
+call PrintChar 	; imprime o caracter
+mov ax,4C00h 	; termina programa 
+int 21h
+
+PrintChar PROC NEAR
+
+push ax cx bx 	; salva os registradores que ser&atilde;o alterados
+
+xor bh,bh 	; limpa bh - p&aacute;gina de v&iacute;deo 0
+mov ah,2 	; fun&ccedil;&atilde;o 2 - mover o cursor
+mov dh,Row
+mov dl,Col
+int 10h 	; chama subrotina da bios
+
+mov al,Char 
+mov bl,Colour
+xor bh,bh 	; exibe p&aacute;gina - 0
+mov ah,9 	; fun&ccedil;&atilde;o 09h escreve o caracter &amp; atributos
+mov cx,1 	; imprime-o uma vez
+int 10h 	; chama subrotina da bios
+
+pop bx cx ax 	; recupera registradores
+
+ret 		; retorna ao ponto em que foi chamado
+PrintChar ENDP
+
+; vari&aacute;veis para armazenar dados
+
+Row db 		? 
+Col db 		?
+Colour db 	?
+Char db 	?
+
+end Start
+</PRE></BLOCKQUOTE>
+
+<H2>Passagem pela pilha</H2>
+
+Este &eacute; o m&eacute;todo mais poderoso e flex&iacute;vel de passagem
+de par&acirc;metros. Sua desvantagem &eacute; a complexidade.
+
+<BLOCKQUOTE><PRE>
+Listagem 6: PROC3.ASM
+
+; este &eacute; um procedimento para imprimir um bloco na tela usando
+; a pilha para passagem de par&acirc;metro (posi&ccedil;&atilde;o da
+; impress&atilde;o e a cor).
+
+.model tiny 
+.code
+org 100h
+
+Start: 
+
+mov dh,4 	; linha da impress&atilde;o do caracter
+mov dl,5 	; coluna da impress&atilde;o do caracter
+mov al,254 	; valor ascii do bloco a imprimir
+mov bl,4 	; cor da impress&atilde;o do caracter
+push dx ax bx 	; coloca os par&acirc;metros na pilha 
+
+call PrintString ; imprime o caracter
+
+pop bx ax dx 	;recupera os registradores
+mov ax,4C00h 	;termina programa
+int 21h
+
+PrintString PROC NEAR
+
+push bp 	; salva bp
+mov bp,sp 	; copia sp em bp
+push cx 	; salva os registradores que ser&atilde;o alterados
+
+xor bh,bh 	; limpa bh - p&aacute;gina de v&iacute;deo 0
+mov ah,2 	; fun&ccedil;&atilde;o 2 - mover o cursor
+mov dx,[bp+8] 	; recupera dx
+int 10h 	; chama subrotina da bios
+
+mov ax,[bp+6] 	; caracter
+mov bx,[bp+4] 	; atributo
+xor bh,bh 	; exibe p&aacute;gina - 0
+mov ah,9 	; fun&ccedil;&atilde;o 09h escreve o caracter &amp; atributos
+mov cx,1 	; imprime-o uma vez
+int 10h 	; chama subrotina da bios
+
+pop cx 		; recupera registradores
+pop bp 
+
+ret 		; retorna ao ponto em que foi chamado
+PrintString ENDP
+
+end Start
+</PRE></BLOCKQUOTE>
+
+<CENTER>
+<IMG SRC="stacproc.gif" ALT="Pilha de chamada a um procedimento" WIDTH=472 HEIGHT=245>
+<BR><I>Ilustra&ccedil;&atilde;o da pilha para um procedimento com dois
+par&acirc;metros</I>
+</CENTER>
+
+<P>
+
+Para obter um par&acirc;metro da pilha tudo o que voc&ecirc; precisa
+fazer &eacute; calcular onde ele est&aacute;. O &uacute;ltimo par&acirc;metro
+est&aacute; em BP+2 e ent&atilde;o o pr&oacute;ximo estar&aacute; em BP+4.
+
+<A NAME="models"><H2>O que s&atilde;o "Modelos de
+Mem&oacute;ria"?</H2></A>
+
+Temos usado a diretiva .MODEL para especificar que tipo de modelo de
+mem&oacute;ria estamos usando, mas o que isto significa?
+
+<P>
+
+Sintaxe:
+
+<BR>
+
+.MODEL MemoryModel
+
+<P>
+Onde MemoryModel pode ser SMALL, COMPACT, MEDIUM, LARGE, HUGE,
+TINY ou FLAT.
+
+<DL>
+
+<DT><B>Tiny</B>
+<DD>
+
+Significa que haver&aacute; um &uacute;nico segmento tanto para c&oacute;digo
+quanto para dados. Este tipo de programa pode originar um arquivo .COM.
+
+<DT><B>Small</B>
+<DD>
+
+Isto significa que, por default, todo o c&oacute;digo ser&aacute; colocado
+em um segmento e todos os dados declarados no segmento de dados tamb&eacute;m
+ser&atilde;o colocados em um segmento. Isto significa que todos os
+procedimentos e vari&aacute;veis ser&atilde;o endere&ccedil;adas como NEAR
+sendo apontadas apenas pelo offset.
+
+<DT><B>Compact</B>
+<DD>
+
+Isto significa que, por default, todos os elementos de c&oacute;digo
+ser&atilde;o colocados em um segmento mas cada elemento de dados poder&aacute;
+ser colocado em seu pr&oacute;prio segmento f&iacute;sico. Isto significa
+que elementos de dados ser&atilde;o apontados pelo seu endere&ccedil;o de
+segmento e offset. Elementos de c&oacute;digo (procedimentos) ser&atilde;o do
+tipo NEAR e vari&aacute;veis ser&atilde;o do tipo FAR.
+
+<DT><B>Medium</B>
+<DD>
+
+&Eacute; o contr&aacute;rio de compact. Elementos de dados ser&atilde;o do
+tipo NEAR e procedimentos ser&atilde;o FAR.
+
+<DT><B>Large</B>
+<DD>
+
+Isto significa que tanto procedimentos como vari&aacute;veis ser&atilde;o
+do tipo FAR. Voc&ecirc; dever&aacute; usar endere&ccedil;os de segmento e
+offset.
+
+<DT><B>Flat</B>
+<DD>
+
+N&atilde;o &eacute; muito utilizado por ser destinado a um espa&ccedil;o
+de mem&oacute;ria n&atilde;o segmentada. Para us&aacute;-lo voc&ecirc;
+precisar&aacute; de um extensor DOS. &Eacute; o que voc&ecirc; ter&aacute;
+que usar se for escrever um  programa que interaja com um programa C/C++
+que utilize um extensor DOS como o DOS4GW ou PharLap.
+
+</DL>
+
+<A NAME="macros"><H2>Macros (no Turbo Assembler)</H2></A>
+
+<EM>Observa&ccedil;&atilde;o:</EM>
+Todos os exemplo fornecidos s&atilde;o de macros do Turbo Assembler.
+
+<P>
+
+Macros s&atilde;o muito &uacute;teis para fazer algo muito
+freq&uuml;ente mas ao qual n&atilde;o se aplica o uso de procedimentos.
+As macros s&atilde;o substitu&iacute;das, quando o programa &eacute; montado,
+pelo c&oacute;digo que elas cont&ecirc;m.
+
+<P>
+
+Esta &eacute; a sintaxe para defini&ccedil;&atilde;o de uma macro:
+
+<BLOCKQUOTE><PRE>
+Name_of_macro macro 
+;
+;	uma seq&uuml;&ecirc;ncia de instru&ccedil;&otilde;es
+;
+endm
+</PRE></BLOCKQUOTE>
+
+Este s&atilde;o dois exemplos de macro que executam a tediosa tarefa de
+salvar e recuperar certos registradores usando a pilha:
+
+<BLOCKQUOTE><PRE>
+SaveRegs macro
+
+push ax
+push bx
+push cx
+push dx
+
+endm
+
+RestoreRegs macro
+
+pop dx
+pop cx
+pop bx
+pop ax
+
+endm
+</PRE></BLOCKQUOTE>
+
+Observe que os registradores s&atilde;o recuperados na ordem reversa em
+que eles foram salvos. Para utilizar uma macro no seu programa voc&ecirc;
+apenas utiliza o nome da macro com se fosse uma instru&ccedil;&atilde;o
+qualquer:
+
+<BLOCKQUOTE><PRE>
+SaveRegs
+
+; algumas outras instru&ccedil;&otilde;es
+
+RestoreRegs
+</PRE></BLOCKQUOTE>
+
+Este exemplo mostra como voc&ecirc; pode usar uma macro para diminuir o
+trabalho de digita&ccedil;&atilde;o. Esta macro simplesmente imprime uma
+mensagem na tela.
+
+<BLOCKQUOTE><PRE>
+OutMsg macro SomeText
+local PrintMe,SkipData
+
+jmp SkipData
+
+PrintMe db 'SomeText','$'
+
+SkipData:
+
+push ax dx cs 
+
+mov dx,OFFSET cs:PrintMe
+mov ah,9
+int 21h
+
+pop cs dx ax
+
+endm
+</PRE></BLOCKQUOTE>
+
+<P>
+Os &uacute;nicos problemas com macro s&atilde;o que se voc&ecirc; exagerar
+no seu uso isto levar&aacute; seu programa a ser tornar cada vez maior e
+voc&ecirc; ter&aacute; problemas com m&uacute;ltiplas defini&ccedil;&otilde;es
+de labels e vari&aacute;veis. A maneira correta de resolver estes problemas
+&eacute; utilizar a diretiva LOCAL para declarar nomes dentro das macros.
+
+<P>
+
+Sintaxe:
+
+<BLOCKQUOTE><PRE>
+LOCAL name 
+</PRE></BLOCKQUOTE>
+
+Onde name &eacute; o nome da vari&aacute;vel ou label local.
+
+<A NAME="param_macros"><H2>Macros com Par&acirc;metros</H2></A>
+
+Outra utiliza&ccedil;&atilde;o poderosa de macros &eacute; aquela em que
+elas possuem par&acirc;metros. O n&uacute;mero de par&acirc;metros s&oacute; est&aacute; limitado ao comprimento da linha.
+
+<P>
+
+Sintaxe:
+
+<P>
+
+<BLOCKQUOTE><PRE>
+Name_of_Macro macro par1,par2,par3
+;
+; os comandos v&atilde;o aqui
+;
+endm
+</PRE></BLOCKQUOTE>
+
+Este &eacute; um exemplo que executa a adi&ccedil;&atilde;o entre o primeiro
+e o segundo par&acirc;metro e coloca o resultado no terceiro.
+
+<BLOCKQUOTE><PRE>
+AddMacro macro num1,num2,result
+
+push ax 	; salva ax para que n&atilde;o seja destru&iacute;do
+mov ax,num1 	; coloca num1 em ax
+add ax,num2 	; adiciona num2 a ele
+mov result,ax 	; copia a resposta em result
+pop ax 		; recupera ax
+
+endm 
+</PRE></BLOCKQUOTE>
+
+<H3><A HREF="asm1.htm#toc">Retornar para o Sum&aacute;rio</A></H3>
+
+</BODY>
+</HTML>
